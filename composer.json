@@ -1,0 +1,29 @@
+{
+    "name": "plugin-frame/plugin-frame",
+    "description": "A modern wordpress plugin development framework.",
+    "autoload": {
+        "psr-4": {
+            "PluginFrame\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mhrubel",
+            "email": "bd.mhrubel@gmail.com"
+        }
+    ],
+    "scripts": {
+        "phpcs": "phpcs --standard=WordPress --extensions=php .",
+        "phpcbf": "phpcbf --standard=WordPress --extensions=php ."
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "wp-coding-standards/wpcs": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

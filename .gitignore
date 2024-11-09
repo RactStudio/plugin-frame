@@ -1,0 +1,62 @@
+# Node modules
+node_modules/
+
+# Composer dependencies
+vendor/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Grunt build and watch files
+/resources/assets/css/main.css
+/resources/assets/js/main.js
+
+# Compiled/production files
+/dist/
+/.cache/
+/.build/
+/.dist/
+
+# Translations
+languages/*.mo
+languages/*.po
+languages/*.pot
+
+# Logs
+logs/
+*.log
+
+# IDE/Editor files
+.idea/
+.vscode/
+
+# System files
+*.sublime*
+*.swp
+*~
+.project
+
+# WordPress specific
+wp-config.php
+.htaccess
+
+# Ignore lock files if not needed in version control
+package-lock.json
+composer.lock
+
+# Ignore test files and config used for development
+tests/
+phpunit.xml
+phpunit.xml.dist
+
+# Ignore environment files (dotenv)
+.env
+.env.*
+
+# Ignore temp files
+*.tmp
+*.temp
+
+# Grunt generated files or artifacts
+Gruntfile.js
