@@ -59,4 +59,4 @@ phpunit.xml.dist
 *.temp
 
 # Grunt generated files or artifacts
-Gruntfile.js
+#Gruntfile.js
