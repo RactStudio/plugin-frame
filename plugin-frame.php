@@ -11,31 +11,15 @@
  * License:     GPL2
  */
 
+namespace PluginFrame;
+
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 // Define constants for plugin directory paths
 define( 'PLUGIN_FRAME_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PLUGIN_FRAME_URL', plugin_dir_url( __FILE__ ) );
 
-/**
- * Plugin initialization
- */
-function plugin_frame_init() {
-    // Fires when the plugin starts loading
-    do_action( 'plugin_frame_load_start' );
-
-    // Autoload Composer dependencies
-    if ( file_exists( PLUGIN_FRAME_DIR . 'vendor/autoload.php' ) ) {
-        require_once PLUGIN_FRAME_DIR . 'vendor/autoload.php';
-    }
-
-    // Include the main configuration file to load framework files
-    require_once PLUGIN_FRAME_DIR . 'config/main.php';
-
-    // Fires when the plugin finishes loading
-    do_action( 'plugin_frame_load_end' );
-}
-add_action( 'plugins_loaded', 'plugin_frame_init', 1 ); // Prioritize loading if needed
+// Load The Plugin Frame
+require_once PLUGIN_FRAME_DIR . 'config/Main.php';
+new \PluginFrame\Main();
