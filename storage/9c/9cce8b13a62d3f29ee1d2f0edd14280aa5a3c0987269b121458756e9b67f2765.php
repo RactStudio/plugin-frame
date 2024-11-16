@@ -34,13 +34,19 @@ class __TwigTemplate_ecdd169dddbedb87a0d3ebfec0eda6a677cf01b7668d32e5e218a548db8
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 1
-        yield "<h2>";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getFunction('__')->getCallable()(($context["title"] ?? null), "plugin-frame"), "html", null, true);
+        // line 6
+        yield "
+<h2>";
+        // line 7
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["title"] ?? null), "html", null, true);
         yield "</h2>
 <p>";
-        // line 2
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getFunction('__')->getCallable()(($context["content"] ?? null), "plugin-frame"), "html", null, true);
+        // line 8
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["content"] ?? null), "html", null, true);
+        yield "</p>
+<p>";
+        // line 9
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getFunction('__')->getCallable()(($context["description"] ?? null), ($context["plugin_domain"] ?? null)), "html", null, true);
         yield "</p>";
         return; yield '';
     }
@@ -66,7 +72,7 @@ class __TwigTemplate_ecdd169dddbedb87a0d3ebfec0eda6a677cf01b7668d32e5e218a548db8
      */
     public function getDebugInfo()
     {
-        return array (  43 => 2,  38 => 1,);
+        return array (  49 => 9,  45 => 8,  41 => 7,  38 => 6,);
     }
 
     public function getSourceContext()

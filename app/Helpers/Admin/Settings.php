@@ -4,6 +4,9 @@ namespace PluginFrame\Helpers\Admin;
 
 use PluginFrame\Services\Views;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 class Settings
 {
     /**
@@ -14,8 +17,10 @@ class Settings
     public function render(): void
     {
         echo Views::render('admin/settings', [
-            'title' => 'Settings',
-            'content' => 'Plugin Frame Settings',
+            'plugin_domain' => PLUGIN_FRAME_DOMAIN,
+            'title' => __('Settings', PLUGIN_FRAME_DOMAIN),
+            'content' => __('Plugin Frame Settings', PLUGIN_FRAME_DOMAIN),
+            'description' => 'Plugin Frame description for without text-domain',
         ]);
     }
 }

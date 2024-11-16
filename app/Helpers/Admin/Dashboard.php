@@ -4,6 +4,9 @@ namespace PluginFrame\Helpers\Admin;
 
 use PluginFrame\Services\Views;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 class Dashboard
 {
     /**
@@ -14,8 +17,10 @@ class Dashboard
     public function render(): void
     {
         echo Views::render('admin/dashboard', [
-            'title' => 'Dashboard',
-            'content' => 'Plugin Frame Admin Dashboard!',
+            'plugin_domain' => PLUGIN_FRAME_DOMAIN,
+            'title' => __('Dashboard', PLUGIN_FRAME_DOMAIN),
+            'content' => __('Plugin Frame Admin Dashboard!', PLUGIN_FRAME_DOMAIN),
+            'description' => 'Plugin Frame description for without text-domain',
         ]);
     }
 }

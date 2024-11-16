@@ -62,8 +62,7 @@ class Main
     private function pf_load_directories_files(): void
     {
         // Directories to scan and load PHP files (use main directories)
-        $directories =
-        [
+        $directories = [
             PLUGIN_FRAME_DIR . 'app/',        // App-related files (Controllers, Models, Services, etc.)
             PLUGIN_FRAME_DIR . 'resources/',  // Public assets or other PHP files (if any)
             PLUGIN_FRAME_DIR . 'languages/',  // Language files for i18n

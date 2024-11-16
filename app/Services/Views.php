@@ -6,6 +6,9 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 class Views
 {
     /**
@@ -24,11 +27,11 @@ class Views
         ]);
 
         // Add translation functions
-        $twig->addFunction(new TwigFunction('__', function (string $text, string $domain = 'plugin-frame') {
+        $twig->addFunction(new TwigFunction('__', function (string $text, string $domain = PLUGIN_FRAME_DOMAIN){
             return __($text, $domain);
         }));
 
-        $twig->addFunction(new TwigFunction('_e', function (string $text, string $domain = 'plugin-frame') {
+        $twig->addFunction(new TwigFunction('_e', function (string $text, string $domain = PLUGIN_FRAME_DOMAIN) {
             _e($text, $domain);
         }));
 
