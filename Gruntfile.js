@@ -24,6 +24,7 @@ module.exports = function(grunt) {
                 src: [
                     '**',
                     '!node_modules/**',
+                    '!storage/**',
                     '!.pluginframe',
                     '!composer.json',
                     '!composer.lock',
