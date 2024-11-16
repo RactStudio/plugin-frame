@@ -10,7 +10,7 @@ class Actions
     // Add Actions
     public function __construct()
     {
-        echo '<h2>--------------- Actions:</h2>';
+        //echo '<h2>--------------- Actions:</h2>';
     }
 
 }

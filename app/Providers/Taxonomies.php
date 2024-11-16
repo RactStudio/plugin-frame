@@ -10,6 +10,6 @@ class Taxonomies
     // Add Taxonomies
     public function __construct()
     {
-        echo '<h2>--------------- Taxonomies:</h2>';
+        //echo '<h2>--------------- Taxonomies:</h2>';
     }
 }
