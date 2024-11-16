@@ -9,6 +9,10 @@ class Main
 {
     public function __construct()
     {
+        // Check if the PHP version 7.4 or higher.
+        if (version_compare(PHP_VERSION, '7.4', '<')) {
+            wp_die("{PLUGIN_FRAME_NAME} requires PHP version 7.4 or higher.");
+        }
         // Prioritize loading if needed
         add_action( 'plugins_loaded', [$this, 'plugin_frame_init'], 1 );
     }
