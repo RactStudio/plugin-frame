@@ -1,0 +1,52 @@
+PLUGIN FRAME WIKI
+
+Developer Installation:
+1. Clone the repository:
+git clone https://github.com/your-username/plugin-frame.git
+2. Install Composer dependencies:
+composer init
+composer install
+3. Copy the plugin files to your WordPress plugins directory:
+cp -r plugin-frame/ /path/to/wordpress/wp-content/plugins/
+4. Activate the plugin in your WordPress dashboard.
+
+
+plugin-frame/
+├── admin/                         # Contains admin-specific functionality
+│   ├── includes/                  # Reusable functions (e.g., form handling, validation)
+│   ├── resources/                 # Admin-specific assets and views
+│   │   ├── assets/                # Static assets for admin (CSS, JS)
+│   │   ├── views/                 # Admin-specific PHP templates
+│   ├── SettingsPage.php           # Admin settings page handler
+│   ├── AdminNotices.php           # Admin notices handler
+│   ├── Dashboard.php              # Dashboard-related functionalities
+├── app/                           # Core plugin application files
+│   ├── Helpers/                   # Helpers for handling logic (admin, frontend)
+│   ├── Models/                    # Data handling (e.g., WP_Query, custom tables)
+│   ├── Services/                  # Reusable services (API, caching, helpers)
+│   ├── Providers/                 # Registers actions, filters, etc.
+│   │   ├── Actions.php            # Registers WP actions
+│   │   ├── Filters.php            # Registers WP filters
+│   │   ├── Widgets.php            # Registers WP widgets
+│   │   ├── Menus.php              # Registers admin menu pages
+│   │   ├── ShortCodes.php         # Registers WP ShortCodes
+│   │   ├── PostTypes.php          # Registers custom post types
+│   │   ├── Taxonomies.php         # Registers custom taxonomies
+│   │   ├── Activation.php         # Activation hook handler
+│   │   ├── Deactivation.php       # Deactivation hook handler
+│   │   ├── EnqueueAssets.php      # Enqueues frontend/admin scripts and styles
+│   ├── Api/                       # Custom REST API endpoints
+├── config/                        # Configuration files
+│   ├── main.php                   # Main config file that dynamically loads all files
+├── resources/                     # Global assets and frontend views
+│   ├── assets/                    # Frontend-specific static assets (CSS, JS)
+│   ├── views/                     # Frontend PHP templates
+├── languages/                     # Language files for i18n (automatically detected by WP)
+├── cli/                           # WP-CLI commands (optional)
+├── tests/                         # PHPUnit tests
+├── vendor/                        # Composer dependencies (auto-created by Composer)
+├── composer.json                  # Composer dependencies configuration
+├── package.json                   # NPM dependencies for managing assets
+├── plugin-frame.php               # Main plugin file that initializes everything
+├── readme.txt                     # WordPress.org plugin repository information
+└── README.md                      # GitHub repository information
