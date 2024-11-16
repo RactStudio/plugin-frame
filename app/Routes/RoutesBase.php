@@ -12,6 +12,6 @@ class RoutesBase
     {
         // Register your routes here
         //add_action( 'rest_api_init', [$this, 'register_routes'] );
-        echo '<h2>--------------- Routes:</h2>';
+        //echo '<h2>--------------- Routes:</h2>';
     }
 }

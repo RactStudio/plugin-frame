@@ -10,6 +10,6 @@ class ShortCodes
     // Add ShortCodes
     public function __construct()
     {
-        echo '<h2>--------------- ShortCodes:</h2>';
+        //echo '<h2>--------------- ShortCodes:</h2>';
     }
 }

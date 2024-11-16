@@ -5,11 +5,11 @@ namespace PluginFrame\Providers;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class EnqueueAssets
+class Customize
 {
-    // Plugin EnqueueAssets
+    // Plugin Options Customize
     public function __construct()
     {
-        //echo '<h2>--------------- EnqueueAssets:</h2>';
+        //echo '<h2>--------------- Customize:</h2>';
     }
 }

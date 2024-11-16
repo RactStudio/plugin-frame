@@ -10,6 +10,6 @@ class Widgets
     // Add Widgets
     public function __construct()
     {
-        echo '<h2>--------------- Widgets:</h2>';
+        //echo '<h2>--------------- Widgets:</h2>';
     }
 }

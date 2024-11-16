@@ -8,7 +8,7 @@
  * Author URI:  https://mhrubel.com
  * Text Domain: plugin-frame
  * Domain Path: /languages
- * License:     GPL2
+ * License:     LGPL-3.0-or-later
  */
 
 namespace PluginFrame;

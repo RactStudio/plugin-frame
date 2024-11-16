@@ -2,7 +2,7 @@
   "name": "plugin-frame",
   "version": "1.0.0",
   "description": "A modern WordPress plugin development framework.",
-  "main": "index.js",
+  "main": "plugin-frame.php",
   "scripts": {
     "build": "grunt",
     "watch": "grunt watch",
@@ -11,8 +11,8 @@
     "prod": "npm run translate && grunt build:prod"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Mahamudul Hasan Rubel",
+  "license": "LGPL-3.0-or-later",
   "devDependencies": {
     "alpinejs": "^3.14.3",
     "grunt": "^1.6.1",
