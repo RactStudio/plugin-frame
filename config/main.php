@@ -26,6 +26,12 @@ class Main
         // Load classes to load framework files
         $this->pf_load_directories_files();
 
+        // Load plugin Routes Classes
+        $this->pf_load_routes_base_classes();
+
+        // Load plugin Api Classes
+        $this->pf_load_api_base_classes();
+
         // Load plugin Providers Classes
         $this->pf_load_providers_classes();
 
@@ -48,6 +54,7 @@ class Main
         do_action( 'plugin_frame_load_composer_end' );
     }
 
+    // Load PHP files from directories and subdirectories
     private function pf_load_directories_files(): void
     {
         // Directories to scan and load PHP files (use main directories)
@@ -82,6 +89,32 @@ class Main
         }
     }
     
+    // Load plugin Routes Classes [app/Routes/RoutesBase.php]
+    private function pf_load_routes_base_classes(): void
+    {
+        // Fires when the plugin finishes loading classes
+        do_action( 'plugin_frame_load_routes_classes_start' );
+
+        // Load classes to load framework files
+        new \PluginFrame\Routes\RoutesBase();
+        
+        // Fires when the plugin finishes loading classes
+        do_action( 'plugin_frame_load_routes_classes_end' );
+    }
+    
+    // Load plugin Api Classes [app/Api/ApiBase.php]
+    private function pf_load_api_base_classes(): void
+    {
+        // Fires when the plugin finishes loading classes
+        do_action( 'plugin_frame_load_api_classes_start' );
+
+        // Load classes to load framework files
+        new \PluginFrame\Api\ApiBase();
+        
+        // Fires when the plugin finishes loading classes
+        do_action( 'plugin_frame_load_api_classes_end' );
+    }
+
     // Load plugin Providers Classes [app/Providers/LoadProviders.php]
     private function pf_load_providers_classes(): void
     {
