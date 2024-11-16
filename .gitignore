@@ -1,6 +1,9 @@
 # Node modules
 node_modules/
 
+# Twig compiled files
+storage/
+
 # Composer dependencies
 vendor/
 

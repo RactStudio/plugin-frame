@@ -22,8 +22,15 @@
         "wp-coding-standards/wpcs": "*"
     },
     "config": {
+        "platform": {
+            "php": "7.4"
+        },
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
+    },
+    "require": {
+        "php": ">=7.4",
+        "twig/twig": "^3.3"
     }
 }

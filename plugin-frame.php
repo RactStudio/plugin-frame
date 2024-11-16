@@ -17,6 +17,9 @@ namespace PluginFrame;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 // Define constants for plugin directory paths
+define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' );
+define( 'PLUGIN_FRAME_VERSION', '1.0.0' );
+define( 'PLUGIN_FRAME_DOMAIN', 'plugin-frame' );
 define( 'PLUGIN_FRAME_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PLUGIN_FRAME_URL', plugin_dir_url( __FILE__ ) );
 
