@@ -31,6 +31,8 @@ module.exports = function(grunt) {
                     '!tests/**',
                     '!.dist/**',
                     '!Gruntfile.js',
+                    '!TwigStringExtractor.php',
+                    '!languages/temp-twig-strings.php',
                     '!package.json',
                     '!package-lock.json',
                     '!README.md',

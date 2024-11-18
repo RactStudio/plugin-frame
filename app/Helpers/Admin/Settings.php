@@ -17,10 +17,10 @@ class Settings
     public function render(): void
     {
         echo Views::render('admin/settings', [
-            'plugin_domain' => PLUGIN_FRAME_DOMAIN,
-            'title' => __('Settings', PLUGIN_FRAME_DOMAIN),
-            'content' => __('Plugin Frame Settings', PLUGIN_FRAME_DOMAIN),
-            'description' => 'Plugin Frame description for without text-domain',
+            'plugin_domain' => 'plugin-frame',
+            'title' => __('Settings', 'plugin-frame'),
+            'content' => __('Plugin Frame Settings', 'plugin-frame'),
+            'description' => 'Plugin Frame Settings description for without text-domain',
         ]);
     }
 }
