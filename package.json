@@ -8,7 +8,7 @@
     "watch": "grunt watch",
     "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/main.css --watch",
     "twig-parse": "php TwigStringExtractor.php",
-    "translate": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root && rm languages/temp-twig-strings.php",
+    "translate": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
     "prod": "grunt && npm run translate && grunt build:prod"
   },
   "keywords": [],

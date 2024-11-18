@@ -23,9 +23,12 @@ module.exports = function(grunt) {
                 expand: true,
                 src: [
                     '**',
+                    '!.DS_Store',
+                    '!Thumbs.db',
+                    '!desktop.ini',
                     '!node_modules/**',
                     '!storage/**',
-                    '!.pluginframe',
+                    '!pluginframe',
                     '!composer.json',
                     '!composer.lock',
                     '!tests/**',
