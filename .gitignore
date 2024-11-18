@@ -10,6 +10,7 @@ vendor/
 # OS generated files
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Grunt build and watch files
 /resources/assets/css/main.css
