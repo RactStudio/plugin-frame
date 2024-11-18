@@ -17,10 +17,10 @@ class Dashboard
     public function render(): void
     {
         echo Views::render('admin/dashboard', [
-            'plugin_domain' => PLUGIN_FRAME_DOMAIN,
-            'title' => __('Dashboard', PLUGIN_FRAME_DOMAIN),
-            'content' => __('Plugin Frame Admin Dashboard!', PLUGIN_FRAME_DOMAIN),
-            'description' => 'Plugin Frame description for without text-domain',
+            'plugin_domain' => 'plugin-frame',
+            'title' => __('Dashboard', 'plugin-frame'),
+            'content' => __('Plugin Frame Admin Dashboard!', 'plugin-frame'),
+            'description' => 'Plugin Frame Dashboard description for without text-domain',
         ]);
     }
 }

@@ -25,6 +25,7 @@ Thumbs.db
 languages/*.mo
 languages/*.po
 languages/*.pot
+languages/*.php
 
 # Logs
 logs/
