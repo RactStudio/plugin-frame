@@ -1,9 +1,11 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-      "./resources/views/**/*.{php,twig}",
-      "./app/**/*.php"
+      "./resources/**/*.{twig,html,php,js}"
     ],
-    important: '#plugin-frame-load',
+    prefix: 'pf-',
+    darkMode: ['selector', '[data-mode="pf-dark"]'],
+    important: '#pf-load',
     theme: {
       extend: {},
     },

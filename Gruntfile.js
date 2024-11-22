@@ -1,7 +1,7 @@
-module.exports = function(grunt) {
+module.exports = function (pf) {
     'use strict';
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+    pf.initConfig({
+        pkg: pf.file.readJSON('package.json'),
         uglify: {
             build: {
                 src: 'resources/assets/js/*.js',
@@ -62,12 +62,12 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    pf.loadNpmTasks('grunt-contrib-uglify');
+    pf.loadNpmTasks('grunt-contrib-cssmin');
+    pf.loadNpmTasks('grunt-contrib-copy');
+    pf.loadNpmTasks('grunt-contrib-clean');
+    pf.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['uglify', 'cssmin']);
-    grunt.registerTask('build:prod', ['clean:dist', 'uglify', 'cssmin', 'copy:dist']);
+    pf.registerTask('default', ['uglify', 'cssmin']);
+    pf.registerTask('build:prod', ['clean:dist', 'uglify', 'cssmin', 'copy:dist']);
 };

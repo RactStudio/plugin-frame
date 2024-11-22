@@ -53,18 +53,28 @@ class EnqueueAssets
      */
     protected function registerFrontendAssets()
     {
+        // Frontend Tailwind styles
+        $this->enqueueFiles->registerFrontendStyle(
+            'plugin-frame-frontend-tailwind-styles',
+            PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
+            [],
+            PLUGIN_FRAME_VERSION,
+            false
+        );
+
         // Frontend styles
         $this->enqueueFiles->registerFrontendStyle(
             'plugin-frame-frontend-styles',
             PLUGIN_FRAME_URL . 'resources/assets/css/frontend.css',
             [],
-            PLUGIN_FRAME_VERSION
+            PLUGIN_FRAME_VERSION,
+            false
         );
 
         // Frontend AlpineJS script
         $this->enqueueFiles->registerFrontendScript(
             'plugin-frame-frontend-alpine-js',
-            'resources/assets/js/alpinejs.min.js',
+            PLUGIN_FRAME_URL . 'resources/assets/js/alpinejs.min.js',
             [],
             '3.14.3', // Current version at the time - use latest version (if needed)
             true
@@ -73,7 +83,7 @@ class EnqueueAssets
         // Frontend scripts
         $this->enqueueFiles->registerFrontendScript(
             'plugin-frame-frontend-scripts',
-            'resources/assets/js/frontend.js',
+            PLUGIN_FRAME_URL . 'resources/assets/js/frontend.js',
             [],
             PLUGIN_FRAME_VERSION,
             true
@@ -109,17 +119,26 @@ class EnqueueAssets
 
         // Admin styles
         $this->enqueueFiles->registerAdminStyle(
+            'plugin-frame-admin-tailwind-styles',
+            PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
+            [],
+            PLUGIN_FRAME_VERSION,
+            false
+        );
+
+        // Admin styles
+        $this->enqueueFiles->registerAdminStyle(
             'plugin-frame-admin-styles',
             PLUGIN_FRAME_URL . 'resources/assets/css/admin.css',
             [],
             PLUGIN_FRAME_VERSION,
-            true
+            false
         );
 
         // Admin AlpineJS script
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-alpine-js',
-            'resources/assets/js/alpinejs.min.js',
+            PLUGIN_FRAME_URL . 'resources/assets/js/alpinejs.min.js',
             [],
             '3.14.3', // Use latest version (if needed)
             true
