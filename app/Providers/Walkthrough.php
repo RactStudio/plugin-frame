@@ -1,15 +1,16 @@
-<?php 
+<?php
 
 namespace PluginFrame\Providers;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class PostTypes
+class Walkthrough
 {
-    // Add Custom Post Types
+    // Add
     public function __construct()
     {
         // Do something
     }
+
 }

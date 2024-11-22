@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Widgets
 {
-    // Add Widgets
+    // Add Widgets (Block/Classic)
     public function __construct()
     {
-        //echo '<h2>--------------- Widgets:</h2>';
+        // Do something
     }
 }

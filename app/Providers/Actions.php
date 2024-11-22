@@ -7,10 +7,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Actions
 {
-    // Add Actions
+    // Add
     public function __construct()
     {
-        //echo '<h2>--------------- Actions:</h2>';
+        // Do something
     }
 
 }

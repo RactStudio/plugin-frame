@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Activation
 {
-    // Plugin Activation
+    // Add
     public function __construct()
     {
-        //echo '<h2>--------------- Activation:</h2>';
+        // Do something
     }
 }

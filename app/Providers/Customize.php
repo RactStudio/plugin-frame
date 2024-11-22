@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Customize
 {
-    // Plugin Options Customize
+    // Plugin Options Customize in Apperance Customizer
     public function __construct()
     {
-        //echo '<h2>--------------- Customize:</h2>';
+        // Do something
     }
 }

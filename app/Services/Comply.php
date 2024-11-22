@@ -1,15 +1,16 @@
 <?php 
 
-namespace PluginFrame\Providers;
+namespace PluginFrame\Services;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class PostTypes
+class Comply
 {
-    // Add Custom Post Types
+    // User consent of data collection
     public function __construct()
     {
         // Do something
     }
+
 }

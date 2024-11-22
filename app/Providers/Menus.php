@@ -6,9 +6,7 @@ use PluginFrame\Helpers\Admin\Dashboard;
 use PluginFrame\Helpers\Admin\Settings;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
-    exit;
-}
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Menus
 {

@@ -5,11 +5,12 @@ namespace PluginFrame\Providers;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class PostTypes
+class Notices
 {
-    // Add Custom Post Types
+    // Add
     public function __construct()
     {
         // Do something
     }
+
 }

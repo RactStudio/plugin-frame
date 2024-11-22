@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class ShortCodes
 {
-    // Add ShortCodes
+    // Add
     public function __construct()
     {
-        //echo '<h2>--------------- ShortCodes:</h2>';
+        // Do something
     }
 }

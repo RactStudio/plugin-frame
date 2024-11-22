@@ -9,7 +9,13 @@ class LoadProviders
 {
     public function __construct()
     {
-        // Load all providers internal classes
+
+        /**
+         * Few classes need to be loaded fast to execute first to make sure it purpose is achived
+         * Eg: Init.php need to be initialized first
+         */
+
+        // Load / Execute - all providers internal classes
         new \PluginFrame\Providers\EnqueueAssets();
         new \PluginFrame\Providers\Activation();
         new \PluginFrame\Providers\Deactivation();

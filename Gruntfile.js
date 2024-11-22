@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    'use strict';
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
@@ -28,6 +29,7 @@ module.exports = function(grunt) {
                     '!desktop.ini',
                     '!node_modules/**',
                     '!storage/**',
+                    '!dev/**',
                     '!pluginframe',
                     '!composer.json',
                     '!composer.lock',
@@ -51,11 +53,11 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['resources/assets/js/*.js'],
-                tasks: ['uglify'],
+                tasks: ['uglify']
             },
             css: {
                 files: ['resources/assets/css/*.css'],
-                tasks: ['cssmin'],
+                tasks: ['cssmin']
             }
         }
     });

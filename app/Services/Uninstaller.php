@@ -1,15 +1,16 @@
-<?php 
+<?php
 
-namespace PluginFrame\Providers;
+namespace PluginFrame\Services;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class PostTypes
+class Uninstaller
 {
-    // Add Custom Post Types
+    // Add
     public function __construct()
     {
         // Do something
     }
+
 }

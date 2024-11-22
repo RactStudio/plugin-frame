@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Taxonomies
 {
-    // Add Taxonomies
+    // Add
     public function __construct()
     {
-        //echo '<h2>--------------- Taxonomies:</h2>';
+        // Do something
     }
 }
