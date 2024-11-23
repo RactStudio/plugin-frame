@@ -1,3 +1,14 @@
-<h2>{{ title }}</h2>
-<h3>{{ content }}</h3>
-<p>{{ __(description, plugin_domain) }}</p>
+<div id="pf-load" x-data>
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+<div class="bg-gray-50 py-24 sm:py-32">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <h2 class="text-center text-base/7 font-semibold text-indigo-600">{{ content }}</h2>
+    <p class="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">{{ __(description, plugin_domain) }}</p>
+  </div>
+</div>
+
+{% endblock %}
+</div>

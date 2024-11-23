@@ -10,6 +10,6 @@ class Deactivation
     // Plugin Deactivation
     public function __construct()
     {
-        //echo '<h2>--------------- Deactivation:</h2>';
+        // Do somdething
     }
 }

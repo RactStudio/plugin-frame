@@ -10,6 +10,6 @@ class PostTypes
     // Add Custom Post Types
     public function __construct()
     {
-        //echo '<h2>--------------- PostTypes:</h2>';
+        // Do something
     }
 }

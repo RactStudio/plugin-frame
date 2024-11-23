@@ -10,6 +10,6 @@ class Filters
     // Add Filters
     public function __construct()
     {
-        //echo '<h2>--------------- Filters:</h2>';
+        // Do something
     }
 }

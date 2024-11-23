@@ -4,12 +4,13 @@
   "description": "A modern WordPress plugin development framework.",
   "main": "plugin-frame.php",
   "scripts": {
-    "build": "grunt",
-    "watch": "grunt watch",
-    "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/main.css --watch",
+    "build": "pf",
+    "watch": "pf watch",
+    "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --watch",
+    "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css",
     "twig-parse": "php TwigStringExtractor.php",
     "translate": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
-    "prod": "grunt && npm run translate && grunt build:prod"
+    "prod": "npm run tailwind && npm run translate && grunt build:prod"
   },
   "keywords": [],
   "author": "Mahamudul Hasan Rubel",
@@ -22,7 +23,7 @@
     "grunt-contrib-cssmin": "^5.0.0",
     "grunt-contrib-uglify": "^5.2.2",
     "grunt-contrib-watch": "^1.1.0",
-    "tailwindcss": "^3.4.14",
+    "tailwindcss": "^3.4.15",
     "wp-pot": "^2.0.0"
   },
   "directories": {

@@ -1,6 +1,7 @@
-module.exports = function(grunt) {
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+module.exports = function (pf) {
+    'use strict';
+    pf.initConfig({
+        pkg: pf.file.readJSON('package.json'),
         uglify: {
             build: {
                 src: 'resources/assets/js/*.js',
@@ -28,6 +29,7 @@ module.exports = function(grunt) {
                     '!desktop.ini',
                     '!node_modules/**',
                     '!storage/**',
+                    '!dev/**',
                     '!pluginframe',
                     '!composer.json',
                     '!composer.lock',
@@ -51,21 +53,21 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['resources/assets/js/*.js'],
-                tasks: ['uglify'],
+                tasks: ['uglify']
             },
             css: {
                 files: ['resources/assets/css/*.css'],
-                tasks: ['cssmin'],
+                tasks: ['cssmin']
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    pf.loadNpmTasks('grunt-contrib-uglify');
+    pf.loadNpmTasks('grunt-contrib-cssmin');
+    pf.loadNpmTasks('grunt-contrib-copy');
+    pf.loadNpmTasks('grunt-contrib-clean');
+    pf.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['uglify', 'cssmin']);
-    grunt.registerTask('build:prod', ['clean:dist', 'uglify', 'cssmin', 'copy:dist']);
+    pf.registerTask('default', ['uglify', 'cssmin']);
+    pf.registerTask('build:prod', ['clean:dist', 'uglify', 'cssmin', 'copy:dist']);
 };

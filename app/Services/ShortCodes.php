@@ -2,12 +2,15 @@
 
 namespace PluginFrame\Services;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 class ShortCodes
 {
-    // Methods of all ShortCodes
+    // Add
     public function __construct()
     {
-        //
+        // Do something
     }
 
 }

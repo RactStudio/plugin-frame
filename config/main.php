@@ -27,7 +27,7 @@ class Main
 
         $this->pf_load_composer_vendor();
 
-        // Load classes to load framework files
+        // Load framework files to load classes
         $this->pf_load_directories_files();
 
         // Load plugin Routes Classes

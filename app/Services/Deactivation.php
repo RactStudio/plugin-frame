@@ -1,15 +1,15 @@
 <?php 
 
-namespace PluginFrame\Providers;
+namespace PluginFrame\Services;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Widgets
+class Deactivation
 {
-    // Add Widgets
+    // Add
     public function __construct()
     {
-        //echo '<h2>--------------- Widgets:</h2>';
+        // Do something
     }
 }
