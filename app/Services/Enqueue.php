@@ -16,11 +16,11 @@ class Enqueue
      * @param string|bool $ver
      * @param callable|null $condition
      */
-    public function registerFrontendStyle($handle, $src, $deps = [], $ver = false, $condition = null)
+    public function registerFrontendStyle($handle, $src, $deps = [], $ver = false, $inFooter = false, $condition = null)
     {
-        add_action('wp_enqueue_scripts', function () use ($handle, $src, $deps, $ver, $condition) {
+        add_action('wp_enqueue_scripts', function () use ($handle, $src, $deps, $ver, $inFooter, $condition) {
             if (!$condition || (is_callable($condition) && $condition())) {
-                wp_enqueue_style($handle, $src, $deps, $ver);
+                wp_enqueue_style($handle, $src, $deps, $ver, $inFooter);
             }
         });
     }
@@ -53,11 +53,11 @@ class Enqueue
      * @param string|bool $ver
      * @param callable|null $condition
      */
-    public function registerAdminStyle($handle, $src, $deps = [], $ver = false, $condition = null)
+    public function registerAdminStyle($handle, $src, $deps = [], $ver = false, $inFooter = false, $condition = null)
     {
-        add_action('admin_enqueue_scripts', function () use ($handle, $src, $deps, $ver, $condition) {
+        add_action('admin_enqueue_scripts', function () use ($handle, $src, $deps, $ver, $inFooter, $condition) {
             if (!$condition || (is_callable($condition) && $condition())) {
-                wp_enqueue_style($handle, $src, $deps, $ver);
+                wp_enqueue_style($handle, $src, $deps, $ver, $inFooter);
             }
         });
     }

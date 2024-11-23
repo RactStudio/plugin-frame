@@ -1,13 +1,21 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
 module.exports = {
-    content: [
-      "./resources/**/*.{twig,html,php,js}"
-    ],
-    prefix: 'pf-',
-    darkMode: ['selector', '[data-mode="pf-dark"]'],
-    important: '#pf-load',
-    theme: {
-      extend: {},
-    },
-    plugins: [],
+  prefix: 'pf-',
+  darkMode: [
+    'selector',
+    '[data-mode="pf-dark"]',
+    'variant', [
+    '@media (pf-color-scheme: dark) { &:not(.light *) }',
+    '&:is(.dark *)'
+    ]
+  ],
+  content: [
+    "./resources/**/*.{twig,html,php,js}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 }
+

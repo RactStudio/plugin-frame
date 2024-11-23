@@ -53,14 +53,23 @@ class EnqueueAssets
      */
     protected function registerFrontendAssets()
     {
-        // Frontend Tailwind styles
-        $this->enqueueFiles->registerFrontendStyle(
-            'plugin-frame-frontend-tailwind-styles',
-            PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
-            [],
-            PLUGIN_FRAME_VERSION,
-            false
-        );
+        // // Frontend Tailwind scripts
+        // $this->enqueueFiles->registerFrontendScript(
+        //     'plugin-frame-frontend-tailwind-scripts',
+        //     PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.min.js',
+        //     [],
+        //     '3.4.15', // Use latest version (if needed)
+        //     false
+        // );
+
+        // // Frontend Tailwind styles
+        // $this->enqueueFiles->registerFrontendStyle(
+        //     'plugin-frame-frontend-tailwind-styles',
+        //     PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
+        //     [],
+        //     PLUGIN_FRAME_VERSION,
+        //     false
+        // );
 
         // Frontend styles
         $this->enqueueFiles->registerFrontendStyle(
@@ -109,15 +118,17 @@ class EnqueueAssets
      */
     protected function registerAdminAssets()
     {
+        
         // Admin Tailwind scripts
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-tailwind-scripts',
             PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.min.js',
             [],
-            '3.4.15' // Use latest version (if needed)
+            '3.4.15', // Use latest version (if needed)
+            false
         );
 
-        // Admin styles
+        // Admin Tailwind styles
         $this->enqueueFiles->registerAdminStyle(
             'plugin-frame-admin-tailwind-styles',
             PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
