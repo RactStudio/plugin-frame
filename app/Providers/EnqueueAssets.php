@@ -56,7 +56,7 @@ class EnqueueAssets
         // // Frontend Tailwind scripts
         // $this->enqueueFiles->registerFrontendScript(
         //     'plugin-frame-frontend-tailwind-scripts',
-        //     PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.min.js',
+        //     PLUGIN_FRAME_URL . 'resources/assets/js/main.min.js',
         //     [],
         //     '3.4.15', // Use latest version (if needed)
         //     false
@@ -122,7 +122,7 @@ class EnqueueAssets
         // Admin Tailwind scripts
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-tailwind-scripts',
-            PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.min.js',
+            PLUGIN_FRAME_URL . 'resources/assets/js/main.min.js',
             [],
             '3.4.15', // Use latest version (if needed)
             false
