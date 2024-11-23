@@ -1,13 +1,13 @@
 <?php 
 
-namespace PluginFrame\Providers;
+namespace PluginFrame\Providers\Options;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Widgets
+class Export
 {
-    // Add Widgets (Block/Classic)
+    // Add
     public function __construct()
     {
         // Do something

@@ -1,11 +1,11 @@
 <?php 
 
-namespace PluginFrame\Providers;
+namespace PluginFrame\Providers\Options;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class OptionsImport
+class Options
 {
     // Add
     public function __construct()
