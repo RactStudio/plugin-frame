@@ -5,6 +5,8 @@ namespace PluginFrame;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+use PluginFrame\Config;
+
 class Main
 {
     public function __construct()

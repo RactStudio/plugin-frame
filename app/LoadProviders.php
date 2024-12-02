@@ -25,7 +25,7 @@ class LoadProviders
 
     public function __construct()
     {
-        // Load providers based on priority
+        // Load providers based on priority first
         $this->loadProviders($this->providers['priority_first']);
         
         // Dynamically load standard providers, excluding priority classes

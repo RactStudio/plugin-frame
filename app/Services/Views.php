@@ -35,7 +35,7 @@ class Views
         }));
 
         $twig->addFunction(new TwigFunction('_e', function (string $text, string $domain = 'plugin-frame') {
-            echo __($text, $domain);  // Do not echo translated text
+            return __($text, $domain);  // Do not echo translated text
         }));
 
         $twig->addFunction(new TwigFunction('_n', function (string $single, string $plural, int $number, string $domain = 'plugin-frame') {
