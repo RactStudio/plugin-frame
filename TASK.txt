@@ -1,0 +1,12 @@
+Task / Features List of Plugin Frame
+
+01. Cloudflare Tunnel setup
+02. Internal WP Routes request post and get to do other things
+03. External API request post and get to do other things
+04. Add more features in services and complete all incomplete features
+05. Add WP-CLI features to be used in the CLI
+06. Add PF CLI features
+07. let users custom the Framework when the initialize with PF cli
+08. Make sure the final plugin build is not using wp standard for namespaces and do not interfere with other plugin functions and classes.
+
+
