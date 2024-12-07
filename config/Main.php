@@ -152,8 +152,8 @@ class Main
         // Fires when the plugin started loading classes
         do_action( 'plugin_frame_load_routes_classes_start' );
 
-        // Load classes to load WordPress Routes
-        new \PluginFrame\Routes\RoutesBase();
+        // Load classes to register WordPress REST API routes
+        new \PluginFrame\Routes\RoutesRegister();
         
         // Fires when the plugin finishes loading classes
         do_action( 'plugin_frame_load_routes_classes_end' );
