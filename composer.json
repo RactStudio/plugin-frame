@@ -4,7 +4,10 @@
     "autoload": {
         "psr-4": {
             "PluginFrame\\": "app/"
-        }
+        },
+        "files": [
+            "app/Debug/Helpers.php"
+        ]
     },
     "authors": [
         {
@@ -16,10 +19,13 @@
         "phpcs": "phpcs --standard=WordPress --extensions=php .",
         "phpcbf": "phpcbf --standard=WordPress --extensions=php ."
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require-dev": {
         "squizlabs/php_codesniffer": "*",
         "dealerdirect/phpcodesniffer-composer-installer": "*",
-        "wp-coding-standards/wpcs": "*"
+        "wp-coding-standards/wpcs": "*",
+        "kint-php/kint": "^6.0"
     },
     "config": {
         "platform": {
