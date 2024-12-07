@@ -7,6 +7,6 @@ Task / Features List of Plugin Frame
 05. Add WP-CLI features to be used in the CLI
 06. Add PF CLI features
 07. let users custom the Framework when the initialize with PF cli
-08. Make sure the final plugin build is not using wp standard for namespaces and do not interfere with other plugin functions and classes.
+08. Make sure the final plugin build is using wp standard for namespaces and do not interfere with other plugin functions and classes.
 09. Add DB Models for All of Worddpress Tables and Data
 
