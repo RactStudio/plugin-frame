@@ -11,6 +11,9 @@ class Actions
     public function __construct()
     {
         // Do something
+        
+
+        
     }
 
 }

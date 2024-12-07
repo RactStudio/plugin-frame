@@ -34,7 +34,7 @@ download_cloudflared() {
 # Start Cloudflared Tunnel
 start_tunnel() {
   local url="http://$1"
-  echo "Starting tunnel to http://$url..."
+  echo "Starting tunnel to $url..."
   ./"$EXECUTABLE" tunnel --url "$url" &> cloudflared_tunnel.log &
   local pid=$!
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace PluginFrame;
+namespace PluginFrame\Config;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -53,11 +53,11 @@ class Main
         // Load plugin debugeer
         $this->load_plugin_frame_debug();
 
-        // Load plugin default features priority first
-        $this->load_plugin_frame_config('first');
-
         // Load framework files to load classes
         $this->load_directories_files();
+
+        // Load plugin default features priority first
+        $this->load_plugin_frame_config('first');
 
         // Load plugin Providers Classes
         $this->load_providers_classes();
@@ -73,35 +73,55 @@ class Main
 
         // Fires when the plugin finishes loading completely
         do_action( 'plugin_frame_load_end' );
+
     }
 
     // Load plugin debugeer files
     public function load_plugin_frame_debug(): void
     {
-        // Load Debugger helper file to load Class
-        require_once PLUGIN_FRAME_DIR . 'pf/debug/Helpers.php';
+        if ( file_exists( PLUGIN_FRAME_DIR . 'app/Debug/Helpers.php' ) )
+        {
+            // Fires when the debugger started loading
+            do_action( 'plugin_frame_debugger_load_start' );
+
+            // Load Debugger helper file to load Class
+            require_once PLUGIN_FRAME_DIR . 'app/Debug/Helpers.php';
+
+            // Fires when the debugger finishes loading
+            do_action( 'plugin_frame_debugger_load_end' );
+        }
     }
 
     // Load plugin default features priority first or last
     private function load_plugin_frame_config($priority): void
     {
-        // Load the config file
-        require_once PLUGIN_FRAME_DIR . 'config/config.php';
+        if ( file_exists( PLUGIN_FRAME_DIR . 'config/config.php' ) )
+        {
+            // Fires when the config started loading
+            do_action( 'plugin_frame_config_load_start' );
 
-        if ($priority === 'first') {
-            // Load plugin default features priority first
-            (new \PluginFrame\Config())->priority_load_first();
-        } elseif ($priority === 'last') {
-            // Load plugin default features priority last
-            (new \PluginFrame\Config())->priority_load_last();
+            // Load the config file
+            require_once PLUGIN_FRAME_DIR . 'config/config.php';
+
+            if ($priority === 'first') {
+                // Load plugin default features priority first
+                (new \PluginFrame\Config\Config())->priority_load_first();
+            } elseif ($priority === 'last') {
+                // Load plugin default features priority last
+                (new \PluginFrame\Config\Config())->priority_load_last();
+            }
+
+            // Fires when the config finishes loading
+            do_action( 'plugin_frame_config_load_end' );
         }
+
     }
 
     // Load composer vendor files
     private function load_composer_vendor(): void
     {
         // Fires when the composer started loading
-        do_action( 'plugin_frame_load_composer_start' );
+        do_action( 'plugin_frame_composer_load_start' );
 
         // Autoload Composer dependencies
         if ( file_exists( PLUGIN_FRAME_DIR . 'vendor/autoload.php' ) )
@@ -110,15 +130,18 @@ class Main
         }
         
         // Fires when the composer finishes loading
-        do_action( 'plugin_frame_load_composer_end' );
+        do_action( 'plugin_frame_composer_load_end' );
     }
 
     // Load PHP files from directories and subdirectories
     private function load_directories_files(): void
     {
+        // Fires when the directories and subdirectories started loading
+        do_action( 'plugin_frame_directories_load_start' );
+
         // Directories to scan and load PHP files (use main directories)
         $directories = [
-            PLUGIN_FRAME_DIR . 'app/',        // App-related files (Controllers/Helpers, Models, Providers, Services, etc.)
+            //PLUGIN_FRAME_DIR . 'app/',        // App-related files (Controllers/Helpers, Models, Providers, Services, etc.)
             PLUGIN_FRAME_DIR . 'resources/',  // Public assets, or other PHP files (if any)
             PLUGIN_FRAME_DIR . 'languages/',  // Language files for i18n
         ];
@@ -128,6 +151,9 @@ class Main
         {
             $this->load_files_recursively($directory);  // Calls the function to process each directory
         }
+
+        // Fires when the directories and subdirectories finishes loading
+        do_action( 'plugin_frame_directories_load_end' );
     }
 
     // Recursive function to load PHP files from directories and subdirectories
@@ -150,38 +176,38 @@ class Main
     private function load_routes_base_classes(): void
     {
         // Fires when the plugin started loading classes
-        do_action( 'plugin_frame_load_routes_classes_start' );
+        do_action( 'plugin_frame_routes_classes_load_start' );
 
         // Load classes to register WordPress REST API routes
         new \PluginFrame\Routes\RoutesRegister();
         
         // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_load_routes_classes_end' );
+        do_action( 'plugin_frame_routes_classes_load_end' );
     }
     
     // Load plugin Api Classes [app/Api/ApiBase.php]
     private function load_api_base_classes(): void
     {
         // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_load_api_classes_start' );
+        do_action( 'plugin_frame_api_classes_load_start' );
 
         // Load classes to load framework files
         new \PluginFrame\Api\ApiBase();
         
         // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_load_api_classes_end' );
+        do_action( 'plugin_frame_api_classes_load_end' );
     }
 
     // Load plugin Providers Classes [app/Providers/LoadProviders.php]
     private function load_providers_classes(): void
     {
         // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_load_providers_classes_start' );
+        do_action( 'plugin_frame_providers_classes_load_start' );
 
         // Load classes to load framework files
         new \PluginFrame\LoadProviders();
         
         // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_load_providers_classes_end' );
+        do_action( 'plugin_frame_providers_classes_load_end' );
     }
 }
