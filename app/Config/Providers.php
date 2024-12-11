@@ -11,12 +11,13 @@ class Providers
      * Add each class manually.
      * Only from directory inside [app/Providers]
      * These will be loaded first and last,
-     * and will exclude from the standard classes loading.
+     * and will exclude from the standard providers classes loading.
      */
     protected $classes = [
         'priority_first' => [
             // Classes to load first
             \PluginFrame\Providers\Init::class,
+            // add your
         ],
         'priority_last' => [
             // Classes to load last

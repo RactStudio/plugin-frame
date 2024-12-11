@@ -8,7 +8,6 @@ if (!defined('ABSPATH')) { exit; }
 use PluginFrame\Routes\Helpers;
 
 // Middleware classes
-use PluginFrame\Routes\Middleware\TestMiddleware;
 use PluginFrame\Routes\Middleware\PublicMiddleware;
 use PluginFrame\Routes\Middleware\AuthMiddleware;
 use PluginFrame\Routes\Middleware\RoleMiddleware;
@@ -26,6 +25,7 @@ class Routes
 {
     public function __construct()
     {
+        // Can be assigned for multiple route base url by creating a new instance
         $route = new Helpers('plugin-frame/v1');
 
         // Public Endpoint Routes with new class and method handler
