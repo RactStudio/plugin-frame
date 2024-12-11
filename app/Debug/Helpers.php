@@ -1,5 +1,7 @@
 <?php
 
+namespace PluginFrame\Debug;
+
 use PluginFrame\Debug\Debugger;
 
 // Check and define `dd` only if it doesn't already exist

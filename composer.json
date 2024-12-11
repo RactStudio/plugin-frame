@@ -1,14 +1,6 @@
 {
     "name": "plugin-frame/plugin-frame",
     "description": "A modern wordpress plugin development framework.",
-    "autoload": {
-        "psr-4": {
-            "PluginFrame\\": "app/"
-        },
-        "files": [
-            "app/Debug/Helpers.php"
-        ]
-    },
     "authors": [
         {
             "name": "mhrubel",

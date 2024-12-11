@@ -26,11 +26,7 @@ define( 'PLUGIN_FRAME_MIN_PHP', '7.4' ); // Required
 define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
 define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
 define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
-define( 'PLUGIN_FRAME_PREFIX_SNAKE', 'plugin_frame_' );
-define( 'PLUGIN_FRAME_PREFIX_CAMEL', 'pluginFrame' );
 
 // Load The Plugin Frame Main
-require_once PLUGIN_FRAME_DIR . 'config/Main.php';
+require_once PLUGIN_FRAME_DIR . 'app/Config/Main.php';
 new \PluginFrame\Config\Main();
-
-//d(['name' => 'test']);

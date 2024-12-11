@@ -24,6 +24,10 @@ plugin-frame/
 │   ├── Helpers/                   # Helpers for handling logic (admin, frontend)
 │   ├── Models/                    # Data handling (e.g., WP_Query, custom tables)
 │   ├── Services/                  # Reusable services (API, caching, helpers)
+│   ├── Config/                    # Registers actions, filters, etc.
+│   │   ├── ClassesLoader.php      # Load Each class based on needs
+│   │   ├── Config.php             # Registers WP actions
+│   │   ├── Main.php               # Main config file that dynamically loads all files
 │   ├── Providers/                 # Registers actions, filters, etc.
 │   │   ├── Actions.php            # Registers WP actions
 │   │   ├── Filters.php            # Registers WP filters
@@ -36,8 +40,6 @@ plugin-frame/
 │   │   ├── Deactivation.php       # Deactivation hook handler
 │   │   ├── EnqueueAssets.php      # Enqueues frontend/admin scripts and styles
 │   ├── Api/                       # Custom REST API endpoints
-├── config/                        # Configuration files
-│   ├── main.php                   # Main config file that dynamically loads all files
 ├── resources/                     # Global assets and frontend views
 │   ├── assets/                    # Frontend-specific static assets (CSS, JS)
 │   ├── views/                     # Frontend PHP templates
