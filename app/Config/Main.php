@@ -157,47 +157,7 @@ class Main
         do_action( 'plugin_frame_routes_classes_load_start' );
 
         // Load routes classes to register WordPress REST API
-        //new \PluginFrame\Config\RoutesTest();
-
-
-        // Hook into WordPress REST API initialization
-        \add_action(
-            'rest_api_init',
-            function ()
-            {
-                // Register a single route
-                register_rest_route('plugin-frame/v1', '/test', [
-                    'methods' => 'GET',
-                    'callback' => function ($request) {
-                        return rest_ensure_response(['message' => 'This is the test endpoint response.']);
-                    },
-                    'permission_callback' => '__return_true',
-                ]);
-
-                // Middleware for group routes
-                $middleware = function ($request) {
-                    // Example middleware logic: allow all requests
-                    return true;
-                };
-
-                // Group routes with middleware
-                $groupMiddleware = function () use ($middleware) {
-                    // Register a route within the group
-                    register_rest_route('plugin-frame/v1', '/public', [
-                        'methods' => 'GET',
-                        'callback' => function ($request) {
-                            return rest_ensure_response(['message' => 'This is the public endpoint response.']);
-                        },
-                        'permission_callback' => $middleware, // Apply middleware here
-                    ]);
-                };
-
-                // Call the grouped routes
-                $groupMiddleware();
-
-        });
-
-
+        new \PluginFrame\Routes\Register();
         
         // Fires when the plugin finishes loading classes
         do_action( 'plugin_frame_routes_classes_load_end' );
@@ -210,7 +170,7 @@ class Main
         do_action( 'plugin_frame_api_classes_load_start' );
 
         // Load classes to load framework files
-        new \PluginFrame\Api\ApiBase();
+        new \PluginFrame\Config\APIbase();
         
         // Fires when the plugin finishes loading classes
         do_action( 'plugin_frame_api_classes_load_end' );

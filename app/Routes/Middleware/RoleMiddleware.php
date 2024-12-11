@@ -6,7 +6,7 @@ use WP_Error;
 
 class RoleMiddleware
 {
-    public static function handle($request)
+    public function handle($request)
     {
         if (current_user_can('administrator')) {
             return true;

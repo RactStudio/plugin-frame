@@ -2,8 +2,6 @@
 
 namespace PluginFrame\Debug;
 
-use Knit\Knit;
-
 /**
  * Debugger Class
  */
@@ -39,11 +37,11 @@ class Debugger
 
     public static function render($data): void
     {
-        // Use Knit Debug to handle visualization
+        // Use var_dump Debug to handle visualization
         if (is_array($data) || is_object($data)) {
             echo self::render_html($data);
         } else {
-            Knit::debug($data);
+            var_dump($data);
         }
     }
 
