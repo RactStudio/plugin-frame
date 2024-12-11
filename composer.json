@@ -17,7 +17,6 @@
         "squizlabs/php_codesniffer": "*",
         "dealerdirect/phpcodesniffer-composer-installer": "*",
         "wp-coding-standards/wpcs": "*",
-        "kint-php/kint": "^6.0"
     },
     "config": {
         "platform": {
