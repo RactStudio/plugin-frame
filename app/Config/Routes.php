@@ -9,10 +9,12 @@ use PluginFrame\Routes\Helpers;
 
 // Middleware classes
 use PluginFrame\Routes\Middleware\PublicMiddleware;
+use PluginFrame\Routes\Middleware\CORSMiddleware;
 use PluginFrame\Routes\Middleware\AuthMiddleware;
+use PluginFrame\Routes\Middleware\AuthUserPassMiddleware;
+use PluginFrame\Routes\Middleware\AuthAppPassMiddleware;
 use PluginFrame\Routes\Middleware\RoleMiddleware;
 use PluginFrame\Routes\Middleware\RateLimitMiddleware;
-use PluginFrame\Routes\Middleware\CORSMiddleware;
 
 // Handlers classes
 use PluginFrame\Routes\Handlers\TestData;
@@ -28,8 +30,14 @@ class Routes
         // Can be assigned for multiple route base url by creating a new instance
         $route = new Helpers('plugin-frame/v1');
 
+        // Public Endpoint Routes with No middleware
+        $route->single('get', '/nowar', [new TestData(), 'testDataHandler']);
+
         // Public Endpoint Routes with new class and method handler
         $route->single('get', '/test', [new TestData(), 'testDataHandler'], [PublicMiddleware::class, RateLimitMiddleware::class]);
+
+        // Signin Endpoint Routes with new class and method handler
+        $route->single('get', '/signin', [new TestData(), 'testDataHandler'], [AuthUserPassMiddleware::class, RateLimitMiddleware::class]);
 
         $route->group([PublicMiddleware::class, RateLimitMiddleware::class], function () use($route)
         {
@@ -60,11 +68,11 @@ class Routes
             $route->single('get', '/demo-data', DemoData::class);
         });
 
-        // Instantiate the other handler class
+        // Instantiate the other handler class to work non static methods
         $otherHandlers = new OtherHandlers();
 
         // Authenticated Routes
-        $route->group([AuthMiddleware::class], function () use ($route, $otherHandlers)
+        $route->group([CORSMiddleware::class, AuthUserPassMiddleware::class], function () use ($route, $otherHandlers)
         {
             $route->single('get', '/secure-data', [$otherHandlers, 'getSecureData']);
             $route->single('post', '/secure-data', [$otherHandlers, 'postSecureData']);
@@ -72,7 +80,7 @@ class Routes
             $route->single('get', '/custom-response', [$otherHandlers, 'customResponseHandler']);
         });
 
-        // Authentication Routes
+        // Authentication with Handler Methods
         $route->single('post', '/auth/application-password', [$otherHandlers, 'handleApplicationPasswordAuth'], [PublicMiddleware::class]);
         $route->single('post', '/auth/username-password', [$otherHandlers, 'handleUsernamePasswordAuth'], [PublicMiddleware::class]);
 

@@ -43,7 +43,7 @@ class OtherHandlers
         }
     
         return new \WP_Error('invalid_auth_method', 'Invalid authentication method', ['status' => 400]);
-    }    
+    }
     
     public function handleUsernamePasswordAuth($request)
     {
@@ -72,7 +72,7 @@ class OtherHandlers
         }
     
         return new \WP_Error('invalid_auth_method', 'Invalid authentication method', ['status' => 400]);
-    }    
+    }
     
     public function postSecureData($request)
     {

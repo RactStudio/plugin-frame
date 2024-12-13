@@ -41,6 +41,8 @@ class PublicData
             'comments' => $comments,
         ];
 
+        dd($response);
+
         return rest_ensure_response($response);
     }
     

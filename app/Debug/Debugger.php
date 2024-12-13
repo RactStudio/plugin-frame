@@ -37,46 +37,76 @@ class Debugger
 
     public static function render($data): void
     {
-        // Use var_dump Debug to handle visualization
-        if (is_array($data) || is_object($data)) {
-            echo self::render_html($data);
-        } else {
-            var_dump($data);
-        }
+        echo self::render_html($data);
     }
 
     private static function render_html($data): string
     {
-        $output = "<pre style='background: #333; color: #fff; padding: 10px; border-radius: 4px; max-height: 400px; overflow: auto;'>";
+        $html = "<div style='background: #333; color: #fff; padding: 10px; border-radius: 4px; max-height: 400px; overflow: auto;'>";
+        $html .= "<button onclick='toggleAll()' style='margin-bottom: 10px; padding: 5px 10px; background: #0073aa; color: #fff; border: none; border-radius: 3px; cursor: pointer;'>Expand/Collapse All</button>";
+        $html .= "<div>";
+        $html .= self::array_to_html($data);
+        $html .= "</div>";
+        $html .= "</div>";
 
-        if (is_array($data)) {
-            $output .= self::array_to_html($data);
-        } else {
-            $output .= htmlspecialchars(print_r($data, true));
+        $html .= "<script>
+        function toggleAll() {
+            const details = document.querySelectorAll('details');
+            const expand = !Array.from(details).every(detail => detail.open); // Check if all are expanded
+            details.forEach(detail => (detail.open = expand)); // Set all to the same state
         }
+        </script>";
 
-        $output .= "</pre>";
-        return $output;
+        return $html;
     }
 
     private static function array_to_html($array, $level = 0): string
     {
-        $html = "<ul style='list-style-type: none; padding-left: 20px;'>";
+        if (!is_array($array)) {
+            return htmlspecialchars(self::value_to_string($array));
+        }
+
+        $html = "<ul style='list-style-type: none; padding-left: 10px;'>";
 
         foreach ($array as $key => $value) {
+            $keyLabel = is_int($key) ? "Item {$key}" : htmlspecialchars((string)$key);
+
             if (is_array($value)) {
                 $html .= "<li>";
                 $html .= "<details>";
-                $html .= "<summary><b>{$key}</b></summary>";
+                $html .= "<summary><b>{$keyLabel}</b></summary>";
                 $html .= self::array_to_html($value, $level + 1);
                 $html .= "</details>";
                 $html .= "</li>";
+            } elseif (is_object($value)) {
+                $html .= "<li><b>{$keyLabel}:</b> <a href='#' style='color: #1e90ff; text-decoration: underline;' onclick='alert(JSON.stringify(" . json_encode($value) . "))'>" . htmlspecialchars(self::value_to_string($value)) . "</a></li>";
             } else {
-                $html .= "<li><b>{$key}:</b> " . htmlspecialchars($value) . "</li>";
+                $html .= "<li><b>{$keyLabel}:</b> <a href='#' style='color: #1e90ff; text-decoration: underline;' onclick='alert(" . json_encode($value) . ")'>" . htmlspecialchars((string)$value) . "</a></li>";
             }
         }
 
         $html .= "</ul>";
         return $html;
+    }
+
+    private static function value_to_string($value): string
+    {
+        if (is_null($value)) {
+            return 'null';
+        }
+
+        if (is_bool($value)) {
+            return $value ? 'true' : 'false';
+        }
+
+        if (is_object($value)) {
+            if (method_exists($value, '__toString')) {
+                return (string)$value;
+            }
+
+            return json_encode($value) ?: 'Instance of ' . get_class($value);
+        }
+
+        return (string)$value;
     }
 }

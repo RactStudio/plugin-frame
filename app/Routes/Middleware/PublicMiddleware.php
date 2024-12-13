@@ -10,7 +10,7 @@ class PublicMiddleware
     /**
      * Handle logic for public routes (if needed)
      */
-    public function handle( $request )
+    public function handle($request)
     {
         // Add any preprocessing logic for public routes
         return true;
