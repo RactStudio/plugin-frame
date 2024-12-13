@@ -29,7 +29,7 @@ class Helpers
      * @param callable|string|array $handler A callable, a class, or an array with class and method.
      * @param array $middleware Middleware classes to execute before the handler.
      */
-    public function single($method = 'GET', $endpoint, $handler, $middleware = [])
+    public function single($method = 'GET', $endpoint, $handler, $middleware = []): void
     {
         $middlewareStack = $middleware ?: $this->currentMiddleware;
 
@@ -46,6 +46,11 @@ class Helpers
                 return $this->handleMethodHandler($handler, $request);
             },
             'permission_callback' => function ($request) use ($middlewareStack) {
+                // Allow if no middleware is used
+                if (empty($middlewareStack)) {
+                    return true;
+                }
+
                 // Execute middleware for permission check
                 $middlewareResult = $this->executeMiddleware($request, $middlewareStack, true);
                 return !is_wp_error($middlewareResult);
@@ -56,10 +61,10 @@ class Helpers
     /**
      * Group multiple routes with shared middleware.
      *
-     * @param array $middleware Middleware classes to apply to the group.
+     * @param array $middleware Optional middleware classes to apply to the group.
      * @param callable $callback A callback that registers the routes in the group.
      */
-    public function group(array $middleware, callable $callback)
+    public function group(array $middleware = [], callable $callback): void
     {
         $previousMiddleware = $this->currentMiddleware;
         $this->currentMiddleware = array_merge($previousMiddleware, $middleware);
@@ -80,6 +85,10 @@ class Helpers
      */
     private function executeMiddleware($request, array $middlewareStack, $isPermissionCheck = false)
     {
+        if (empty($middlewareStack)) {
+            return true; // No middleware, allow access
+        }
+
         $cacheKey = md5(json_encode($middlewareStack) . ($isPermissionCheck ? '_permission' : '_callback'));
 
         // Return cached result if available
@@ -159,7 +168,7 @@ class Helpers
      *
      * @param string $message The error message to log.
      */
-    private function logError($message)
+    private function logError($message): void
     {
         if (defined('WP_DEBUG') && WP_DEBUG) {
             error_log("[PluginFrame Error] $message");

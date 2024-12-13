@@ -4,8 +4,8 @@
   "description": "A modern WordPress plugin development framework.",
   "main": "plugin-frame.php",
   "scripts": {
-    "build": "pf",
-    "watch": "pf watch",
+    "build": "grunt",
+    "watch": "grunt watch",
     "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --watch",
     "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css",
     "twig-parse": "php TwigStringExtractor.php",

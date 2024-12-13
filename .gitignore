@@ -7,6 +7,9 @@ storage/
 # Composer dependencies
 vendor/
 
+# PF logs
+logs/
+
 # OS generated files
 .DS_Store
 Thumbs.db

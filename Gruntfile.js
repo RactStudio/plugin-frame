@@ -29,6 +29,7 @@ module.exports = function (pf) {
                     '!desktop.ini',
                     '!node_modules/**',
                     '!storage/**',
+                    '!logs/**',
                     '!pf/**',
                     '!pf',
                     '!cloudflared.exe',
