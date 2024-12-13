@@ -43,20 +43,9 @@ class Debugger
     private static function render_html($data): string
     {
         $html = "<div style='background: #333; color: #fff; padding: 10px; border-radius: 4px; max-height: 400px; overflow: auto;'>";
-        $html .= "<button onclick='toggleAll()' style='margin-bottom: 10px; padding: 5px 10px; background: #0073aa; color: #fff; border: none; border-radius: 3px; cursor: pointer;'>Expand/Collapse All</button>";
-        $html .= "<div>";
         $html .= self::array_to_html($data);
         $html .= "</div>";
         $html .= "</div>";
-
-        $html .= "<script>
-        function toggleAll() {
-            const details = document.querySelectorAll('details');
-            const expand = !Array.from(details).every(detail => detail.open); // Check if all are expanded
-            details.forEach(detail => (detail.open = expand)); // Set all to the same state
-        }
-        </script>";
-
         return $html;
     }
 
