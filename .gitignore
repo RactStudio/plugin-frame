@@ -12,6 +12,12 @@ vendor/
 Thumbs.db
 desktop.ini
 
+# Cloudflared generated files
+cloudflared.exe
+cloudflared_tunnel.log
+pf/cloudflared.exe
+pf/cloudflared_tunnel.log
+
 # Grunt build and watch files
 /resources/assets/css/main.css
 /resources/assets/js/main.js

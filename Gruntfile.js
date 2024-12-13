@@ -31,6 +31,8 @@ module.exports = function (pf) {
                     '!storage/**',
                     '!pf/**',
                     '!pf',
+                    '!cloudflared.exe',
+                    '!cloudflared_tunnel.log',
                     '!composer.json',
                     '!composer.lock',
                     '!tests/**',
