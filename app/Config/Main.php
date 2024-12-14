@@ -14,7 +14,7 @@ class Main
     }
 
     // Load the plugin with minimum PHP version requirment check
-    public function load_with_php_version_check()
+    public function load_with_php_version_check(): void
     {
         // Check minimum PHP version required for the plugin.
         if (version_compare(PHP_VERSION, PLUGIN_FRAME_MIN_PHP, '<')) {
@@ -67,6 +67,12 @@ class Main
 
         // Load plugin default features priority last
         $this->load_plugin_frame_config('last');
+
+        // Load plugin frame cron jobs
+        // $this->load_plugin_frame_crons();
+
+        // Load plugin frame pf_logs
+        $this->load_plugin_frame_pflogs();
 
         // Load plugin frame debugeer
         $this->load_plugin_frame_debug();
@@ -176,19 +182,6 @@ class Main
         do_action( 'plugin_frame_api_classes_load_end' );
     }
 
-    // Load plugin frame Classes
-    private function load_plugin_frame_classes(): void
-    {
-        // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_providers_classes_load_start' );
-
-        // Load classes to load framework files
-        new \PluginFrame\Config\Providers();
-        
-        // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_providers_classes_load_end' );
-    }
-
     // Load plugin debugeer files
     public function load_plugin_frame_debug(): void
     {
@@ -203,6 +196,48 @@ class Main
             // Fires when the debugger finishes loading
             do_action( 'plugin_frame_debugger_load_end' );
         }
+    }
+    
+    // Load plugin error logs files pf_log()
+    public function load_plugin_frame_pflogs(): void
+    {
+        if ( file_exists( PLUGIN_FRAME_DIR . 'app/Debug/PFlogs/Helpers.php' ) )
+        {
+            // Fires when the pf_log started loading
+            do_action( 'plugin_frame_pflogs_load_start' );
+
+            // Load pf_log helper functions file
+            require_once PLUGIN_FRAME_DIR . 'app/Debug/PFlogs/Helpers.php';
+
+            // Fires when the debugger finishes loading
+            do_action( 'plugin_frame_pflogs_load_end' );
+        }
+    }
+    
+    // Load plugin cron class to load start() method
+    public function load_plugin_frame_crons(): void
+    {
+        // Fires when the pf_log started loading
+        do_action( 'plugin_frame_crons_load_start' );
+
+        // Load classes to load cron class to startt cron
+        (new \PluginFrame\Cron\Heartbeat())->start();
+
+        // Fires when the debugger finishes loading
+        do_action( 'plugin_frame_crons_load_end' );
+    }
+
+    // Load plugin frame Classes
+    private function load_plugin_frame_classes(): void
+    {
+        // Fires when the plugin finishes loading classes
+        do_action( 'plugin_frame_providers_classes_load_start' );
+
+        // Load classes to load framework files
+        new \PluginFrame\Config\Providers();
+        
+        // Fires when the plugin finishes loading classes
+        do_action( 'plugin_frame_providers_classes_load_end' );
     }
 
 }

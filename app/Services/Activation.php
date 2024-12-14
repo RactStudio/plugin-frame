@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace PluginFrame\Services;
 
@@ -7,9 +7,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Activation
 {
-    // Add
-    public function __construct()
+    /**
+     * Register the activation hook for the provided callable.
+     *
+     * @param callable $callback
+     */
+    public function registerActivationHook($callback): void
     {
-        // Do something
+        register_activation_hook(PLUGIN_FRAME_FILE, $callback);
     }
 }

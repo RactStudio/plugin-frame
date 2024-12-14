@@ -2,10 +2,10 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\Enqueue;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+use PluginFrame\Services\Enqueue;
 
 class EnqueueAssets
 {

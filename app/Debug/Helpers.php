@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 use PluginFrame\Debug\Debugger;
 
 // Check and define `dd` only if it doesn't already exist

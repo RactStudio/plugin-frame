@@ -2,6 +2,9 @@
 
 namespace PluginFrame\Debug;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 /**
  * Debugger Class
  */
