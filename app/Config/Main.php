@@ -10,16 +10,16 @@ class Main
     public function __construct()
     {
         // Check PHP version and load the plugin if requirements are met.
-        add_action('plugins_loaded', [$this, 'load_with_php_version_check'], 1);
+        add_action('plugins_loaded', [$this, 'load_with_php_version_check']);
     }
 
-    // Load the plugin with minimum PHP version requirment check
+    // Load the plugin with minimum PHP version requirement check
     public function load_with_php_version_check(): void
     {
-        // Check minimum PHP version required for the plugin.
+        // Check minimum PHP version required for the plugin
         if (version_compare(PHP_VERSION, PLUGIN_FRAME_MIN_PHP, '<')) {
-            add_action('admin_notices', function ()
-            {
+            // PHP version not met, show an admin notice
+            add_action('admin_notices', function (): void {
                 ?>
                 <div class="notice notice-error">
                     <p>
@@ -33,16 +33,26 @@ class Main
                 </div>
                 <?php
             });
-        } else {
-            // Load the plugin functionality.
-            $this->plugin_frame_init();
+
+            // Early exit to prevent the plugin from being loaded
+            return;
         }
+
+        // Initialize the plugin functionality
+        $this->plugin_frame_init();
+
+        // Execute the plugin activation hook
+        new \PluginFrame\Hooks\Activation();
+        
+        // Execute the plugin deactivation hook
+        new \PluginFrame\Hooks\Deactivation();
+
     }
-    
+
     /**
      * Load files and initialize the plugin.
      */
-    private function plugin_frame_init(): void
+    protected function plugin_frame_init(): void
     {
         // Fires when the plugin starts loading
         do_action( 'plugin_frame_load_start' );

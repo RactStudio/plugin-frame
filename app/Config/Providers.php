@@ -17,13 +17,11 @@ class Providers
         'priority_first' => [
             // Classes to load first
             \PluginFrame\Providers\Init::class,
-            \PluginFrame\Providers\Activation::class, // keep this above
             // add yours
         ],
         'priority_last' => [
             // Classes to load last
             // add yours
-            \PluginFrame\Providers\Deactivation::class, // Keep this last
         ],
     ];
 
