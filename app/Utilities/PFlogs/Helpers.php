@@ -1,9 +1,11 @@
 <?php
 
+namespace PluginFrame;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-use PluginFrame\Debug\PFlogs;
+use PluginFrame\Utilities\PFlogs;
 
 // Check and define `pf_log` only if it doesn't already exist
 if (!function_exists('pf_log')) {

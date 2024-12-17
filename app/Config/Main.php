@@ -5,249 +5,194 @@ namespace PluginFrame\Config;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Main
-{
+class Main {
+
     public function __construct()
     {
-        // Check PHP version and load the plugin if requirements are met.
-        add_action('plugins_loaded', [$this, 'load_with_php_version_check']);
-    }
-
-    // Load the plugin with minimum PHP version requirement check
-    public function load_with_php_version_check(): void
-    {
-        // Check minimum PHP version required for the plugin
-        if (version_compare(PHP_VERSION, PLUGIN_FRAME_MIN_PHP, '<')) {
-            // PHP version not met, show an admin notice
-            add_action('admin_notices', function (): void {
-                ?>
-                <div class="notice notice-error">
-                    <p>
-                        <?php 
-                        echo esc_html(
-                            PLUGIN_FRAME_NAME . ' requires PHP version ' . PLUGIN_FRAME_MIN_PHP . 
-                            ' or higher. Please update your PHP version to continue using this plugin.'
-                        ); 
-                        ?>
-                    </p>
-                </div>
-                <?php
-            });
-
-            // Early exit to prevent the plugin from being loaded
-            return;
+        // Perform PHP version check early before plugin execution.
+        if ( ! $this->is_php_version_compatible() )
+        {
+            return; // Stop plugin execution if PHP version requirement is not met.
         }
 
-        // Initialize the plugin functionality
-        $this->plugin_frame_init();
+        // Register activation and deactivation hooks dynamically.
+        $this->on_plugin_activation();
+        $this->on_plugin_deactivation();
 
-        // Execute the plugin activation hook
-        new \PluginFrame\Hooks\Activation();
-        
-        // Execute the plugin deactivation hook
-        new \PluginFrame\Hooks\Deactivation();
-
+        // Initialize plugin functionalities after all plugins are loaded.
+        add_action('plugins_loaded', [$this, 'initialize_plugin']);
     }
 
     /**
-     * Load files and initialize the plugin.
+     * Check for minimum PHP version compatibility.
+     * 
+     * @return bool True if compatible, otherwise false.
      */
-    protected function plugin_frame_init(): void
+    private function is_php_version_compatible(): bool
     {
-        // Fires when the plugin starts loading
-        do_action( 'plugin_frame_load_start' );
-
-        // Load composer vendor files
-        $this->load_composer_vendor();
-
-        // Load framework files to load classes
-        $this->load_directories_files();
-
-        // Load plugin default features priority first
-        $this->load_plugin_frame_config('first');
-
-        // Load plugin frame Classes
-        $this->load_plugin_frame_classes();
-
-        // Load plugin Routes Classes
-        $this->load_routes_base_classes();
-
-        // Load plugin Api Classes
-        $this->load_api_base_classes();
-
-        // Load plugin default features priority last
-        $this->load_plugin_frame_config('last');
-
-        // Load plugin frame cron jobs
-        // $this->load_plugin_frame_crons();
-
-        // Load plugin frame pf_logs
-        $this->load_plugin_frame_pflogs();
-
-        // Load plugin frame debugeer
-        $this->load_plugin_frame_debug();
-
-        // Fires when the plugin finishes loading completely
-        do_action( 'plugin_frame_load_end' );
-
-    }
-
-    // Load plugin default features priority first or last
-    private function load_plugin_frame_config($priority): void
-    {
-        // Fires when the config started loading
-        do_action( 'plugin_frame_config_load_start' );
-
-        if ($priority === 'first') {
-            // Load plugin default features priority first
-            (new \PluginFrame\Config\Config())->priority_load_first();
-        } elseif ($priority === 'last') {
-            // Load plugin default features priority last
-            (new \PluginFrame\Config\Config())->priority_load_last();
+        if ( version_compare(PHP_VERSION, PLUGIN_FRAME_MIN_PHP, '<') ) {
+            add_action('admin_notices', [$this, 'php_version_notice']);
+            return false;
         }
-
-        // Fires when the config finishes loading
-        do_action( 'plugin_frame_config_load_end' );
-
+        return true;
     }
 
-    // Load composer vendor files
-    private function load_composer_vendor(): void
+    /**
+     * Show admin notice for incompatible PHP version.
+     */
+    public function php_version_notice(): void
     {
-        // Fires when the composer started loading
-        do_action( 'plugin_frame_composer_load_start' );
+        ?>
+        <div class="notice notice-error">
+            <p>
+                <?php 
+                echo esc_html(
+                    PLUGIN_FRAME_NAME . ' requires PHP version ' . PLUGIN_FRAME_MIN_PHP . 
+                    ' or higher. Please update your PHP version to use this plugin.'
+                ); 
+                ?>
+            </p>
+        </div>
+        <?php
+    }
 
-        // Autoload Composer dependencies
-        if ( file_exists( PLUGIN_FRAME_DIR . 'vendor/autoload.php' ) )
+    /**
+     * Register tasks on plugin activation.
+     */
+    public function on_plugin_activation(): void
+    {
+        $activation_hook = PLUGIN_FRAME_DIR . 'app/Hooks/Activation.php';
+        if ( file_exists($activation_hook) )
         {
-            require_once PLUGIN_FRAME_DIR . 'vendor/autoload.php';
+            require_once $activation_hook;
+            new \PluginFrame\Hooks\Activation();
+        } else {
+            error_log('Activation hook not found:: '. $activation_hook);
         }
-        
-        // Fires when the composer finishes loading
-        do_action( 'plugin_frame_composer_load_end' );
     }
 
-    // Load PHP files from directories and subdirectories
-    private function load_directories_files(): void
+    /**
+     * Register tasks on plugin deactivation.
+     */
+    public function on_plugin_deactivation(): void
     {
-        // Fires when the directories and subdirectories started loading
-        do_action( 'plugin_frame_directories_load_start' );
-
-        // Directories to scan and load PHP files (use main directories)
-        $directories = [
-            PLUGIN_FRAME_DIR . 'app/',        // App-related files (Controllers/Helpers, Models, Providers, Services, etc.)
-            PLUGIN_FRAME_DIR . 'resources/',  // Public assets, or other PHP files (if any)
-            PLUGIN_FRAME_DIR . 'languages/',  // Language files for i18n
-        ];
-
-        // Loop through the directories and load files recursively
-        foreach ($directories as $directory)
+        $deactivation_hook = PLUGIN_FRAME_DIR . 'app/Hooks/Deactivation.php';
+        if ( file_exists($deactivation_hook) )
         {
-            $this->load_files_recursively($directory);  // Calls the function to process each directory
+            require_once $deactivation_hook;
+            new \PluginFrame\Hooks\Deactivation();
+        } else {
+            error_log('Deactivation hook not found:: '. $deactivation_hook);
         }
-
-        // Fires when the directories and subdirectories finishes loading
-        do_action( 'plugin_frame_directories_load_end' );
     }
 
-    // Recursive function to load PHP files from directories and subdirectories
-    private function load_files_recursively($dir): void
+    /**
+     * Initialize the plugin: load dependencies, configurations, and features.
+     */
+    public function initialize_plugin(): void
     {
-        // Load all PHP files in the current directory
-        foreach (glob($dir . '/*.php') as $file)
-        {
+        do_action('plugin_frame_load_start');
+
+        // Load all required files and features.
+        $this->load_dependencies();
+        $this->load_features();
+
+        do_action('plugin_frame_load_end');
+    }
+
+    /**
+     * Load all dependencies required for the plugin.
+     */
+    private function load_dependencies(): void
+    {
+        $this->load_composer_autoload();
+        $this->load_directory_files([
+            PLUGIN_FRAME_DIR . 'app/',       // Main app files.
+            PLUGIN_FRAME_DIR . 'resources/', // Resources and assets.
+            PLUGIN_FRAME_DIR . 'languages/', // Language files.
+        ]);
+    }
+
+    /**
+     * Load Composer autoload file.
+     */
+    private function load_composer_autoload(): void
+    {
+        $composer_autoload = PLUGIN_FRAME_DIR . 'vendor/autoload.php';
+        if ( file_exists($composer_autoload) ) {
+            require_once $composer_autoload;
+        }
+    }
+
+    /**
+     * Recursively load PHP files from given directories.
+     *
+     * @param array $directories List of directories to scan.
+     */
+    private function load_directory_files(array $directories): void
+    {
+        foreach ($directories as $directory) {
+            $this->load_files_recursively($directory);
+        }
+    }
+
+    /**
+     * Helper to recursively include PHP files.
+     *
+     * @param string $dir Directory path.
+     */
+    private function load_files_recursively(string $dir): void
+    {
+        foreach (glob($dir . '/*.php') as $file) {
             require_once $file;
         }
 
-        // Recursively load PHP files from subdirectories
         foreach (glob($dir . '/*', GLOB_ONLYDIR) as $subdir)
         {
-            $this->load_files_recursively($subdir);  // Calls itself for each subdirectory
+            $this->load_files_recursively($subdir);
         }
     }
-    
-    // Load plugin Routes Classes [app/Routes/RoutesBase.php]
-    private function load_routes_base_classes(): void
-    {
-        // Fires when the plugin started loading classes
-        do_action( 'plugin_frame_routes_classes_load_start' );
 
-        // Load routes classes to register WordPress REST API
+    /**
+     * Load plugin-specific features.
+     */
+    private function load_features(): void
+    {
+        // Load debugging utilities.
+        $this->load_debugger();
+
+        (new \PluginFrame\Config\Config())->priority_load_first();
+
+        // Initialize plugin routes and APIs.
         new \PluginFrame\Routes\Register();
-        
-        // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_routes_classes_load_end' );
-    }
-    
-    // Load plugin Api Classes [app/Api/ApiBase.php]
-    private function load_api_base_classes(): void
-    {
-        // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_api_classes_load_start' );
-
-        // Load classes to load framework files
         new \PluginFrame\Config\APIbase();
-        
-        // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_api_classes_load_end' );
-    }
 
-    // Load plugin debugeer files
-    public function load_plugin_frame_debug(): void
-    {
-        if ( file_exists( PLUGIN_FRAME_DIR . 'app/Debug/Helpers.php' ) )
-        {
-            // Fires when the debugger started loading
-            do_action( 'plugin_frame_debugger_load_start' );
-
-            // Load Debugger helper functions file
-            require_once PLUGIN_FRAME_DIR . 'app/Debug/Helpers.php';
-
-            // Fires when the debugger finishes loading
-            do_action( 'plugin_frame_debugger_load_end' );
-        }
-    }
-    
-    // Load plugin error logs files pf_log()
-    public function load_plugin_frame_pflogs(): void
-    {
-        if ( file_exists( PLUGIN_FRAME_DIR . 'app/Debug/PFlogs/Helpers.php' ) )
-        {
-            // Fires when the pf_log started loading
-            do_action( 'plugin_frame_pflogs_load_start' );
-
-            // Load pf_log helper functions file
-            require_once PLUGIN_FRAME_DIR . 'app/Debug/PFlogs/Helpers.php';
-
-            // Fires when the debugger finishes loading
-            do_action( 'plugin_frame_pflogs_load_end' );
-        }
-    }
-    
-    // Load plugin cron class to load start() method
-    public function load_plugin_frame_crons(): void
-    {
-        // Fires when the pf_log started loading
-        do_action( 'plugin_frame_crons_load_start' );
-
-        // Load classes to load cron class to startt cron
-        (new \PluginFrame\Cron\Heartbeat())->start();
-
-        // Fires when the debugger finishes loading
-        do_action( 'plugin_frame_crons_load_end' );
-    }
-
-    // Load plugin frame Classes
-    private function load_plugin_frame_classes(): void
-    {
-        // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_providers_classes_load_start' );
-
-        // Load classes to load framework files
+        // Initialize service providers and configuration.
         new \PluginFrame\Config\Providers();
-        
-        // Fires when the plugin finishes loading classes
-        do_action( 'plugin_frame_providers_classes_load_end' );
+
+        (new \PluginFrame\Config\Config())->priority_load_last();
+    }
+
+    /**
+     * Load debugging utilities if files exist.
+     */
+    private function load_debugger(): void
+    {
+        $debug_helper = PLUGIN_FRAME_DIR . 'app/Utilities/Debug/Helpers.php';
+        if ( file_exists($debug_helper) )
+        {
+            require_once $debug_helper;
+        } else {
+            pf_log('Debug helper not found, and couldn\'t be loaded.');
+        } 
+
+        $log_helper = PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/Helpers.php';
+        if ( file_exists($log_helper) )
+        {
+            require_once $log_helper;
+        } else {
+            pf_log('PF Log helper not found, and couldn\'t be loaded.');
+        }
     }
 
 }

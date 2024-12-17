@@ -3,7 +3,7 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-use PluginFrame\Debug\Debugger;
+use PluginFrame\Utilities\Debugger;
 
 // Check and define `dd` only if it doesn't already exist
 if (!function_exists('dd')) {

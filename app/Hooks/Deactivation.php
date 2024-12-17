@@ -3,9 +3,7 @@
 namespace PluginFrame\Hooks;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
-    exit;
-}
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Deactivation
 {
@@ -22,22 +20,9 @@ class Deactivation
      */
     public function deactivate(): void
     {
-        // Remove scheduled events (cron jobs)
-        self::removeScheduleCronJobs();
-
         // Add a log entry indicating successful deactivation
-        if (function_exists('pf_log')) {
-            pf_log(PLUGIN_FRAME_NAME . ' deactivated successfully.');
-        }
-    }
+        pf_log( PLUGIN_FRAME_NAME . ' Deactivated successfully.');
 
-    /**
-     * Remove scheduled cron jobs of plugin frame.
-     */
-    protected static function removeScheduleCronJobs(): void
-    {
-        if (wp_next_scheduled('pluginframe_heartbeat_event')) {
-            wp_clear_scheduled_hook('pluginframe_heartbeat_event');
-        }
+        // Add yours
     }
 }
