@@ -1,6 +1,11 @@
 <?php
 
-use PluginFrame\Debug\Debugger;
+namespace PluginFrame\Utilities;
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+use PluginFrame\Utilities\Debugger;
 
 // Check and define `dd` only if it doesn't already exist
 if (!function_exists('dd')) {

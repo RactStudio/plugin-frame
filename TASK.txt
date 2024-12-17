@@ -1,13 +1,16 @@
 #Task / Features List of Plugin Frame
 
-01. DONE - Cloudflare Tunnel setup
+01. DONE  - Cloudflare Tunnel setup
 02. DONE  - Internal WP Routes request post and get to do other things
-03. Ned to add more Middleware for the framework from OtherHandlers methods
-04. External API request post and get to do other things
-05. Add more features in services and complete all incomplete features
-06. Add WP-CLI features to be used in the CLI
-07. Add PF CLI features
-08. let users custom the Framework when the initialize with PF cli
-09. Make sure the final plugin build is using wp standard for namespaces and do not interfere with other plugin functions and classes.
-10. Add DB Models for All of Worddpress Tables and Data
-11. Add Debuggger for the framework (eg: dd, d, log)
+03. DONE  - Need to add more Middleware for the framework from OtherHandlers methods
+04. LATER - External API request post and get to do other things
+05. DOING - Add more features in services and complete all incomplete features
+06. DOING - Add features in WP Config and other features
+07. Add WP-CLI features to be used in the CLI
+08. Add PF CLI features
+09. let users custom the Framework when the initialize with PF cli
+10. Make sure the final plugin build is using wp standard for namespaces and do not interfere with other plugin functions and classes.
+11. Add DB Models for All of Worddpress Tables and Data
+12. DONE - Add Debuggger for the framework (eg: dd, d, log)
+12. DONE - Add OWN PF LOGGING SYSTEM for the framework (eg: pf_log() )
+13. DONE - Add own Cron Jobs for the framework

@@ -33,10 +33,10 @@ class ActionsLinks
 
         // Define conditions for action links
         $conditions = [
-            'left' => function () {
+            'left' => function (): string {
                 return '<a href="' . esc_url(admin_url('admin.php?page=plugin-frame-settings')) . '">Settings</a>';
             },
-            'right' => function () {
+            'right' => function (): string {
                 return '<a href="' . esc_url('https://pluginframe.com/documentation') . '" target="_blank">Docs</a>';
             },
         ];
@@ -57,10 +57,10 @@ class ActionsLinks
 
         // Define conditions for description links
         $conditions = [
-            'left' => function () {
+            'left' => function (): string {
                 return '<a href="' . esc_url(admin_url('admin.php?page=plugin-frame-about')) . '">About</a>';
             },
-            'right' => function () {
+            'right' => function (): string {
                 return '<a href="' . esc_url('https://pluginframe.com/support') . '" target="_blank">Support</a>';
             },
         ];
