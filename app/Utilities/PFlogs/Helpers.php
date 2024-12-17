@@ -1,6 +1,6 @@
 <?php
 
-namespace PluginFrame;
+namespace PluginFrame\Utilities;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
