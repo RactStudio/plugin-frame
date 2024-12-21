@@ -32,7 +32,7 @@ class Providers
         
         // Dynamically load standard providers, excluding priority classes
         $this->loadProvidersClasses();
-
+        
         // Load classes with priority last
         $this->loadClasses($this->classes['priority_last']);
     }

@@ -213,20 +213,21 @@ class Main {
      */
     private function load_debugger(): void
     {
+        $log_helper = PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/Helpers.php';
+        if ( file_exists($log_helper) )
+        {
+            require_once $log_helper;
+            require_once PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/LogCleaner.php';
+        } else {
+            error_log('PF Log helper not found, and couldn\'t be loaded.');
+        }
+        
         $debug_helper = PLUGIN_FRAME_DIR . 'app/Utilities/Debug/Helpers.php';
         if ( file_exists($debug_helper) )
         {
             require_once $debug_helper;
         } else {
-            pf_log('Debug helper not found, and couldn\'t be loaded.');
-        } 
-
-        $log_helper = PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/Helpers.php';
-        if ( file_exists($log_helper) )
-        {
-            require_once $log_helper;
-        } else {
-            pf_log('PF Log helper not found, and couldn\'t be loaded.');
+            error_log('Debug helper not found, and couldn\'t be loaded.');
         }
     }
 

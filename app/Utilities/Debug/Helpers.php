@@ -5,6 +5,7 @@ namespace PluginFrame\Utilities;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+require_once PLUGIN_FRAME_DIR . 'app/Utilities/Debug/Debugger.php';
 use PluginFrame\Utilities\Debugger;
 
 // Check and define `dd` only if it doesn't already exist
