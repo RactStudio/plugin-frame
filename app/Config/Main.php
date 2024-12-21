@@ -15,12 +15,14 @@ class Main {
             return; // Stop plugin execution if PHP version requirement is not met.
         }
 
-        // Register activation and deactivation hooks dynamically.
-        $this->on_plugin_activation();
-        $this->on_plugin_deactivation();
-
         // Initialize plugin functionalities after all plugins are loaded.
         add_action('plugins_loaded', [$this, 'initialize_plugin']);
+
+        // Register hooks dynamically.
+        $this->on_plugin_activation();
+        $this->on_plugin_deactivation();
+        $this->on_plugin_uninstall();
+        $this->on_plugin_upgrade();
     }
 
     /**
@@ -86,6 +88,36 @@ class Main {
             new \PluginFrame\Hooks\Deactivation();
         } else {
             error_log('Deactivation hook not found:: '. $deactivation_hook);
+        }
+    }
+
+    /**
+     * Register tasks on plugin uninstall.
+     */
+    public function on_plugin_uninstall(): void
+    {
+        $uninstall_hook = PLUGIN_FRAME_DIR . 'app/Hooks/Uninstall.php';
+        if ( file_exists($uninstall_hook) )
+        {
+            require_once $uninstall_hook;
+            (new \PluginFrame\Hooks\Uninstall())->init();
+        } else {
+            error_log('Uninstall hook not found:: '. $uninstall_hook);
+        }
+    }
+
+    /**
+     * Register tasks on plugin upgrade/update.
+     */
+    public function on_plugin_upgrade(): void
+    {
+        $upgrade_hook = PLUGIN_FRAME_DIR . 'app/Hooks/Upgrade.php';
+        if ( file_exists($upgrade_hook) )
+        {
+            require_once $upgrade_hook;
+            new \PluginFrame\Hooks\Upgrade();
+        } else {
+            error_log('Upgrade hook not found:: '. $upgrade_hook);
         }
     }
 
