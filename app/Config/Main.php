@@ -30,6 +30,9 @@ class Main {
      */
     private function is_php_version_compatible(): bool
     {
+        if ( ! defined('PLUGIN_FRAME_MIN_PHP') ) {
+            define('PLUGIN_FRAME_MIN_PHP', '7.4');
+        }
         if ( version_compare(PHP_VERSION, PLUGIN_FRAME_MIN_PHP, '<') ) {
             add_action('admin_notices', [$this, 'php_version_notice']);
             return false;
