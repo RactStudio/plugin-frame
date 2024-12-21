@@ -21,7 +21,7 @@ class Deactivation
     public function deactivate(): void
     {
         // Add a log entry indicating successful deactivation
-        pf_log( PLUGIN_FRAME_NAME . ' Deactivated successfully.');
+        error_log( PLUGIN_FRAME_NAME . ' Deactivated successfully.');
 
         // Add yours
     }

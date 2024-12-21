@@ -21,7 +21,7 @@ class Activation
     public function activate(): void
     {
         // Add a log entry indicating successful activation
-        pf_log(PLUGIN_FRAME_NAME . ' Activated successfully.');
+        error_log(PLUGIN_FRAME_NAME . ' Activated successfully.');
 
         // Add yours
     }
