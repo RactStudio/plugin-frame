@@ -1,18 +1,20 @@
 <?php
 
-namespace PluginFrame\Utilities;
+namespace PluginFrame\Utilities\PFlogs;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 require_once PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/PFlogs.php';
-use PluginFrame\Utilities\PFlogs;
+use PluginFrame\Utilities\PFlogs\PFlogs;
+
 require_once PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/LogCleaner.php';
-use PluginFrame\Utilities\LogCleaner;
+use PluginFrame\Utilities\PFlogs\LogCleaner;
+
 require_once PLUGIN_FRAME_DIR . 'app/Services/Scheduler.php';
 use PluginFrame\Services\Scheduler;
 
-// Define `pf_log` if it doesn't exist
+// Define `pf_log` function globally
 if (!function_exists('pf_log')) {
     function pf_log($data): void
     {
@@ -20,7 +22,7 @@ if (!function_exists('pf_log')) {
     }
 }
 
-// Define `pf_logs` if it doesn't exist
+// Define `pf_logs` function globally
 if (!function_exists('pf_logs')) {
     function pf_logs($data): void
     {

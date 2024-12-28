@@ -9,8 +9,12 @@ if (!defined('ABSPATH')) {
 
 class PostTypes
 {
+    protected $postTypes;
+
     public function __construct()
     {
+        $this->postTypes = new \PluginFrame\Services\PostTypes();
+        
         $this->registerCustomPostTypes();
     }
 
@@ -19,10 +23,8 @@ class PostTypes
      */
     protected function registerCustomPostTypes()
     {
-        $postTypes = new \PluginFrame\Services\PostTypes();
-
         // Example 1: Classic Editor Compatible
-        $postTypes->registerPostType(
+        $this->postTypes->registerPostType(
             'classic_example',
             [
                 'label' => 'Classic Editor Post',
@@ -38,12 +40,12 @@ class PostTypes
         );
 
         // Example 2: Block Editor Compatible
-        $postTypes->registerPostType(
+        $this->postTypes->registerPostType(
             'block_example',
             [
                 'label' => 'Block Editor Post',
                 'public' => true,
-                'show_in_menu' => true,
+                'show_in_menu' => true, // Set to false to hide from the admin menu
                 'supports' => ['title', 'editor', 'thumbnail'],
                 'show_in_rest' => true, // Enables Gutenberg
             ]

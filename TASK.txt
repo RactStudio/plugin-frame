@@ -12,5 +12,15 @@
 10. Make sure the final plugin build is using wp standard for namespaces and do not interfere with other plugin functions and classes.
 11. Add DB Models for All of Worddpress Tables and Data
 12. DONE - Add Debuggger for the framework (eg: dd, d, log)
-12. DONE - Add OWN PF LOGGING SYSTEM for the framework (eg: pf_log() )
-13. DONE - Add own Cron Jobs for the framework
+12. DONE - Add OWN LOGGING SYSTEM for the framework (eg: pf_log() )
+13. Add own Cron Jobs for the framework
+
+NEED TO REPLACE TEXTS
+PluginFrame
+PLUGIN-FRAME
+PLUGIN_FRAME
+Plugin Frame
+pluginframe
+plugin-frame
+plugin_frame
+plugin frame

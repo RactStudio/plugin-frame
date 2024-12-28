@@ -5,6 +5,37 @@ namespace PluginFrame\Config;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+/**
+ * Define plugin constants if not already defined
+ */
+if ( ! defined( 'PLUGIN_FRAME_NAME' ) ) {
+    define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_VERSION' ) ) {
+    define( 'PLUGIN_FRAME_VERSION', '1.0.0' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_SLUG' ) ) {
+    define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_PREFIX' ) ) {
+    define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_FILE' ) ) {
+    define( 'PLUGIN_FRAME_FILE', dirname( __DIR__, 2 ) . '/' . PLUGIN_FRAME_SLUG . '.php' ); // Required [MUST BE HERE]
+}
+if ( ! defined( 'PLUGIN_FRAME_DIR' ) ) {
+    define( 'PLUGIN_FRAME_DIR', plugin_dir_path( PLUGIN_FRAME_FILE ) ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_URL' ) ) {
+    define( 'PLUGIN_FRAME_URL', plugin_dir_url( PLUGIN_FRAME_FILE ) ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_MIN_PHP' ) ) {
+    define( 'PLUGIN_FRAME_MIN_PHP', '7.4' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_BASENAME' ) ) {
+    define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
+}
+
 class Main {
 
     public function __construct()
@@ -219,7 +250,7 @@ class Main {
             require_once $log_helper;
             require_once PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/LogCleaner.php';
         } else {
-            error_log('PF Log helper not found, and couldn\'t be loaded.');
+            error_log('PF Log helper not found, and couldn\'t be loaded. File: ' . $log_helper );
         }
         
         $debug_helper = PLUGIN_FRAME_DIR . 'app/Utilities/Debug/Helpers.php';
@@ -227,7 +258,7 @@ class Main {
         {
             require_once $debug_helper;
         } else {
-            error_log('Debug helper not found, and couldn\'t be loaded.');
+            error_log('Debug helper not found, and couldn\'t be loaded. File: ' . $debug_helper );
         }
     }
 

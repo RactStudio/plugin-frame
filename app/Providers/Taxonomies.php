@@ -3,14 +3,16 @@
 namespace PluginFrame\Providers;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
-    exit;
-}
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Taxonomies
 {
+    protected $taxonomies;
+
     public function __construct()
     {
+        $this->taxonomies = new \PluginFrame\Services\Taxonomies();
+
         $this->registerCustomTaxonomies();
     }
 
@@ -19,10 +21,8 @@ class Taxonomies
      */
     protected function registerCustomTaxonomies()
     {
-        $taxonomies = new \PluginFrame\Services\Taxonomies();
-
         // Example 1: Conditional Taxonomy
-        $taxonomies->registerTaxonomy(
+        $this->taxonomies->registerTaxonomy(
             'conditional_taxonomy',
             ['classic_example'], // Post types associated with this taxonomy
             [
@@ -38,7 +38,7 @@ class Taxonomies
         );
 
         // Example 2: Block-Compatible Taxonomy
-        $taxonomies->registerTaxonomy(
+        $this->taxonomies->registerTaxonomy(
             'block_taxonomy',
             ['block_example'], // Post types associated with this taxonomy
             [
