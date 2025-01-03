@@ -42,7 +42,7 @@ class Enqueue
             if (!$condition || (is_callable($condition) && $condition())) {
                 wp_enqueue_script($handle, $src, $deps, $ver, $inFooter);
 
-                if ($tagAttribute !== '' && in_array($tagAttribute, ['defer', 'async'])) {
+                if ($tagAttribute !== null && in_array($tagAttribute, ['defer', 'async'])) {
                     add_filter('script_loader_tag', function ($tag, $enqueuedHandle) use ($handle, $tagAttribute) {
                         if ($enqueuedHandle === $handle) {
                             return str_replace(' src', " $tagAttribute src", $tag);
@@ -89,7 +89,7 @@ class Enqueue
             if (!$condition || (is_callable($condition) && $condition())) {
                 wp_enqueue_script($handle, $src, $deps, $ver, $inFooter);
 
-                if ($tagAttribute !== '' && in_array($tagAttribute, ['defer', 'async'])) {
+                if ($tagAttribute !== null && in_array($tagAttribute, ['defer', 'async'])) {
                     add_filter('script_loader_tag', function ($tag, $enqueuedHandle) use ($handle, $tagAttribute) {
                         if ($enqueuedHandle === $handle) {
                             return str_replace(' src', " $tagAttribute src", $tag);

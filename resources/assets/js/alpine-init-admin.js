@@ -1,36 +1,29 @@
-// Admin Alpine.js Initialization
 document.addEventListener('alpine:init', () => {
-    // Set a custom prefix for directives
     Alpine.prefix('pf-');
-    console.log("Custom namespace 'pf-' set for Alpine.js.");
 
-    // Create a global Alpine store for pf-data
-    Alpine.store('data', {
-        darkMode: false,
-        toggleDarkMode() {
-            this.darkMode = !this.darkMode;
-            this.applyDarkMode();
+    Alpine.data('darkModeToggle', () => ({
+        mode: localStorage.getItem('plugin_frame_theme') || 'system', // Default to system mode
+        init() {
+            if (!localStorage.getItem('plugin_frame_theme')) {
+                localStorage.setItem('plugin_frame_theme', 'system'); // Set default mode to system
+            }
+            this.mode = localStorage.getItem('plugin_frame_theme');
+            this.applyMode(this.mode);
         },
-        applyDarkMode() {
-            if (this.darkMode) {
-                document.documentElement.classList.add('pf-dark');
+        toggleMode(newMode) {
+            this.mode = newMode;
+            localStorage.setItem('plugin_frame_theme', newMode); // Save mode to localStorage
+            this.applyMode(newMode);
+        },
+        applyMode(mode) {
+            const html = document.documentElement;
+            // Apply system, light, or dark mode to the root element
+            if (mode === 'system') {
+                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                html.setAttribute('data-mode', prefersDarkScheme ? 'pf-dark' : 'pf-light');
             } else {
-                document.documentElement.classList.remove('pf-dark');
+                html.setAttribute('data-mode', `pf-${mode}`);
             }
         },
-    });
-
-    // Apply dark mode state on page load
-    Alpine.store('data').applyDarkMode();
-    console.log("Global store for 'pf-data' initialized.");
-});
-
-// Initialize Alpine.js if not already started
-document.addEventListener('DOMContentLoaded', () => {
-    if (typeof Alpine === 'undefined') {
-        console.log("Initializing Alpine.js...");
-        Alpine.start();
-    } else {
-        console.log("Alpine.js is already initialized by another script.");
-    }
+    }));
 });

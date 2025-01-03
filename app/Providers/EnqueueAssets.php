@@ -91,14 +91,16 @@ class EnqueueAssets
             true
         );
 
-        // // Frontend Tailwind script [Require Alpine JS]
-        // $this->enqueueFiles->registerFrontendScript(
-        //     'plugin-frame-frontend-tailwind-script',
-        //     PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.js',
-        //     ['plugin-frame-frontend-alpine-init-script'],
-        //     PLUGIN_FRAME_VERSION,
-        //     true
-        // );
+        // Frontend Tailwind script [Require Alpine JS]
+        $this->enqueueFiles->registerFrontendScript(
+            'plugin-frame-frontend-tailwind-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.js',
+            ['plugin-frame-frontend-alpine-init-script'],
+            PLUGIN_FRAME_VERSION,
+            true,
+            null,
+            'defer'
+        );
 
         // Frontend scripts [Dependent on WP jQuery]
         $this->enqueueFiles->registerFrontendScript(
@@ -158,7 +160,7 @@ class EnqueueAssets
             'defer'
         );
 
-        // Admin AlpineJS script
+        // Admin AlpineJS Init script
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-alpine-init-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/alpine-init-admin.js',
@@ -167,14 +169,16 @@ class EnqueueAssets
             true
         );
 
-        // // Admin Tailwind script [Dependent on Alpine Init JS]
-        // $this->enqueueFiles->registerAdminScript(
-        //     'plugin-frame-admin-tailwind-script',
-        //     PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.js',
-        //     ['plugin-frame-admin-alpine-init-script'],
-        //     PLUGIN_FRAME_VERSION,
-        //     true
-        // );
+        // Admin Tailwind script [Dependent on Alpine Init JS]
+        $this->enqueueFiles->registerAdminScript(
+            'plugin-frame-admin-tailwind-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.js',
+            ['plugin-frame-admin-alpine-init-script'],
+            PLUGIN_FRAME_VERSION,
+            false,
+            null,
+            'defer'
+        );
 
         // Admin scripts [Dependent on WP jQuery]
         $this->enqueueFiles->registerAdminScript(

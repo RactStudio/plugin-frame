@@ -1,17 +1,16 @@
-<div id="pf-load" pf-data="{}" class="pf-bg-gray-50 pf-dark:pf-bg-gray-800 pf-py-24 sm:pf-py-32">
+<div id="pf-load" pf-data="{}" class="pf-bg-gray-50 pf-dark:pf-bg-gray-800 pf-py-24 sm:pf-py-32" pf-data-mode="system">
 
   <!-- Dark Mode Toggle -->
-  {% include 'lib/tailwind-dark-mode.twig' %}
+  {% include 'lib/theme-mode/theme-mode-button.twig' %}
 
-
-    <!-- Main Content -->
-    <div class="pf-mx-auto pf-max-w-2xl pf-px-6 lg:pf-max-w-7xl lg:pf-px-8">
-        <h2 class="pf-text-center pf-text-base pf-font-semibold pf-text-indigo-600 pf-dark:pf-text-indigo-400">
-            {{ content }}
-        </h2>
-        <p class="pf-mx-auto pf-mt-2 pf-max-w-lg pf-text-balance pf-text-center pf-text-4xl pf-font-semibold pf-tracking-tight pf-text-gray-950 pf-dark:pf-text-gray-200 sm:pf-text-5xl">
-            {{ __(description, plugin_domain) }}
-        </p>
-    </div>
-
+  <!-- Main Content -->
+  <div class="pf-mx-auto pf-max-w-2xl pf-px-6 lg:pf-max-w-7xl lg:pf-px-8">
+    <h2 class="pf-text-center pf-text-base pf-font-semibold pf-text-indigo-600 pf-dark:pf-text-indigo-400">
+      {{ content }}
+    </h2>
+    <p class="pf-mx-auto pf-mt-2 pf-max-w-lg pf-text-balance pf-text-center pf-text-4xl pf-font-semibold pf-tracking-tight pf-text-gray-950 pf-dark:pf-text-gray-200 sm:pf-text-5xl">
+      {{ __(description, plugin_domain) }}
+    </p>
+  </div>
+  
 </div>
