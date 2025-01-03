@@ -77,7 +77,9 @@ class EnqueueAssets
             PLUGIN_FRAME_URL . 'resources/assets/js/alpinejs.min.js',
             [],
             '3.14.3', // Current version at the time - use latest version (if needed)
-            true
+            true,
+            null,
+            'defer'
         );
 
         // Frontend AlpineJS Init script
@@ -151,7 +153,9 @@ class EnqueueAssets
             PLUGIN_FRAME_URL . 'resources/assets/js/alpinejs.min.js',
             [],
             '3.14.3',
-            true
+            true,
+            null,
+            'defer'
         );
 
         // Admin AlpineJS script
