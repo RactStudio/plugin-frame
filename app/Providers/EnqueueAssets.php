@@ -53,15 +53,6 @@ class EnqueueAssets
      */
     protected function registerFrontendAssets()
     {
-        // // Frontend Tailwind scripts
-        // $this->enqueueFiles->registerFrontendScript(
-        //     'plugin-frame-frontend-tailwind-scripts',
-        //     PLUGIN_FRAME_URL . 'resources/assets/js/main.min.js',
-        //     [],
-        //     '3.4.15', // Use latest version (if needed)
-        //     false
-        // );
-
         // // Frontend Tailwind styles
         // $this->enqueueFiles->registerFrontendStyle(
         //     'plugin-frame-frontend-tailwind-styles',
@@ -82,25 +73,43 @@ class EnqueueAssets
 
         // Frontend AlpineJS script
         $this->enqueueFiles->registerFrontendScript(
-            'plugin-frame-frontend-alpine-js',
+            'plugin-frame-frontend-alpine-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/alpinejs.min.js',
             [],
             '3.14.3', // Current version at the time - use latest version (if needed)
             true
         );
 
-        // Frontend scripts
+        // Frontend AlpineJS Init script
         $this->enqueueFiles->registerFrontendScript(
-            'plugin-frame-frontend-scripts',
+            'plugin-frame-frontend-alpine-init-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/alpine-init-frontend.js',
+            ['plugin-frame-frontend-alpine-script'],
+            PLUGIN_FRAME_VERSION,
+            true
+        );
+
+        // // Frontend Tailwind script [Require Alpine JS]
+        // $this->enqueueFiles->registerFrontendScript(
+        //     'plugin-frame-frontend-tailwind-script',
+        //     PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.js',
+        //     ['plugin-frame-frontend-alpine-init-script'],
+        //     PLUGIN_FRAME_VERSION,
+        //     true
+        // );
+
+        // Frontend scripts [Dependent on WP jQuery]
+        $this->enqueueFiles->registerFrontendScript(
+            'plugin-frame-frontend-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/frontend.js',
-            [],
+            ['jquery'],
             PLUGIN_FRAME_VERSION,
             true
         );
 
         // // Example with condition
         // $this->enqueueFiles->registerFrontendScript(
-        //     'plugin-frame-custom-frontend-js',
+        //     'plugin-frame-custom-frontend-script',
         //     PLUGIN_FRAME_URL . 'resources/assets/js/frontend.js',
         //     ['jquery'],
         //     PLUGIN_FRAME_VERSION,
@@ -118,16 +127,6 @@ class EnqueueAssets
      */
     protected function registerAdminAssets()
     {
-        
-        // Admin Tailwind scripts
-        $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-admin-tailwind-scripts',
-            PLUGIN_FRAME_URL . 'resources/assets/js/main.min.js',
-            [],
-            '3.4.15', // Use latest version (if needed)
-            false
-        );
-
         // Admin Tailwind styles
         $this->enqueueFiles->registerAdminStyle(
             'plugin-frame-admin-tailwind-styles',
@@ -148,16 +147,34 @@ class EnqueueAssets
 
         // Admin AlpineJS script
         $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-admin-alpine-js',
+            'plugin-frame-admin-alpine-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/alpinejs.min.js',
             [],
-            '3.14.3', // Use latest version (if needed)
+            '3.14.3',
             true
         );
 
-        // Admin scripts
+        // Admin AlpineJS script
         $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-admin-scripts',
+            'plugin-frame-admin-alpine-init-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/alpine-init-admin.js',
+            ['plugin-frame-admin-alpine-script'],
+            PLUGIN_FRAME_VERSION,
+            true
+        );
+
+        // // Admin Tailwind script [Dependent on Alpine Init JS]
+        // $this->enqueueFiles->registerAdminScript(
+        //     'plugin-frame-admin-tailwind-script',
+        //     PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.js',
+        //     ['plugin-frame-admin-alpine-init-script'],
+        //     PLUGIN_FRAME_VERSION,
+        //     true
+        // );
+
+        // Admin scripts [Dependent on WP jQuery]
+        $this->enqueueFiles->registerAdminScript(
+            'plugin-frame-admin-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/admin.js',
             ['jquery'],
             PLUGIN_FRAME_VERSION,

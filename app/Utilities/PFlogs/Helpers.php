@@ -1,30 +1,39 @@
 <?php
 
-namespace PluginFrame\Utilities;
+namespace PluginFrame\Utilities\PFlogs;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-use PluginFrame\Utilities\PFlogs;
+require_once PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/PFlogs.php';
+use PluginFrame\Utilities\PFlogs\PFlogs;
 
-// Check and define `pf_log` only if it doesn't already exist
+require_once PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/LogCleaner.php';
+use PluginFrame\Utilities\PFlogs\LogCleaner;
+
+require_once PLUGIN_FRAME_DIR . 'app/Services/Scheduler.php';
+use PluginFrame\Services\Scheduler;
+
+// Define `pf_log` function globally
 if (!function_exists('pf_log')) {
-    /**
-     * Error logs execute as native function
-     */
     function pf_log($data): void
     {
         PFlogs::pf_log($data);
     }
 }
 
-// Check and define `pf_logs` only if it doesn't already exist
+// Define `pf_logs` function globally
 if (!function_exists('pf_logs')) {
-    /**
-     * Error logs execute as native function
-     */
     function pf_logs($data): void
     {
         PFlogs::pf_log($data);
     }
+}
+
+// Initialize LogCleaner after all files are loaded
+if (PFlogs::isLoggingEnabled()) {
+    $scheduler = new Scheduler();
+    new LogCleaner($scheduler); // Automatically schedules the log cleaner
+} else {
+    error_log('Unable to execute PF LogCleaner scheduler.');
 }

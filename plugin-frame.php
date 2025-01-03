@@ -16,17 +16,23 @@ namespace PluginFrame;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-// Define constants for plugin directory paths
+/**
+ * Defines Constants.
+ * Also declared in app/config/Main.php for redundancy.
+ */
 define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
 define( 'PLUGIN_FRAME_VERSION', '1.0.0' ); // Required
-define( 'PLUGIN_FRAME_FILE', __FILE__ ); // Required
+define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
+define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
+define( 'PLUGIN_FRAME_FILE', __FILE__ ); // Required [MUST BE HERE, IF NOT POSSIBLE THEN, DELETE UNDERNEATH CONSTANT'S AS WELL]
 define( 'PLUGIN_FRAME_DIR', plugin_dir_path( PLUGIN_FRAME_FILE ) ); // Required
 define( 'PLUGIN_FRAME_URL', plugin_dir_url( PLUGIN_FRAME_FILE ) ); // Required
 define( 'PLUGIN_FRAME_MIN_PHP', '7.4' ); // Required
 define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
-define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
-define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
 
 // Load The Plugin Frame Main
-require_once PLUGIN_FRAME_DIR . 'app/Config/Main.php';
+require_once __DIR__ . '/app/Config/Main.php';
 new \PluginFrame\Config\Main();
+
+// WRITE ANYTHING BELOW THIS LINE
+// ##############################

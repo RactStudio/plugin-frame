@@ -5,6 +5,37 @@ namespace PluginFrame\Config;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+/**
+ * Define plugin constants if not already defined
+ */
+if ( ! defined( 'PLUGIN_FRAME_NAME' ) ) {
+    define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_VERSION' ) ) {
+    define( 'PLUGIN_FRAME_VERSION', '1.0.0' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_SLUG' ) ) {
+    define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_PREFIX' ) ) {
+    define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_FILE' ) ) {
+    define( 'PLUGIN_FRAME_FILE', dirname( __DIR__, 2 ) . '/' . PLUGIN_FRAME_SLUG . '.php' ); // Required [MUST BE HERE]
+}
+if ( ! defined( 'PLUGIN_FRAME_DIR' ) ) {
+    define( 'PLUGIN_FRAME_DIR', plugin_dir_path( PLUGIN_FRAME_FILE ) ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_URL' ) ) {
+    define( 'PLUGIN_FRAME_URL', plugin_dir_url( PLUGIN_FRAME_FILE ) ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_MIN_PHP' ) ) {
+    define( 'PLUGIN_FRAME_MIN_PHP', '7.4' ); // Required
+}
+if ( ! defined( 'PLUGIN_FRAME_BASENAME' ) ) {
+    define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
+}
+
 class Main {
 
     public function __construct()
@@ -15,12 +46,14 @@ class Main {
             return; // Stop plugin execution if PHP version requirement is not met.
         }
 
-        // Register activation and deactivation hooks dynamically.
-        $this->on_plugin_activation();
-        $this->on_plugin_deactivation();
-
         // Initialize plugin functionalities after all plugins are loaded.
         add_action('plugins_loaded', [$this, 'initialize_plugin']);
+
+        // Register hooks dynamically.
+        $this->on_plugin_activation();
+        $this->on_plugin_deactivation();
+        $this->on_plugin_uninstall();
+        $this->on_plugin_upgrade();
     }
 
     /**
@@ -30,6 +63,9 @@ class Main {
      */
     private function is_php_version_compatible(): bool
     {
+        if ( ! defined('PLUGIN_FRAME_MIN_PHP') ) {
+            define('PLUGIN_FRAME_MIN_PHP', '7.4');
+        }
         if ( version_compare(PHP_VERSION, PLUGIN_FRAME_MIN_PHP, '<') ) {
             add_action('admin_notices', [$this, 'php_version_notice']);
             return false;
@@ -83,6 +119,36 @@ class Main {
             new \PluginFrame\Hooks\Deactivation();
         } else {
             error_log('Deactivation hook not found:: '. $deactivation_hook);
+        }
+    }
+
+    /**
+     * Register tasks on plugin uninstall.
+     */
+    public function on_plugin_uninstall(): void
+    {
+        $uninstall_hook = PLUGIN_FRAME_DIR . 'app/Hooks/Uninstall.php';
+        if ( file_exists($uninstall_hook) )
+        {
+            require_once $uninstall_hook;
+            (new \PluginFrame\Hooks\Uninstall())->init();
+        } else {
+            error_log('Uninstall hook not found:: '. $uninstall_hook);
+        }
+    }
+
+    /**
+     * Register tasks on plugin upgrade/update.
+     */
+    public function on_plugin_upgrade(): void
+    {
+        $upgrade_hook = PLUGIN_FRAME_DIR . 'app/Hooks/Upgrade.php';
+        if ( file_exists($upgrade_hook) )
+        {
+            require_once $upgrade_hook;
+            new \PluginFrame\Hooks\Upgrade();
+        } else {
+            error_log('Upgrade hook not found:: '. $upgrade_hook);
         }
     }
 
@@ -178,20 +244,21 @@ class Main {
      */
     private function load_debugger(): void
     {
+        $log_helper = PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/Helpers.php';
+        if ( file_exists($log_helper) )
+        {
+            require_once $log_helper;
+            require_once PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/LogCleaner.php';
+        } else {
+            error_log('PF Log helper not found, and couldn\'t be loaded. File: ' . $log_helper );
+        }
+        
         $debug_helper = PLUGIN_FRAME_DIR . 'app/Utilities/Debug/Helpers.php';
         if ( file_exists($debug_helper) )
         {
             require_once $debug_helper;
         } else {
-            pf_log('Debug helper not found, and couldn\'t be loaded.');
-        } 
-
-        $log_helper = PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/Helpers.php';
-        if ( file_exists($log_helper) )
-        {
-            require_once $log_helper;
-        } else {
-            pf_log('PF Log helper not found, and couldn\'t be loaded.');
+            error_log('Debug helper not found, and couldn\'t be loaded. File: ' . $debug_helper );
         }
     }
 

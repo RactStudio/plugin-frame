@@ -1,13 +1,14 @@
 <?php
 
-namespace PluginFrame\Utilities;
+namespace PluginFrame\Utilities\Debug;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-use PluginFrame\Utilities\Debugger;
+require_once PLUGIN_FRAME_DIR . 'app/Utilities/Debug/Debugger.php';
+use PluginFrame\Utilities\Debug\Debugger;
 
-// Check and define `dd` only if it doesn't already exist
+// Check and define `dd` function globally
 if (!function_exists('dd')) {
     /**
      * Dump and die. Stops execution.
@@ -18,7 +19,7 @@ if (!function_exists('dd')) {
     }
 }
 
-// Check and define `d` only if it doesn't already exist
+// Check and define `d` function globally
 if (!function_exists('d')) {
     /**
      * Dump data and continue execution.
@@ -29,7 +30,7 @@ if (!function_exists('d')) {
     }
 }
 
-// Check and define `debug_log` only if it doesn't already exist
+// Check and define `debug_log` function globally
 if (!function_exists('debug_log')) {
     /**
      * Log data into PHP's error log.
@@ -40,7 +41,7 @@ if (!function_exists('debug_log')) {
     }
 }
 
-// Check and define `json` only if it doesn't already exist
+// Check and define `json` function globally
 if (!function_exists('json')) {
     /**
      * Pretty-prints JSON for debugging purposes.
@@ -51,7 +52,7 @@ if (!function_exists('json')) {
     }
 }
 
-// Check and define `backtrace` only if it doesn't already exist
+// Check and define `backtrace` function globally
 if (!function_exists('backtrace')) {
     /**
      * Output the backtrace for debugging purposes.
