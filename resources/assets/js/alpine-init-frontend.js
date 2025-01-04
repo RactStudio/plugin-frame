@@ -4,7 +4,6 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('darkModeToggle', () => ({
         mode: localStorage.getItem('plugin_frame_theme') || 'system', // Default to system mode
         init() {
-            // Apply the mode on initialization
             if (!localStorage.getItem('plugin_frame_theme')) {
                 localStorage.setItem('plugin_frame_theme', 'system'); // Set default mode to system
             }
@@ -18,9 +17,13 @@ document.addEventListener('alpine:init', () => {
         },
         applyMode(mode) {
             const html = document.documentElement;
-            html.setAttribute('data-mode', `pf-${mode}`); // Set the data-mode attribute based on the selected mode
+            // Apply system, light, or dark mode to the root element
+            if (mode === 'system') {
+                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                html.setAttribute('data-mode', prefersDarkScheme ? 'pf-dark' : 'pf-light');
+            } else {
+                html.setAttribute('data-mode', `pf-${mode}`);
+            }
         },
     }));
-
-    // Alpine.start();
 });

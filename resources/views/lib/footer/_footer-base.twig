@@ -1,0 +1,12 @@
+<footer class="pf-footer {{ custom_classes|default('') }}">
+  <div class="pf-container pf-flex pf-justify-between">
+    <div class="pf-footer-content">
+      {{ content|default('Footer Content') }}
+    </div>
+    <div class="pf-footer-links">
+      {% for link in links %}
+        <a href="{{ link.url }}" class="pf-footer-link">{{ link.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</footer>

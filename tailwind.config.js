@@ -4,9 +4,24 @@ module.exports = {
   prefix: 'pf-', // Custom prefix for Tailwind classes
   darkMode: ['class', '[data-mode="pf-dark"]'], // Enable dark mode with custom attribute
   content: [
+    "./node_modules/flowbite/**/*.js", // Flowbite JS
     "./resources/views/**/*.{twig,html,php,js}" // Specify content files
   ],
   theme: {
+    fontFamily: {
+      sans: ["Roboto", "sans-serif"],
+      serif: ["Roboto Slab", "serif"],
+      body: ["Roboto", "sans-serif"],
+      mono: [
+        "SFMono-Regular",
+        "Menlo",
+        "Monaco",
+        "Consolas",
+        "Liberation Mono",
+        "Courier New",
+        "monospace",
+      ],
+    },
     extend: {
       colors: {
         gray: {
@@ -44,5 +59,7 @@ module.exports = {
         });
       });
     }),
+    // Flowbite plugin
+    require('flowbite/plugin'),
   ],
 };

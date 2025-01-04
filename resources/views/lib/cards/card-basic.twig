@@ -1,0 +1,11 @@
+<div class="pf-card pf-border pf-rounded-lg pf-shadow-md pf-bg-white pf-dark:pf-bg-gray-800">
+  <div class="pf-card-header pf-font-semibold pf-text-lg pf-py-4 pf-px-6">
+    {{ title|default('Card Title') }}
+  </div>
+  <div class="pf-card-body pf-py-4 pf-px-6">
+    {{ content|default('Card content goes here.') }}
+  </div>
+  <div class="pf-card-footer pf-border-t pf-pt-4 pf-px-6">
+    {{ footer|default('Footer content.') }}
+  </div>
+</div>
