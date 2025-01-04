@@ -1,16 +1,54 @@
-<div id="pf-load" pf-data="{}" class="pf-bg-gray-50 pf-dark:pf-bg-gray-800 pf-py-24 sm:pf-py-32 transition-all" pf-data-mode="system">
+{# { Dashboard Modern Template with Fixed Sidebar Alignment } #}
 
-  <!-- Dark Mode Toggle -->
-  {% include 'lib/theme-mode/theme-mode-dropdown.twig' %}
+<div class="pf-min-h-screen pf-grid pf-grid-cols-12 pf-gap-2 sm:pf-pr-2.5 md:pf-pr-4 lg:pf-pr-5 pf-pr-2">
 
-  <!-- Main Content -->
-  <div class="pf-mx-auto pf-max-w-2xl pf-px-6 lg:pf-max-w-7xl lg:pf-px-8  transition-all">
-    <h2 class="pf-text-center pf-text-base pf-font-semibold pf-text-indigo-600 pf-dark:pf-text-indigo-400">
-      {{ content }}
-    </h2>
-    <p class="pf-mx-auto pf-mt-2 pf-max-w-lg pf-text-balance pf-text-center pf-text-4xl pf-font-semibold pf-tracking-tight pf-text-gray-950 pf-dark:pf-text-gray-200 sm:pf-text-5xl">
-      {{ __(description, plugin_domain) }}
-    </p>
+  <!-- Header -->
+  <header class="pf-col-span-12 pf-mt-[-36px] pf-bg-gradient-to-r pf-border pf-rounded-br-md pf-rounded-bl-md pf-p-4 pf-from-indigo-500 pf-to-indigo-600 pf-dark:pf-from-gray-700 pf-dark:pf-to-gray-800 pf-shadow-lg">
+    {% include 'lib/header/header-modern.twig' %}
+  </header>
+
+  <!-- Main Content and Sidebar -->
+  <div class="pf-grid pf-col-span-12 pf-gap-2">
+
+    <!-- Main Content -->
+    <main class="pf-col-span-12 md:pf-col-span-8 lg:pf-col-span-9">
+
+      <section class="pf-mt-6">
+        {% include 'lib/sections/section-hero-modern.twig' with {
+          title: 'Welcome to Your Dashboard',
+          subtitle: 'Manage your content, settings, and analytics all in one place.',
+          action_button: '<a href="#" class="pf-btn pf-btn-primary">Get Started</a>'
+        } %}
+      </section>
+
+      <section class="pf-mt-6">
+        {% include 'lib/sections/section-grid-card.twig' with {
+          cards: [
+            { title: 'Users', value: '1,250', change: '+5%', icon: 'assets/img/user-icon.svg' },
+            { title: 'Revenue', value: '$45,000', change: '+12%', icon: 'assets/img/revenue-icon.svg' },
+            { title: 'Signups', value: '350', change: '+8%', icon: 'assets/img/signup-icon.svg' }
+          ]
+        } %}
+      </section>
+
+      <section class="pf-mt-6">
+        {% include 'lib/blocks/block-cta.twig' with {
+          title: 'Need Assistance?',
+          content: 'Reach out to our support team for help with any issues.',
+          button: '<a href="#" class="pf-btn pf-btn-secondary">Contact Support</a>'
+        } %}
+      </section>
+    </main>
+
+    {# <!-- Right Sidebar -->
+    <aside class="pf-col-span-12 md:pf-col-span-4 lg:pf-col-span-3 pf-bg-gray-50 pf-dark:pf-bg-gray-800 pf-rounded pf-shadow-sm">
+      {% include 'lib/sidebar/sidebar-modern-right.twig' %}
+    </aside> #}
+
   </div>
-  
+
+  <!-- Footer -->
+  <footer class="pf-col-span-12 pf-mt-6">
+    {% include 'lib/footer/footer-modern.twig' %}
+  </footer>
 </div>

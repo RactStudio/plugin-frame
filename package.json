@@ -6,11 +6,10 @@
   "scripts": {
     "build": "grunt",
     "watch": "grunt watch",
-    "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --watch",
-    "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css",
-    "twig-parse": "php TwigStringExtractor.php",
+    "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",
+    "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify",
     "translate": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
-    "prod": "npm run tailwind && npm run translate && grunt build:prod"
+    "prod": "NODE_ENV=production npm run tailwind && npm run translate && grunt build:prod"
   },
   "keywords": [],
   "author": "Mahamudul Hasan Rubel",
@@ -85,6 +84,7 @@
     "findup-sync": "^5.0.0",
     "fined": "^2.0.0",
     "flagged-respawn": "^2.0.0",
+    "flowbite": "^2.5.2",
     "for-in": "^1.0.2",
     "for-own": "^1.0.0",
     "foreground-child": "^3.3.0",

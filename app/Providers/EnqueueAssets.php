@@ -91,17 +91,6 @@ class EnqueueAssets
             true
         );
 
-        // Frontend Tailwind script [Require Alpine JS]
-        $this->enqueueFiles->registerFrontendScript(
-            'plugin-frame-frontend-tailwind-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.js',
-            ['plugin-frame-frontend-alpine-init-script'],
-            PLUGIN_FRAME_VERSION,
-            true,
-            null,
-            'defer'
-        );
-
         // Frontend scripts [Dependent on WP jQuery]
         $this->enqueueFiles->registerFrontendScript(
             'plugin-frame-frontend-script',
@@ -110,6 +99,15 @@ class EnqueueAssets
             PLUGIN_FRAME_VERSION,
             true
         );
+
+        // // Frontend Flowbite script
+        // $this->enqueueFiles->registerFrontendScript(
+        //     'plugin-frame-frontend-alpine-script',
+        //     PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
+        //     ['plugin-frame-frontend-tailwind-styles'],
+        //     '2.5.2', // Current version at the time - use latest version (if needed)
+        //     true
+        // );
 
         // // Example with condition
         // $this->enqueueFiles->registerFrontendScript(
@@ -169,23 +167,21 @@ class EnqueueAssets
             true
         );
 
-        // Admin Tailwind script [Dependent on Alpine Init JS]
-        $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-admin-tailwind-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/tailwind.js',
-            ['plugin-frame-admin-alpine-init-script'],
-            PLUGIN_FRAME_VERSION,
-            false,
-            null,
-            'defer'
-        );
-
         // Admin scripts [Dependent on WP jQuery]
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/admin.js',
             ['jquery'],
             PLUGIN_FRAME_VERSION,
+            true
+        );
+
+        // Admin Flowbite script
+        $this->enqueueFiles->registerAdminScript(
+            'plugin-frame-frontend-alpine-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
+            [],
+            '2.5.2', // Current version at the time - use latest version (if needed)
             true
         );
 

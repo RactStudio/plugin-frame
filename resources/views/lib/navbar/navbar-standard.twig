@@ -1,0 +1,15 @@
+{% extends 'lib/navbar/_navbar-base.twig' %}
+
+{% block custom_classes %}
+  pf-navbar-standard
+{% endblock %}
+
+{% set links = [
+  { 'url': '#', 'label': 'Home' },
+  { 'url': '#', 'label': 'About' },
+  { 'url': '#', 'label': 'Contact' },
+] %}
+
+{% block actions %}
+  {% include 'lib/theme/theme-dropdown.twig' %}
+{% endblock %}

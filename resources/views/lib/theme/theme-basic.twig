@@ -1,15 +1,11 @@
-<div class="pf-bg-gray-50 pf-dark:pf-bg-gray-800 pf-py-12 sm:pf-py-18" pf-data="darkModeToggle">
+<div class=pf-py-1 sm:pf-py-1" pf-data="darkModeToggle">
     <!-- Dark Mode Toggle Buttons -->
     <div class="pf-flex pf-justify-center pf-items-center pf-space-x-4 pf-mb-6">
         <!-- Light Mode Button -->
         <button 
             type="button" 
-            class="pf-flex pf-items-center pf-gap-2 pf-px-3 pf-py-1.5 pf-rounded-md pf-shadow-sm pf-transition-colors"
-            :class="{
-                'pf-bg-gray-200 hover:pf-bg-gray-300': mode !== 'light',
-                'pf-bg-gray-800 pf-text-white pf-border pf-border-gray-200': mode === 'light'
-            }"
-            pf-on:click="toggleMode('light')">
+            class="pf-flex pf-items-center pf-gap-2 pf-px-4 pf-py-2 pf-rounded-md pf-shadow-sm pf-transition-colors pf-font-sans pf-text-gray-700 pf-dark:pf-text-gray-200"
+             pf-on:click="toggleMode('light')">
             <svg xmlns="http://www.w3.org/2000/svg"
                 enable-background="new 0 0 30 30"
                 class="pf-h-6 pf-w-6 pf-text-gray-800 pf-dark:pf-text-gray-200" 
@@ -23,11 +19,7 @@
         <!-- Dark Mode Button -->
         <button 
             type="button" 
-            class="pf-flex pf-items-center pf-gap-2 pf-px-3 pf-py-1.5 pf-rounded-md pf-shadow-sm pf-transition-colors"
-            :class="{
-                'pf-bg-gray-200 hover:pf-bg-gray-300': mode !== 'dark',
-                'pf-bg-gray-700 pf-text-gray-200': mode === 'dark'
-            }"
+            class="pf-flex pf-items-center pf-gap-2 pf-px-4 pf-py-2 pf-rounded-md pf-shadow-sm pf-transition-colors pf-font-sans pf-text-gray-700 pf-dark:pf-text-gray-200"
             pf-on:click="toggleMode('dark')">
             <svg xmlns="http://www.w3.org/2000/svg" 
                 class="pf-h-6 pf-w-6 pf-text-gray-800 pf-dark:pf-text-gray-200" 
@@ -41,11 +33,7 @@
         <!-- System Mode Button -->
         <button 
             type="button" 
-            class="pf-flex pf-items-center pf-gap-2 pf-px-3 pf-py-1.5 pf-rounded-md pf-shadow-sm pf-transition-colors"
-            :class="{
-                'pf-bg-gray-200 hover:pf-bg-gray-300': mode !== 'system',
-                'pf-bg-gray-700 pf-text-gray-200': mode === 'system'
-            }"
+            class="pf-flex pf-items-center pf-gap-2 pf-px-4 pf-py-2 pf-rounded-md pf-shadow-sm pf-transition-colors pf-font-sans pf-text-gray-700 pf-dark:pf-text-gray-200"
             pf-on:click="toggleMode('system')">
             <svg xmlns="http://www.w3.org/2000/svg"
                 class="pf-h-6 pf-w-6 pf-text-gray-800 pf-dark:pf-text-gray-200" 
