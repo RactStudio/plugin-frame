@@ -1,17 +1,15 @@
 <?php
 
-namespace PluginFrame\Config;
+namespace PluginFrame\API;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class APIbase
+class ApiRoutes
 {
     // Define your API routes here
-    public function url(): string
+    public function __construct()
     {
         // Provide API base URL here
-        //return 'https://api.example.com';
-        return 'http://127.0.0.1:80';
     }
 }
