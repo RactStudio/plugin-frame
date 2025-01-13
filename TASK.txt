@@ -24,3 +24,9 @@ pluginframe
 plugin-frame
 plugin_frame
 plugin frame
+pf
+pf-
+pf_
+PF
+PF-
+PF_
