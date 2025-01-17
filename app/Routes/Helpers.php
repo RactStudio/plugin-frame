@@ -10,6 +10,8 @@ class Helpers
     private $currentMiddleware = [];
     private $routesBase;
     private $middlewareCache = [];
+    private $prefixStack = [];
+    private $routeSpecificMiddleware = [];
 
     /**
      * Constructor to set a dynamic route prefix.
@@ -31,7 +33,7 @@ class Helpers
      */
     public function single($method = 'GET', $endpoint, $handler, $middleware = []): void
     {
-        $middlewareStack = $middleware ?: $this->currentMiddleware;
+        $middlewareStack = $middleware ?: $this->routeSpecificMiddleware ?: $this->currentMiddleware;
 
         register_rest_route($this->routesBase, $endpoint, [
             'methods' => strtoupper($method),
@@ -59,6 +61,24 @@ class Helpers
     }
 
     /**
+     * Add a prefix to the multiple route group / single routes.
+     *
+     * @param string $prefix The URL prefix for the group.
+     * @param callable $callback A callback that registers routes within this group.
+     */
+    public function prefix($prefix, callable $callback): void
+    {
+        // Add the current prefix to the stack
+        array_push($this->prefixStack, trim($prefix, '/'));
+
+        // Execute the callback within this prefix context
+        $callback();
+
+        // Remove the last added prefix
+        array_pop($this->prefixStack);
+    }
+
+    /**
      * Group multiple routes with shared middleware.
      *
      * @param array $middleware Optional middleware classes to apply to the group.
@@ -72,6 +92,32 @@ class Helpers
         $callback();
 
         $this->currentMiddleware = $previousMiddleware; // Restore the previous state
+    }
+
+    /**
+     * Temporarily remove middleware for a group of routes.
+     *
+     * @param string|array|null $middleware The specific middleware(s) to remove, or null to remove all.
+     * @param callable $callback The callback that registers routes in the context.
+     */
+    public function removeMiddleware($middleware = null, callable $callback): void
+    {
+        $originalMiddleware = $this->currentMiddleware;
+
+        if ($middleware) {
+            // Remove specific middleware
+            $middlewareToRemove = is_array($middleware) ? $middleware : [$middleware];
+            $this->currentMiddleware = array_diff($originalMiddleware, $middlewareToRemove);
+        } else {
+            // Remove all middleware
+            $this->currentMiddleware = [];
+        }
+
+        // Execute the callback with the modified middleware stack
+        $callback();
+
+        // Restore the original middleware stack
+        $this->currentMiddleware = $originalMiddleware;
     }
 
     /**

@@ -66,6 +66,48 @@ class Routes
         $route->group([PublicMiddleware::class, RateLimitMiddleware::class], function () use ($route)
         {
             $route->single('get', '/demo-data', DemoData::class);
+
+            // Remove only the RateLimitMiddleware for specific routes (support for multiple middleware in an array)
+            $route->removeMiddleware(RateLimitMiddleware::class, function () use ($route) {
+                $route->single('get', '/without-role-middleware', [TestData::class, 'testDataHandler']);
+                $route->single('post', '/without-role-middleware', [TestData::class, 'testDataHandler']);
+            });
+
+            // Remove all middleware for specific routes
+            $route->removeMiddleware(null, function () use ($route) {
+                $route->single('get', '/without-any-middleware', [TestData::class, 'testDataHandler']);
+            });
+
+            $route->single('post', '/demo-data', DemoData::class);
+        });
+
+        // Prefix with multiple single routes
+        $route->prefix('/example-one', function () use ($route)
+        {
+            // Single route under '/example-one/route-a'
+            $route->single('get', '/route-a', [TestData::class, 'testDataHandler']);
+
+            // Single route under '/example-one/route-b'
+            $route->single('get', '/route-b', [TestData::class, 'testDataHandler']);
+        });
+
+        // Prefix with group and single routes
+        $route->prefix('/example-two', function () use ($route)
+        {
+            // Single route under '/example-two/route-x'
+            $route->single('get', '/route-x', [TestData::class, 'testDataHandler']);
+
+            // Grouped routes with middleware
+            $route->group([AuthMiddleware::class], function () use ($route) {
+                // Single route under '/example-two/protected/route-y'
+                $route->single('get', '/protected/route-y', [TestData::class, 'testDataHandler']);
+
+                // Single route under '/example-two/protected/route-z'
+                $route->single('get', '/protected/route-z', [TestData::class, 'testDataHandler']);
+            });
+
+            // Single route outside the group but still under '/example-two'
+            $route->single('get', '/route-w', [TestData::class, 'testDataHandler']);
         });
 
         // Instantiate the other handler class to work non static methods
