@@ -67,15 +67,18 @@ class Routes
         {
             $route->single('get', '/demo-data', DemoData::class);
 
-            // Remove only the RateLimitMiddleware for specific routes (support for multiple middleware in an array)
-            $route->removeMiddleware(RateLimitMiddleware::class, function () use ($route) {
-                $route->single('get', '/without-role-middleware', [TestData::class, 'testDataHandler']);
-                $route->single('post', '/without-role-middleware', [TestData::class, 'testDataHandler']);
+            // Remove only RateLimitMiddleware for specific routes (support for multiple middleware in an array)
+            $route->removeMiddleware(RateLimitMiddleware::class, function () use ($route)
+            {
+                $route->single('get', '/without-rate-limit', [TestData::class, 'testDataHandler']);
+                $route->single('post', '/without-rate-limit', [TestData::class, 'testDataHandler']);
             });
 
             // Remove all middleware for specific routes
-            $route->removeMiddleware(null, function () use ($route) {
+            $route->removeMiddleware(null, function () use ($route)
+            {
                 $route->single('get', '/without-any-middleware', [TestData::class, 'testDataHandler']);
+                $route->single('post', '/without-any-middleware', [TestData::class, 'testDataHandler']);
             });
 
             $route->single('post', '/demo-data', DemoData::class);
