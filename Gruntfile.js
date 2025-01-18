@@ -13,7 +13,7 @@ module.exports = function (pf) {
                 files: [{
                     expand: true,
                     cwd: 'resources/assets/css',
-                    src: ['*.css', '!*.min.css'],
+                    src: ['*.css', '!*.min.css', '!tailwind*.css'], // Excludes all files starting with "tailwind"
                     dest: 'resources/assets/css',
                     ext: '.min.css'
                 }]

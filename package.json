@@ -9,7 +9,7 @@
     "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",
     "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify",
     "translate": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
-    "prod": "NODE_ENV=production npm run tailwind && npm run translate && grunt build:prod"
+    "prod": "npm run translate && npm run tailwind && grunt build:prod"
   },
   "keywords": [],
   "author": "Mahamudul Hasan Rubel",

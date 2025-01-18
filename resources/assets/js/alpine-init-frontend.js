@@ -1,7 +1,7 @@
 document.addEventListener('alpine:init', () => {
     Alpine.prefix('pf-');
 
-    Alpine.data('darkModeToggle', () => ({
+    Alpine.data('themeModeToggle', () => ({
         mode: localStorage.getItem('plugin_frame_theme') || 'system', // Default to system mode
         init() {
             if (!localStorage.getItem('plugin_frame_theme')) {
@@ -20,9 +20,9 @@ document.addEventListener('alpine:init', () => {
             // Apply system, light, or dark mode to the root element
             if (mode === 'system') {
                 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                html.setAttribute('data-mode', prefersDarkScheme ? 'pf-dark' : 'pf-light');
+                html.setAttribute('theme-mode', prefersDarkScheme ? 'pf-dark' : 'pf-light');
             } else {
-                html.setAttribute('data-mode', `pf-${mode}`);
+                html.setAttribute('theme-mode', `pf-${mode}`);
             }
         },
     }));

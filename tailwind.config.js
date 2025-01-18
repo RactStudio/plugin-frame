@@ -2,7 +2,6 @@ const plugin = require('tailwindcss/plugin'); // Import the plugin function
 
 module.exports = {
   prefix: 'pf-', // Custom prefix for Tailwind classes
-  darkMode: ['class', '[data-mode="pf-dark"]'], // Enable dark mode with custom attribute
   content: [
     "./node_modules/flowbite/**/*.js", // Flowbite JS
     "./resources/views/**/*.{twig,html,php,js}" // Specify content files
@@ -40,22 +39,25 @@ module.exports = {
   },
   plugins: [
     plugin(function({ addVariant, e }) {
-      // Add custom variants for pf-dark and system modes
+      // Add custom variants for theme modes
+      addVariant('pf-color', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `[theme-mode="pf-color"] .${e(`pf-color${separator}${className}`)}`;
+        });
+      });
       addVariant('pf-dark', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
-          return `[data-mode="pf-dark"] .${e(`pf-dark${separator}${className}`)}`;
+          return `[theme-mode="pf-dark"] .${e(`pf-dark${separator}${className}`)}`;
         });
       });
-
       addVariant('pf-light', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
-          return `[data-mode="pf-light"] .${e(`pf-light${separator}${className}`)}`;
+          return `[theme-mode="pf-light"] .${e(`pf-light${separator}${className}`)}`;
         });
       });
-
       addVariant('pf-system', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
-          return `[data-mode="pf-system"] .${e(`pf-system${separator}${className}`)}`;
+          return `[theme-mode="pf-system"] .${e(`pf-system${separator}${className}`)}`;
         });
       });
     }),

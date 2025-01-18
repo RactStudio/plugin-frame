@@ -1,3 +1,14 @@
-@tailwind base;
+/* Tailwind base styles with a specific scope */
+@tailwind base; /* Includes normalize.css and resets */
+
+/* Custom overrides to remove normalize.css */
+@layer base {
+    #wpbody #titlediv #title-prompt-text {
+        padding: 3px 10px 10px 10px !important;
+    }
+    /* Add any other overrides for normalize.css properties */
+}
+
+/* Tailwind components and utilities */
 @tailwind components;
 @tailwind utilities;

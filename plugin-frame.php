@@ -33,6 +33,3 @@ define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Requ
 // Load The Plugin Frame Main
 require_once __DIR__ . '/app/Config/Main.php';
 new \PluginFrame\Config\Main();
-
-// WRITE ANYTHING BELOW THIS LINE
-// ##############################
