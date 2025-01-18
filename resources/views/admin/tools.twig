@@ -1,16 +1,47 @@
-<div id="pf-load" pf-data="{}" class="pf-bg-gray-50 pf-dark:pf-bg-gray-800 pf-color:pf-bg-yellow-400 pf-py-24 sm:pf-py-32 transition-all">
- 
-  <!-- Dark Mode Toggle -->
-  {% include 'lib/theme/theme-dropdown.twig' %}
+<div id="pf-load" pf-data="{}" class="pf-grid pf-grid-cols-12 pf-gap-2 sm:pf-pr-2.5 md:pf-pr-4 lg:pf-pr-5 pf-pr-2">
 
-  <!-- Main Content -->
-  <div class="pf-mx-auto pf-max-w-2xl pf-px-6 lg:pf-max-w-7xl lg:pf-px-8 transition-all">
-    <h2 class="pf-text-center pf-text-base pf-font-sans pf-font-semibold pf-text-indigo-600 pf-dark:pf-text-indigo-400">
-      {{ content }}
-    </h2>
-    <p class="pf-mx-auto pf-mt-2 pf-max-w-lg pf-text-balance pf-text-center pf-text-4xl pf-font-serif pf-font-semibold pf-tracking-tight pf-text-gray-950 pf-dark:pf-text-gray-200 sm:pf-text-5xl">
-      {{ __(description, plugin_domain) }}
-    </p>
+  <!-- Header -->
+  <header class="pf-col-span-12 pf-p-4 pf-mt-[-2.25rem] pf-rounded-md pf-shadow-md pf-border-1 pf-bg-red-500 pf-border-red-300 pf-light:pf-bg-gray-100 pf-light:pf-border-gray-300 pf-dark:pf-bg-gray-800 pf-dark:pf-border-gray-600">
+    {% include 'lib/header/header-modern.twig' %}
+  </header>
+
+  <!-- Notices -->
+  {% if wp_notices %}
+    <div class="wp-notices pf-col-span-12 pf-p-0 pf-m-0 sm:pf-m-1 md:pf-pt-[0.5rem] md:pf-my-0 md:pf-mx-[-1rem]">
+      {{ wp_notices|raw }}
+    </div>
+  {% endif %}
+
+  <!-- Main Content and Sidebar -->
+  <div class="pf-grid pf-col-span-12 pf-gap-2">
+
+    <!-- Main Content -->
+    <main class="pf-col-span-12 md:pf-col-span-8 lg:pf-col-span-9">
+
+      <!-- Dark Mode Toggle -->
+      {% include 'lib/theme/theme-basic.twig' %}
+      {% include 'lib/theme/theme-button.twig' %}
+
+      <div class="pf-mx-auto pf-max-w-2xl pf-px-6 lg:pf-max-w-7xl lg:pf-px-8 transition-all">
+        <h2 class="pf-text-center pf-text-base pf-font-sans pf-font-semibold pf-text-indigo-600 pf-dark:pf-text-indigo-400">
+          {{ content }}
+        </h2>
+        <p class="pf-mx-auto pf-mt-2 pf-max-w-lg pf-text-balance pf-text-center pf-text-4xl pf-font-serif pf-font-semibold pf-tracking-tight pf-text-gray-950 pf-dark:pf-text-gray-200 sm:pf-text-5xl">
+          {{ __(description, plugin_domain) }}
+        </p>
+      </div>
+
+    </main>
+
+    {# <!-- Right Sidebar -->
+    <aside class="pf-col-span-12 md:pf-col-span-4 lg:pf-col-span-3 pf-bg-gray-50 pf-dark:pf-bg-gray-800 pf-rounded pf-shadow-sm">
+      {% include 'lib/sidebar/sidebar-modern-right.twig' %}
+    </aside> #}
+
   </div>
 
+  <!-- Footer -->
+  <footer class="pf-col-span-12 pf-mt-6">
+    {% include 'lib/footer/footer-modern.twig' %}
+  </footer>
 </div>

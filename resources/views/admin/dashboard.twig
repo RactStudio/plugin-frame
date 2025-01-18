@@ -5,7 +5,12 @@
     {% include 'lib/header/header-modern.twig' %}
   </header>
 
-  <h2></h2>
+  <!-- Notices -->
+  {% if wp_notices %}
+    <div class="wp-notices pf-col-span-12 pf-p-0 pf-m-0 sm:pf-m-1 md:pf-pt-[0.5rem] md:pf-my-0 md:pf-mx-[-1rem]">
+      {{ wp_notices|raw }}
+    </div>
+  {% endif %}
 
   <!-- Main Content and Sidebar -->
   <div class="pf-grid pf-col-span-12 pf-gap-2">
@@ -13,7 +18,7 @@
     <!-- Main Content -->
     <main class="pf-col-span-12 md:pf-col-span-8 lg:pf-col-span-9">
 
-      <section class="pf-mt-3">
+      <section class="pf-mt-5">
         {% include 'lib/sections/section-hero-modern.twig' with {
           title: 'Welcome to Your Dashboard',
           subtitle: 'Manage your content, settings, and analytics all in one place.',

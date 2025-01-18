@@ -33,3 +33,24 @@ define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Requ
 // Load The Plugin Frame Main
 require_once __DIR__ . '/app/Config/Main.php';
 new \PluginFrame\Config\Main();
+
+
+// Hook to display the admin notice
+add_action(
+    'admin_notices',
+    function () {
+        echo '<div class="notice notice-success is-dismissible">';
+        echo '<p>' . esc_html__('1. This is a custom admin notice 1!', 'plugin-frame') . '</p>';
+        echo '</div>';
+    }
+);
+
+// Hook to display the admin notice
+add_action(
+    'admin_notices',
+    function () {
+        echo '<div class="notice notice-success is-dismissible">';
+        echo '<p>' . esc_html__('2. This is a custom admin notice 2!', 'plugin-frame') . '</p>';
+        echo '</div>';
+    }
+);
