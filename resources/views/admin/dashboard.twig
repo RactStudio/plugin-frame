@@ -1,9 +1,11 @@
-<div id="pf-load" pf-data="{}" class="pf-min-h-screen pf-grid pf-grid-cols-12 pf-gap-2 sm:pf-pr-2.5 md:pf-pr-4 lg:pf-pr-5 pf-pr-2">
+<div id="pf-load" pf-data="{}" class="pf-grid pf-grid-cols-12 pf-gap-2 sm:pf-pr-2.5 md:pf-pr-4 lg:pf-pr-5 pf-pr-2">
 
   <!-- Header -->
-  <header class="pf-col-span-12 pf-mt-[-36px] pf-bg-gradient-to-r pf-border pf-rounded-br-md pf-rounded-bl-md pf-p-4 pf-from-indigo-500 pf-to-indigo-600 pf-dark:pf-from-gray-700 pf-dark:pf-to-gray-800 pf-shadow-lg">
+  <header class="pf-col-span-12 pf-p-4 pf-mt-[-2.25rem] pf-rounded-md pf-shadow-md pf-border-1 pf-bg-red-500 pf-border-red-300 pf-light:pf-bg-gray-100 pf-light:pf-border-gray-300 pf-dark:pf-bg-gray-800 pf-dark:pf-border-gray-600">
     {% include 'lib/header/header-modern.twig' %}
   </header>
+
+  <h2></h2>
 
   <!-- Main Content and Sidebar -->
   <div class="pf-grid pf-col-span-12 pf-gap-2">
@@ -11,7 +13,7 @@
     <!-- Main Content -->
     <main class="pf-col-span-12 md:pf-col-span-8 lg:pf-col-span-9">
 
-      <section class="pf-mt-6">
+      <section class="pf-mt-3">
         {% include 'lib/sections/section-hero-modern.twig' with {
           title: 'Welcome to Your Dashboard',
           subtitle: 'Manage your content, settings, and analytics all in one place.',
@@ -22,9 +24,9 @@
       <section class="pf-mt-6">
         {% include 'lib/sections/section-grid-card.twig' with {
           cards: [
-            { title: 'Users', value: '1,250', change: '+5%', icon: 'assets/img/user-icon.svg' },
-            { title: 'Revenue', value: '$45,000', change: '+12%', icon: 'assets/img/revenue-icon.svg' },
-            { title: 'Signups', value: '350', change: '+8%', icon: 'assets/img/signup-icon.svg' }
+            { title: 'Users', value: '1,250', change: '+5%', icon: 'resources/assets/img/user.png' },
+            { title: 'Revenue', value: '$45,000', change: '+12%', icon: 'resources/assets/img/user.png' },
+            { title: 'Signups', value: '350', change: '+8%', icon: 'resources/assets/img/user.png' }
           ]
         } %}
       </section>

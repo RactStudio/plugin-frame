@@ -21,6 +21,7 @@ class Dashboard
             'title' => __('Dashboard', 'plugin-frame'),
             'content' => __('Plugin Frame Admin Dashboard!', 'plugin-frame'),
             'description' => 'Plugin Frame Dashboard description for without text-domain',
+            'plugin_frame_url' => PLUGIN_FRAME_URL,
         ]);
     }
 }
