@@ -32,6 +32,7 @@ class Dashboard
     {
         echo Views::render('admin/dashboard', [
             'plugin_domain'    => 'plugin-frame',
+            'plugin_frame_name'=> PLUGIN_FRAME_NAME,
             'title'            => __('Dashboard', 'plugin-frame'),
             'content'          => __('Plugin Frame Admin Dashboard!', 'plugin-frame'),
             'description'      => __('Plugin Frame Dashboard description for without text-domain', 'plugin-frame'),
