@@ -31,7 +31,7 @@ class Upgrade
                 error_log(PLUGIN_FRAME_NAME . ' upgrade process started.');
 
                 // Perform upgrade tasks
-                // $this->performUpgradeTasks();
+                $this->performUpgradeTasks();
 
                 // Log success
                 error_log(PLUGIN_FRAME_NAME . ' upgraded successfully.');
@@ -48,6 +48,7 @@ class Upgrade
         $newVersion = PLUGIN_FRAME_VERSION; // Replace with your plugin's constant or logic
 
         if (version_compare($currentVersion, $newVersion, '<')) {
+            
             // Example: Perform database migrations or other tasks
             $this->updateDatabaseSchema();
 

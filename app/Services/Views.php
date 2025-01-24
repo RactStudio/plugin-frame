@@ -2,6 +2,7 @@
 
 namespace PluginFrame\Services;
 
+use Exception;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
@@ -18,7 +19,7 @@ class Views
      * @param array $data Data to pass to the template.
      * @return string Rendered HTML.
      */
-    public static function render(string $template, array $data = [])
+    public static function render(string $template, $extension = 'twig', array $data = [])
     {
         // Set up the loader to scan all subdirectories inside resources/views
         $loader = new FilesystemLoader( PLUGIN_FRAME_DIR . 'resources/views' );
@@ -48,8 +49,8 @@ class Views
 
         try {
             // Render the template, adding the .twig extension automatically
-            return $twig->render("$template.twig", $data);
-        } catch (\Exception $e) {
+            return $twig->render("$template.{$extension}", $data);
+        } catch (Exception $e) {
             return '<p>Error rendering view: ' . htmlspecialchars($e->getMessage()) . '</p>';
         }
     }

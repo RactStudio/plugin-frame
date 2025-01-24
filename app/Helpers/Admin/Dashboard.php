@@ -13,15 +13,15 @@ class Dashboard
      * Captured WordPress notices.
      * @var string|null
      */
-    protected ?string $wp_notices = null;
+    // protected ?string $wp_notices = null;
 
     public function __construct()
     {
         // Capture notices
-        $this->wp_notices = $this->get_wp_notices();
+        // $this->wp_notices = $this->get_wp_notices();
 
         // Remove admin notices to prevent auto-injection
-        $this->disable_auto_injection();
+        // $this->disable_auto_injection();
     }
 
     /**
@@ -30,14 +30,14 @@ class Dashboard
      */
     public function render(): void
     {
-        echo Views::render('admin/dashboard', [
+        echo Views::render('admin/dashboard', 'twig', [
             'plugin_domain'    => 'plugin-frame',
             'plugin_frame_name'=> PLUGIN_FRAME_NAME,
             'title'            => __('Dashboard', 'plugin-frame'),
             'content'          => __('Plugin Frame Admin Dashboard!', 'plugin-frame'),
             'description'      => __('Plugin Frame Dashboard description for without text-domain', 'plugin-frame'),
             'plugin_frame_url' => PLUGIN_FRAME_URL,
-            'wp_notices'       => $this->wp_notices,
+            // 'wp_notices'       => $this->wp_notices,
         ]);
     }
 
