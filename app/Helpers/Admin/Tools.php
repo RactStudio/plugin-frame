@@ -30,7 +30,7 @@ class Tools
      */
     public function render(): void
     {
-        echo Views::render('admin/tools', [
+        echo Views::render('admin/tools',  'twig', [
             'plugin_domain'    => 'plugin-frame',
             'title'            => __('Tools', 'plugin-frame'),
             'content'          => __('Plugin Frame Tools Dashboard!', 'plugin-frame'),

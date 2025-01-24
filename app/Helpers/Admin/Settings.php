@@ -30,7 +30,7 @@ class Settings
      */
     public function render(): void
     {
-        echo Views::render('admin/settings', [
+        echo Views::render('admin/settings',  'twig', [
             'plugin_domain'    => 'plugin-frame',
             'title'            => __('Settings', 'plugin-frame'),
             'content'          => __('Plugin Frame Settings Dashboard!', 'plugin-frame'),
