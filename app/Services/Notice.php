@@ -52,7 +52,7 @@ class Notice
         // Hook into admin_notices
         add_action('admin_notices', function () use ($message, $classes, $iconHtml)
         {
-            echo sprintf('<div class="%s"><p>%s%s</p></div>', esc_attr($classes), $iconHtml, esc_html($message));
+            echo sprintf('<div class="pf-notice %s"><p>%s%s</p></div>', esc_attr($classes), $iconHtml, esc_html($message));
         });
     }
 
@@ -99,7 +99,7 @@ class Notice
     {
         $icons = [
             'info'    => '<span class="dashicons dashicons-info"></span>',
-            'success' => '<span class="dashicons dashicons-yes"></span>',
+            'success' => '<span class="dashicons dashicons-yes-alt"></span>',
             'warning' => '<span class="dashicons dashicons-warning"></span>',
             'error'   => '<span class="dashicons dashicons-dismiss"></span>',
         ];
@@ -109,16 +109,30 @@ class Notice
     /**
      * Format the icon for rendering in the notice.
      *
-     * @param string $icon Icon HTML or URL.
+     * @param string|null $icon Icon URL, HTML, or raw content.
      * @return string HTML for the icon.
      */
     private function formatIcon($icon)
     {
-        if (filter_var($icon, FILTER_VALIDATE_URL))
-        {
-            // If the icon is a URL, display it as an image
-            return '<img src="' . esc_url($icon) . '" alt="" style="width:20px;height:20px;margin-right:8px;vertical-align:middle;">';
+        // If no icon is provided, return an empty string
+        if (!$icon) {
+            return '';
         }
+
+        // Supported image file extensions
+        $supportedImageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp', 'svg'];
+
+        // Check if the icon is a URL
+        if (filter_var($icon, FILTER_VALIDATE_URL)) {
+            $extension = pathinfo(parse_url($icon, PHP_URL_PATH), PATHINFO_EXTENSION);
+            
+            // If the URL has a supported image extension, render as an <img> tag
+            if (in_array(strtolower($extension), $supportedImageExtensions)) {
+                return '<img src="' . esc_url($icon) . '" alt="" style="display:inline-block;width:20px;height:20px;margin-right:8px;vertical-align:middle;">';
+            }
+        }
+
+        // Everything else is treated as raw HTML (SVG, FontAwesome, custom HTML, etc.)
         return '<span class="notice-icon" style="margin-right:8px;vertical-align:middle;">' . $icon . '</span>';
     }
 }

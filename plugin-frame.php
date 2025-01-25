@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Plugin Frame
- * Plugin URI:  https://wpframework.com
+ * Plugin URI:  https://wp-frame.com
  * Description: A modern WordPress plugin development framework.
  * Version:     1.0.0
  * Author:      Mahamudul Hasan Rubel

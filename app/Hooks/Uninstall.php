@@ -2,8 +2,10 @@
 
 namespace PluginFrame\Hooks;
 
+use Exception;
+
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if (!defined('ABSPATH')) { exit; }
 
 class Uninstall
 {
@@ -12,39 +14,72 @@ class Uninstall
      */
     public static function init(): void
     {
-        register_uninstall_hook(PLUGIN_FRAME_FILE, [__CLASS__, 'onUninstall']);
+        register_uninstall_hook(PLUGIN_FRAME_FILE, [__CLASS__, 'handleUninstall']);
     }
 
     /**
-     * Logic executed during plugin uninstallation.
+     * Handle the uninstallation process.
      */
-    public static function onUninstall(): void
+    public static function handleUninstall(): void
     {
-        // Log uninstall process
-        error_log(PLUGIN_FRAME_NAME . ' uninstall process started.');
+        // Execute pre-uninstall hooks
+        do_action('plugin_frame_pre_uninstall');
 
-        // Perform cleanup tasks
-        self::performCleanup();
+        try {
+            // Core uninstall logic
+            self::uninstallCore();
 
-        // Log success
-        error_log(PLUGIN_FRAME_NAME . ' uninstalled successfully.');
+            // Execute post-uninstall hooks
+            do_action('plugin_frame_post_uninstall');
+
+            // Log successful uninstallation
+            error_log(PLUGIN_FRAME_NAME . ' uninstalled successfully.');
+
+        } catch (Exception $e) {
+            // Log the error
+            error_log(PLUGIN_FRAME_NAME . ' Uninstallation failed: ' . $e->getMessage());
+
+            // Show an error message to the admin if necessary
+            wp_die(__('Plugin uninstallation failed. Please check the error logs for details.', 'plugin-frame'));
+        }
     }
 
     /**
-     * Perform cleanup tasks.
+     * Core uninstall logic executed during plugin uninstallation.
      */
-    private static function performCleanup(): void
+    private static function uninstallCore(): void
+    {
+        // Example: Perform database cleanup or remove plugin-specific options
+        // self::cleanupDatabase();
+        // self::removePluginOptions();
+
+        // Extension point for additional tasks
+        do_action('plugin_frame_on_uninstall');
+    }
+
+    /**
+     * Perform database cleanup during uninstallation.
+     */
+    private static function cleanupDatabase(): void
     {
         global $wpdb;
 
+        // Example: Drop a custom database table
+        $tableName = $wpdb->prefix . 'example_table';
+        $wpdb->query("DROP TABLE IF EXISTS $tableName");
+
+        error_log('Database cleanup completed.');
+    }
+
+    /**
+     * Remove plugin-specific options and settings.
+     */
+    private static function removePluginOptions(): void
+    {
         // Example: Delete plugin-specific options
         delete_option('plugin_frame_version');
         delete_option('plugin_frame_settings');
 
-        // Example: Drop custom database tables
-        // $wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}example_table");
-
-        // Example: Remove custom user meta
-        // delete_metadata('user', 0, 'plugin_frame_meta_key', '', true);
+        error_log('Plugin-specific options removed.');
     }
 }
