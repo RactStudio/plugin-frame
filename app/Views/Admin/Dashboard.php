@@ -15,14 +15,13 @@ class Dashboard
      */
     public function render(): void
     {
-        echo Views::render('admin/dashboard-2', 'twig', [
+        echo Views::render('admin/dashboard', 'twig', [
             'plugin_domain'    => 'plugin-frame',
             'plugin_frame_name'=> PLUGIN_FRAME_NAME,
             'title'            => __('Dashboard', 'plugin-frame'),
             'content'          => __('Plugin Frame Admin Dashboard!', 'plugin-frame'),
             'description'      => __('Plugin Frame Dashboard description for without text-domain', 'plugin-frame'),
             'plugin_frame_url' => PLUGIN_FRAME_URL,
-            // 'wp_notices'       => $this->wp_notices,
         ]);
     }
 }

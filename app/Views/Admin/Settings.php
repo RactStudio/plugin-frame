@@ -10,21 +10,6 @@ defined('ABSPATH') || exit;
 class Settings
 {
     /**
-     * Captured WordPress notices.
-     * @var string|null
-     */
-    protected ?string $wp_notices = null;
-
-    public function __construct()
-    {
-        // Capture notices
-        $this->wp_notices = $this->get_wp_notices();
-
-        // Remove admin notices to prevent auto-injection
-        $this->disable_auto_injection();
-    }
-
-    /**
      * Render the content of the page.
      * @return void
      */
@@ -32,44 +17,11 @@ class Settings
     {
         echo Views::render('admin/settings',  'twig', [
             'plugin_domain'    => 'plugin-frame',
+            'plugin_frame_name'=> PLUGIN_FRAME_NAME,
             'title'            => __('Settings', 'plugin-frame'),
             'content'          => __('Plugin Frame Settings Dashboard!', 'plugin-frame'),
             'description'      => __('Plugin Frame Settings description for without text-domain', 'plugin-frame'),
             'plugin_frame_url' => PLUGIN_FRAME_URL,
-            'wp_notices'       => $this->wp_notices,
         ]);
     }
-
-    /**
-     * Fetch all WordPress notices for rendering.
-     * @return string
-     */
-    private function get_wp_notices(): string
-    {
-        ob_start();
-        do_action('admin_notices');
-        do_action('all_admin_notices');
-        $notices = ob_get_clean();
-
-        return $notices ?: '';
-    }
-
-    /**
-     * Disable auto-injection of WordPress notices.
-     * @return void
-     */
-    private function disable_auto_injection(): void
-    {
-        global $wp_filter;
-
-        // Ensure $wp_filter is defined and hooks are available
-        if (isset($wp_filter['admin_notices']) && is_a($wp_filter['admin_notices'], 'WP_Hook')) {
-            $wp_filter['admin_notices']->callbacks = [];
-        }
-
-        if (isset($wp_filter['all_admin_notices']) && is_a($wp_filter['all_admin_notices'], 'WP_Hook')) {
-            $wp_filter['all_admin_notices']->callbacks = [];
-        }
-    }
-
 }
