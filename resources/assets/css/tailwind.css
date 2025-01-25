@@ -6,6 +6,16 @@
     #wpbody #titlediv #title-prompt-text {
         padding: 3px 10px 10px 10px !important;
     }
+    .pf-notice.update-nag,
+    .pf-notice.notice,
+    .pf-notice.error,
+    .pf-notice.updated {
+        z-index: 100 !important;
+        margin-top: 0.75rem;
+        border-radius: 0.3rem;
+        padding: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
     /* Add any other overrides for normalize.css properties */
 }
 

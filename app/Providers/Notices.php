@@ -14,15 +14,16 @@ class Notices
      *
      * @var Notice
      */
-    protected $notices;
+    protected $notice;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->notices = new Notice();
-        $this->registerNotices();
+        $this->notice = new Notice();
+        // Display Notices (Comment to DISABLE all Notices)
+        // $this->registerNotices();
     }
 
     /**
@@ -31,61 +32,45 @@ class Notices
     protected function registerNotices()
     {
         // Example 1: Basic notice
-        $this->notices->addNotice(
+        $this->notice->addNotice(
             'Welcome to PluginFrame!',
             'success'
         );
 
-        // Example 2: Notice with a custom icon
-        $this->notices->addNotice(
-            'Custom notice with a FontAwesome icon.',
-            'info',
-            true,
-            '<i class="fa fa-info-circle"></i>'
-        );
-
-        // Example 3: Debug notice
-        $this->notices->addDebugNotice(
-            'This is a debug-only message thta dismiss is false.',
+        // Example 2: Debug notice
+        $this->notice->addDebugNotice(
+            'This is a debug-only message.',
             true
         );
 
-        // Example 4: Role-based notice
-        $this->notices->addRoleBasedNotice(
+        // Example 3: Role-based notice
+        $this->notice->addRoleBasedNotice(
             'Only admins can see this message.',
             'administrator',
             'warning'
         );
 
-        // Example 5: Conditional notice
-        $this->notices->addNotice(
-            'Only displayed on the "Settings" admin page.',
+        // Example 4: Conditional notice
+        $this->notice->addNotice(
+            'Only displayed on the "Settings" admin page without icon or img.',
             'info',
             true,
-            null,
+            false,
             function () {
-                return isset($_GET['page']) && $_GET['page'] === 'plugin-settings';
+                return isset($_GET['page']) && $_GET['page'] === 'plugin-frame';
             }
         );
 
-        // Example 6: Notice with image icon
-        $this->notices->addNotice(
+        // Example 5: Notice with image icon
+        $this->notice->addNotice(
             'This notice uses a custom image icon.',
             'error',
             true,
-            'https://example.com/icons/error-icon.png'
+            PLUGIN_FRAME_URL.'resources/assets/img/user.png'
         );
 
-        // Example 6: Notice with image icon
-        $this->notices->addNotice(
-            'This notice uses a no (false) icon.',
-            'error',
-            false,
-            false,
-        );
-
-        // Example 7: Notice for post edit screen only
-        $this->notices->addNotice(
+        // Example 6: Notice for post edit screen only
+        $this->notice->addNotice(
             'Only visible on post editing screens.',
             'info',
             true,

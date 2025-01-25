@@ -37,7 +37,7 @@ class Menus
             'manage_options',              // Capability
             'plugin-frame',                  // Menu slug
             [$dashboard, 'render'],          // Callback method
-            'dashicons-admin-home',           // Icon
+            'dashicons-grid-view',  // Icon
             2                                // Position
         );
 
