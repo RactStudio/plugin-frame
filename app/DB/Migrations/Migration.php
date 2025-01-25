@@ -3,9 +3,7 @@
 namespace Pluginframe\DB\Migrations;
 
 use Exception;
-use Pluginframe\DB\Models\BaseModel;
 use Pluginframe\DB\Utils\QueryBuilder;
-use Pluginframe\DB\Utils\DBHelper;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }
