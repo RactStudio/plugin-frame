@@ -1,6 +1,6 @@
 <?php
 
-namespace Pluginframe\DB\Meta;
+namespace Pluginframe\WPDB\Meta;
 
 use Pluginframe\DB\Utils\QueryBuilder;
 use Pluginframe\DB\Pagination\PaginationManager;
@@ -31,18 +31,13 @@ class Posts
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder,
+                $this->queryBuilder->table($this->table),
                 $page,
-                $perPage,
-                $this->table,
+                $perPage
             );
-        } else {
-            $result = $this->queryBuilder->table($this->table)->select(['*'])->get();
         }
 
-        return [
-            'data' => $result
-        ];
+        return $this->queryBuilder->table($this->table)->get();
     }
 
     /**
@@ -53,11 +48,7 @@ class Posts
      */
     public function getPost($postId)
     {
-        $result= $this->queryBuilder->table($this->table)->select(['*'])->where('ID', $postId)->execute();
-        
-        return [ 
-            'data' => $result
-        ];
+        return $this->queryBuilder->table($this->table)->where('ID', $postId)->get();
     }
 
     /**
@@ -68,12 +59,7 @@ class Posts
      */
     public function insertPost($data)
     {
-        $insert = $this->queryBuilder
-                ->table($this->table)
-                ->select(['*'])
-                ->insert($data);
-        
-        return  $insert;
+        return $this->queryBuilder->table($this->table)->insert($data);
     }
 
     /**
@@ -85,13 +71,10 @@ class Posts
      */
     public function updatePost($postId, $data)
     {
-        $update = $this->queryBuilder
-                ->table($this->table)
-                ->select(['*'])
-                ->where('ID', $postId)
-                ->update($data);
-        
-        return  $update;
+        return $this->queryBuilder
+            ->table($this->table)
+            ->where('ID', $postId)
+            ->update($data);
     }
 
     /**
@@ -102,12 +85,6 @@ class Posts
      */
     public function deletePost($postId)
     {
-        $delete = $this->queryBuilder
-                ->table($this->table)
-                ->select(['*'])
-                ->where('ID', $postId)
-                ->delete();
-
-        return  $delete;
+        return $this->queryBuilder->table($this->table)->where('ID', $postId)->delete();
     }
 }

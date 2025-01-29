@@ -2,11 +2,29 @@
 
 namespace PluginFrame\Routes\Handlers;
 
+use PluginFrame\DB\Meta\PostMeta;
+
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }
 
 class TestData
 {
+    // Public endpoint display
+    public static function testDBposts($request)
+    {
+        // [wordpress root]/wp-json/plugin-frame/v1/db-posts?page=1&per_page=10
+
+        // Get pagination parameters from the request
+        $page = intval($request->get_param('page')) ?: 1; // Default to page 1 if not specified
+        $perPage = intval($request->get_param('per_page')) ?: 5; // Default to 10 items per page
+        $post_id = 	25;
+        $meta_key = '_edit_lock';
+
+        $response = (new PostMeta())->getMeta($post_id, $meta_key);
+
+        return rest_ensure_response($response);
+
+    }
 
     // Public endpoint display posts and comments with pagination
     public static function testDataHandler($request)

@@ -2,6 +2,7 @@
 
 namespace Pluginframe\DB\Pagination;
 
+use Exception;
 use Pluginframe\DB\Utils\QueryBuilder;
 use WP_Query;
 
@@ -20,25 +21,30 @@ class PaginationManager
      * @param int $page The current page number.
      * @param int $perPage The number of items per page.
      * @param string $table The table name for the query.
-     * @param array $select The columns to select.
+     * @param array $select The columns to select (default is all `*`).
      * @param array $where The WHERE conditions.
      * @param bool $countQuery Whether to perform a count query.
      * @return array The results or the total record count.
+     * @throws Exception If the table name is missing.
      */
-    public function getPaginatedResults(QueryBuilder $queryBuilder, $page = 1, $perPage = 10, $table = '', $select = [], $where = [], $countQuery = false)
+    public function getPaginatedResults(QueryBuilder $queryBuilder, $page = 1, $perPage = 10, $table = '', $select = ['*'], $where = [])
     {
-        // Set the query parameters
+        if (empty($table)) {
+            throw new Exception('Table name must be specified for pagination.');
+        }
+
+        // Set the query table and columns
         $queryBuilder->table($table);
         $queryBuilder->select($select);
 
-        // Add where conditions if provided
+        // Apply WHERE conditions if provided
         $this->applyWhereConditions($queryBuilder, $where);
 
-        // Set pagination parameters
+        // Apply pagination (LIMIT, OFFSET)
         $this->applyPagination($queryBuilder, $page, $perPage);
 
-        // Return either the paginated results or the count based on $countQuery
-        return $countQuery ? $this->getTotalRecords($queryBuilder) : $this->fetchResultsWithMetadata($queryBuilder, $page, $perPage);
+        // Fetch paginated results
+        return $this->fetchResultsWithMetadata($queryBuilder, $page, $perPage);
     }
 
     /**

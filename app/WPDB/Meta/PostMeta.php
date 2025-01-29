@@ -1,6 +1,6 @@
 <?php
 
-namespace Pluginframe\DB\Meta;
+namespace Pluginframe\WPDB\Meta;
 
 use Pluginframe\DB\Utils\QueryBuilder;
 use Pluginframe\DB\Pagination\PaginationManager;
@@ -34,18 +34,13 @@ class PostMeta
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder,
+                $this->queryBuilder->table($this->table),
                 $page,
-                $perPage,
-                $this->table,
+                $perPage
             );
-        } else {
-            $result = $this->queryBuilder->table($this->table)->select(['*'])->get();
         }
 
-        return [
-            'data' => $result
-        ];
+        return $this->queryBuilder->table($this->table)->get();
     }
 
     /**
@@ -60,18 +55,13 @@ class PostMeta
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder->where('post_id', $postId),
+                $this->queryBuilder->table($this->table)->where('post_id', $postId),
                 $page,
-                $perPage,
-                $this->table,
+                $perPage
             );
-        } else {
-            $result = $this->queryBuilder->table($this->table)->select(['*'])->where('post_id', $postId)->get();
         }
 
-        return [
-            'data' => $result
-        ];
+        return $this->queryBuilder->table($this->table)->where('post_id', $postId)->get();
     }
 
     /**
@@ -83,16 +73,11 @@ class PostMeta
      */
     public function getMeta($postId, $metaKey)
     {
-        $result = $this->queryBuilder
-                ->table($this->table)
-                ->select(['*'])
-                ->where('post_id', $postId)
-                ->where('meta_key', $metaKey)
-                ->get();
-
-        return [
-            'data' => $result
-        ];
+        return $this->queryBuilder
+            ->table($this->table)
+            ->where('post_id', $postId)
+            ->where('meta_key', $metaKey)
+            ->get();
     }
 
     /**
@@ -105,14 +90,11 @@ class PostMeta
      */
     public function updateMeta($postId, $metaKey, $metaValue)
     {
-        $update = $this->queryBuilder
-                ->table($this->table)
-                ->select(['*'])
-                ->where('post_id', $postId)
-                ->where('meta_key', $metaKey)
-                ->update(['meta_value' => $metaValue]);
-
-        return $update;
+        return $this->queryBuilder
+            ->table($this->table)
+            ->where('post_id', $postId)
+            ->where('meta_key', $metaKey)
+            ->update(['meta_value' => $metaValue]);
     }
 
     /**

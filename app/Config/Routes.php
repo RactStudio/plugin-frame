@@ -31,6 +31,9 @@ class Routes
         $route = new Helpers('plugin-frame/v1');
 
         // Public Endpoint Routes with No middleware
+        $route->single('get', '/db-posts', [new TestData(), 'testDBposts']);
+
+        // Public Endpoint Routes with No middleware
         $route->single('get', '/nowar', [new TestData(), 'testDataHandler']);
 
         // Public Endpoint Routes with new class and method handler
