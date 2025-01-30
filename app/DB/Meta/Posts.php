@@ -61,53 +61,65 @@ class Posts
     }
 
     /**
-     * Insert a new post.
+     * Insert a new post with optional metadata.
      *
-     * @param array $data The data to insert.
-     * @return bool|int
+     * @param array $postData The post data.
+     * @param array $metaData Optional metadata.
+     * @return int|WP_Error Post ID or error.
      */
-    public function insertPost($data)
+    public function insertPost($postData, $metaData = [])
     {
-        $insert = $this->queryBuilder
-                ->table($this->table)
-                ->select(['*'])
-                ->insert($data);
-        
-        return  $insert;
+        $postId = wp_insert_post($postData);
+
+        if (!is_wp_error($postId) && !empty($metaData)) {
+            foreach ($metaData as $key => $value) {
+                update_post_meta($postId, $key, $value);
+            }
+        }
+
+        return $postId;
     }
 
     /**
-     * Update a post by its ID.
+     * Update a post and its metadata.
      *
-     * @param int $postId The post ID.
-     * @param array $data The data to update.
-     * @return bool
+     * @param int $postId Post ID.
+     * @param array $postData The post data.
+     * @param array $metaData Optional metadata updates.
+     * @return bool|WP_Error True on success, WP_Error on failure.
      */
-    public function updatePost($postId, $data)
+    public function updatePost($postId, $postData, $metaData = [])
     {
-        $update = $this->queryBuilder
-                ->table($this->table)
-                ->select(['*'])
-                ->where('ID', $postId)
-                ->update($data);
-        
-        return  $update;
+        $postData['ID'] = $postId;
+        $updated = wp_update_post($postData);
+
+        if (!is_wp_error($updated) && !empty($metaData)) {
+            foreach ($metaData as $key => $value) {
+                update_post_meta($postId, $key, $value);
+            }
+        }
+
+        return !is_wp_error($updated);
     }
 
     /**
-     * Delete a post by its ID.
+     * Delete a post and its metadata.
      *
-     * @param int $postId The post ID.
-     * @return bool
+     * @param int $postId Post ID.
+     * @return bool True on success, false on failure.
      */
     public function deletePost($postId)
     {
-        $delete = $this->queryBuilder
-                ->table($this->table)
-                ->select(['*'])
-                ->where('ID', $postId)
-                ->delete();
+        global $wpdb;
 
-        return  $delete;
+        // Delete post
+        $deleted = wp_delete_post($postId, true);
+
+        if ($deleted) {
+            // Delete all metadata related to this post
+            $wpdb->delete($wpdb->postmeta, ['post_id' => $postId]);
+        }
+
+        return (bool) $deleted;
     }
 }

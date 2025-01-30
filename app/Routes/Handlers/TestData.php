@@ -20,7 +20,7 @@ class TestData
         $post_id = 	25;
         $meta_key = '_edit_lock';
 
-        $response = (new PostMeta())->getMeta($post_id, $meta_key);
+        $response = (new PostMeta())->getPostMeta($post_id, $meta_key);
 
         return rest_ensure_response($response);
 

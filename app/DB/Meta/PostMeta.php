@@ -81,7 +81,7 @@ class PostMeta
      * @param string $metaKey The metadata key.
      * @return mixed
      */
-    public function getMeta($postId, $metaKey)
+    public function getPostMeta($postId, $metaKey)
     {
         $result = $this->queryBuilder
                 ->table($this->table)
@@ -96,55 +96,40 @@ class PostMeta
     }
 
     /**
-     * Add or update metadata for a post.
+     * Insert post metadata.
      *
      * @param int $postId The Post ID.
      * @param string $metaKey The metadata key.
      * @param mixed $metaValue The metadata value.
-     * @return bool
+     * @return bool|int Meta ID or false on failure.
      */
-    public function updateMeta($postId, $metaKey, $metaValue)
+    public function insertPostMeta($postId, $metaKey, $metaValue)
     {
-        $update = $this->queryBuilder
-                ->table($this->table)
-                ->select(['*'])
-                ->where('post_id', $postId)
-                ->where('meta_key', $metaKey)
-                ->update(['meta_value' => $metaValue]);
-
-        return $update;
+        return update_post_meta($postId, $metaKey, $metaValue);
     }
 
     /**
-     * Insert new post metadata.
+     * Update post metadata.
      *
      * @param int $postId The Post ID.
      * @param string $metaKey The metadata key.
      * @param mixed $metaValue The metadata value.
-     * @return bool|int
+     * @return bool|int Meta ID or false on failure.
      */
-    public function insertMeta($postId, $metaKey, $metaValue)
+    public function updatePostMeta($postId, $metaKey, $metaValue)
     {
-        return $this->queryBuilder->table($this->table)->insert([
-            'post_id' => $postId,
-            'meta_key' => $metaKey,
-            'meta_value' => $metaValue,
-        ]);
+        return update_post_meta($postId, $metaKey, $metaValue);
     }
 
     /**
-     * Delete metadata for a post by key.
+     * Delete metadata for a post.
      *
      * @param int $postId The Post ID.
      * @param string $metaKey The metadata key.
-     * @return bool
+     * @return bool True on success, false on failure.
      */
     public function deleteMeta($postId, $metaKey)
     {
-        return $this->queryBuilder
-            ->table($this->table)
-            ->where('post_id', $postId)
-            ->where('meta_key', $metaKey)
-            ->delete();
+        return delete_post_meta($postId, $metaKey);
     }
 }
