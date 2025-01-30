@@ -43,7 +43,7 @@ class LogCleaner
     {
         // Check if already scheduled
         if (!$this->isScheduled()) {
-            $this->scheduler->scheduleRecurring(self::$hookName, HOUR_IN_SECONDS, [], [$this, 'deleteLogs']);
+            $this->scheduler->scheduleRecurring(self::$hookName, HOUR_IN_SECONDS, [$this, 'deleteLogs']);
         }
 
         // Register the task handler

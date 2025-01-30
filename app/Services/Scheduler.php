@@ -10,7 +10,7 @@ class Scheduler
     /**
      * Schedule a recurring cron job.
      */
-    public function scheduleRecurring(string $hook, int $interval, array $args = [], callable $callback): void
+    public function scheduleRecurring(string $hook, int $interval, callable $callback, array $args = []): void
     {
         add_action($hook, $callback);
 
@@ -30,7 +30,7 @@ class Scheduler
     /**
      * Schedule a single cron job.
      */
-    public function scheduleSingle(string $hook, int $time, array $args = [], callable $callback): void
+    public function scheduleSingle(string $hook, int $time, callable $callback, array $args = []): void
     {
         add_action($hook, $callback);
 

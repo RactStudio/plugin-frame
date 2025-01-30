@@ -42,10 +42,13 @@ class Routes
         // Signin Endpoint Routes with new class and method handler
         $route->single('get', '/signin', [new TestData(), 'testDataHandler'], [AuthUserPassMiddleware::class, RateLimitMiddleware::class]);
 
-        $route->group([PublicMiddleware::class, RateLimitMiddleware::class], function () use($route)
-        {
-            $route->single('get', '/public', [new PublicData(), 'publicDataHandler']);
-        });
+        $route->group(
+            function () use($route)
+            {
+                $route->single('get', '/public', [new PublicData(), 'publicDataHandler']);
+            },
+            [PublicMiddleware::class, RateLimitMiddleware::class]
+        );
 
         // Single route with class and static method
         $route->single('get', '/test-1', [TestData::class, 'testDataHandler'], [
@@ -54,10 +57,13 @@ class Routes
         ]);
 
         // Grouped routes with middleware and static method handler
-        $route->group([PublicMiddleware::class, RateLimitMiddleware::class], function () use ($route)
-        {
-            $route->single('get', '/public-1', [PublicData::class, 'publicDataHandler']);
-        });
+        $route->group(
+            function () use ($route)
+            {
+                $route->single('get', '/public-1', [PublicData::class, 'publicDataHandler']);
+            },
+            [PublicMiddleware::class, RateLimitMiddleware::class]
+        );
 
         // Single route using a class's handle method dynamically by autoloading handle method
         $route->single('get', '/test-data', HandleData::class, [
@@ -66,26 +72,33 @@ class Routes
         ]);
 
         // Grouped route using a class's handle method by automatically calling handle method
-        $route->group([PublicMiddleware::class, RateLimitMiddleware::class], function () use ($route)
-        {
-            $route->single('get', '/demo-data', DemoData::class);
-
-            // Remove only RateLimitMiddleware for specific routes (support for multiple middleware in an array)
-            $route->removeMiddleware(RateLimitMiddleware::class, function () use ($route)
+        $route->group(
+            function () use ($route)
             {
-                $route->single('get', '/without-rate-limit', [TestData::class, 'testDataHandler']);
-                $route->single('post', '/without-rate-limit', [TestData::class, 'testDataHandler']);
-            });
+                $route->single('get', '/demo-data', DemoData::class);
 
-            // Remove all middleware for specific routes
-            $route->removeMiddleware(null, function () use ($route)
-            {
-                $route->single('get', '/without-any-middleware', [TestData::class, 'testDataHandler']);
-                $route->single('post', '/without-any-middleware', [TestData::class, 'testDataHandler']);
-            });
+                // Remove only RateLimitMiddleware for specific routes (support for multiple middleware in an array)
+                $route->removeMiddleware(
+                    function () use ($route)
+                    {
+                        $route->single('get', '/without-rate-limit', [TestData::class, 'testDataHandler']);
+                        $route->single('post', '/without-rate-limit', [TestData::class, 'testDataHandler']);
+                    },
+                    RateLimitMiddleware::class
+                );
 
-            $route->single('post', '/demo-data', DemoData::class);
-        });
+                // Remove all middleware for specific routes
+                $route->removeMiddleware(function () use ($route)
+                    {
+                        $route->single('get', '/without-any-middleware', [TestData::class, 'testDataHandler']);
+                        $route->single('post', '/without-any-middleware', [TestData::class, 'testDataHandler']);
+                    }
+                );
+
+                $route->single('post', '/demo-data', DemoData::class);
+            },
+            [PublicMiddleware::class, RateLimitMiddleware::class]
+        );
 
         // Prefix with multiple single routes
         $route->prefix('/example-one', function () use ($route)
@@ -104,13 +117,17 @@ class Routes
             $route->single('get', '/route-x', [TestData::class, 'testDataHandler']);
 
             // Grouped routes with middleware
-            $route->group([AuthMiddleware::class], function () use ($route) {
-                // Single route under '/example-two/protected/route-y'
-                $route->single('get', '/protected/route-y', [TestData::class, 'testDataHandler']);
+            $route->group(
+                function () use ($route)
+                {
+                    // Single route under '/example-two/protected/route-y'
+                    $route->single('get', '/protected/route-y', [TestData::class, 'testDataHandler']);
 
-                // Single route under '/example-two/protected/route-z'
-                $route->single('get', '/protected/route-z', [TestData::class, 'testDataHandler']);
-            });
+                    // Single route under '/example-two/protected/route-z'
+                    $route->single('get', '/protected/route-z', [TestData::class, 'testDataHandler']);
+                },
+                [AuthMiddleware::class]
+            );
 
             // Single route outside the group but still under '/example-two'
             $route->single('get', '/route-w', [TestData::class, 'testDataHandler']);
@@ -120,24 +137,30 @@ class Routes
         $otherHandlers = new OtherHandlers();
 
         // Authenticated Routes
-        $route->group([CORSMiddleware::class, AuthUserPassMiddleware::class], function () use ($route, $otherHandlers)
-        {
-            $route->single('get', '/secure-data', [$otherHandlers, 'getSecureData']);
-            $route->single('post', '/secure-data', [$otherHandlers, 'postSecureData']);
-            $route->single('post', '/file-upload', [$otherHandlers, 'fileUploadHandler']);
-            $route->single('get', '/custom-response', [$otherHandlers, 'customResponseHandler']);
-        });
+        $route->group(
+            function () use ($route, $otherHandlers)
+            {
+                $route->single('get', '/secure-data', [$otherHandlers, 'getSecureData']);
+                $route->single('post', '/secure-data', [$otherHandlers, 'postSecureData']);
+                $route->single('post', '/file-upload', [$otherHandlers, 'fileUploadHandler']);
+                $route->single('get', '/custom-response', [$otherHandlers, 'customResponseHandler']);
+            },
+            [CORSMiddleware::class, AuthUserPassMiddleware::class]
+        );
 
         // Authentication with Handler Methods
         $route->single('post', '/auth/application-password', [$otherHandlers, 'handleApplicationPasswordAuth'], [PublicMiddleware::class]);
         $route->single('post', '/auth/username-password', [$otherHandlers, 'handleUsernamePasswordAuth'], [PublicMiddleware::class]);
 
         // Admin-Only Routes
-        $route->group([AuthMiddleware::class, RoleMiddleware::class], function () use ($route, $otherHandlers)
-        {
-            $route->single('get', '/admin-only', [$otherHandlers, 'adminOnlyHandler']);
-            $route->single('get', '/nested-admin-data', [$otherHandlers, 'nestedAdminDataHandler']);
-        });
+        $route->group(
+            function () use ($route, $otherHandlers)
+            {
+                $route->single('get', '/admin-only', [$otherHandlers, 'adminOnlyHandler']);
+                $route->single('get', '/nested-admin-data', [$otherHandlers, 'nestedAdminDataHandler']);
+            },
+            [AuthMiddleware::class, RoleMiddleware::class]
+        );
 
         // CRUD Operations
         $route->single('post', '/data/add', [$otherHandlers, 'addDataHandler'], [AuthMiddleware::class]);
@@ -171,13 +194,19 @@ class Routes
         ]);
 
         // Deeply Nested Middleware
-        $route->group([AuthMiddleware::class], function () use ($route, $otherHandlers)
-        {
-            $route->group([RoleMiddleware::class], function () use ($route, $otherHandlers)
+        $route->group(
+            function () use ($route, $otherHandlers)
             {
-                $route->single('get', '/nested-protected-endpoint', [$otherHandlers, 'nestedProtectedHandler'], [CORSMiddleware::class]);
-            });
-        });
+                $route->group(
+                    function () use ($route, $otherHandlers)
+                    {
+                        $route->single('get', '/nested-protected-endpoint', [$otherHandlers, 'nestedProtectedHandler'], [CORSMiddleware::class]);
+                    },
+                    [RoleMiddleware::class]
+                );
+            },
+            [AuthMiddleware::class]
+        );
 
         // Advanced Examples
         $route->single('get', '/data/search', [$otherHandlers, 'searchDataHandler'], [AuthMiddleware::class]);
