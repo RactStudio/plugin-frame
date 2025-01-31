@@ -2,7 +2,11 @@
 
 namespace PluginFrame\Routes\Handlers;
 
-use PluginFrame\DB\Meta\PostMeta;
+use Pluginframe\DB\Meta\PostMeta;
+use PluginFrame\DB\Meta\Comments;
+use PluginFrame\DB\Meta\CommentMeta;
+use PluginFrame\DB\Meta\Posts;
+use Pluginframe\DB\Pagination\PaginationManager;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }
@@ -16,13 +20,17 @@ class TestData
 
         // Get pagination parameters from the request
         $page = intval($request->get_param('page')) ?: 1; // Default to page 1 if not specified
-        $perPage = intval($request->get_param('per_page')) ?: 5; // Default to 10 items per page
-        $post_id = 	25;
-        $meta_key = '_edit_lock';
+        $perPage = intval($request->get_param('per_page')) ?: 2; // Default to 10 items per page
+        $postId = 	1;
+        // $columns = 'ID';
+        $columns = ['comment_ID', 'comment_post_id', 'comment_date', 'comment_content'];
 
-        $response = (new PostMeta())->getPostMeta($post_id, $meta_key);
-
+        $response = (new Comments())->getComment($postId, $page, $perPage);
+        $response[] = (new CommentMeta())->getCommentMeta($postId, $page, $perPage);
+        // $response = (new Comments())->allComments($page, $perPage, $columns);
+        
         return rest_ensure_response($response);
+
 
     }
 

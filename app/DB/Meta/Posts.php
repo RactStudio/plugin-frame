@@ -25,9 +25,10 @@ class Posts
      *
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function allPosts($page = 1, $perPage = 10)
+    public function allPosts($page = 1, $perPage = 10, $columns = ['*'])
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
@@ -35,9 +36,10 @@ class Posts
                 $page,
                 $perPage,
                 $this->table,
+                [$columns],
             );
         } else {
-            $result = $this->queryBuilder->table($this->table)->select(['*'])->get();
+            $result = $this->queryBuilder->table($this->table)->select($columns)->get();
         }
 
         return [
@@ -46,16 +48,30 @@ class Posts
     }
 
     /**
-     * Get a specific post by its ID.
+     * Get a specific post by its ID with pagination.
      *
      * @param int $postId The post ID.
-     * @return mixed
+     * @param int $page The current page.
+     * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected (default is all `*`).
+     * @return array
      */
-    public function getPost($postId)
+    public function getPost($postId, $page = 1, $perPage = 10, $columns = ['*']): array
     {
-        $result= $this->queryBuilder->table($this->table)->select(['*'])->where('ID', $postId)->execute();
-        
-        return [ 
+        if (method_exists($this->paginationManager, 'getPaginatedResults')) {
+            return $this->paginationManager->getPaginatedResults(
+                $this->queryBuilder,
+                $page,
+                $perPage,
+                $this->table,
+                [$columns],
+                ['ID' => $postId,],
+            );
+        } else {
+            $result = $this->queryBuilder->table($this->table)->select($columns)->where('ID', $postId)->get();
+        }
+
+        return [
             'data' => $result
         ];
     }

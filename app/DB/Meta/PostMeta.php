@@ -28,9 +28,10 @@ class PostMeta
      *
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected.
      * @return array
      */
-    public function allPostMeta($page = 1, $perPage = 10)
+    public function allPostMeta($page = 1, $perPage = 10, $columns = ['*']): array
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
@@ -38,9 +39,10 @@ class PostMeta
                 $page,
                 $perPage,
                 $this->table,
+                [$columns],
             );
         } else {
-            $result = $this->queryBuilder->table($this->table)->select(['*'])->get();
+            $result = $this->queryBuilder->table($this->table)->select($columns)->get();
         }
 
         return [
@@ -54,19 +56,22 @@ class PostMeta
      * @param int $postId The Post ID to get metadata for.
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function singlePostMeta($postId, $page = 1, $perPage = 10)
+    public function getPostMeta($postId, $page = 1, $perPage = 10, $columns = ['*']): array
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder->where('post_id', $postId),
+                $this->queryBuilder,
                 $page,
                 $perPage,
                 $this->table,
+                [$columns],
+                ['post_id' => $postId,],
             );
         } else {
-            $result = $this->queryBuilder->table($this->table)->select(['*'])->where('post_id', $postId)->get();
+            $result = $this->queryBuilder->table($this->table)->select($columns)->where('post_id', $postId)->get();
         }
 
         return [
@@ -79,13 +84,14 @@ class PostMeta
      *
      * @param int $postId The Post ID.
      * @param string $metaKey The metadata key.
-     * @return mixed
+     * @param array $columns The items is selected (default is all `*`).
+     * @return array
      */
-    public function getPostMeta($postId, $metaKey)
+    public function singlePostMeta($postId, $metaKey, $columns = ['*']): array
     {
         $result = $this->queryBuilder
                 ->table($this->table)
-                ->select(['*'])
+                ->select($columns)
                 ->where('post_id', $postId)
                 ->where('meta_key', $metaKey)
                 ->get();
