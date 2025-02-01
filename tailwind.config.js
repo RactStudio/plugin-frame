@@ -62,6 +62,6 @@ module.exports = {
       });
     }),
     // Flowbite plugin
-    // require('flowbite/plugin'),
+    require('flowbite/plugin'),
   ],
 };

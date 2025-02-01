@@ -34,18 +34,18 @@ class Enqueue
      * @param string|bool $ver
      * @param bool $inFooter
      * @param callable|null $condition
-     * @param string $tagAttribute 'defer', 'async', or ''
+     * @param string $tagAttribute 'defer', 'async', 'module', or ''
      */
-    public function registerFrontendScript($handle, $src, $deps = [], $ver = false, $inFooter = false, $condition = null, $tagAttribute = 'non')
+    public function registerFrontendScript($handle, $src, $deps = [], $ver = false, $inFooter = false, $condition = null, $tagAttribute = null)
     {
         add_action('wp_enqueue_scripts', function () use ($handle, $src, $deps, $ver, $inFooter, $condition, $tagAttribute) {
             if (!$condition || (is_callable($condition) && $condition())) {
                 wp_enqueue_script($handle, $src, $deps, $ver, $inFooter);
 
-                if ($tagAttribute !== null && in_array($tagAttribute, ['defer', 'async'])) {
+                if ($tagAttribute !== null && in_array($tagAttribute, ['defer', 'async', 'module'])) {
                     add_filter('script_loader_tag', function ($tag, $enqueuedHandle) use ($handle, $tagAttribute) {
                         if ($enqueuedHandle === $handle) {
-                            return str_replace(' src', " $tagAttribute src", $tag);
+                            return str_replace('<script ', "<script type=\"$tagAttribute\" ", $tag);
                         }
                         return $tag;
                     }, 10, 2);
@@ -81,18 +81,18 @@ class Enqueue
      * @param string|bool $ver
      * @param bool $inFooter
      * @param callable|null $condition
-     * @param string $tagAttribute 'defer', 'async', or ''
+     * @param string $tagAttribute 'defer', 'async', 'module', or ''
      */
-    public function registerAdminScript($handle, $src, $deps = [], $ver = false, $inFooter = false, $condition = null, $tagAttribute = 'non')
+    public function registerAdminScript($handle, $src, $deps = [], $ver = false, $inFooter = false, $condition = null, $tagAttribute = null)
     {
         add_action('admin_enqueue_scripts', function () use ($handle, $src, $deps, $ver, $inFooter, $condition, $tagAttribute) {
             if (!$condition || (is_callable($condition) && $condition())) {
                 wp_enqueue_script($handle, $src, $deps, $ver, $inFooter);
 
-                if ($tagAttribute !== null && in_array($tagAttribute, ['defer', 'async'])) {
+                if ($tagAttribute !== null && in_array($tagAttribute, ['defer', 'async', 'module'])) {
                     add_filter('script_loader_tag', function ($tag, $enqueuedHandle) use ($handle, $tagAttribute) {
                         if ($enqueuedHandle === $handle) {
-                            return str_replace(' src', " $tagAttribute src", $tag);
+                            return str_replace('<script ', "<script type=\"$tagAttribute\" ", $tag);
                         }
                         return $tag;
                     }, 10, 2);
@@ -100,5 +100,4 @@ class Enqueue
             }
         });
     }
-
 }

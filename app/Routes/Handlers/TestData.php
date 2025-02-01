@@ -26,7 +26,7 @@ class TestData
         $columns = ['comment_ID', 'comment_post_id', 'comment_date', 'comment_content'];
 
         $response = (new Comments())->getComment($postId, $page, $perPage);
-        $response[] = (new CommentMeta())->getCommentMeta($postId, $page, $perPage);
+        $response['data'][] = (new CommentMeta())->getCommentMeta($postId, $page, $perPage)['data'];
         // $response = (new Comments())->allComments($page, $perPage, $columns);
         
         return rest_ensure_response($response);

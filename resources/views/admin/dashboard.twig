@@ -11,6 +11,7 @@
     <!-- Main Content -->
     <main class="pf-col-span-12 md:pf-col-span-8 lg:pf-col-span-9">
 
+
       <section class="pf-mt-5">
         {% include 'lib/sections/section-hero-modern.twig' with {
           title: title,
@@ -18,6 +19,36 @@
           action_button: '<a href="#" class="pf-btn pf-btn-primary">Get Started</a>'
         } %}
       </section>
+
+
+
+<div x-data="{ showModal: false }">
+  <button @click="showModal = true" class="pf-bg-green-500 pf-text-white pf-py-2 pf-px-4 pf-rounded">
+    Open Modal
+  </button>
+
+  <div x-show="showModal" class="pf-flex pf-fixed pf-inset-0 pf-bg-gray-900 pf-bg-opacity-50 pf-justify-center pf-items-center">
+    <div class="pf-bg-white pf-rounded-lg pf-shadow-lg pf-p-6 pf-max-w-md pf-w-full">
+      <h2 class="pf-text-lg pf-font-bold">Modal Title</h2>
+      <p>This is a Flowbite modal controlled by Alpine.js.</p>
+      <button @click="showModal = false" class="pf-mt-4 pf-bg-red-500 pf-text-white pf-py-2 pf-px-4 pf-rounded">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<h3>Lucide Icons</h3>
+<i data-lucide="moon"></i> <!-- Dark Mode Icon -->
+<i data-lucide="sun"></i> <!-- Light Mode Icon -->
+<i data-lucide="monitor"></i> <!-- System Mode Icon -->
+
+<h3>Font Awesome</h3>
+<i class="fa-solid fa-desktop"></i> <!-- Home icon -->
+<i class="fa-solid fa-sun"></i> <!-- User icon -->
+<i class="fa-solid fa-moon"></i> <!-- Cloud icon -->
+
 
       <section class="pf-mt-6">
         {% include 'lib/sections/section-grid-card.twig' with {
@@ -50,3 +81,9 @@
     {% include 'lib/footer/footer-modern.twig' %}
   </footer>
 </div>
+{# 
+<!-- Lucide Icons Script -->
+<script type="module">
+    import { createIcons, icons } from '{{ plugin_frame_url }}resources/assets/js/lucide.min.js';
+    document.addEventListener("DOMContentLoaded", () => createIcons({ icons }));
+</script> #}
