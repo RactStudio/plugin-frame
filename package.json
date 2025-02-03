@@ -5,8 +5,8 @@
   "main": "plugin-frame.php",
   "scripts": {
     "translate": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
-    "tailwind": "npx @tailwindcss/cli -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --production",
-    "tailwind-watch": "npx @tailwindcss/cli -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",
+    "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify",
+    "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",
     "watch": "grunt watch",
     "build": "npm run tailwind && npm run translate && grunt",
     "prod": "npm run translate && npm run build && npm run tailwind && grunt build:prod"

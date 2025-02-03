@@ -193,7 +193,7 @@ class Routes
             CORSMiddleware::class,
         ]);
 
-        // Deeply Nested Middleware
+        // Deeply Nested Middleware and grouped routes
         $route->group(
             function () use ($route, $otherHandlers)
             {
