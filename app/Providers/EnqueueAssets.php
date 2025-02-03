@@ -100,15 +100,6 @@ class EnqueueAssets
             true
         );
 
-        // // Frontend Flowbite script
-        // $this->enqueueFiles->registerFrontendScript(
-        //     'plugin-frame-frontend-alpine-script',
-        //     PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
-        //     ['plugin-frame-frontend-tailwind-styles'],
-        //     '2.5.2', // Current version at the time - use latest version (if needed)
-        //     true
-        // );
-
         // // Example with condition
         // $this->enqueueFiles->registerFrontendScript(
         //     'plugin-frame-custom-frontend-script',
@@ -173,15 +164,6 @@ class EnqueueAssets
             PLUGIN_FRAME_URL . 'resources/assets/js/admin.js',
             ['jquery'],
             PLUGIN_FRAME_VERSION,
-            true
-        );
-
-        // Admin Flowbite script
-        $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-frontend-alpine-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
-            [],
-            '2.5.2', // Current version at the time - use latest version (if needed)
             true
         );
 

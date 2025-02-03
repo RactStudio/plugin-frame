@@ -2,11 +2,37 @@
 
 namespace PluginFrame\Routes\Handlers;
 
+use Pluginframe\DB\Meta\PostMeta;
+use PluginFrame\DB\Meta\Comments;
+use PluginFrame\DB\Meta\CommentMeta;
+use PluginFrame\DB\Meta\Posts;
+use Pluginframe\DB\Pagination\PaginationManager;
+
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }
 
 class TestData
 {
+    // Public endpoint display
+    public static function testDBposts($request)
+    {
+        // [wordpress root]/wp-json/plugin-frame/v1/db-posts?page=1&per_page=10
+
+        // Get pagination parameters from the request
+        $page = intval($request->get_param('page')) ?: 1; // Default to page 1 if not specified
+        $perPage = intval($request->get_param('per_page')) ?: 2; // Default to 10 items per page
+        $postId = 	1;
+        // $columns = 'ID';
+        $columns = ['comment_ID', 'comment_post_id', 'comment_date', 'comment_content'];
+
+        $response = (new Comments())->getComment($postId, $page, $perPage);
+        $response[] = (new CommentMeta())->getCommentMeta($postId, $page, $perPage);
+        // $response = (new Comments())->allComments($page, $perPage, $columns);
+        
+        return rest_ensure_response($response);
+
+
+    }
 
     // Public endpoint display posts and comments with pagination
     public static function testDataHandler($request)

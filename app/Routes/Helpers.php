@@ -31,7 +31,7 @@ class Helpers
      * @param callable|string|array $handler A callable, a class, or an array with class and method.
      * @param array $middleware Middleware classes to execute before the handler.
      */
-    public function single($method = 'GET', $endpoint, $handler, $middleware = []): void
+    public function single($method, $endpoint, $handler, $middleware = []): void
     {
         $middlewareStack = $middleware ?: $this->routeSpecificMiddleware ?: $this->currentMiddleware;
 
@@ -81,10 +81,10 @@ class Helpers
     /**
      * Group multiple routes with shared middleware.
      *
-     * @param array $middleware Optional middleware classes to apply to the group.
      * @param callable $callback A callback that registers the routes in the group.
+     * @param array $middleware Optional middleware classes to apply to the group.
      */
-    public function group(array $middleware = [], callable $callback): void
+    public function group(callable $callback, array $middleware = []): void
     {
         $previousMiddleware = $this->currentMiddleware;
         $this->currentMiddleware = array_merge($previousMiddleware, $middleware);
@@ -97,10 +97,10 @@ class Helpers
     /**
      * Temporarily remove middleware for a group of routes.
      *
-     * @param string|array|null $middleware The specific middleware(s) to remove, or null to remove all.
      * @param callable $callback The callback that registers routes in the context.
+     * @param string|array|null $middleware The specific middleware(s) to remove, or null to remove all.
      */
-    public function removeMiddleware($middleware = null, callable $callback): void
+    public function removeMiddleware(callable $callback, $middleware = null): void
     {
         $originalMiddleware = $this->currentMiddleware;
 

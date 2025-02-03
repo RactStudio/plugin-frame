@@ -6,9 +6,7 @@ use Exception;
 use Pluginframe\DB\Utils\QueryBuilder;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
-    exit;
-}
+if (!defined('ABSPATH')) { exit; }
 
 /**
  * Base Model class to handle common database operations

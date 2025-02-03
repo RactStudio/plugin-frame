@@ -34,7 +34,7 @@ class QueryBuilder
     /**
      * Set the columns to select.
      *
-     * @param array $columns The columns to select.
+     * @param array $columns The items is selected (default is all `*`).
      * @return $this
      */
     public function select($columns = ['*'])
@@ -103,6 +103,17 @@ class QueryBuilder
             $this->groupBy[] = $columns;
         }
         return $this;
+    }
+
+    /**
+     * Add a Column BY clause.
+     *
+     * @param string|array $columns The column(s) to group by.
+     * @return $this
+     */
+    public function columns($columns)
+    {
+        return $this->groupBy($columns);
     }
 
     /**
@@ -247,8 +258,11 @@ class QueryBuilder
     {
         global $wpdb;
 
-        $sql = "SELECT " . implode(', ', $this->columns) . " FROM {$wpdb->prefix}{$this->table}";
+        // Ensure columns are set properly, default to '*'
+        $columns = !empty($this->columns) ? implode(', ', $this->columns) : '*';
 
+        $sql = "SELECT {$columns} FROM {$wpdb->prefix}{$this->table}";
+        
         if (!empty($this->joins)) {
             $sql .= " " . implode(' ', $this->joins);
         }

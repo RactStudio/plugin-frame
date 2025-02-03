@@ -8,7 +8,7 @@ use Pluginframe\DB\Pagination\PaginationManager;
 /**
  * CommentsMeta class for interacting with wp_commentmeta table.
  */
-class CommentsMeta
+class CommentMeta
 {
     protected $queryBuilder;
     protected $paginationManager;
@@ -25,19 +25,26 @@ class CommentsMeta
      *
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function allCommentsMeta($page = 1, $perPage = 10)
+    public function allCommentsMeta($page = 1, $perPage = 10, $columns = ['*'])
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder->table($this->table),
+                $this->queryBuilder,
                 $page,
-                $perPage
+                $perPage,
+                $this->table,
+                $columns,
             );
+        } else {
+            $result =  $this->queryBuilder->table($this->table)->select($columns)->get();
         }
 
-        return $this->queryBuilder->table($this->table)->get();
+        return [
+            'data' => $result
+        ];
     }
 
     /**
@@ -46,40 +53,59 @@ class CommentsMeta
      * @param int $commentId The Comment ID to get metadata for.
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function singleCommentMeta($commentId, $page = 1, $perPage = 10)
+    public function getCommentMeta($commentId, $page = 1, $perPage = 10, $columns = ['*'])
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder->table($this->table)->where('comment_id', $commentId),
+                $this->queryBuilder,
                 $page,
-                $perPage
+                $perPage,
+                $this->table,
+                $columns,
+                ['comment_id' => $commentId,],
             );
+        } else {
+            $result =  $this->queryBuilder->table($this->table)->select($columns)->where('comment_id', $commentId)->get();
         }
 
-        return $this->queryBuilder->table($this->table)->where('comment_id', $commentId)->get();
+        return [
+            'data' => $result
+        ];
     }
 
-    public function getMeta($commentId, $metaKey)
+    /**
+     * Get Post Comment Metadata for a specific Post with pagination.
+     *
+     * @param int $postId The Post ID to get metadata for.
+     * @param int $page The current page.
+     * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected (default is all `*`).
+     * @return array
+     */
+    public function getPostCommentMeta($postId, $page = 1, $perPage = 10, $columns = ['*'])
     {
-        return $this->queryBuilder
-            ->table($this->table)
-            ->where('comment_id', $commentId)
-            ->where('meta_key', $metaKey)
-            ->get();
+        if (method_exists($this->paginationManager, 'getPaginatedResults')) {
+            return $this->paginationManager->getPaginatedResults(
+                $this->queryBuilder,
+                $page,
+                $perPage,
+                $this->table,
+                $columns,
+                ['post_id' => $postId,],
+            );
+        } else {
+            $result =  $this->queryBuilder->table($this->table)->select($columns)->where('post_id', $postId)->get();
+        }
+
+        return [
+            'data' => $result
+        ];
     }
 
-    public function updateMeta($commentId, $metaKey, $metaValue)
-    {
-        return $this->queryBuilder
-            ->table($this->table) 
-            ->where('comment_id', $commentId)
-            ->where('meta_key', $metaKey)
-            ->update(['meta_value' => $metaValue]);
-    }
-
-    public function insertMeta($commentId, $metaKey, $metaValue)
+    public function insertCommentMeta($commentId, $metaKey, $metaValue)
     {
         return $this->queryBuilder
             ->table($this->table) 
@@ -90,20 +116,21 @@ class CommentsMeta
             ]);
     }
 
-    public function deleteMeta($commentId, $metaKey)
+    public function updateCommentMeta($commentId, $metaKey, $metaValue)
+    {
+        return $this->queryBuilder
+            ->table($this->table) 
+            ->where('comment_id', $commentId)
+            ->where('meta_key', $metaKey)
+            ->update(['meta_value' => $metaValue]);
+    }
+
+    public function deleteCommentMeta($commentId, $metaKey)
     {
         return $this->queryBuilder
             ->table($this->table) 
             ->where('comment_id', $commentId)
             ->where('meta_key', $metaKey)
             ->delete();
-    }
-
-    public function getAllMeta($commentId)
-    {
-        return $this->queryBuilder
-            ->table($this->table) 
-            ->where('comment_id', $commentId)
-            ->get();
     }
 }

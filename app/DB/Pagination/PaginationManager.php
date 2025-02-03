@@ -2,6 +2,7 @@
 
 namespace Pluginframe\DB\Pagination;
 
+use Exception;
 use Pluginframe\DB\Utils\QueryBuilder;
 use WP_Query;
 
@@ -20,25 +21,30 @@ class PaginationManager
      * @param int $page The current page number.
      * @param int $perPage The number of items per page.
      * @param string $table The table name for the query.
-     * @param array $select The columns to select.
+     * @param array $select The columns to select (default is all `*`).
      * @param array $where The WHERE conditions.
      * @param bool $countQuery Whether to perform a count query.
      * @return array The results or the total record count.
+     * @throws Exception If the table name is missing.
      */
-    public function getPaginatedResults(QueryBuilder $queryBuilder, $page = 1, $perPage = 10, $table = '', $select = [], $where = [], $countQuery = false)
+    public function getPaginatedResults(QueryBuilder $queryBuilder, $page = 1, $perPage = 10, $table = '', $select = '*', $where = [])
     {
-        // Set the query parameters
+        if (empty($table)) {
+            throw new Exception('Table name must be specified for pagination.');
+        }
+
+        // Set the query table and columns
         $queryBuilder->table($table);
         $queryBuilder->select($select);
 
-        // Add where conditions if provided
+        // Apply WHERE conditions if provided
         $this->applyWhereConditions($queryBuilder, $where);
 
-        // Set pagination parameters
+        // Apply pagination (LIMIT, OFFSET)
         $this->applyPagination($queryBuilder, $page, $perPage);
 
-        // Return either the paginated results or the count based on $countQuery
-        return $countQuery ? $this->getTotalRecords($queryBuilder) : $this->fetchResultsWithMetadata($queryBuilder, $page, $perPage);
+        // Fetch paginated results
+        return $this->fetchResultsWithMetadata($queryBuilder, $page, $perPage);
     }
 
     /**
@@ -49,8 +55,8 @@ class PaginationManager
      */
     private function applyWhereConditions(QueryBuilder $queryBuilder, array $where)
     {
-        foreach ($where as $condition) {
-            $queryBuilder->where($condition[0], $condition[1], $condition[2]);
+        foreach ($where as $key => $value) {
+            $queryBuilder->where($key, $value);
         }
     }
 
@@ -104,13 +110,18 @@ class PaginationManager
      */
     private function generatePaginationMetadata($page, $totalRecords, $perPage, $totalPages)
     {
+        $links = $this->generatePrevNextLinksParam($page, $perPage, $totalPages);
+
         return [
-            'total_records' => $totalRecords,
-            'per_page' => $perPage,
-            'current_page' => $page,
-            'total_pages' => $totalPages,
-            'has_next_page' => $page < $totalPages,
+            'total_records'     => $totalRecords,
+            'per_page'          => $perPage,
+            'page'              => $page,
+            'total_pages'       => $totalPages,
+            'has_next_page'     => $page < $totalPages,
             'has_previous_page' => $page > 1,
+            'prev_page_param'   => $links['prev_link'],
+            'this_page_param'   => $links['this_link'],
+            'next_page_param'   => $links['next_link'],
         ];
     }
 
@@ -126,19 +137,41 @@ class PaginationManager
     }
 
     /**
-     * Generate pagination links.
+     * Generate only previous and next pagination links.
      *
      * @param int $currentPage The current page number.
      * @param int $totalPages The total number of pages.
-     * @return string The HTML for the pagination links.
+     * @param int $totalPages The base URL for pagination links.
+     * @param string $queryParam The query parameter name for pagination.
+     * @return array Associative array with URLs.
      */
-    public function generatePaginationLinks($currentPage, $totalPages)
+    public function generatePrevNextLinksParam($currentPage, $perPage, $totalPages, $queryParam = 'page')
     {
-        // Generate the pagination links using WordPress's paginate_links function
-        return paginate_links([
-            'total' => $totalPages,
-            'current' => $currentPage,
-            'base' => '?paged=%#%',
-        ]);
+        $links = [
+            'prev_link' => null,
+            'this_link' => null,
+            'next_link' => null,
+        ];
+
+        // Generate previous page link if applicable
+        if ($currentPage > 1) {
+            $prevPage = $currentPage - 1;
+            $links['prev_link'] = $queryParam. '=' . $prevPage . '&per_page=' . $perPage;
+        }
+
+        // Generate this page link if applicable
+        if ($currentPage) {
+            $links['this_link'] = $queryParam. '=' . $currentPage . '&per_page=' . $perPage;
+        }
+
+        // Generate next page link if applicable
+        if ($currentPage < $totalPages) {
+            $nextPage = $currentPage + 1;
+            $links['next_link'] = $queryParam. '=' . $nextPage . '&per_page=' . $perPage;
+        }
+
+
+        return $links;
     }
+
 }

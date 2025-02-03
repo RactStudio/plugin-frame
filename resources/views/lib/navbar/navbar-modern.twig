@@ -1,7 +1,84 @@
-<nav class="pf-px-5 pf-pt-2 pf-pb-1 pf-bg-opacity-25 pf-rounded-b-md pf-bg-gray-100 pf-light:pf-bg-gray-200 pf-dark:pf-bg-gray-700">
-  <ul class="pf-flex pf-space-x-6">
-    <li><a href="" class="pf-text-gray-100 pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-font-sans pf-text-[16px] pf-font-normal">Dashboard</a></li>
-    <li><a href="" class="pf-text-gray-100 pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-font-sans pf-text-[16px] pf-font-normal">Settings</a></li>
-    <li><a href="" class="pf-text-gray-100 pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-font-sans pf-text-[16px] pf-font-normal">Tools</a></li>
+<!-- Mobile Menu Button (Visible only on md and below) -->
+<button id="pf-mobile-menu-button" class="md:pf-hidden fixed top-2 left-2 z-50 pf-px-3 pf-py-2 pf-bg-gray-200 pf-rounded-md">
+  <span id="pf-menu-open-icon" class="dashicons dashicons-menu-alt"></span>
+  <span id="pf-menu-close-icon" class="pf-hidden dashicons dashicons-no-alt"></span>
+</button>
+
+<nav class="pf-bg-opacity-25 pf-rounded-b-md pf-bg-gray-100 pf-light:pf-bg-gray-200 pf-dark:pf-bg-gray-700 pf-px-5 pf-py-2">
+  <ul id="nav-links" class="pf-hidden md:pf-flex pf-space-x-6 pf-items-start md:pf-items-center pf-flex-col md:pf-flex-row">
+    <li class="pf-relative pf-group">
+      <a href="#" id="dashboard-link" class="pf-text-white pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-font-sans pf-text-[16px] pf-font-normal">
+        Dashboard
+        <span id="submenu-icon" class="pf-hidden md:pf-inline-block md:pf-ml-2 dashicons dashicons-arrow-down-alt2"></span> <!-- Down arrow by default -->
+      </a>
+      <ul id="submenu" class="pf-hidden md:pf-block md:pf-absolute pf-group-hover:pf-block pf-absolute pf-bg-gray-200 pf-light:pf-bg-gray-300 pf-dark:pf-bg-gray-800 pf-mt-2 pf-rounded-md pf-shadow-lg pf-w-40">
+        <li><a href="#" class="pf-block pf-py-2 pf-px-4 pf-text-gray-900 pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-hover:pf-bg-gray-300 pf-dark:pf-hover:pf-bg-gray-600">Submenu 1</a></li>
+        <li><a href="#" class="pf-block pf-py-2 pf-px-4 pf-text-gray-900 pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-hover:pf-bg-gray-300 pf-dark:pf-hover:pf-bg-gray-600">Submenu 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="pf-text-white pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-font-sans pf-text-[16px] pf-font-normal">Settings</a></li>
+    <li><a href="#" class="pf-text-white pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-font-sans pf-text-[16px] pf-font-normal">Tools</a></li>
   </ul>
 </nav>
+
+<!-- JavaScript for Mobile Toggle & Window Resize Detection -->
+<script>
+  const menuButton = document.getElementById("pf-mobile-menu-button");
+  const menuOpenIcon = document.getElementById("pf-menu-open-icon");
+  const menuCloseIcon = document.getElementById("pf-menu-close-icon");
+  const navLinks = document.getElementById("nav-links");
+  const dashboardLink = document.getElementById("dashboard-link");
+  const submenu = document.getElementById("submenu");
+  const submenuIcon = document.getElementById("submenu-icon");
+
+  // Function to check screen size and adjust visibility
+  function updateMenuVisibility() {
+    if (window.innerWidth >= 768) {
+      menuButton.classList.add("pf-hidden"); // Hide menu button on md+
+      navLinks.classList.remove("pf-hidden"); // Ensure menu is visible on md+
+      submenu.classList.remove("pf-hidden"); // Ensure submenu is visible on md+
+    } else {
+      menuButton.classList.remove("pf-hidden"); // Show menu button on mobile
+      navLinks.classList.add("pf-hidden"); // Hide menu initially on mobile
+      menuOpenIcon.classList.remove("pf-hidden");
+      menuCloseIcon.classList.add("pf-hidden");
+      submenu.classList.add("pf-hidden"); // Ensure submenu is hidden on mobile
+    }
+  }
+
+  // Toggle menu on mobile
+  menuButton.addEventListener("click", function () {
+    navLinks.classList.toggle("pf-hidden");
+    menuOpenIcon.classList.toggle("pf-hidden");
+    menuCloseIcon.classList.toggle("pf-hidden");
+  });
+
+  // Toggle submenu on mobile
+  dashboardLink.addEventListener("click", function (e) {
+    if (window.innerWidth < 768) { // Only toggle submenu on mobile
+      e.preventDefault(); // Prevent default link behavior
+      submenu.classList.toggle("pf-hidden");
+      submenuIcon.classList.toggle("dashicons-arrow-down-alt2"); // Toggle caret down
+      submenuIcon.classList.toggle("dashicons-arrow-up-alt2"); // Toggle caret up
+    }
+  });
+
+  // Close the submenu if clicked outside of the menu
+  document.addEventListener("click", function (e) {
+    const isClickInsideMenu = navLinks.contains(e.target) || menuButton.contains(e.target);
+    const isClickInsideSubmenu = submenu.contains(e.target);
+    
+    // If click is outside of menu or submenu, close the submenu
+    if (!isClickInsideMenu && !isClickInsideSubmenu) {
+      submenu.classList.add("pf-hidden");
+      submenuIcon.classList.remove("dashicons-arrow-up-alt2");
+      submenuIcon.classList.add("dashicons-arrow-down-alt2");
+    }
+  });
+
+  // Close menu on resize if screen is `md` or larger
+  window.addEventListener("resize", updateMenuVisibility);
+
+  // Initial check on page load
+  updateMenuVisibility();
+</script>

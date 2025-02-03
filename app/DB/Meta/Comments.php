@@ -25,19 +25,26 @@ class Comments
      *
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function allComments($page = 1, $perPage = 10)
+    public function allComments($page = 1, $perPage = 10, $columns = ['*']): array
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder->table($this->table),
+                $this->queryBuilder,
                 $page,
-                $perPage
+                $perPage,
+                $this->table,
+                $columns,
             );
+        } else {
+            $result =  $this->queryBuilder->table($this->table)->select($columns)->get();
         }
 
-        return $this->queryBuilder->get();
+        return [
+            'data' => $result
+        ];
     }
 
     /**
@@ -46,27 +53,61 @@ class Comments
      * @param int $commentId The Comment ID to get data for.
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function singleComment($commentId, $page = 1, $perPage = 10)
+    public function getComment($commentId, $page = 1, $perPage = 10, $columns = ['*']): array
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder->table($this->table)->where('comment_ID', $commentId),
+                $this->queryBuilder,
                 $page,
-                $perPage
+                $perPage,
+                $this->table,
+                $columns,
+                ['comment_ID' => $commentId,],
             );
+        } else {
+            $result =  $this->queryBuilder->table($this->table)->select($columns)->where('comment_ID', $commentId)->get();
         }
 
-        return $this->queryBuilder->table($this->table)->where('comment_ID', $commentId)->get();
+        return [
+            'data' => $result
+        ];
     }
 
-    public function getComment($commentId)
+    /**
+     * Get Post Comment data for a specific Post with pagination.
+     *
+     * @param int $postId The Post ID to get data for.
+     * @param int $page The current page.
+     * @param int $perPage The number of items per page.
+     * @param array $columns The items is selected (default is all `*`).
+     * @return array
+     */
+    public function getPostComment($postId, $page = 1, $perPage = 10, $columns = ['*']): array
     {
-        return $this->queryBuilder
-            ->table($this->table)
-            ->where('comment_ID', $commentId)
-            ->get();
+        if (method_exists($this->paginationManager, 'getPaginatedResults')) {
+            return $this->paginationManager->getPaginatedResults(
+                $this->queryBuilder,
+                $page,
+                $perPage,
+                $this->table,
+                $columns,
+                ['post_id' => $postId,],
+            );
+        } else {
+            $result =  $this->queryBuilder->table($this->table)->select($columns)->where('comment_ID', $commentId)->get();
+        }
+
+        return [
+            'data' => $result
+        ];
+    }
+
+    public function insertComment($data)
+    {
+        return $this->queryBuilder->table($this->table)->insert($data);
     }
 
     public function updateComment($commentId, $data)
@@ -75,11 +116,6 @@ class Comments
             ->table($this->table)
             ->where('comment_ID', $commentId)
             ->update($data);
-    }
-
-    public function insertComment($data)
-    {
-        return $this->queryBuilder->table($this->table)->insert($data);
     }
 
     public function deleteComment($commentId)
