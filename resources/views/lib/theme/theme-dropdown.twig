@@ -3,10 +3,10 @@
         open: false,
         currentMode: null, // We'll initialize this in init()
         modes: {
-            color: 'palette',
-            light: 'sun',
-            dark: 'moon',
-            system: 'monitor'
+            color: 'gg-desktop',
+            light: 'gg-sun',
+            dark: 'gg-moon',
+            system: 'gg-edit-contrast',
         },
         init() {
             // Read from localStorage, defaulting to 'system'
@@ -42,23 +42,22 @@
 
     <!-- Toggle Button -->
     <button @click="open = !open" @click.away="open = false"
-        class="pf-flex pf-items-center pf-w-15 md:pf-w-28 pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-text-center pf-bg-opacity-50 pf-bg-gray-300 pf-rounded-md pf-shadow-md pf-text-gray-800 hover:pf-bg-gray-300 dark:pf-text-gray-200 dark:pf-bg-gray-700 dark:hover:pf-bg-gray-600 pf-overflow-hidden pf-text-ellipsis">
-        <!-- The icon here uses the data-lucide attribute and has a reference -->
-        <i data-lucide="palette" x-bind:data-lucide="modes[currentMode]" class="pf-h-5 pf-w-5" x-ref="toggleIcon"></i>
+        class="pf-flex pf-items-center pf-w-16 md:pf-w-28 pf-gap-2 pf-px-2 pf-py-2 pf-font-sans pf-text-center pf-bg-opacity-50 pf-bg-gray-300 pf-rounded-md pf-shadow-md pf-color:pf-text-white pf-color:hover:pf-text-gray-800 pf-text-gray-800 hover:pf-bg-gray-300 pf-dark:pf-text-gray-200 pf-dark:pf-bg-gray-700 pf-dark:hover:pf-bg-gray-600 pf-overflow-hidden pf-text-ellipsis">
+        <i class="pf-h-5 pf-w-5 pf-scale-[1.2] pf-flex pf-items-center pf-justify-center" x-bind:class="modes[currentMode]" x-ref="toggleIcon"></i>
         <span class="pf-hidden md:pf-inline" x-text="currentMode.charAt(0).toUpperCase() + currentMode.slice(1)">Theme</span>
     </button>
 
     <!-- Dropdown Menu -->
     <div x-show="open" x-transition
-        class="pf-z-10 pf-w-28 pf-mr-[70px] md:pf-mr-0 pf-bg-white pf-rounded-md pf-shadow-lg pf-border pf-border-gray-200 dark:pf-bg-gray-800 dark:pf-border-gray-600 pf-absolute pf-top-full pf-mt-1">
+        class="pf-items-center pf-z-10 pf-w-28 pf-mr-[70px] md:pf-mr-0 pf-bg-white pf-rounded-md pf-shadow-lg pf-border pf-border-gray-200 pf-dark:pf-bg-gray-800 pf-dark:pf-border-gray-600 pf-absolute pf-top-full pf-mt-1">
         <ul class="pf-py-1">
             <template x-for="[mode, icon] in Object.entries(modes)" :key="mode">
                 <li>
                     <!-- Note we pass $event to setMode so that we can copy the icon -->
                     <button @click="setMode(mode, $event)"
-                        class="pf-flex pf-items-center pf-w-full pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-text-gray-700 hover:pf-bg-gray-200 dark:pf-text-gray-200 dark:hover:pf-bg-gray-600"
-                        :class="{ 'pf-bg-gray-200 dark:pf-bg-gray-700': currentMode === mode }">
-                        <i data-lucide="palette" x-bind:data-lucide="icon" class="pf-h-5 pf-w-5"></i>
+                        class="pf-flex pf-items-center pf-w-full pf-gap-2 pf-px-2 pf-py-2 pf-font-sans pf-text-gray-700 hover:pf-bg-gray-200 pf-dark:pf-text-gray-200 pf-dark:hover:pf-bg-gray-600"
+                        :class="{ 'pf-bg-gray-200 pf-light:pf-bg-gray-200 pf-dark:pf-bg-gray-700': currentMode === mode }">
+                        <i class="pf-h-5 pf-w-5 pf-scale-[1.2] pf-flex pf-items-center pf-justify-center" x-bind:class="icon"></i>
                         <span x-text="mode.charAt(0).toUpperCase() + mode.slice(1)"></span>
                     </button>
                 </li>

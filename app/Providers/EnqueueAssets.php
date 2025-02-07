@@ -144,6 +144,15 @@ class EnqueueAssets
             false
         );
 
+        // css.gg Pure CSS icons
+        $this->enqueueFiles->registerAdminStyle(
+            'plugin-frame-admin-cssgg-icons',
+            PLUGIN_FRAME_URL . 'resources/assets/css/css.gg/icons.min.css',
+            [],
+            '2.1.1',
+            false
+        );
+
         // Admin styles
         $this->enqueueFiles->registerAdminStyle(
             'plugin-frame-admin-styles',
@@ -151,6 +160,17 @@ class EnqueueAssets
             [],
             PLUGIN_FRAME_VERSION,
             false
+        );
+
+        // Admin AlpineJS script
+        $this->enqueueFiles->registerAdminScript(
+            'plugin-frame-admin-alpine-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
+            [],
+            '3.14.3',
+            true,
+            null,
+            'module'
         );
 
         // Flowbite Script
@@ -164,26 +184,15 @@ class EnqueueAssets
             'module',
         );
 
-        // Font-Awesome Icons Scripts
+        // Lucid Icons Scripts
         $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-admin-font-awesome-script',
-            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js',
+            'plugin-frame-admin-lucid-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/lucid.min.js',
             [],
-            '6.5.1',
+            '0.474.0',
             true,
             null,
             'defer'
-        );
-
-        // Admin AlpineJS script
-        $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-admin-alpine-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
-            [],
-            '3.14.3',
-            false,
-            null,
-            'module'
         );
 
         // Admin Main Scripts (Auto generated)

@@ -9,7 +9,7 @@
     "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",
     "watch": "grunt watch",
     "build": "npm run tailwind && npm run translate && grunt",
-    "prod": "npm run translate && npm run build && npm run tailwind && grunt build:prod"
+    "prod": "npm run build && grunt build:prod"
   },
   "keywords": [],
   "author": "Mahamudul Hasan Rubel",
@@ -27,7 +27,6 @@
     "test": "tests"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2",
     "abbrev": "^3.0.0",
     "alpine": "^0.2.1",
     "alpinejs": "^3.14.8",

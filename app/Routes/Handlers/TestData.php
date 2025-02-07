@@ -2,11 +2,11 @@
 
 namespace PluginFrame\Routes\Handlers;
 
-use Pluginframe\DB\Meta\PostMeta;
-use PluginFrame\DB\Meta\Comments;
-use PluginFrame\DB\Meta\CommentMeta;
-use PluginFrame\DB\Meta\Posts;
-use Pluginframe\DB\Pagination\PaginationManager;
+use PluginFrame\DB\WP\PostMeta;
+use PluginFrame\DB\WP\Comments;
+use PluginFrame\DB\WP\CommentMeta;
+use PluginFrame\DB\WP\Posts;
+use PluginFrame\DB\Pagination\PaginationManager;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }
