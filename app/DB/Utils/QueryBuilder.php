@@ -123,7 +123,7 @@ class QueryBuilder
      * @param string $direction The sort direction (ASC or DESC).
      * @return $this
      */
-    public function orderBy($column, $direction = 'ASC')
+    public function orderBy($column, $direction = 'DESC')
     {
         $this->orderBy[] = "{$column} {$direction}";
         return $this;

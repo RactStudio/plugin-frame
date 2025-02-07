@@ -22,6 +22,7 @@ use PluginFrame\Routes\Handlers\HandleData;
 use PluginFrame\Routes\Handlers\PublicData;
 use PluginFrame\Routes\Handlers\DemoData;
 use PluginFrame\Routes\Handlers\OtherHandlers;
+use PluginFrame\Routes\Handlers\WP\CommentsData;
 
 class Routes
 {
@@ -29,6 +30,17 @@ class Routes
     {
         // Can be assigned for multiple route base url by creating a new instance
         $route = new Helpers('plugin-frame/v1');
+
+        // Comments Data
+        $route->prefix('/comments', function () use ($route) {
+            $route->group( function () use ($route){
+                $route->single('get', '/all', [CommentsData::class, 'getAllComments']);
+            }, [PublicMiddleware::class, RateLimitMiddleware::class] );
+            $route->group( function () use ($route){
+                $route->single('get', '/insert', [CommentsData::class, 'getAllComments']);
+                $route->single('get', '/delete', [CommentsData::class, 'getAllComments']);
+            }, [AuthMiddleware::class, RateLimitMiddleware::class] );
+        });
 
         // Public Endpoint Routes with No middleware
         $route->single('get', '/db-posts', [new TestData(), 'testDBposts']);

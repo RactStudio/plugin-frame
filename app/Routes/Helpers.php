@@ -33,27 +33,24 @@ class Helpers
      */
     public function single($method, $endpoint, $handler, $middleware = []): void
     {
+        // Apply all stacked prefixes
+        $fullEndpoint = implode('/', $this->prefixStack) . '/' . ltrim($endpoint, '/');
+    
         $middlewareStack = $middleware ?: $this->routeSpecificMiddleware ?: $this->currentMiddleware;
-
-        register_rest_route($this->routesBase, $endpoint, [
+    
+        register_rest_route($this->routesBase, $fullEndpoint, [
             'methods' => strtoupper($method),
             'callback' => function ($request) use ($handler, $middlewareStack) {
-                // Execute middleware
                 $middlewareResult = $this->executeMiddleware($request, $middlewareStack);
                 if (is_wp_error($middlewareResult)) {
                     return $middlewareResult;
                 }
-
-                // Resolve and invoke handler
                 return $this->handleMethodHandler($handler, $request);
             },
             'permission_callback' => function ($request) use ($middlewareStack) {
-                // Allow if no middleware is used
                 if (empty($middlewareStack)) {
                     return true;
                 }
-
-                // Execute middleware for permission check
                 $middlewareResult = $this->executeMiddleware($request, $middlewareStack, true);
                 return !is_wp_error($middlewareResult);
             },
@@ -88,11 +85,11 @@ class Helpers
     {
         $previousMiddleware = $this->currentMiddleware;
         $this->currentMiddleware = array_merge($previousMiddleware, $middleware);
-
+    
         $callback();
-
-        $this->currentMiddleware = $previousMiddleware; // Restore the previous state
-    }
+    
+        $this->currentMiddleware = $previousMiddleware; // Restore middleware
+    }    
 
     /**
      * Temporarily remove middleware for a group of routes.

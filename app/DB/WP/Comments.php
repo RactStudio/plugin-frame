@@ -23,23 +23,27 @@ class Comments
     /**
      * Get all comments with optional pagination.
      *
+     * @param object $request The request object.
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
+     * @param string $sortBy The 'asc' or 'desc' for sorting by comment_date.
      * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function allComments($page = 1, $perPage = 10, $columns = ['*']): array
+    public function allComments($request, $page = 1, $perPage = 10, $sortBy = 'desc', $columns = ['*']): array
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
                 $this->queryBuilder,
+                $request,
                 $page,
                 $perPage,
+                $sortBy,
                 $this->table,
                 $columns,
             );
         } else {
-            $result =  $this->queryBuilder->table($this->table)->select($columns)->get();
+            $result =  $this->queryBuilder->table($this->table)->orderBy('comment_date', $sortBy)->select($columns)->get();
         }
 
         return [
@@ -50,25 +54,29 @@ class Comments
     /**
      * Get Comment data for a specific Comment with pagination.
      *
+     * @param object $request The request object.
      * @param int $commentId The Comment ID to get data for.
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
+     * @param string $sortBy The 'asc' or 'desc' for sorting by comment_date.
      * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function getComment($commentId, $page = 1, $perPage = 10, $columns = ['*']): array
+    public function getComment($request, $commentId, $page = 1, $perPage = 10, $sortBy = 'desc', $columns = ['*']): array
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
                 $this->queryBuilder,
+                $request,
                 $page,
                 $perPage,
+                $sortBy,
                 $this->table,
                 $columns,
                 ['comment_ID' => $commentId,],
             );
         } else {
-            $result =  $this->queryBuilder->table($this->table)->select($columns)->where('comment_ID', $commentId)->get();
+            $result =  $this->queryBuilder->table($this->table)->orderBy('comment_date', $sortBy)->select($columns)->where('comment_ID', $commentId)->get();
         }
 
         return [
@@ -85,19 +93,21 @@ class Comments
      * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function getPostComment($postId, $page = 1, $perPage = 10, $columns = ['*']): array
+    public function getPostComment($request, $postId, $page = 1, $perPage = 10, $sortBy = 'desc', $columns = ['*']): array
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
                 $this->queryBuilder,
+                $request,
                 $page,
                 $perPage,
+                $sortBy,
                 $this->table,
                 $columns,
                 ['post_id' => $postId,],
             );
         } else {
-            $result =  $this->queryBuilder->table($this->table)->select($columns)->where('comment_ID', $commentId)->get();
+            $result =  $this->queryBuilder->table($this->table)->orderBy('comment_date', $sortBy)->select($columns)->where('post_id', $postId)->get();
         }
 
         return [
