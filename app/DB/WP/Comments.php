@@ -26,7 +26,8 @@ class Comments
      * @param object $request The request object.
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
-     * @param string $sortBy The 'asc' or 'desc' for sorting by comment_date.
+     * @param string $sortColumn The column to sort by - Default is `null`.
+     * @param string $sortBy The sort direction ('asc' or 'desc').
      * @param array $columns The items is selected (default is all `*`).
      * @return array
      */

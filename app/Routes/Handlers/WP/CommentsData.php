@@ -16,6 +16,10 @@ class CommentsData
      * [root-domain]/wp-json/plugin-frame/v1/comments/all/?page=1&per_page=10
      * 
      * @param WP_REST_Request $request
+     * @param int $page The current page.
+     * @param int $perPage The number of items per page.
+     * @param string $sortColumn The column to sort by - Default is `null`.
+     * @param string $sortBy The sort direction ('asc' or 'desc').
      * @return WP_REST_Response
      */
     public static function getAllComments($request)
@@ -24,8 +28,8 @@ class CommentsData
             // Get pagination parameters from the request
             $page = 1; // Default to page 1 if not specified
             $perPage = 8; // Default to 10 items per page
-            $sortBy = 'desc'; // Default to 'desc' Date (if not specified)
             $sortColumn = 'comment_date'; // Default to 'comment_date' (if not specified)
+            $sortBy = 'desc'; // Default to 'desc' Date (if not specified)
         
             // Fetch comments
             $response = (new Comments())->allComments($request, $page, $perPage, $sortColumn, $sortBy);

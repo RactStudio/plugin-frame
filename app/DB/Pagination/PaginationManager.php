@@ -20,7 +20,8 @@ class PaginationManager
      * @param object $request The request object.
      * @param int $page The current page number.
      * @param int $perPage The number of items per page.
-     * @param string $sortBy The 'asc' or 'desc' for sorting by comment_date.
+     * @param string $sortColumn The column to sort by - Default is `null`.
+     * @param string $sortBy The sort direction ('asc' or 'desc').
      * @param string $table The table name for the query.
      * @param array $select The columns to select (default is all `*`).
      * @param array $where The WHERE conditions.
@@ -92,6 +93,8 @@ class PaginationManager
      * @param QueryBuilder $queryBuilder
      * @param int $page The current page number.
      * @param int $perPage The number of items per page.
+     * @param string $sortColumn The column to sort by - Default is `null`.
+     * @param string $sortBy The sort direction ('asc' or 'desc').
      * @return array The results with pagination metadata.
      */
     private function fetchResultsWithMetadata(QueryBuilder $queryBuilder, $page, $perPage, $sortColumn, $sortBy, $startTime)
@@ -116,6 +119,9 @@ class PaginationManager
      * @param int $page The current page number.
      * @param int $totalRecords The total number of records.
      * @param int $perPage The number of items per page.
+     * @param string $sortColumn The column to sort by - Default is `null`.
+     * @param string $sortBy The sort direction ('asc' or 'desc').
+     * @param int $totalRecords The total number of records.
      * @param int $totalPages The total number of pages.
      * @return array The pagination metadata.
      */
@@ -156,6 +162,9 @@ class PaginationManager
      *
      * @param int $currentPage The current page number.
      * @param int $totalPages The total number of pages.
+     * @param int $perPage The base URL for pagination links.
+     * @param string $sortColumn The column to sort by - Default is null.
+     * @param string $sortBy The sort direction ('asc' or 'desc').
      * @param int $totalPages The base URL for pagination links.
      * @param string $queryParam The query parameter name for pagination.
      * @return array Associative array with URLs.
