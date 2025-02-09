@@ -30,7 +30,7 @@ class Comments
      * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function allComments($request, $page = 1, $perPage = 10, $sortBy = 'desc', $columns = ['*']): array
+    public function allComments($request, $page = 1, $perPage = 10, $sortColumn = null, $sortBy = 'desc', $columns = ['*']): array
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
@@ -38,12 +38,13 @@ class Comments
                 $request,
                 $page,
                 $perPage,
+                $sortColumn,
                 $sortBy,
                 $this->table,
                 $columns,
             );
         } else {
-            $result =  $this->queryBuilder->table($this->table)->orderBy('comment_date', $sortBy)->select($columns)->get();
+            $result =  $this->queryBuilder->table($this->table)->orderBy($sortColumn, $sortBy)->select($columns)->get();
         }
 
         return [
@@ -62,7 +63,7 @@ class Comments
      * @param array $columns The items is selected (default is all `*`).
      * @return array
      */
-    public function getComment($request, $commentId, $page = 1, $perPage = 10, $sortBy = 'desc', $columns = ['*']): array
+    public function getComment($request, $commentId, $page = 1, $perPage = 10, $sortColumn = null, $sortBy = 'desc', $columns = ['*']): array
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
@@ -70,13 +71,14 @@ class Comments
                 $request,
                 $page,
                 $perPage,
+                $sortColumn,
                 $sortBy,
                 $this->table,
                 $columns,
                 ['comment_ID' => $commentId,],
             );
         } else {
-            $result =  $this->queryBuilder->table($this->table)->orderBy('comment_date', $sortBy)->select($columns)->where('comment_ID', $commentId)->get();
+            $result =  $this->queryBuilder->table($this->table)->orderBy($sortColumn, $sortBy)->select($columns)->where('comment_ID', $commentId)->get();
         }
 
         return [

@@ -23,11 +23,12 @@ class CommentsData
         try {
             // Get pagination parameters from the request
             $page = 1; // Default to page 1 if not specified
-            $perPage = 5; // Default to 10 items per page
+            $perPage = 8; // Default to 10 items per page
             $sortBy = 'desc'; // Default to 'desc' Date (if not specified)
+            $sortColumn = 'comment_date'; // Default to 'comment_date' (if not specified)
         
             // Fetch comments
-            $response = (new Comments())->allComments($request, $page, $perPage, $sortBy);
+            $response = (new Comments())->allComments($request, $page, $perPage, $sortColumn, $sortBy);
 
             return rest_ensure_response($response);
         } catch (Exception $e) {

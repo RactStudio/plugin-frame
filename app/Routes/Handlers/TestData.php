@@ -22,6 +22,7 @@ class TestData
         $page = intval($request->get_param('page')) ?: 1; // Default to page 1 if not specified
         $perPage = intval($request->get_param('per_page')) ?: 2; // Default to 10 items per page
         $postId = 	1;
+        $sortColumn = 'comment_date';
         // $columns = 'ID';
         $columns = ['comment_ID', 'comment_post_id', 'comment_date', 'comment_content'];
 

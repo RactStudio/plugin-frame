@@ -27,7 +27,7 @@ class PaginationManager
      * @return array The results or the total record count.
      * @throws Exception If the table name is missing.
      */
-    public function getPaginatedResults(QueryBuilder $queryBuilder, $request, $page = 1, $perPage = 10, $sortBy = 'desc', $table = '', $select = '*', $where = [])
+    public function getPaginatedResults(QueryBuilder $queryBuilder, $request, $page = 1, $perPage = 10, $sortColumn = null, $sortBy = 'desc', $table = '', $select = '*', $where = [])
     {
         if (empty($table)) {
             throw new Exception('Table name must be specified for pagination.');
@@ -44,7 +44,7 @@ class PaginationManager
 
         // Set the query table, columns and orderBy
         $queryBuilder->table($table);
-        $queryBuilder->orderBy('comment_date', $sortBy);
+        $queryBuilder->orderBy($sortColumn, $sortBy);
         $queryBuilder->select($select);
 
         // Apply WHERE conditions if provided
@@ -54,7 +54,7 @@ class PaginationManager
         $this->applyPagination($queryBuilder, $page, $perPage);
 
         // Fetch paginated results
-        $results = $this->fetchResultsWithMetadata($queryBuilder, $page, $perPage, $sortBy, $startTime);
+        $results = $this->fetchResultsWithMetadata($queryBuilder, $page, $perPage, $sortColumn, $sortBy, $startTime);
 
         return $results;
     }
@@ -94,7 +94,7 @@ class PaginationManager
      * @param int $perPage The number of items per page.
      * @return array The results with pagination metadata.
      */
-    private function fetchResultsWithMetadata(QueryBuilder $queryBuilder, $page, $perPage, $sortBy, $startTime)
+    private function fetchResultsWithMetadata(QueryBuilder $queryBuilder, $page, $perPage, $sortColumn, $sortBy, $startTime)
     {
         $queryStartTime = microtime(true);
         $results = $queryBuilder->get(); // Execute query
@@ -106,7 +106,7 @@ class PaginationManager
 
         return [
             'data' => $results,
-            'meta' => $this->generatePaginationMetadata($page, $perPage, $sortBy, $totalRecords, $totalPages, $queryExecutionTime, $startTime)
+            'meta' => $this->generatePaginationMetadata($page, $perPage, $sortColumn, $sortBy, $totalRecords, $totalPages, $queryExecutionTime, $startTime)
         ];
     }
 
@@ -119,10 +119,10 @@ class PaginationManager
      * @param int $totalPages The total number of pages.
      * @return array The pagination metadata.
      */
-    private function generatePaginationMetadata($page, $perPage, $sortBy, $totalRecords, $totalPages, $queryTime, $startTime)
+    private function generatePaginationMetadata($page, $perPage, $sortColumn, $sortBy, $totalRecords, $totalPages, $queryTime, $startTime)
     {
         $serverTime = microtime(true) - $startTime;
-        $links = $this->generatePrevNextLinksParam($page, $perPage, $sortBy, $totalPages);
+        $links = $this->generatePrevNextLinksParam($page, $perPage, $sortColumn, $sortBy, $totalPages);
 
         return [
             'page'              => $page,
@@ -160,7 +160,7 @@ class PaginationManager
      * @param string $queryParam The query parameter name for pagination.
      * @return array Associative array with URLs.
      */
-    public function generatePrevNextLinksParam($currentPage, $perPage, $sortBy, $totalPages, $queryParam = 'page')
+    public function generatePrevNextLinksParam($currentPage, $perPage, $sortColumn, $sortBy, $totalPages, $queryParam = 'page')
     {
         $links = [
             'prev_link' => null,
@@ -168,18 +168,23 @@ class PaginationManager
             'next_link' => null,
         ];
 
+        $sortParam = '';
+        if($sortColumn !== null){
+            $sortParam = '&sort_by=' . $sortBy;
+        }
+
         if ($currentPage > 1) {
             $prevPage = $currentPage - 1;
-            $links['prev_link'] = $queryParam . '=' . $prevPage . '&per_page=' . $perPage . '&sort_by=' . $sortBy;
+            $links['prev_link'] = $queryParam . '=' . $prevPage . '&per_page=' . $perPage . $sortParam;
         }
 
         if ($currentPage) {
-            $links['this_link'] = $queryParam . '=' . $currentPage . '&per_page=' . $perPage . '&sort_by=' . $sortBy;
+            $links['this_link'] = $queryParam . '=' . $currentPage . '&per_page=' . $perPage . $sortParam;
         }
 
         if ($currentPage < $totalPages) {
             $nextPage = $currentPage + 1;
-            $links['next_link'] = $queryParam . '=' . $nextPage . '&per_page=' . $perPage . '&sort_by=' . $sortBy;
+            $links['next_link'] = $queryParam . '=' . $nextPage . '&per_page=' . $perPage . $sortParam;
         }
 
         return $links;
