@@ -36,8 +36,8 @@ if ( ! defined( 'PLUGIN_FRAME_BASENAME' ) ) {
     define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
 }
 
-class Main {
-
+class Main
+{
     public function __construct()
     {
         // Perform PHP version check early before plugin execution.
