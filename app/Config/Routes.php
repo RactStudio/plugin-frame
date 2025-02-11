@@ -35,6 +35,8 @@ class Routes
         $route->prefix('/comments', function () use ($route) {
             $route->group( function () use ($route){
                 $route->single('get', '/all', [CommentsData::class, 'getAllComments']);
+                $route->single('get', '/single', [CommentsData::class, 'getComment']);
+                $route->single('get', '/post', [CommentsData::class, 'getPostComment']);
             }, [PublicMiddleware::class, RateLimitMiddleware::class] );
             $route->group( function () use ($route){
                 $route->single('get', '/insert', [CommentsData::class, 'getAllComments']);
