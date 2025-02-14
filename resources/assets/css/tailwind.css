@@ -1,5 +1,7 @@
 /* Tailwind base styles with a specific scope */
-@tailwind base; /* Includes normalize.css and resets */
+
+/* Includes normalize.css and resets */
+@tailwind base;
 
 /* Custom overrides to remove normalize.css */
 @layer base {
@@ -21,6 +23,7 @@
 #pf-load {
     /* Tailwind components */
     @tailwind components;
+    
 }
 
 /* Tailwind utilities */

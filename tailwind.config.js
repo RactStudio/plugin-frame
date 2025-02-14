@@ -4,7 +4,7 @@ module.exports = {
   prefix: 'pf-', // Custom prefix for Tailwind classes
   content: [
     "./resources/views/**/*.{twig,html,php,js}", // Specify content files
-    "./app/**/*.{twig,html,php,js}" // Specify content files
+    "./app/views/**/*.{twig,html,php,js}" // Specify content files
   ],
   theme: {
     fontFamily: {

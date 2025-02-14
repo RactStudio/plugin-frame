@@ -79,40 +79,24 @@ class EnqueueAssets
             '3.14.3', // Current version at the time - use latest version (if needed)
             true,
             null,
-            'defer',
-        );
-
-        // Flowbite Script
-        $this->enqueueFiles->registerFrontendScript(
-            'plugin-frame-frontend-flowbite-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
-            [],
-            PLUGIN_FRAME_VERSION,
-            true,
-            null,
-            'defer',
-        );
-
-        // Lucid Icons Scripts
-        $this->enqueueFiles->registerFrontendScript(
-            'plugin-frame-frontend-lucid-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/lucid.min.js',
-            [],
-            '0.474.0',
-            true,
-            null,
-            'defer'
+            [
+                'type' => 'module',
+                'defer' => '',
+            ],
         );
 
         // Frontend Main Scripts (Auto generated)
         $this->enqueueFiles->registerFrontendScript(
             'plugin-frame-frontend-main-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/main.min.js',
+            PLUGIN_FRAME_URL . 'resources/assets/js/frontend.min.js',
             ['plugin-frame-frontend-alpine-script'],
             PLUGIN_FRAME_VERSION,
             true,
             null,
-            'defer',
+            [
+                'type' => 'module',
+                'async' => '',
+            ],
         );
 
         // // Example with condition
@@ -144,20 +128,11 @@ class EnqueueAssets
             false
         );
 
-        // css.gg Pure CSS icons
-        $this->enqueueFiles->registerAdminStyle(
-            'plugin-frame-admin-cssgg-icons',
-            PLUGIN_FRAME_URL . 'resources/assets/css/css.gg/icons.min.css',
-            [],
-            '2.1.1',
-            false
-        );
-
         // Admin styles
         $this->enqueueFiles->registerAdminStyle(
             'plugin-frame-admin-styles',
             PLUGIN_FRAME_URL . 'resources/assets/css/admin.min.css',
-            [],
+            ['plugin-frame-admin-tailwind-styles'],
             PLUGIN_FRAME_VERSION,
             false
         );
@@ -170,40 +145,24 @@ class EnqueueAssets
             '3.14.3',
             true,
             null,
-            'module'
-        );
-
-        // Flowbite Script
-        $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-adnmin-flowbite-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
-            [],
-            PLUGIN_FRAME_VERSION,
-            true,
-            null,
-            'module',
-        );
-
-        // Lucid Icons Scripts
-        $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-admin-lucid-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/lucid.min.js',
-            [],
-            '0.474.0',
-            true,
-            null,
-            'defer'
+            [
+                'type' => 'module',
+                'defer' => '',
+            ],
         );
 
         // Admin Main Scripts (Auto generated)
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-main-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/main.min.js',
-            [],
+            PLUGIN_FRAME_URL . 'resources/assets/js/admin.min.js',
+            ['plugin-frame-admin-alpine-script'],
             PLUGIN_FRAME_VERSION,
             true,
             null,
-            'module'
+            [
+                'type' => 'module',
+                'defer' => '',
+            ],
         );
 
         // // Example with condition

@@ -1,84 +1,107 @@
-<!-- Mobile Menu Button (Visible only on md and below) -->
-<button id="pf-mobile-menu-button" class="md:pf-hidden fixed top-2 left-2 z-50 pf-px-3 pf-py-2 pf-bg-gray-200 pf-rounded-md">
+<!-- Mobile Menu Button -->
+<button id="pf-mobile-menu-button" class="md:pf-hidden fixed top-2 left-2 z-50 pf-p-2 pf-bg-gray-200 pf-rounded-md">
   <span id="pf-menu-open-icon" class="dashicons dashicons-menu-alt"></span>
-  <span id="pf-menu-close-icon" class="pf-hidden dashicons dashicons-no-alt"></span>
+  <span id="pf-menu-close-icon" class="dashicons dashicons-no-alt pf-hidden"></span>
 </button>
 
-<nav class="pf-bg-opacity-25 pf-rounded-b-md pf-bg-gray-100 pf-light:pf-bg-gray-200 pf-dark:pf-bg-gray-700 pf-px-5 pf-py-2">
-  <ul id="nav-links" class="pf-hidden md:pf-flex pf-space-x-6 pf-items-start md:pf-items-center pf-flex-col md:pf-flex-row">
-    <li class="pf-relative pf-group">
-      <a href="#" id="submenu-link" class="pf-text-white pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-font-sans pf-text-[16px] pf-font-normal">
+<!-- Main Navigation -->
+<nav id="pf-main-nav" class="pf-bg-gray-100 pf-dark:pf-bg-gray-800 pf-rounded-md pf-hidden md:pf-block">
+  <ul class="md:pf-flex md:pf-space-x-6 pf-flex-col md:pf-flex-row">
+    <!-- Mega Menu Item -->
+    <li class="pf-relative">
+      <button id="pf-submenu-button" class="pf-flex pf-items-center pf-px-4 pf-py-2 pf-text-gray-800 pf-dark:pf-text-white">
         Dashboard
-        <span id="submenu-icon" class="pf-hidden md:pf-inline-block md:pf-ml-2 dashicons dashicons-arrow-down-alt2"></span> <!-- Down arrow by default -->
-      </a>
-      <ul id="submenu" class="pf-hidden md:pf-block md:pf-absolute pf-group-hover:pf-block pf-absolute pf-bg-gray-200 pf-light:pf-bg-gray-300 pf-dark:pf-bg-gray-800 pf-mt-2 pf-rounded-md pf-shadow-lg pf-w-40">
-        <li><a href="#" class="pf-block pf-py-2 pf-px-4 pf-text-gray-900 pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-hover:pf-bg-gray-300 pf-dark:pf-hover:pf-bg-gray-600">Submenu 1</a></li>
-        <li><a href="#" class="pf-block pf-py-2 pf-px-4 pf-text-gray-900 pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-hover:pf-bg-gray-300 pf-dark:pf-hover:pf-bg-gray-600">Submenu 2</a></li>
-      </ul>
+        <span id="pf-submenu-icon" class="dashicons pf-ml-1 dashicons-arrow-down-alt2"></span>
+      </button>
+
+      <!-- Mega Menu Dropdown -->
+      <div id="pf-submenu" class="pf-absolute pf-left-0 pf-w-full md:pf-w-48 pf-bg-white pf-dark:pf-bg-gray-700 pf-rounded-md pf-shadow-lg pf-z-50 pf-hidden">
+        <div class="pf-grid md:pf-grid-cols-2 lg:pf-grid-cols-3 pf-gap-4 pf-p-4">
+          <!-- Mega Menu Content -->
+          <div>
+            <h3 class="pf-text-lg pf-font-semibold pf-mb-2">Category 1</h3>
+            <a href="#" class="pf-block pf-py-2 pf-px-4 pf-text-gray-700 pf-dark:pf-text-gray-200 pf-hover:pf-bg-gray-100 pf-dark:pf-hover:pf-bg-gray-600">Subitem 1</a>
+            <a href="#" class="pf-block pf-py-2 pf-px-4 pf-text-gray-700 pf-dark:pf-text-gray-200 pf-hover:pf-bg-gray-100 pf-dark:pf-hover:pf-bg-gray-600">Subitem 2</a>
+          </div>
+          <!-- Add more columns as needed -->
+        </div>
+      </div>
     </li>
-    <li><a href="#" class="pf-text-white pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-font-sans pf-text-[16px] pf-font-normal">Settings</a></li>
-    <li><a href="#" class="pf-text-white pf-light:pf-text-gray-800 pf-dark:pf-text-gray-100 pf-font-sans pf-text-[16px] pf-font-normal">Tools</a></li>
+
+    <!-- Regular Menu Items -->
+    <li>
+      <a href="#" class="pf-block pf-px-4 pf-py-2 pf-text-gray-800 pf-dark:pf-text-white pf-hover:pf-bg-gray-200 pf-dark:pf-hover:pf-bg-gray-600">Settings</a>
+    </li>
+    <li>
+      <a href="#" class="pf-block pf-px-4 pf-py-2 pf-text-gray-800 pf-dark:pf-text-white pf-hover:pf-bg-gray-200 pf-dark:pf-hover:pf-bg-gray-600">Tools</a>
+    </li>
   </ul>
 </nav>
 
-<!-- JavaScript for Mobile Toggle & Window Resize Detection -->
 <script>
-  const menuButton = document.getElementById("pf-mobile-menu-button");
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuButton = document.getElementById("pf-mobile-menu-button");
   const menuOpenIcon = document.getElementById("pf-menu-open-icon");
   const menuCloseIcon = document.getElementById("pf-menu-close-icon");
-  const navLinks = document.getElementById("nav-links");
-  const submenuLink = document.getElementById("submenu-link");
-  const submenu = document.getElementById("submenu");
-  const submenuIcon = document.getElementById("submenu-icon");
+  const mainNav = document.getElementById("pf-main-nav");
+  const submenuButton = document.getElementById("pf-submenu-button");
+  const submenu = document.getElementById("pf-submenu");
+  const submenuIcon = document.getElementById("pf-submenu-icon");
 
-  // Function to check screen size and adjust visibility
-  function updateMenuVisibility() {
-    if (window.innerWidth >= 768) {
-      menuButton.classList.add("pf-hidden"); // Hide menu button on md+
-      navLinks.classList.remove("pf-hidden"); // Ensure menu is visible on md+
-      submenu.classList.remove("pf-hidden"); // Ensure submenu is visible on md+
-    } else {
-      menuButton.classList.remove("pf-hidden"); // Show menu button on mobile
-      navLinks.classList.add("pf-hidden"); // Hide menu initially on mobile
-      menuOpenIcon.classList.remove("pf-hidden");
-      menuCloseIcon.classList.add("pf-hidden");
-      submenu.classList.add("pf-hidden"); // Ensure submenu is hidden on mobile
-    }
-  }
-
-  // Toggle menu on mobile
-  menuButton.addEventListener("click", function () {
-    navLinks.classList.toggle("pf-hidden");
-    menuOpenIcon.classList.toggle("pf-hidden");
-    menuCloseIcon.classList.toggle("pf-hidden");
+  // Toggle mobile menu
+  mobileMenuButton.addEventListener("click", function () {
+    const isMenuOpen = !mainNav.classList.contains("pf-hidden");
+    mainNav.classList.toggle("pf-hidden");
+    menuOpenIcon.classList.toggle("pf-hidden", isMenuOpen);
+    menuCloseIcon.classList.toggle("pf-hidden", !isMenuOpen);
   });
 
   // Toggle submenu on mobile
-  submenuLink.addEventListener("click", function (e) {
-    if (window.innerWidth < 768) { // Only toggle submenu on mobile
-      e.preventDefault(); // Prevent default link behavior
+  submenuButton.addEventListener("click", function (e) {
+    if (window.innerWidth < 768) {
+      e.preventDefault();
+      const isSubmenuOpen = !submenu.classList.contains("pf-hidden");
       submenu.classList.toggle("pf-hidden");
-      submenuIcon.classList.toggle("dashicons-arrow-down-alt2"); // Toggle caret down
-      submenuIcon.classList.toggle("dashicons-arrow-up-alt2"); // Toggle caret up
+      submenuIcon.classList.toggle("dashicons-arrow-down-alt2", !isSubmenuOpen);
+      submenuIcon.classList.toggle("dashicons-arrow-up-alt2", isSubmenuOpen);
     }
   });
 
-  // Close the submenu if clicked outside of the menu
+  // Show submenu on hover (desktop)
+  const submenuParent = submenuButton.parentElement;
+  submenuParent.addEventListener("mouseenter", function () {
+    if (window.innerWidth >= 768) {
+      submenu.classList.remove("pf-hidden");
+    }
+  });
+
+  submenuParent.addEventListener("mouseleave", function () {
+    if (window.innerWidth >= 768) {
+      submenu.classList.add("pf-hidden");
+    }
+  });
+
+  // Close submenu when clicking outside
   document.addEventListener("click", function (e) {
-    const isClickInsideMenu = navLinks.contains(e.target) || menuButton.contains(e.target);
-    const isClickInsideSubmenu = submenu.contains(e.target);
-    
-    // If click is outside of menu or submenu, close the submenu
-    if (!isClickInsideMenu && !isClickInsideSubmenu) {
+    if (!submenu.contains(e.target) && !submenuButton.contains(e.target)) {
       submenu.classList.add("pf-hidden");
       submenuIcon.classList.remove("dashicons-arrow-up-alt2");
       submenuIcon.classList.add("dashicons-arrow-down-alt2");
     }
   });
 
-  // Close menu on resize if screen is `md` or larger
-  window.addEventListener("resize", updateMenuVisibility);
-
-  // Initial check on page load
-  updateMenuVisibility();
+  // Handle window resize
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= 768) {
+      mainNav.classList.remove("pf-hidden");
+      submenu.classList.add("pf-hidden");
+      submenuIcon.classList.remove("dashicons-arrow-up-alt2");
+      submenuIcon.classList.add("dashicons-arrow-down-alt2");
+    } else {
+      mainNav.classList.add("pf-hidden");
+      menuOpenIcon.classList.remove("pf-hidden");
+      menuCloseIcon.classList.add("pf-hidden");
+    }
+  });
+});
 </script>

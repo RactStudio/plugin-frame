@@ -2,21 +2,32 @@ module.exports = function (pf) {
     'use strict';
     pf.initConfig({
         pkg: pf.file.readJSON('package.json'),
+        webpack: {
+            options: require('./webpack.config.js'), // Load Webpack config
+            build: {} // Run Webpack
+        },
         uglify: {
-            build: {
-                src: 'resources/assets/js/*.js',
-                dest: 'resources/assets/js/main.min.js'
+            admin: {
+                files: {
+                    'resources/assets/js/admin.min.js': ['resources/assets/js/admin.bundle.js']
+                }
+            },
+            frontend: {
+                files: {
+                    'resources/assets/js/frontend.min.js': ['resources/assets/js/frontend.bundle.js']
+                }
             }
         },
         cssmin: {
-            target: {
-                files: [{
-                    expand: true,
-                    cwd: 'resources/assets/css',
-                    src: ['*.css', '!*.min.css', '!tailwind*.css'], // Excludes all files starting with "tailwind"
-                    dest: 'resources/assets/css',
-                    ext: '.min.css'
-                }]
+            admin: {
+                files: {
+                    'resources/assets/css/admin.min.css': ['resources/assets/css/*.css', '!resources/assets/css/*.min.css', '!resources/assets/css/tailwind*.css']
+                }
+            },
+            frontend: {
+                files: {
+                    'resources/assets/css/frontend.min.css': ['resources/assets/css/*.css', '!resources/assets/css/*.min.css', '!resources/assets/css/tailwind*.css']
+                }
             }
         },
         copy: {
@@ -43,18 +54,21 @@ module.exports = function (pf) {
                     '!package-lock.json',
                     '!README.md',
                     '!tailwind.config.js',
+                    '!TASK.txt',
+                    '!webpack.config.js',
                     '!wiki.txt'
                 ],
                 dest: '.dist/plugin-frame'
             }
         },
         clean: {
-            dist: ['.dist/plugin-frame']
+            dist: ['.dist/plugin-frame'],
+            bundles: ['resources/assets/js/*.bundle.*'] // Clean up Webpack bundles after build
         },
         watch: {
             scripts: {
                 files: ['resources/assets/js/*.js'],
-                tasks: ['uglify']
+                tasks: ['webpack', 'uglify']
             },
             css: {
                 files: ['resources/assets/css/*.css'],
@@ -63,12 +77,13 @@ module.exports = function (pf) {
         }
     });
 
+    pf.loadNpmTasks('grunt-webpack');
     pf.loadNpmTasks('grunt-contrib-uglify');
     pf.loadNpmTasks('grunt-contrib-cssmin');
     pf.loadNpmTasks('grunt-contrib-copy');
     pf.loadNpmTasks('grunt-contrib-clean');
     pf.loadNpmTasks('grunt-contrib-watch');
 
-    pf.registerTask('default', ['uglify', 'cssmin']);
-    pf.registerTask('build:prod', ['clean:dist', 'uglify', 'cssmin', 'copy:dist']);
+    pf.registerTask('default', ['webpack', 'uglify', 'cssmin', 'clean:bundles']);
+    pf.registerTask('build:prod', ['clean:dist', 'webpack', 'uglify', 'cssmin', 'clean:bundles', 'copy:dist']);
 };
