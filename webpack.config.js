@@ -2,6 +2,9 @@ const path = require('path');
 
 module.exports = {
     entry: {
+        alpine: './resources/assets/js/alpine.js',
+        flowbite: './resources/assets/js/flowbite.js',
+        lucide: './resources/assets/js/lucide.js',
         admin: './resources/assets/js/admin.js',
         frontend: './resources/assets/js/frontend.js'
     },

@@ -53,14 +53,14 @@ class EnqueueAssets
      */
     protected function registerFrontendAssets()
     {
-        // Frontend Tailwind styles
-        $this->enqueueFiles->registerFrontendStyle(
-            'plugin-frame-frontend-tailwind-styles',
-            PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
-            [],
-            PLUGIN_FRAME_VERSION,
-            false
-        );
+        // // Frontend Tailwind styles
+        // $this->enqueueFiles->registerFrontendStyle(
+        //     'plugin-frame-frontend-tailwind-styles',
+        //     PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
+        //     [],
+        //     false,
+        //     'all',
+        // );
 
         // Frontend styles
         $this->enqueueFiles->registerFrontendStyle(
@@ -68,7 +68,7 @@ class EnqueueAssets
             PLUGIN_FRAME_URL . 'resources/assets/css/frontend.min.css',
             [],
             PLUGIN_FRAME_VERSION,
-            false
+            'all',
         );
 
         // Frontend AlpineJS script
@@ -76,7 +76,35 @@ class EnqueueAssets
             'plugin-frame-frontend-alpine-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
             [],
-            '3.14.3', // Current version at the time - use latest version (if needed)
+            false,
+            true,
+            null,
+            [
+                'type' => 'module',
+                'defer' => '',
+            ],
+        );
+        
+        // Frontend Flowbite script
+        $this->enqueueFiles->registerFrontendScript(
+            'plugin-frame-frontend-flowbite-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
+            [],
+            false,
+            true,
+            null,
+            [
+                'type' => 'module',
+                'defer' => '',
+            ],
+        );
+
+        // Frontend Lucide script
+        $this->enqueueFiles->registerFrontendScript(
+            'plugin-frame-frontend-lucide-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/lucide.min.js',
+            [],
+            false,
             true,
             null,
             [
@@ -124,8 +152,8 @@ class EnqueueAssets
             'plugin-frame-admin-tailwind-styles',
             PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
             [],
-            PLUGIN_FRAME_VERSION,
-            false
+            false,
+            'all',
         );
 
         // Admin styles
@@ -134,7 +162,7 @@ class EnqueueAssets
             PLUGIN_FRAME_URL . 'resources/assets/css/admin.min.css',
             ['plugin-frame-admin-tailwind-styles'],
             PLUGIN_FRAME_VERSION,
-            false
+            'all',
         );
 
         // Admin AlpineJS script
@@ -142,7 +170,35 @@ class EnqueueAssets
             'plugin-frame-admin-alpine-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
             [],
-            '3.14.3',
+            false,
+            false,
+            null,
+            [
+                'type' => 'module',
+                'defer' => '',
+            ],
+        );
+
+        // Admin Flowbite script
+        $this->enqueueFiles->registerAdminScript(
+            'plugin-frame-admin-flowbite-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
+            [],
+            false,
+            true,
+            null,
+            [
+                'type' => 'module',
+                'defer' => '',
+            ],
+        );
+
+        // Admin Lucide script
+        $this->enqueueFiles->registerAdminScript(
+            'plugin-frame-admin-lucide-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/lucide.min.js',
+            [],
+            false,
             true,
             null,
             [
@@ -157,7 +213,7 @@ class EnqueueAssets
             PLUGIN_FRAME_URL . 'resources/assets/js/admin.min.js',
             ['plugin-frame-admin-alpine-script'],
             PLUGIN_FRAME_VERSION,
-            true,
+            false,
             null,
             [
                 'type' => 'module',

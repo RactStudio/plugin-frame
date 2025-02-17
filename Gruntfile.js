@@ -7,6 +7,21 @@ module.exports = function (pf) {
             build: {} // Run Webpack
         },
         uglify: {
+            alpine: {
+                files: {
+                    'resources/assets/js/alpine.min.js': ['resources/assets/js/alpine.bundle.js']
+                }
+            },
+            flowbite: {
+                files: {
+                    'resources/assets/js/flowbite.min.js': ['resources/assets/js/flowbite.bundle.js']
+                }
+            },
+            lucide: {
+                files: {
+                    'resources/assets/js/lucide.min.js': ['resources/assets/js/lucide.bundle.js']
+                }
+            },
             admin: {
                 files: {
                     'resources/assets/js/admin.min.js': ['resources/assets/js/admin.bundle.js']

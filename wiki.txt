@@ -1,14 +1,24 @@
 PLUGIN FRAME WIKI
 
 Developer Installation:
-1. Clone the repository:
-git clone https://github.com/your-username/plugin-frame.git
-2. Install Composer dependencies:
-composer init
+1. Go to your WordPress plugin directory
+cd /path/to/wordpress/wp-content/plugins/
+
+2. Clone the repository:
+git clone https://github.com/RactStudio/plugin-frame.git
+
+3. Install Composer dependencies:
 composer install
-3. Copy the plugin files to your WordPress plugins directory:
-cp -r plugin-frame/ /path/to/wordpress/wp-content/plugins/
-4. Activate the plugin in your WordPress dashboard.
+
+4. Install Node.js dependencies:
+npm install
+
+5. Build the plugin:
+npm run build
+
+6. Activate the plugin in your WordPress dashboard.
+
+7. START YOUR PLUGIN DEVELOPMENT
 
 
 plugin-frame/

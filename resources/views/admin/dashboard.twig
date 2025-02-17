@@ -19,46 +19,53 @@
         } %}
       </section>
 
-      
-<!-- Button and Modal in the same x-data scope -->
-<div x-data="{ showModal: false }">
-    <!-- Button outside the modal div -->
-    <button @click="showModal = true" class="pf-bg-green-500 pf-text-white pf-py-2 pf-px-4 pf-rounded">
-        Open Modal
-    </button>
+      <section class="pf-mt-6 pf-p-6">
 
-    <!-- Modal Overlay -->
-    <div
-        x-show="showModal"
-        x-transition:enter="pf-transition pf-ease-out pf-duration-600"
-        x-transition:enter-start="pf-opacity-0"
-        x-transition:enter-end="pf-opacity-100"
-        x-transition:leave="pf-transition pf-ease-in pf-duration-400"
-        x-transition:leave-start="pf-opacity-100"
-        x-transition:leave-end="pf-opacity-0"
-        class="pf-flex pf-fixed pf-inset-0 pf-bg-gray-900 pf-bg-opacity-50 pf-justify-center pf-items-center"
-    >
-        <!-- Modal Content -->
-        <div
-            x-show="showModal"
-            x-transition:enter="pf-transition pf-ease-out pf-duration-600"
-            x-transition:enter-start="pf-opacity-0 pf-transform pf-scale-75"
-            x-transition:enter-end="pf-opacity-100 pf-transform pf-scale-200"
-            x-transition:leave="pf-transition pf-ease-in pf-duration-400"
-            x-transition:leave-start="pf-opacity-100 pf-transform pf-scale-200"
-            x-transition:leave-end="pf-opacity-0 pf-transform pf-scale-75"
-            class="pf-bg-white pf-rounded-lg pf-shadow-lg pf-p-6 pf-max-w-md pf-w-full"
-        >
-            <h2 class="pf-text-lg pf-font-bold">Modal Title</h2>
-            <p>This is a Flowbite modal controlled by Alpine.js.</p>
-            <button @click="showModal = false" class="pf-mt-4 pf-bg-red-500 pf-text-white pf-py-2 pf-px-4 pf-rounded">
-                Close
+        <!-- Button and Modal in the same x-data scope -->
+        <div x-data="{ showModal: false }">
+            <!-- Button outside the modal div -->
+            <button @click="showModal = true" class="pf-bg-green-500 pf-text-white pf-py-2 pf-px-4 pf-rounded">
+                Open Modal
             </button>
-        </div>
-    </div>
-</div>
 
-    <h3>Lucide Icons</h3>
+          <!-- Only render the modal when showModal2 is true -->
+          <template x-if="showModal">
+            <!-- Modal Overlay -->
+            <div
+              x-show="showModal"
+              x-transition:enter="pf-transition pf-ease-out pf-duration-600"
+              x-transition:enter-start="pf-opacity-0"
+              x-transition:enter-end="pf-opacity-100"
+              x-transition:leave="pf-transition pf-ease-in pf-duration-400"
+              x-transition:leave-start="pf-opacity-100"
+              x-transition:leave-end="pf-opacity-0"
+              class="pf-flex pf-fixed pf-inset-0 pf-bg-gray-900 pf-bg-opacity-50 pf-justify-center pf-items-center"
+            >
+              <!-- Modal Content -->
+              <div
+                x-show="showModal"
+                x-transition:enter="pf-transition pf-ease-out pf-duration-600"
+                x-transition:enter-start="pf-opacity-0 pf-transform pf-scale-75"
+                x-transition:enter-end="pf-opacity-100 pf-transform pf-scale-200"
+                x-transition:leave="pf-transition pf-ease-in pf-duration-400"
+                x-transition:leave-start="pf-opacity-100 pf-transform pf-scale-200"
+                x-transition:leave-end="pf-opacity-0 pf-transform pf-scale-75"
+                class="pf-bg-white pf-rounded-lg pf-shadow-lg pf-p-6 pf-max-w-md pf-w-full"
+              >
+                <h2 class="pf-text-lg pf-font-bold">Modal Title</h2>
+                <p>This is a Flowbite modal controlled by Alpine.js.</p>
+                <button @click="showModal = false" class="pf-mt-4 pf-bg-red-500 pf-text-white pf-py-2 pf-px-4 pf-rounded">
+                    Close
+                </button>
+              </div>
+            </div>
+          </template>
+        </div>
+
+      </section>
+
+      <section class="pf-mt-6 pf-p-6">
+        <h3>Lucide Icons</h3>
         <!-- Example: Using Lucide icons -->
         <div>
             <i data-lucide="home"></i> Home
@@ -69,10 +76,11 @@
         <div>
             <i data-lucide="settings"></i> Settings
         </div>
-    <i data-lucide="moon"></i> <!-- Dark Mode Icon -->
-    <i data-lucide="sun"></i> <!-- Light Mode Icon -->
-    <i data-lucide="monitor"></i> <!-- System Mode Icon -->
-    <i data-lucide="palette"></i> <!-- Color Mode Icon -->
+        <i data-lucide="moon"></i> <!-- Dark Mode Icon -->
+        <i data-lucide="sun"></i> <!-- Light Mode Icon -->
+        <i data-lucide="monitor"></i> <!-- System Mode Icon -->
+        <i data-lucide="palette"></i> <!-- Color Mode Icon -->
+      </section>
 
       <section class="pf-mt-6">
         {% include 'lib/sections/section-grid-card.twig' with {
