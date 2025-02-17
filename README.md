@@ -8,25 +8,25 @@ Follow these steps to set up the development environment:
 
 1. Navigate to WordPress plugins directory:
     
-    cd /path/to/wordpress/wp-content/plugins/
+    `cd /path/to/wordpress/wp-content/plugins/`
     
 
 2. Clone the repository:
     
-    git clone https://github.com/RactStudio/plugin-frame.git
+    `git clone https://github.com/RactStudio/plugin-frame.git`
     
 
 3. Install dependencies:
     
-    composer install
+    `composer install`
     
     
-    npm install
+    `npm install`
     
 
 4. Build the plugin:
     
-    npm run build
+    `npm run build`
     
 
 5. Activate the plugin through WordPress dashboard
