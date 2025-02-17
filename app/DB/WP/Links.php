@@ -1,6 +1,6 @@
 <?php
 
-namespace Pluginframe\DB\Meta;
+namespace PluginFrame\DB\WP;
 
 use Pluginframe\DB\Utils\QueryBuilder;
 use Pluginframe\DB\Pagination\PaginationManager;
@@ -8,14 +8,11 @@ use Pluginframe\DB\Pagination\PaginationManager;
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }
 
-/**
- * EventsMeta class for interacting with wp_e_events table.
- */
-class EventsMeta
+class Links
 {
     protected $queryBuilder;
     protected $paginationManager;
-    protected $table = 'e_events';
+    protected $table = 'links';
 
     public function __construct()
     {
@@ -24,15 +21,15 @@ class EventsMeta
     }
 
     /**
-     * Get all events with optional pagination.
+     * Get all links with optional pagination.
      *
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
      * @return array
      */
-    public function allEvents($page = 1, $perPage = 10)
+    public function allLinks($page = 1, $perPage = 10)
     {
-        if (method_exists($this->paginationManager, 'paginate')) {
+        if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
                 $this->queryBuilder->table($this->table),
                 $page,
@@ -43,32 +40,32 @@ class EventsMeta
         return $this->queryBuilder->table($this->table)->get();
     }
 
-    public function getEvent($eventId)
+    public function getLink($linkId)
     {
         return $this->queryBuilder
             ->table($this->table)
-            ->where('event_id', $eventId)
+            ->where('link_id', '=', $linkId)
             ->get();
     }
 
-    public function updateEvent($eventId, $data)
+    public function updateLink($linkId, $data)
     {
         return $this->queryBuilder
             ->table($this->table)
-            ->where('event_id', $eventId)
+            ->where('link_id', '=', $linkId)
             ->update($data);
     }
 
-    public function insertEvent($data)
+    public function insertLink($data)
     {
         return $this->queryBuilder->table($this->table)->insert($data);
     }
 
-    public function deleteEvent($eventId)
+    public function deleteLink($linkId)
     {
         return $this->queryBuilder
             ->table($this->table)
-            ->where('event_id', $eventId)
+            ->where('link_id', '=', $linkId)
             ->delete();
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pluginframe\DB\Meta;
+namespace PluginFrame\DB\WP;
 
 use Pluginframe\DB\Utils\QueryBuilder;
 use Pluginframe\DB\Pagination\PaginationManager;
@@ -8,11 +8,11 @@ use Pluginframe\DB\Pagination\PaginationManager;
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }
 
-class Terms
+class TermTaxonomy
 {
     protected $queryBuilder;
     protected $paginationManager;
-    protected $table = 'terms';
+    protected $table = 'term_taxonomy';
 
     public function __construct()
     {
@@ -21,13 +21,13 @@ class Terms
     }
 
     /**
-     * Get all terms with pagination.
+     * Get all term taxonomy records with pagination.
      *
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
      * @return array
      */
-    public function allTerms($page = 1, $perPage = 10)
+    public function allTermTaxonomy($page = 1, $perPage = 10)
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
@@ -41,71 +41,71 @@ class Terms
     }
 
     /**
-     * Get Term data for a specific Term with pagination.
+     * Get Term Taxonomy data for a specific Term Taxonomy with pagination.
      *
-     * @param int $termId The Term ID to get data for.
+     * @param int $termTaxonomyId The Term Taxonomy ID to get data for.
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
      * @return array
      */
-    public function singleTerm($termId, $page = 1, $perPage = 10)
+    public function singleTermTaxonomy($termTaxonomyId, $page = 1, $perPage = 10)
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder->table($this->table)->where('term_id', $termId),
+                $this->queryBuilder->table($this->table)->where('term_taxonomy_id', $termTaxonomyId),
                 $page,
                 $perPage
             );
         }
 
-        return $this->queryBuilder->table($this->table)->where('term_id', $termId)->get();
+        return $this->queryBuilder->table($this->table)->where('term_taxonomy_id', $termTaxonomyId)->get();
     }
 
     /**
-     * Get a specific term by its ID.
+     * Get a specific term taxonomy by its ID.
      *
-     * @param int $termId The term ID.
+     * @param int $termTaxonomyId The term taxonomy ID.
      * @return mixed
      */
-    public function getTerm($termId)
+    public function getTermTaxonomy($termTaxonomyId)
     {
-        return $this->queryBuilder->table($this->table)->where('term_id', $termId)->get();
+        return $this->queryBuilder->table($this->table)->where('term_taxonomy_id', $termTaxonomyId)->get();
     }
 
     /**
-     * Insert a new term.
+     * Insert a new term taxonomy record.
      *
      * @param array $data The data to insert.
      * @return bool|int
      */
-    public function insertTerm($data)
+    public function insertTermTaxonomy($data)
     {
         return $this->queryBuilder->table($this->table)->insert($data);
     }
 
     /**
-     * Update a term by its ID.
+     * Update a term taxonomy by its ID.
      *
-     * @param int $termId The term ID.
+     * @param int $termTaxonomyId The term taxonomy ID.
      * @param array $data The data to update.
      * @return bool
      */
-    public function updateTerm($termId, $data)
+    public function updateTermTaxonomy($termTaxonomyId, $data)
     {
         return $this->queryBuilder
             ->table($this->table)
-            ->where('term_id', $termId)
+            ->where('term_taxonomy_id', $termTaxonomyId)
             ->update($data);
     }
 
     /**
-     * Delete a term by its ID.
+     * Delete a term taxonomy by its ID.
      *
-     * @param int $termId The term ID.
+     * @param int $termTaxonomyId The term taxonomy ID.
      * @return bool
      */
-    public function deleteTerm($termId)
+    public function deleteTermTaxonomy($termTaxonomyId)
     {
-        return $this->queryBuilder->table($this->table)->where('term_id', $termId)->delete();
+        return $this->queryBuilder->table($this->table)->where('term_taxonomy_id', $termTaxonomyId)->delete();
     }
 }

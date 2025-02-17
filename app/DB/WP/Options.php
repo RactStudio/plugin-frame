@@ -1,6 +1,6 @@
 <?php
 
-namespace Pluginframe\DB\Meta;
+namespace PluginFrame\DB\WP;
 
 use Pluginframe\DB\Utils\QueryBuilder;
 use Pluginframe\DB\Pagination\PaginationManager;

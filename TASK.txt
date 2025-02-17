@@ -1,8 +1,5 @@
 #Task / Features List of Plugin Frame
 
-01. DONE  - Cloudflare Tunnel setup
-02. DONE  - Internal WP Routes request post and get to do other things
-03. DONE  - Need to add more Middleware for the framework from OtherHandlers methods
 04. LATER - External API request post and get to do other things
 05. DOING - Add more features in services and complete all incomplete features
 06. DOING - Add features in WP Config and other features

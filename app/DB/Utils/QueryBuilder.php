@@ -34,7 +34,7 @@ class QueryBuilder
     /**
      * Set the columns to select.
      *
-     * @param array $columns The columns to select.
+     * @param array $columns The items is selected (default is all `*`).
      * @return $this
      */
     public function select($columns = ['*'])
@@ -106,14 +106,30 @@ class QueryBuilder
     }
 
     /**
+     * Add a Column BY clause.
+     *
+     * @param string|array $columns The column(s) to group by.
+     * @return $this
+     */
+    public function columns($columns)
+    {
+        return $this->groupBy($columns);
+    }
+
+    /**
      * Add an ORDER BY clause.
      *
      * @param string $column The column name.
      * @param string $direction The sort direction (ASC or DESC).
      * @return $this
      */
-    public function orderBy($column, $direction = 'ASC')
+    public function orderBy($column = null, $direction = 'DESC')
     {
+        if ($column === null) {
+            $this->orderBy = [];
+            return $this;
+        }
+        
         $this->orderBy[] = "{$column} {$direction}";
         return $this;
     }
@@ -247,8 +263,11 @@ class QueryBuilder
     {
         global $wpdb;
 
-        $sql = "SELECT " . implode(', ', $this->columns) . " FROM {$wpdb->prefix}{$this->table}";
+        // Ensure columns are set properly, default to '*'
+        $columns = !empty($this->columns) ? implode(', ', $this->columns) : '*';
 
+        $sql = "SELECT {$columns} FROM {$wpdb->prefix}{$this->table}";
+        
         if (!empty($this->joins)) {
             $sql .= " " . implode(' ', $this->joins);
         }

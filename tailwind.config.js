@@ -3,9 +3,8 @@ const plugin = require('tailwindcss/plugin'); // Import the plugin function
 module.exports = {
   prefix: 'pf-', // Custom prefix for Tailwind classes
   content: [
-    "./node_modules/flowbite/**/*.js", // Flowbite JS
     "./resources/views/**/*.{twig,html,php,js}", // Specify content files
-    "./app/**/*.{twig,html,php,js}" // Specify content files
+    "./app/views/**/*.{twig,html,php,js}" // Specify content files
   ],
   theme: {
     fontFamily: {

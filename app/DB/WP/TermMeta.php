@@ -1,6 +1,6 @@
 <?php
 
-namespace Pluginframe\DB\Meta;
+namespace PluginFrame\DB\WP;
 
 use Pluginframe\DB\Utils\QueryBuilder;
 use Pluginframe\DB\Pagination\PaginationManager;
@@ -8,11 +8,11 @@ use Pluginframe\DB\Pagination\PaginationManager;
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }
 
-class UserMeta
+class TermMeta
 {
     protected $queryBuilder;
     protected $paginationManager;
-    protected $table = 'usermeta';
+    protected $table = 'termmeta';
 
     public function __construct()
     {
@@ -21,13 +21,13 @@ class UserMeta
     }
 
     /**
-     * Get all user metadata with pagination.
+     * Get all term metadata with pagination.
      *
      * @param int $page The current page.
      * @param int $perPage The number of items per page.
      * @return array
      */
-    public function allUserMeta($page = 1, $perPage = 10)
+    public function allTermMeta($page = 1, $perPage = 10)
     {
         if (method_exists($this->paginationManager, 'getPaginatedResults')) {
             return $this->paginationManager->getPaginatedResults(
@@ -41,83 +41,62 @@ class UserMeta
     }
 
     /**
-     * Get User Metadata for a specific User with pagination.
+     * Get metadata for a specific term by its ID.
      *
-     * @param int $userId The User ID to get metadata for.
-     * @param int $page The current page.
-     * @param int $perPage The number of items per page.
-     * @return array
-     */
-    public function singleUserMeta($userId, $page = 1, $perPage = 10)
-    {
-        if (method_exists($this->paginationManager, 'getPaginatedResults')) {
-            return $this->paginationManager->getPaginatedResults(
-                $this->queryBuilder->table($this->table)->where('user_id', $userId),
-                $page,
-                $perPage
-            );
-        }
-
-        return $this->queryBuilder->table($this->table)->where('user_id', $userId)->get();
-    }
-
-    /**
-     * Get metadata for a specific user by user ID.
-     *
-     * @param int $userId The user ID.
+     * @param int $termId The term ID.
      * @return mixed
      */
-    public function getUserMeta($userId)
+    public function getTermMeta($termId)
     {
-        return $this->queryBuilder->table($this->table)->where('user_id', $userId)->get();
+        return $this->queryBuilder->table($this->table)->where('term_id', $termId)->get();
     }
 
     /**
-     * Insert new metadata for a user.
+     * Insert new metadata for a term.
      *
-     * @param int $userId The user ID.
+     * @param int $termId The term ID.
      * @param string $metaKey The metadata key.
      * @param mixed $metaValue The metadata value.
      * @return bool|int
      */
-    public function insertUserMeta($userId, $metaKey, $metaValue)
+    public function insertTermMeta($termId, $metaKey, $metaValue)
     {
         return $this->queryBuilder->table($this->table)->insert([
-            'user_id' => $userId,
+            'term_id' => $termId,
             'meta_key' => $metaKey,
             'meta_value' => $metaValue,
         ]);
     }
 
     /**
-     * Update metadata for a user.
+     * Update metadata for a specific term.
      *
-     * @param int $userId The user ID.
+     * @param int $termId The term ID.
      * @param string $metaKey The metadata key.
      * @param mixed $metaValue The metadata value.
      * @return bool
      */
-    public function updateUserMeta($userId, $metaKey, $metaValue)
+    public function updateTermMeta($termId, $metaKey, $metaValue)
     {
         return $this->queryBuilder
             ->table($this->table)
-            ->where('user_id', $userId)
+            ->where('term_id', $termId)
             ->where('meta_key', $metaKey)
             ->update(['meta_value' => $metaValue]);
     }
 
     /**
-     * Delete metadata for a user by key.
+     * Delete metadata for a term.
      *
-     * @param int $userId The user ID.
+     * @param int $termId The term ID.
      * @param string $metaKey The metadata key.
      * @return bool
      */
-    public function deleteUserMeta($userId, $metaKey)
+    public function deleteTermMeta($termId, $metaKey)
     {
         return $this->queryBuilder
             ->table($this->table)
-            ->where('user_id', $userId)
+            ->where('term_id', $termId)
             ->where('meta_key', $metaKey)
             ->delete();
     }
