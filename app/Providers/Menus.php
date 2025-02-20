@@ -2,13 +2,14 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Helpers\Admin\Dashboard;
-use PluginFrame\Helpers\Admin\Settings;
-use PluginFrame\Helpers\Admin\Tools;
-
-use PluginFrame\Helpers\AdminAlpine\DashboardAlpine;
-use PluginFrame\Helpers\AdminAlpine\SettingsAlpine;
-use PluginFrame\Helpers\AdminAlpine\ToolsAlpine;
+// Standard JS based admin pages
+use PluginFrame\Views\Admin\Dashboard;
+use PluginFrame\Views\Admin\Settings;
+use PluginFrame\Views\Admin\Tools;
+// Alpine JS based admin pages
+use PluginFrame\Views\AdminAlpine\DashboardAlpine;
+use PluginFrame\Views\AdminAlpine\SettingsAlpine;
+use PluginFrame\Views\AdminAlpine\ToolsAlpine;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }

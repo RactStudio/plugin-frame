@@ -1,6 +1,6 @@
 <?php
 
-namespace PluginFrame\Helpers\Admin;
+namespace PluginFrame\Views\Admin;
 
 use PluginFrame\Services\Views;
 

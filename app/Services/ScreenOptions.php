@@ -5,9 +5,9 @@ namespace PluginFrame\Services;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Walkthrough
+class ScreenOptions
 {
-    // Add
+    // Create, Copy, Move, Delete files from places to places
     public function __construct()
     {
         // Do something

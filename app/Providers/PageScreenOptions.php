@@ -1,16 +1,17 @@
-<?php
+<?php 
 
-namespace PluginFrame\Services;
+namespace PluginFrame\Providers;
+
+use PluginFrame\Services\ScreenOptions;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Uninstaller
+class PageScreenOptions
 {
-    // Add
+    // Add Filters
     public function __construct()
     {
         // Do something
     }
-
 }

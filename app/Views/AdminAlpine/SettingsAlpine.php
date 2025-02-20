@@ -1,6 +1,6 @@
 <?php
 
-namespace PluginFrame\Helpers\AdminAlpine;
+namespace PluginFrame\Views\AdminAlpine;
 
 use PluginFrame\Services\Views;
 
