@@ -1,0 +1,158 @@
+<div pf-data="themeModeToggle">
+    <!-- Dropdown -->
+    <div class="pf-relative pf-text-left pf-flex pf-justify-center pf-items-center">
+        <!-- Dropdown Trigger -->
+        <button 
+            id="pfThemeDropdownButton" 
+            aria-expanded="false" 
+            class="pf-flex pf-items-center pf-w-15 md:pf-w-28 pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-text-center pf-bg-opacity-50 pf-bg-gray-300 pf-rounded-md pf-shadow-md pf-color:pf-text-white pf-color:hover:pf-text-gray-800 pf-text-gray-800 hover:pf-bg-gray-300 pf-dark:pf-text-gray-200 pf-dark:pf-bg-gray-700 pf-dark:hover:pf-bg-gray-600 pf-overflow-hidden pf-text-ellipsis"
+            type="button"
+            onclick="toggleDropdown()"
+        >
+            <!-- Selected Mode Icon -->
+            <span id="selectedModeIcon" class="pf-h-6 pf-w-6">
+                <i id="dropdownArrowIcon" data-lucide="chevron-down" class="pf-h-6 pf-w-6"></i>
+            </span>
+            <!-- Selected Mode Text -->
+            <span id="selectedModeText" class="pf-hidden md:pf-inline">Theme</span>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div 
+            id="pfThemeDropdown" 
+            class="pf-hidden pf-items-center pf-z-10 pf-w-28 pf-mr-[70px] md:pf-mr-0 pf-bg-white pf-rounded-md pf-shadow-lg pf-border pf-border-gray-200 pf-dark:pf-bg-gray-800 pf-dark:pf-border-gray-600 pf-absolute pf-top-full pf-mt-1 pf-transform pf-transition-all pf-duration-600 pf-ease-in pf-opacity-0"
+        >
+            <ul class="pf-py-1" aria-labelledby="pfThemeDropdownButton">
+                <li>
+                    <!-- Color Mode Button -->
+                    <button 
+                        id="colorModeButton"
+                        type="button" 
+                        class="pf-flex pf-items-center pf-w-full pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-text-gray-700 hover:pf-bg-gray-200 pf-dark:pf-text-gray-200 pf-dark:hover:pf-bg-gray-600"
+                        onclick="selectOption('color', this)">
+                        <i data-lucide="palette" class="pf-h-6 pf-w-6"></i>
+                        Color
+                    </button>
+                </li>
+                <li>
+                    <!-- Light Mode Button -->
+                    <button 
+                        id="lightModeButton"
+                        type="button" 
+                        class="pf-flex pf-items-center pf-w-full pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-text-gray-700 hover:pf-bg-gray-200 pf-dark:pf-text-gray-200 pf-dark:hover:pf-bg-gray-600"
+                        onclick="selectOption('light', this)">
+                        <i data-lucide="sun" class="pf-h-6 pf-w-6"></i>
+                        Light
+                    </button>
+                </li>
+                <li>
+                    <!-- Dark Mode Button -->
+                    <button 
+                        id="darkModeButton"
+                        type="button" 
+                        class="pf-flex pf-items-center pf-w-full pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-text-gray-700 hover:pf-bg-gray-200 pf-dark:pf-text-gray-200 pf-dark:hover:pf-bg-gray-600"
+                        onclick="selectOption('dark', this)">
+                        <i data-lucide="moon" class="pf-h-6 pf-w-6"></i>
+                        Dark
+                    </button>
+                </li>
+                <li>
+                    <!-- System Mode Button -->
+                    <button 
+                        id="systemModeButton"
+                        type="button" 
+                        class="pf-flex pf-items-center pf-w-full pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-text-gray-700 hover:pf-bg-gray-200 pf-dark:pf-text-gray-200 pf-dark:hover:pf-bg-gray-600"
+                        onclick="selectOption('system', this)">
+                        <i data-lucide="sun-moon" class="pf-h-6 pf-w-6"></i>
+                        System
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentMode = localStorage.getItem('plugin_frame_theme') || 'system'; // Default to system if nothing is in localStorage
+    let dropdownOpened = false; // Track whether the dropdown is open or not
+
+    // Set the initial theme based on the stored mode
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectedButton = document.querySelector(`#${currentMode}ModeButton`);
+        selectOption(currentMode, selectedButton); // Apply the selected mode on page load
+
+        // Ensure dropdown is closed on initial page load
+        const dropdown = document.getElementById('pfThemeDropdown');
+        dropdown.classList.add('pf-hidden');
+
+        // Close the dropdown if clicked outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('pfThemeDropdown');
+            const dropdownButton = document.getElementById('pfThemeDropdownButton');
+
+            if (!dropdown.contains(event.target) && !dropdownButton.contains(event.target) && dropdownOpened) {
+                dropdown.classList.add('pf-hidden');
+                dropdownOpened = false;
+            }
+        });
+    });
+
+    function selectOption(mode, button) {
+        currentMode = mode;
+        localStorage.setItem('plugin_frame_theme', mode); // Save the mode in localStorage
+
+        // Remove the active class from all buttons
+        const allButtons = document.querySelectorAll('#pfThemeDropdown button');
+        allButtons.forEach(btn => btn.classList.remove('pf-bg-gray-200', 'pf-dark:pf-bg-gray-700')); // Remove active class
+
+        // Add active class to the selected button
+        button.classList.add('pf-bg-gray-200', 'pf-dark:pf-bg-gray-700'); // Add active class to the selected button
+
+        // Update button text
+        const selectedText = document.getElementById('selectedModeText');
+        selectedText.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
+
+        // Update the button icon
+        const selectedIcon = document.getElementById('selectedModeIcon');
+        selectedIcon.innerHTML = button.querySelector('svg').outerHTML;
+
+        // Close the dropdown
+        toggleDropdown();
+
+        // Apply the selected mode
+        toggleMode(mode);
+    }
+
+    function toggleDropdown() {
+        const dropdown = document.getElementById('pfThemeDropdown');
+        
+        // Toggle the dropdown visibility
+        if (dropdownOpened) {
+            dropdown.classList.add('pf-hidden');
+            dropdown.classList.remove('pf-opacity-100', 'pf-scale-100');
+            dropdownOpened = false;
+        } else {
+            dropdown.classList.remove('pf-hidden');
+            setTimeout(() => {
+                dropdown.classList.add('pf-opacity-100', 'pf-scale-100');
+            }, 10); // Small delay to allow the dropdown to render before applying the animation
+            dropdownOpened = true;
+        }
+    }
+
+    // Function to handle mode change
+    function toggleMode(mode) {
+        const htmlElement = document.documentElement;
+
+        // Apply the selected mode via theme-mode attribute
+        htmlElement.setAttribute('theme-mode', 'pf-' + mode);
+
+        if (mode === 'system') {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                htmlElement.setAttribute('theme-mode', 'pf-dark');
+            } else {
+                htmlElement.setAttribute('theme-mode', 'pf-light');
+            }
+        }
+    }
+</script>

@@ -1,0 +1,59 @@
+<div id="pf-load" pf-data="{}" class="pf-grid pf-grid-cols-12 pf-gap-2 sm:pf-pr-2.5 md:pf-pr-4 lg:pf-pr-5 pf-pr-2">
+
+  <!-- Header -->
+  <header class="pf-mt-[-2rem] pf-col-span-12 pf-p-4 pf-pb-0 pf-rounded-md pf-shadow-lg pf-border-[1px] pf-bg-red-500 pf-border-red-300 pf-light:pf-bg-gray-100 pf-light:pf-border-gray-300 pf-dark:pf-bg-gray-800 pf-dark:pf-border-gray-600">
+    {% include 'lib-alpine/header/header-modern.twig' %}
+  </header>
+  
+  <!-- Main Content and Sidebar -->
+  <div class="pf-grid pf-col-span-12 pf-gap-2">
+
+    <!-- Main Content -->
+    <main class="pf-col-span-12 md:pf-col-span-8 lg:pf-col-span-9">
+
+      <section class="pf-mt-5">
+
+        <!-- Dark Mode Toggle -->
+        {% include 'lib-alpine/theme/theme-button-js.twig' %}
+
+      </section>
+
+      <section class="pf-mt-5">
+        {% include 'lib-alpine/sections/section-hero-modern.twig' with {
+          title: title,
+          subtitle: content,
+          action_button: '<a href="#" class="pf-btn pf-btn-primary">Get Started</a>'
+        } %}
+      </section>
+
+      <section class="pf-mt-6">
+        {% include 'lib-alpine/sections/section-grid-card.twig' with {
+          cards: [
+            { title: 'Users', value: '1,250', change: '+5%', icon: 'resources/assets/img/user.png' },
+            { title: 'Revenue', value: '$45,000', change: '+12%', icon: 'resources/assets/img/user.png' },
+            { title: 'Signups', value: '350', change: '+8%', icon: 'resources/assets/img/user.png' }
+          ]
+        } %}
+      </section>
+
+      <section class="pf-mt-6">
+        {% include 'lib-alpine/blocks/block-cta.twig' with {
+          title: 'Need Assistance?',
+          content: 'Reach out to our support team for help with any issues.',
+          button: '<a href="#" class="pf-btn pf-btn-secondary">Contact Support</a>'
+        } %}
+      </section>
+    </main>
+
+    {# <!-- Right Sidebar -->
+    <aside class="pf-col-span-12 md:pf-col-span-4 lg:pf-col-span-3 pf-bg-gray-50 pf-dark:pf-bg-gray-800 pf-rounded pf-shadow-sm">
+      {% include 'lib-alpine/sidebar/sidebar-modern-right.twig' %}
+    </aside> #}
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="pf-col-span-12 pf-mt-6">
+    {% include 'lib-alpine/footer/footer-modern.twig' %}
+  </footer>
+</div>

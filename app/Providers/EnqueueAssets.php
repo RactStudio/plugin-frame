@@ -80,7 +80,6 @@ class EnqueueAssets
             true,
             null,
             [
-                'type' => 'module',
                 'defer' => '',
             ],
         );
@@ -89,12 +88,11 @@ class EnqueueAssets
         $this->enqueueFiles->registerFrontendScript(
             'plugin-frame-frontend-flowbite-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
-            [],
+            ['plugin-frame-frontend-alpine-script'],
             false,
             true,
             null,
             [
-                'type' => 'module',
                 'defer' => '',
             ],
         );
@@ -103,12 +101,11 @@ class EnqueueAssets
         $this->enqueueFiles->registerFrontendScript(
             'plugin-frame-frontend-lucide-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/lucide.min.js',
-            [],
+            ['plugin-frame-frontend-alpine-script'],
             false,
             true,
             null,
             [
-                'type' => 'module',
                 'defer' => '',
             ],
         );
@@ -122,7 +119,6 @@ class EnqueueAssets
             true,
             null,
             [
-                'type' => 'module',
                 'async' => '',
             ],
         );
@@ -171,10 +167,9 @@ class EnqueueAssets
             PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
             [],
             false,
-            false,
+            true,
             null,
             [
-                'type' => 'module',
                 'defer' => '',
             ],
         );
@@ -183,13 +178,12 @@ class EnqueueAssets
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-flowbite-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
-            [],
+            ['plugin-frame-admin-alpine-script'],
             false,
             true,
             null,
             [
-                'type' => 'module',
-                'defer' => '',
+                'async' => '',
             ],
         );
 
@@ -197,13 +191,12 @@ class EnqueueAssets
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-lucide-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/lucide.min.js',
-            [],
+            ['plugin-frame-admin-alpine-script'],
             false,
             true,
             null,
             [
-                'type' => 'module',
-                'defer' => '',
+                'async' => '',
             ],
         );
 
@@ -216,8 +209,7 @@ class EnqueueAssets
             false,
             null,
             [
-                'type' => 'module',
-                'defer' => '',
+                'async' => '',
             ],
         );
 
