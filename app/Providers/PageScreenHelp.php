@@ -10,6 +10,7 @@ class PageScreenHelp
     public function __construct()
     {
         $this->screenHelp = new ScreenHelp();
+        $this->screenHelp->adjustAdminStyles();
         $this->registerHelpTabs();
     }
 
@@ -57,5 +58,5 @@ class PageScreenHelp
                 'capability' => 'manage_privacy_options'
             ]);
     }
-    
+
 }

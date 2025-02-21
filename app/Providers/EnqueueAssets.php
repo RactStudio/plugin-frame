@@ -71,56 +71,48 @@ class EnqueueAssets
             'all',
         );
 
-        // Frontend AlpineJS script
-        $this->enqueueFiles->registerFrontendScript(
-            'plugin-frame-frontend-alpine-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
-            [],
-            false,
-            true,
-            null,
-            [
-                'defer' => '',
-            ],
-        );
+        // // Frontend AlpineJS script
+        // $this->enqueueFiles->registerFrontendScript(
+        //     'plugin-frame-frontend-alpine-script',
+        //     PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
+        //     [],
+        //     false,
+        //     true,
+        //     null,
+        //     [
+        //         'type' => 'module',
+        //         'defer' => '',
+        //     ],
+        // );
         
-        // Frontend Flowbite script
-        $this->enqueueFiles->registerFrontendScript(
-            'plugin-frame-frontend-flowbite-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
-            ['plugin-frame-frontend-alpine-script'],
-            false,
-            true,
-            null,
-            [
-                'defer' => '',
-            ],
-        );
+        // // Frontend Flowbite script
+        // $this->enqueueFiles->registerFrontendScript(
+        //     'plugin-frame-frontend-flowbite-script',
+        //     PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
+        //     [],
+        //     false,
+        //     true,
+        //     null,
+        // );
 
-        // Frontend Lucide script
-        $this->enqueueFiles->registerFrontendScript(
-            'plugin-frame-frontend-lucide-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/lucide.min.js',
-            ['plugin-frame-frontend-alpine-script'],
-            false,
-            true,
-            null,
-            [
-                'defer' => '',
-            ],
-        );
+        // // Frontend Lucide script
+        // $this->enqueueFiles->registerFrontendScript(
+        //     'plugin-frame-frontend-lucide-script',
+        //     PLUGIN_FRAME_URL . 'resources/assets/js/lucide.min.js',
+        //     [],
+        //     false,
+        //     true,
+        //     null,
+        // );
 
         // Frontend Main Scripts (Auto generated)
         $this->enqueueFiles->registerFrontendScript(
             'plugin-frame-frontend-main-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/frontend.min.js',
-            ['plugin-frame-frontend-alpine-script'],
+            [],
             PLUGIN_FRAME_VERSION,
             true,
             null,
-            [
-                'async' => '',
-            ],
         );
 
         // // Example with condition
@@ -161,56 +153,48 @@ class EnqueueAssets
             'all',
         );
 
-        // Admin AlpineJS script
-        $this->enqueueFiles->registerAdminScript(
-            'plugin-frame-admin-alpine-script',
-            PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
-            [],
-            false,
-            true,
-            null,
-            [
-                'defer' => '',
-            ],
-        );
+        // // Admin AlpineJS script
+        // $this->enqueueFiles->registerAdminScript(
+        //     'plugin-frame-admin-alpine-script',
+        //     PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
+        //     [],
+        //     false,
+        //     false,
+        //     null,
+        //     [
+        //         'type' => 'module',
+        //         'defer' => '',
+        //     ],
+        // );
 
         // Admin Flowbite script
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-flowbite-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
-            ['plugin-frame-admin-alpine-script'],
+            [],
             false,
             true,
             null,
-            [
-                'async' => '',
-            ],
         );
 
         // Admin Lucide script
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-lucide-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/lucide.min.js',
-            ['plugin-frame-admin-alpine-script'],
+            [],
             false,
             true,
             null,
-            [
-                'async' => '',
-            ],
         );
 
         // Admin Main Scripts (Auto generated)
         $this->enqueueFiles->registerAdminScript(
             'plugin-frame-admin-main-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/admin.min.js',
-            ['plugin-frame-admin-alpine-script'],
+            [],
             PLUGIN_FRAME_VERSION,
             false,
             null,
-            [
-                'async' => '',
-            ],
         );
 
         // // Example with condition

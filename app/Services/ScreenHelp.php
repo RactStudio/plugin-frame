@@ -1,8 +1,12 @@
 <?php
 namespace PluginFrame\Services;
 
+use Exception;
 use WP_Screen;
 use PluginFrame\Services\Views;
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class ScreenHelp
 {
@@ -105,7 +109,7 @@ class ScreenHelp
                 'twig',                  // Explicitly set extension
                 $this->mergeContexts($tabConfig)
             );
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             error_log("Help Tab Error [{$tabConfig['template']}]: {$e->getMessage()}");
             return __('Error loading help content', 'plugin-frame');
         }
@@ -128,4 +132,31 @@ class ScreenHelp
         $this->globalContext = array_merge($this->globalContext, $context);
         return $this;
     }
+
+    public function adjustAdminStyles()
+    {
+        add_action('admin_head', function() {
+            $screen = get_current_screen();
+            $margin_needed = isset($this->groups[$screen->id]) || $screen->show_screen_options();
+    
+            if ($margin_needed) {
+                echo '<style>
+                    #pf-load.pf-page  {
+                        margin-top: 30px;
+                        position: relative;
+                        z-index: 999;
+                    }
+                    @media screen and (max-width: 782px) {
+                        #pf-load.pf-page {
+                            margin-top: 40px;
+                        }
+                    }
+                    #screen-meta-links {
+                        margin-bottom: 0px;
+                    }
+                </style>';
+            }
+        });
+    }
+
 }
