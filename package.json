@@ -21,7 +21,6 @@
     "@babel/core": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
     "babel-loader": "^9.2.1",
-    "css-loader": "^7.1.2",
     "fast-glob": "^3.3.3",
     "glob": "^11.0.1",
     "grunt": "^1.6.1",
@@ -32,12 +31,8 @@
     "grunt-contrib-uglify": "^5.2.2",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-webpack": "^7.0.0",
-    "postcss-loader": "^8.1.1",
-    "postcss-prefixwrap": "^1.54.0",
-    "style-loader": "^4.0.0",
     "webpack": "^5.98.0",
-    "webpack-cli": "^6.0.1",
-    "wp-pot": "^2.0.0"
+    "webpack-cli": "^6.0.1"
   },
   "directories": {
     "test": "tests"
@@ -226,7 +221,6 @@
     "validate-npm-package-name": "^6.0.0",
     "which": "^5.0.0",
     "wp-cli": "^0.0.5",
-    "wp-pot": "^2.0.0",
     "wrap-ansi": "^9.0.0",
     "write": "^2.0.0",
     "xregexp": "^5.1.1",
