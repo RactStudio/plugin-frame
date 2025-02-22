@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('fast-glob');
+import fs from 'fs';
+import path from 'path';
+import glob from 'fast-glob';
 
 // Configuration
 const PLUGIN_SLUG = 'plugin-frame';

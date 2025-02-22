@@ -72,7 +72,7 @@ module.exports = function (pf) {
                     '!TASK.txt',
                     '!webpack.config.js',
                     '!translate-gen.mjs',
-                    '!translate-twig.js',
+                    '!translate-twig.mjs',
                     '!wiki.txt'
                 ],
                 dest: '.dist/plugin-frame'

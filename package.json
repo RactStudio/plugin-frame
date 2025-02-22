@@ -5,7 +5,7 @@
   "main": "plugin-frame.php",
   "scripts": {
     "translate-wp": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
-    "translate-twig": "node translate-twig.js",
+    "translate-twig": "node translate-twig.mjs",
     "translate-gen": "node translate-gen.mjs",
     "translate": "npm run translate-wp && npm run translate-twig && npm run translate-gen",
     "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify",
