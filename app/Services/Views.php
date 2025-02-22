@@ -15,14 +15,16 @@ class Views
     /**
      * Render a Twig template.
      *
-     * @param string $template The relative path to the template (without extension).
-     * @param array $data Data to pass to the template.
-     * @return string Rendered HTML.
+     * @param   string  $template The relative path to the template (without extension).
+     * @param   string  $extension Optional - The extension of the template.
+     * @param   array   $data Data to pass to the template, default is `twig`.
+     * @param   string  $rootLocation Optional - `resources/views/` is default.
+     * @return  string  Rendered HTML.
      */
-    public static function render(string $template, $extension = 'twig', array $data = [])
+    public static function render(string $template, string $extension = 'twig', array $data = [], string $rootLocation = 'resources/views/')
     {
-        // Set up the loader to scan all subdirectories inside resources/views
-        $loader = new FilesystemLoader( PLUGIN_FRAME_DIR . 'resources/views' );
+        // Set up the loader to scan all subdirectories inside 'resources/views/' or provided $rootLocation
+        $loader = new FilesystemLoader( PLUGIN_FRAME_DIR . $rootLocation );
         
         // Initialize the Twig environment with cache and auto-reload
         $twig = new Environment($loader, [
@@ -51,7 +53,7 @@ class Views
             // Render the template, adding the .twig extension automatically
             return $twig->render("$template.{$extension}", $data);
         } catch (Exception $e) {
-            return '<p>Error rendering view: ' . htmlspecialchars($e->getMessage()) . '</p>';
+            return '<p>Error rendering twig view: ' . htmlspecialchars($e->getMessage()) . '</p>';
         }
     }
 }

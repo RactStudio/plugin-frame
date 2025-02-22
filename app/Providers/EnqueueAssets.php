@@ -71,19 +71,19 @@ class EnqueueAssets
             'all',
         );
 
-        // // Frontend AlpineJS script
-        // $this->enqueueFiles->registerFrontendScript(
-        //     'plugin-frame-frontend-alpine-script',
-        //     PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
-        //     [],
-        //     false,
-        //     true,
-        //     null,
-        //     [
-        //         'type' => 'module',
-        //         'defer' => '',
-        //     ],
-        // );
+        // Frontend AlpineJS script
+        $this->enqueueFiles->registerFrontendScript(
+            'plugin-frame-frontend-alpine-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
+            [],
+            false,
+            true,
+            null,
+            [
+                'type' => 'module',
+                'defer' => '',
+            ],
+        );
         
         // // Frontend Flowbite script
         // $this->enqueueFiles->registerFrontendScript(
@@ -153,19 +153,19 @@ class EnqueueAssets
             'all',
         );
 
-        // // Admin AlpineJS script
-        // $this->enqueueFiles->registerAdminScript(
-        //     'plugin-frame-admin-alpine-script',
-        //     PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
-        //     [],
-        //     false,
-        //     false,
-        //     null,
-        //     [
-        //         'type' => 'module',
-        //         'defer' => '',
-        //     ],
-        // );
+        // Admin AlpineJS script
+        $this->enqueueFiles->registerAdminScript(
+            'plugin-frame-admin-alpine-script',
+            PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
+            [],
+            false,
+            true,
+            null,
+            [
+                'type' => 'module',
+                'defer' => '',
+            ],
+        );
 
         // Admin Flowbite script
         $this->enqueueFiles->registerAdminScript(
@@ -193,7 +193,7 @@ class EnqueueAssets
             PLUGIN_FRAME_URL . 'resources/assets/js/admin.min.js',
             [],
             PLUGIN_FRAME_VERSION,
-            false,
+            true,
             null,
         );
 

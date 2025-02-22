@@ -2,12 +2,19 @@
 namespace PluginFrame\Services;
 
 use Exception;
+use RuntimeException;
 use WP_Screen;
 use PluginFrame\Services\Views;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+/**
+ * Manages WordPress admin help tabs with Twig template support
+ * 
+ * Provides fluent interface for registering context-aware help tabs
+ * Handles template rendering, context merging, and access control
+ */
 class ScreenHelp
 {
     protected $groups = [];
@@ -15,6 +22,9 @@ class ScreenHelp
     protected $globalContext = [];
     protected $currentScreenId;
 
+    /**
+     * Initialize service and register WordPress hooks
+     */
     public function __construct()
     {
         $this->twig = new Views();
@@ -22,7 +32,10 @@ class ScreenHelp
     }
 
     /**
-     * Start configuration for a specific screen
+     * Set current screen for help tab configuration
+     * 
+     * @param string $screenId WordPress screen ID (e.g., 'dashboard', 'edit-post')
+     * @return self Fluent interface
      */
     public function forScreen(string $screenId): self
     {
@@ -39,12 +52,23 @@ class ScreenHelp
     }
 
     /**
-     * Add a help tab to current screen group
+     * Register a help tab for current screen
+     * 
+     * @param string $tabId Unique tab identifier
+     * @param array $config {
+     *     @type string   $template    Relative path to Twig template (without extension)
+     *     @type string   $title       Display title
+     *     @type array    $context     Tab-specific template variables
+     *     @type int      $priority    Display order (lower numbers first)
+     *     @type string   $capability  Required user capability
+     * }
+     * @return self Fluent interface
+     * @throws RuntimeException If no screen selected
      */
     public function addTab(string $tabId, array $config): self
     {
         if (!$this->currentScreenId) {
-            throw new \RuntimeException('No screen selected. Use forScreen() first.');
+            throw new RuntimeException('No screen selected. Use forScreen() first.');
         }
 
         $this->groups[$this->currentScreenId]['tabs'][$tabId] = wp_parse_args($config, [
@@ -59,12 +83,16 @@ class ScreenHelp
     }
 
     /**
-     * Add shared context for current screen group
+     * Add shared template variables for current screen's tabs
+     * 
+     * @param array $context Associative array of template variables
+     * @return self Fluent interface
+     * @throws RuntimeException If no screen selected
      */
     public function withSharedContext(array $context): self
     {
         if (!$this->currentScreenId) {
-            throw new \RuntimeException('No screen selected. Use forScreen() first.');
+            throw new RuntimeException('No screen selected. Use forScreen() first.');
         }
 
         $this->groups[$this->currentScreenId]['shared_context'] = array_merge(
@@ -76,7 +104,9 @@ class ScreenHelp
     }
 
     /**
-     * Register all tab groups with WordPress
+     * Register all configured help tabs with WordPress
+     * 
+     * Automatically called via admin_head hook
      */
     public function registerGroups()
     {
@@ -117,15 +147,30 @@ class ScreenHelp
 
     protected function mergeContexts(array $tabConfig): array
     {
+        // Get current screen from WordPress
+        $screen = get_current_screen();
+        
+        // Verify we have valid screen and context data
+        if (!$screen || !isset($this->groups[$screen->id])) {
+            return array_merge(
+                $this->globalContext,
+                $tabConfig['context']
+            );
+        }
+    
+        // Use screen ID from current context
         return array_merge(
             $this->globalContext,
-            $this->groups[$this->currentScreenId]['shared_context'],
+            $this->groups[$screen->id]['shared_context'],
             $tabConfig['context']
         );
     }
 
     /**
-     * Add global context available to all tabs
+     * Add global template variables available to all screens
+     * 
+     * @param array $context Associative array of template variables
+     * @return self Fluent interface
      */
     public function addGlobalContext(array $context): self
     {
@@ -133,6 +178,12 @@ class ScreenHelp
         return $this;
     }
 
+    /**
+     * Adjust admin page styles when help tabs are present
+     * 
+     * Adds dynamic CSS for proper spacing above Plugin Frame Page Content
+     * Applies responsive margins for mobile devices
+     */
     public function adjustAdminStyles()
     {
         add_action('admin_head', function() {
