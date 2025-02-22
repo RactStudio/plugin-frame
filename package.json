@@ -6,7 +6,8 @@
   "scripts": {
     "translate-wp": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
     "translate-twig": "node translate-twig.js",
-    "translate": "npm run translate-wp && npm run translate-twig",
+    "translate-gen": "node translate-gen.mjs",
+    "translate": "npm run translate-wp && npm run translate-twig && npm run translate-gen",
     "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify",
     "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",
     "watch": "grunt watch",
@@ -43,7 +44,6 @@
   },
   "dependencies": {
     "abbrev": "^3.0.0",
-    "alpine": "^0.2.1",
     "alpinejs": "^3.14.8",
     "ansi-regex": "^6.1.0",
     "ansi-styles": "^6.2.1",

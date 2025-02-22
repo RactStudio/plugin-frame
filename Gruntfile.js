@@ -71,6 +71,8 @@ module.exports = function (pf) {
                     '!tailwind.config.js',
                     '!TASK.txt',
                     '!webpack.config.js',
+                    '!translate-gen.mjs',
+                    '!translate-twig.js',
                     '!wiki.txt'
                 ],
                 dest: '.dist/plugin-frame'
