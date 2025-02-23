@@ -26,7 +26,13 @@ Follow these steps to set up the development environment:
 
 4. Build the plugin:
     
-    `npm run build`
+    Developemnt build: `npm run build`
+
+    Tailwind CSS build: `npm run tailwind`
+
+    WP Languages build: `npm run language`
+    
+    Production build (dist): `npm run prod`
     
 
 5. Activate the plugin through WordPress dashboard
