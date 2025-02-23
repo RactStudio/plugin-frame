@@ -1,0 +1,16 @@
+<section>
+  <div class="pf-grid pf-grid-cols-1 md:pf-grid-cols-2 lg:pf-grid-cols-3 pf-gap-6">
+    {% for card in cards %}
+      <div class="pf-bg-gray-50 pf-dark:pf-bg-gray-900 pf-border pf-rounded-lg pf-px-6 pf-py-4 pf-shadow-sm">
+        <div class="pf-flex pf-items-center pf-space-x-4">
+          <img src="{{ plugin_frame_url }}{{ card.icon }}" alt="{{ card.title }}" class="pf-h-12 pf-w-12 pf-rounded-full pf-bg-gray-200 pf-p-1">
+          <div>
+            <h3 class="pf-text-lg pf-font-semibold pf-text-gray-800 pf-dark:pf-text-gray-200">{{ card.title }}</h3>
+            <p class="pf-text-xl pf-font-bold pf-text-indigo-600 pf-dark:pf-text-indigo-400">{{ card.value }}</p>
+            <span class="pf-text-sm pf-text-green-500 pf-font-medium">{{ card.change }}</span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

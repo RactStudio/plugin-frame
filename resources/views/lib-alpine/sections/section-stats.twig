@@ -1,0 +1,10 @@
+<section class="pf-stats-section pf-bg-gray-50 pf-dark:pf-bg-gray-900 pf-py-8 pf-px-4">
+  <div class="pf-container pf-grid pf-grid-cols-1 md:pf-grid-cols-3 pf-gap-6">
+    {% for stat in stats %}
+    <div class="pf-stat pf-text-center pf-bg-white pf-dark:pf-bg-gray-800 pf-rounded-lg pf-p-6 pf-shadow">
+      <div class="pf-text-4xl pf-font-bold">{{ stat.value }}</div>
+      <div class="pf-text-sm pf-text-gray-500">{{ stat.label }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

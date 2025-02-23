@@ -1,0 +1,16 @@
+<div class="pf-flex pf-mt-2 pf-mb-4 pf-justify-between">
+  {% include 'lib/logo/logo-text-icon.twig' %}
+  <div class="pf-flex pf-justify-center pf-items-center pf-gap-3">
+    {% include 'lib/theme/theme-dropdown-js.twig' %}
+    <!-- Mobile Menu Button -->
+    <button id="pf-mobile-menu-button" class="pf-flex md:pf-hidden pf-w-10 pf-h-10 pf-px-2 pf-py-2 pf-items-center pf-justify-center pf-font-sans pf-text-[28x] pf-bg-gray-200 pf-rounded-md pf-shadow-md pf-text-gray-700 hover:pf-bg-gray-300 pf-dark:pf-text-gray-200 pf-dark:pf-bg-gray-700 pf-dark:hover:pf-bg-gray-600">
+      <!-- Lucide Icon for Menu Open -->
+      <i data-lucide="menu" id="pf-menu-open-icon" class="pf-h-6 pf-w-6"></i>
+      <!-- Lucide Icon for Menu Close -->
+      <i data-lucide="x" id="pf-menu-close-icon" class="pf-h-6 pf-w-6 pf-hidden"></i>
+    </button>
+  </div>
+</div>
+<div class="pf-mx-[-1rem] pf-rounded-md">
+  {% include 'lib/navbar/navbar-modern.twig' %}
+</div>

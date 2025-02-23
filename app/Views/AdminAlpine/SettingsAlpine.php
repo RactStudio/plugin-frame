@@ -1,13 +1,13 @@
 <?php
 
-namespace PluginFrame\Views\Admin;
+namespace PluginFrame\Views\AdminAlpine;
 
 use PluginFrame\Services\Views;
 
 // Exit if accessed directly
 defined('ABSPATH') || exit;
 
-class Settings
+class SettingsAlpine
 {
     /**
      * Render the content of the page.
@@ -15,7 +15,7 @@ class Settings
      */
     public function render(): void
     {
-        echo Views::render('admin/settings',  'twig', [
+        echo Views::render('admin-alpine/settings',  'twig', [
             'plugin_domain'    => 'plugin-frame',
             'plugin_frame_name'=> PLUGIN_FRAME_NAME,
             'title'            => __('Settings', 'plugin-frame'),

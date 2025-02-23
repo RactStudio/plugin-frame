@@ -1,48 +1,114 @@
 # Plugin Frame
 
-A modern WordPress plugin development framework.
+![Plugin Frame](https://github.com/RactStudio/plugin-frame/)
 
-## Installation for Developers
+## A Modern WordPress Plugin Development Framework 🚀
 
-Follow these steps to set up the development environment:
+Plugin Frame is a robust and developer-friendly WordPress plugin development framework designed for modern workflows. Built with cutting-edge technologies like Composer, npm, Tailwind CSS, and Twig, it provides a Laravel-like structure while adhering to WordPress coding standards and PSR-4 guidelines. Whether you're building lightweight plugins or complex WordPress applications, Plugin Frame streamlines development with a structured, modular, and scalable approach.
 
-1. Navigate to WordPress plugins directory:
-    
-    `cd /path/to/wordpress/wp-content/plugins/`
-    
+### Why Choose Plugin Frame?
 
-2. Clone the repository:
-    
-    `git clone https://github.com/RactStudio/plugin-frame.git`
-    
+- ✅ **Modern Development Workflow** – Leverage tools like Composer, npm, and Webpack for efficient development.
+- ✅ **WordPress & PHP Standards Compliant** – Ensures compatibility with WordPress coding best practices.
+- ✅ **Built-in Optimization & Build Tools** – Automate CSS, JavaScript, translation, and production builds.
+- ✅ **Minimalistic & Developer-Friendly** – Lightweight, fast, and easy to use for all levels of developers.
 
-3. Install dependencies:
-    
-    `composer install`
-    
-    
-    `npm install`
-    
+---
 
-4. Build the plugin:
-    
-    `npm run build`
-    
+## 📌 Installation for Developers
 
-5. Activate the plugin through WordPress dashboard
+Follow these steps to set up your development environment:
 
-6. Start developing your plugin!
+1. **Navigate to the WordPress plugins directory:**
 
-## Features
+    ```sh
+    cd /path/to/wordpress/wp-content/plugins/
+    ```
 
-- Modern development workflow
-- WordPress coding standards compliant
-- Built-in build tools and optimization
-- Developer-friendly architecture
+2. **Clone the repository:**
 
-## Requirements
+    ```sh
+    git clone https://github.com/RactStudio/plugin-frame.git
+    ```
 
-- WordPress 5.0 or higher
-- PHP 7.4 or higher
-- Composer
-- Node.js & npm
+3. **Install dependencies:**
+
+    ```sh
+    composer install
+    npm install
+    ```
+
+4. **Build the plugin:**
+
+    - Development Build: `npm run build`
+    - Tailwind CSS Build: `npm run tailwind`
+    - WP Languages Build: `npm run translate`
+    - Production Build (dist): `npm run prod`
+
+5. **Dev Tools:**
+
+    - Cloudflared Tunnels: `npm run tunnel`
+    - Watch CSS: `npm run watch`
+    - Tailwind CSS Watch: `npm run tailwind-watch`
+
+6. **Activate the plugin** through the WordPress dashboard.
+
+7. **Start developing your plugin!** 🎉
+
+---
+
+## ⚡ Features
+
+- 🚀 **Modern development workflow**
+- 🔍 **Follows WordPress & PHP coding standards**
+- 🔧 **Built-in build tools for performance optimization**
+- 🛠 **Developer-friendly architecture**
+
+---
+
+## 📌 Requirements
+
+- **WordPress:** 5.0 or higher
+- **PHP:** 7.4 or higher
+- **Composer** (for dependency management)
+- **Node.js & npm** (for frontend assets & build tools)
+
+---
+
+## 🛠️ Technologies Used
+
+- **WordPress** | **PHP** | **SQL**
+- **Composer** | **Node.js** | **npm**
+- **Webpack** | **Babel** | **Grunt**
+- **Tailwind CSS** | **Twig** | **Alpine.js**
+- **JavaScript** | **AJAX** | **CSS**
+- **Cloudflared** | **WP-CLI** | **WordPress-i18n**
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! If you’d like to improve Plugin Frame, feel free to open an issue or submit a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the **GPLv3** license.
+
+---
+
+## 🏆 Credits
+
+- Developed by [Mahamudul Hasan Rubel](https://mhr.ractstudio.com/)
+
+---
+
+## 📬 Contact
+
+- **📱 WhatsApp:** +8801734998405
+- **📧 Email:** [bd.mhrubel@gmail.com](mailto:bd.mhrubel@gmail.com)
+
+---
+
+🚀 **Build powerful WordPress plugins effortlessly with Plugin Frame!**

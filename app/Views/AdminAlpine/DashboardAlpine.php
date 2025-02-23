@@ -1,13 +1,13 @@
 <?php
 
-namespace PluginFrame\Views\Admin;
+namespace PluginFrame\Views\AdminAlpine;
 
 use PluginFrame\Services\Views;
 
 // Exit if accessed directly
 defined('ABSPATH') || exit;
 
-class Dashboard
+class DashboardAlpine
 {
     /**
      * Render the content of the page.
@@ -15,7 +15,7 @@ class Dashboard
      */
     public function render(): void
     {
-        echo Views::render('admin/dashboard', 'twig', [
+        echo Views::render('admin-alpine/dashboard', 'twig', [
             'plugin_domain'    => 'plugin-frame',
             'plugin_frame_name'=> PLUGIN_FRAME_NAME,
             'title'            => __('Dashboard', 'plugin-frame'),

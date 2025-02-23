@@ -1,0 +1,100 @@
+<div class=pf-py-1 sm:pf-py-1" pf-data="themeModeToggle">
+    <!-- Mode Selection Buttons -->
+    <div class="pf-flex pf-justify-center pf-items-center pf-space-x-4 pf-mb-6">
+        <!-- Color Mode Button -->
+        <button 
+            id="colorModeButton"
+            type="button" 
+            class="pf-flex pf-items-center pf-w-22 sm:pf-w-28 pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-bg-gray-200 pf-rounded-md pf-shadow-md pf-text-gray-700 hover:pf-bg-gray-300 pf-dark:pf-text-gray-200 pf-dark:pf-bg-gray-700 pf-dark:hover:pf-bg-gray-600"
+            onclick="selectOption('color', this)">
+            <i data-lucide="palette" class="pf-h-6 pf-w-6"></i>
+            Color
+        </button>
+
+        <!-- Light Mode Button -->
+        <button 
+            id="lightModeButton"
+            type="button" 
+            class="pf-flex pf-items-center pf-w-22 sm:pf-w-28 pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-bg-gray-200 pf-rounded-md pf-shadow-md pf-text-gray-700 hover:pf-bg-gray-300 pf-dark:pf-text-gray-200 pf-dark:pf-bg-gray-700 pf-dark:hover:pf-bg-gray-600"
+            onclick="selectOption('light', this)">
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                class="pf-h-6 pf-w-6 pf-text-gray-800 pf-dark:pf-text-gray-200" 
+                viewBox="0 0 24 24" 
+                fill="currentColor">
+                <path d="M12 6a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1zm9 5h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 1a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1zm.22-7.28a1 1 0 0 0-1.39 1.47l1.44 1.39a1 1 0 0 0 .73.28 1 1 0 0 0 .72-.31 1 1 0 0 0 0-1.41L5.22 4.72zm11.51 3.42a1 1 0 0 0 .69-.28l1.44-1.39a1 1 0 1 0-1.35-1.47L15.8 6.9a1 1 0 0 0 0 1.41 1 1 0 0 0 .93.22zM12 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm5.73-1.86a1 1 0 0 0-1.39 1.44l1.44 1.42a1 1 0 0 0 .69.28 1 1 0 0 0 .72-.3 1 1 0 0 0 0-1.42l-1.46-1.42zm-11.46 0-1.44 1.39a1 1 0 0 0 0 1.42 1 1 0 0 0 .72.3 1 1 0 0 0 .67-.25l1.44-1.39a1 1 0 0 0-1.39-1.44zM12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4z"/>
+            </svg>
+            Light
+        </button>
+
+        <!-- Dark Mode Button -->
+        <button 
+            id="darkModeButton"
+            type="button" 
+            class="pf-flex pf-items-center pf-w-22 sm:pf-w-28 pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-bg-gray-200 pf-rounded-md pf-shadow-md pf-text-gray-700 hover:pf-bg-gray-300 pf-dark:pf-text-gray-200 pf-dark:pf-bg-gray-700 pf-dark:hover:pf-bg-gray-600"
+            onclick="selectOption('dark', this)">
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                class="pf-h-6 pf-w-6 pf-text-gray-800 pf-dark:pf-text-gray-200" 
+                viewBox="0 0 24 24" 
+                fill="currentColor">
+                <path d="M12 3c-.13 0-.26.005-.39.014A8.002 8.002 0 0011.64 21 9 9 0 0012 3zm-1.036 14.899A6.008 6.008 0 018.485 5.85a7.965 7.965 0 002.479 12.048z"/>
+            </svg>
+            Dark
+        </button>
+
+        <!-- System Mode Button -->
+        <button 
+            id="systemModeButton"
+            type="button" 
+            class="pf-flex pf-items-center pf-w-22 sm:pf-w-28 pf-gap-1 pf-px-2 pf-py-2 pf-font-sans pf-bg-gray-200 pf-rounded-md pf-shadow-md pf-text-gray-700 hover:pf-bg-gray-300 pf-dark:pf-text-gray-200 pf-dark:pf-bg-gray-700 pf-dark:hover:pf-bg-gray-600"
+            onclick="selectOption('system', this)">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="pf-h-6 pf-w-6 pf-text-gray-800 pf-dark:pf-text-gray-200" 
+                viewBox="0 0 24 24" 
+                fill="currentColor">
+                <path d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"/>
+            </svg>
+            System
+        </button>
+    </div>
+</div>
+
+<script>
+    let currentMode = localStorage.getItem('plugin_frame_theme') || 'system'; // Default to system if nothing is in localStorage
+
+    // Set the initial theme based on the stored mode
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectedButton = document.querySelector(`#${currentMode}ModeButton`);
+        selectOption(currentMode, selectedButton); // Apply the selected mode on page load
+    });
+
+    function selectOption(mode, button) {
+        currentMode = mode;
+        localStorage.setItem('plugin_frame_theme', mode); // Save the mode in localStorage
+
+        // Remove the active class from all buttons
+        const allButtons = document.querySelectorAll('button');
+        allButtons.forEach(btn => btn.classList.remove('pf-bg-gray-200', 'pf-dark:pf-bg-gray-700')); // Remove active class
+
+        // Add active class to the selected button
+        button.classList.add('pf-bg-gray-200', 'pf-dark:pf-bg-gray-700');
+
+        // Apply the selected mode
+        toggleMode(mode);
+    }
+
+    // Function to handle mode change
+    function toggleMode(mode) {
+        const htmlElement = document.documentElement;
+
+        // Apply the selected mode via theme-mode attribute
+        htmlElement.setAttribute('theme-mode', 'pf-' + mode);
+
+        if (mode === 'system') {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                htmlElement.setAttribute('theme-mode', 'pf-dark');
+            } else {
+                htmlElement.setAttribute('theme-mode', 'pf-light');
+            }
+        }
+    }
+</script>
