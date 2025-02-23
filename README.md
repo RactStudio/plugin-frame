@@ -87,6 +87,11 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 This project is licensed under the GPLv3 license.
 
+## Credits
+
+- [Mahamudul Hasan Rubel](https://mhr.ractstudio.com/)
+
 ## Contact
 
-For questions or support, please contact me @mhrubel at [bd.mhrubel@gmail.com](mailto:bd.mhrubel@gmail.com).
+- WhatsApp: +8801734998405
+- Email me at [bd.mhrubel@gmail.com](mailto:bd.mhrubel@gmail.com).
