@@ -1,6 +1,6 @@
 # Plugin Frame
 
-![Plugin Frame](https://repository-banner-url.com)
+![Plugin Frame](https://github.com/RactStudio/plugin-frame/)
 
 ## A Modern WordPress Plugin Development Framework 🚀
 
