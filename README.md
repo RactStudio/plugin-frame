@@ -89,4 +89,4 @@ This project is licensed under the GPLv3 license.
 
 ## Contact
 
-For questions or support, please contact me at [bd.mhrubel@gmail.com](mailto:bd.mhrubel@gmail.com).
+For questions or support, please contact me @mhrubel at [bd.mhrubel@gmail.com](mailto:bd.mhrubel@gmail.com).
