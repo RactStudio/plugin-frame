@@ -1,6 +1,6 @@
 {
   "name": "plugin-frame",
-  "version": "1.0.0",
+  "version": "0.9.1",
   "description": "A modern WordPress plugin development framework.",
   "main": "plugin-frame.php",
   "scripts": {

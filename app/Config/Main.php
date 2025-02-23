@@ -12,7 +12,7 @@ if ( ! defined( 'PLUGIN_FRAME_NAME' ) ) {
     define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
 }
 if ( ! defined( 'PLUGIN_FRAME_VERSION' ) ) {
-    define( 'PLUGIN_FRAME_VERSION', '1.0.0' ); // Required
+    define( 'PLUGIN_FRAME_VERSION', '0.9.1' ); // Required
 }
 if ( ! defined( 'PLUGIN_FRAME_SLUG' ) ) {
     define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required

@@ -3,7 +3,7 @@
  * Plugin Name: Plugin Frame
  * Plugin URI:  https://wp-frame.com
  * Description: A modern WordPress plugin development framework.
- * Version:     1.0.0
+ * Version:     0.9.1
  * Author:      Mahamudul Hasan Rubel
  * Author URI:  https://mhrubel.com
  * Text Domain: plugin-frame
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * Also declared in app/config/Main.php for redundancy.
  */
 define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
-define( 'PLUGIN_FRAME_VERSION', '1.0.0' ); // Required
+define( 'PLUGIN_FRAME_VERSION', '0.9.1' ); // Required
 define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
 define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
 define( 'PLUGIN_FRAME_MIN_PHP', '7.4' ); // Required

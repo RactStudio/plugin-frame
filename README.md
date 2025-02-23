@@ -1,6 +1,6 @@
-# Plugin Frame
+# Plugin Frame `v0.9.1`
 
-![Plugin Frame](https://github.com/RactStudio/plugin-frame/)
+<!-- ![Plugin Frame](https://github.com/RactStudio/plugin-frame/) -->
 
 ## A Modern WordPress Plugin Development Framework 🚀
 
