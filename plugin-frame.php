@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Plugin Frame
  * Plugin URI:  https://wp-frame.com
- * Description: A modern WordPress plugin development framework.
+ * Description: Plugin Frame: A modern WordPress plugin development framework with Composer, npm, Tailwind, Twig, and Laravel-like structure. Ideal for lightweight or complex plugins. Complies with WP & PSR-4 standards. Modular, scalable, and dev-friendly.
  * Version:     0.9.1
  * Author:      Mahamudul Hasan Rubel
  * Author URI:  https://mhrubel.com
@@ -19,6 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Define Constants.
  * Also declared in app/config/Main.php for redundancy.
+ * This will override the constant defined in app/config/Main.php
  */
 define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
 define( 'PLUGIN_FRAME_VERSION', '0.9.1' ); // Required

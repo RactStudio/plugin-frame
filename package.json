@@ -1,14 +1,15 @@
 {
   "name": "plugin-frame",
   "version": "0.9.1",
-  "description": "A modern WordPress plugin development framework.",
+  "description": "Plugin Frame: A modern WordPress plugin development framework with Composer, npm, Tailwind, Twig, and Laravel-like structure. Ideal for lightweight or complex plugins. Complies with WP & PSR-4 standards. Modular, scalable, and dev-friendly.",
   "main": "plugin-frame.php",
   "scripts": {
     "tunnel": "sh ./pf/cf-tunnel.sh",
     "translate-wp": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
     "translate-twig": "node translate-twig.mjs",
     "translate-gen": "node translate-gen.mjs",
-    "translate": "npm run translate-wp && npm run translate-twig && npm run translate-gen",
+    "generate-pomo": "node translate-po-mo.mjs",
+    "translate": "npm run translate-wp && npm run translate-twig && npm run translate-gen && npm run generate-pomo",
     "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify",
     "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",
     "watch": "grunt watch",
@@ -33,7 +34,8 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-webpack": "^7.0.0",
     "webpack": "^5.98.0",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "wp-cli": "^0.0.5"
   },
   "directories": {
     "test": "tests"
@@ -104,6 +106,7 @@
     "gaze": "^1.1.3",
     "get-intrinsic": "^1.2.4",
     "getobject": "^1.1.1",
+    "gettext-parser": "^8.0.0",
     "glob-parent": "^6.0.2",
     "global-modules": "^2.0.0",
     "global-prefix": "^4.0.0",
@@ -221,7 +224,6 @@
     "utf8": "^3.0.0",
     "validate-npm-package-name": "^6.0.0",
     "which": "^5.0.0",
-    "wp-cli": "^0.0.5",
     "wrap-ansi": "^9.0.0",
     "write": "^2.0.0",
     "xregexp": "^5.1.1",

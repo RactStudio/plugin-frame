@@ -235,6 +235,7 @@ class Main
 
         // Initialize service providers and configuration.
         new \PluginFrame\Config\Providers();
+        new \PluginFrame\Config\HooksLoader();
 
         (new \PluginFrame\Config\Config())->priority_load_last();
     }

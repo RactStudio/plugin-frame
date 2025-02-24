@@ -25,7 +25,7 @@
         <div x-data="{ showModal: false }">
             <!-- Button outside the modal div -->
             <button @click="showModal = true" class="pf-bg-green-500 pf-text-white pf-py-2 pf-px-4 pf-rounded">
-                Open Modal
+                {{ __('Open Modal') }}
             </button>
 
           <!-- Only render the modal when showModal2 is true -->
@@ -52,10 +52,10 @@
                 x-transition:leave-end="pf-opacity-0 pf-transform pf-scale-75"
                 class="pf-bg-white pf-rounded-lg pf-shadow-lg pf-p-6 pf-max-w-md pf-w-full"
               >
-                <h2 class="pf-text-lg pf-font-bold">Modal Title</h2>
-                <p>This is a Flowbite modal controlled by Alpine.js.</p>
+                <h2 class="pf-text-lg pf-font-bold">{{ __('Modal Title') }}</h2>
+                <p>{{ __('This is a Flowbite modal controlled by Alpine.js.') }}</p>
                 <button @click="showModal = false" class="pf-mt-4 pf-bg-red-500 pf-text-white pf-py-2 pf-px-4 pf-rounded">
-                    Close
+                    {{ __('Close') }}
                 </button>
               </div>
             </div>
@@ -65,7 +65,7 @@
       </section>
 
       <section class="pf-mt-6 pf-p-6">
-        <h3>Lucide Icons</h3>
+        <h3>{{ __('Lucide Icons') }}</h3>
         <!-- Example: Using Lucide icons -->
         <div>
             <i data-lucide="home"></i> Home
