@@ -48,18 +48,20 @@ class PageScreenHelp
         $this->screenHelp
             ->forScreen('toplevel_page_plugin-frame')
             ->withSharedContext([
+                'plugin_domain'    => PLUGIN_FRAME_SLUG,
+                'plugin_frame_name'=> PLUGIN_FRAME_NAME,
+                'plugin_frame_url' => PLUGIN_FRAME_URL,
                 'support_email' => 'support@pluginframe.com',
                 'docs_url' => 'https://docs.pluginframe.com',
-                'hello_world' => 'Hello World'
             ])
             ->addTab('getting-started', [
-                'title' => __('Getting Started', 'plugin-frame'),
+                'title' => _x('Getting Started', PLUGIN_FRAME_SLUG),
                 'template' => 'screen-help/dashboard/getting-started', // Remove .twig extension
                 'priority' => 10,
                 'capability' => 'manage_options'
             ])
             ->addTab('advanced-usage', [
-                'title' => __('Advanced Usage', 'plugin-frame'),
+                'title' => _x('Advanced Usage', PLUGIN_FRAME_SLUG),
                 'template' => 'screen-help/dashboard/advanced-usage', // Remove .twig extension
                 'priority' => 20
             ]);
@@ -80,14 +82,17 @@ class PageScreenHelp
         $this->screenHelp
             ->forScreen('plugin-frame_page_pf-settings')
             ->withSharedContext([
+                'plugin_domain'    => PLUGIN_FRAME_SLUG,
+                'plugin_frame_name'=> PLUGIN_FRAME_NAME,
+                'plugin_frame_url' => PLUGIN_FRAME_URL,
                 'privacy_policy_url' => '#privacy'
             ])
             ->addTab('general-settings', [
-                'title' => __('General Settings', 'plugin-frame'),
+                'title' => _x('General Settings', PLUGIN_FRAME_SLUG),
                 'template' => 'screen-help/settings/general-settings' // Remove .twig extension
             ])
             ->addTab('privacy', [
-                'title' => __('Privacy Guide', 'plugin-frame'),
+                'title' => _x('Privacy Guide', PLUGIN_FRAME_SLUG),
                 'template' => 'screen-help/settings/privacy', // Remove .twig extension
                 'capability' => 'manage_privacy_options'
             ]);

@@ -73,7 +73,7 @@ class ScreenHelp
 
         $this->groups[$this->currentScreenId]['tabs'][$tabId] = wp_parse_args($config, [
             'template' => "screen-help/{$this->currentScreenId}/{$tabId}.twig",
-            'title' => __('Help Documentation', 'plugin-frame'),
+            'title' => _x('Help Documentation', PLUGIN_FRAME_SLUG),
             'context' => [],
             'priority' => 10,
             'capability' => 'manage_options'
@@ -124,7 +124,7 @@ class ScreenHelp
 
         $screen->add_help_tab([
             'id' => $tabId,
-            'title' => $tabConfig['title'],
+            'title' => _x($tabConfig['title'], PLUGIN_FRAME_SLUG),
             'content' => $this->renderTabContent($tabConfig),
             'priority' => $tabConfig['priority']
         ]);
@@ -204,6 +204,10 @@ class ScreenHelp
                     }
                     #screen-meta-links {
                         margin-bottom: 0px;
+                    }
+                    div#screen-meta-links div#contextual-help-link-wrap,
+                    div#screen-meta, div#screen-meta div#contextual-help-wrap {
+                        z-index: 9999;
                     }
                 </style>';
             }

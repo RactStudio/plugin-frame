@@ -9,7 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class HooksLoader
 {
-    // Define your API routes here
     public function __construct()
     {
         // Load languages

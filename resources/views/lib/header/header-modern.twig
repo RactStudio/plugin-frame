@@ -1,37 +1,16 @@
-<script>
-  document.addEventListener('alpine:init', () => {
-    Alpine.store('menu', {
-      isOpen: false
-    });
-  });
-</script>
-<div x-data="{ 
-    isDesktop: window.innerWidth >= 768,
-    checkScreen() {
-      this.isDesktop = window.innerWidth >= 768;
-      if (this.isDesktop) {
-        // Always close mobile menu on desktop
-        Alpine.store('menu').isOpen = false;
-      }
-    }
-  }" 
-  x-init="checkScreen(); window.addEventListener('resize', checkScreen)">
-
-  <!-- Header -->
-  <div class="pf-flex pf-mt-8 pf-mb-4 pf-justify-between">
-    {% include 'lib/logo/logo-text-icon.twig' %}
-    <div class="pf-flex pf-justify-center pf-items-center pf-gap-3">
-      {% include 'lib/theme/theme-dropdown.twig' %}
-      <!-- Mobile Menu Button -->
-      <button @click="Alpine.store('menu').isOpen = !Alpine.store('menu').isOpen"
-              class="pf-flex md:pf-hidden pf-w-10 pf-h-10 pf-px-2 pf-py-2 pf-items-center pf-justify-center pf-font-sans pf-text-[28px] pf-bg-gray-200 pf-rounded-md pf-shadow-md pf-text-gray-700 hover:pf-bg-gray-300 pf-dark:pf-text-gray-200 pf-dark:pf-bg-gray-700 pf-dark:hover:pf-bg-gray-600">
-        <i x-show="!Alpine.store('menu').isOpen" data-lucide="menu"></i>
-        <i x-show="Alpine.store('menu').isOpen" data-lucide="x"></i>
-      </button>
-    </div>
+<div class="pf-flex pf-mt-8 pf-mb-4 pf-justify-between">
+  {% include 'lib/logo/logo-text-modern.twig' %}
+  <div class="pf-flex pf-justify-center pf-items-center pf-gap-3">
+    {% include 'lib/theme/theme-dropdown-js.twig' %}
+    <!-- Mobile Menu Button -->
+    <button id="pf-mobile-menu-button" class="pf-flex md:pf-hidden pf-w-10 pf-h-10 pf-px-2 pf-py-2 pf-items-center pf-justify-center pf-font-sans pf-text-[28x] pf-bg-gray-200 pf-rounded-md pf-shadow-md pf-text-gray-700 hover:pf-bg-gray-300 pf-dark:pf-text-gray-200 pf-dark:pf-bg-gray-700 pf-dark:hover:pf-bg-gray-600">
+      <!-- Lucide Icon for Menu Open -->
+      <i data-lucide="menu" id="pf-menu-open-icon" class="pf-h-6 pf-w-6"></i>
+      <!-- Lucide Icon for Menu Close -->
+      <i data-lucide="x" id="pf-menu-close-icon" class="pf-h-6 pf-w-6 pf-hidden"></i>
+    </button>
   </div>
-  <div class="pf-mx-[-1rem] pf-rounded-md">
-    {% include 'lib/navbar/navbar-modern2.twig' %}
-  </div>
-  
+</div>
+<div class="pf-mx-[-1rem] pf-rounded-md">
+  {% include 'lib/navbar/navbar-modern.twig' %}
 </div>
