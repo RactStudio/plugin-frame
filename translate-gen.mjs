@@ -27,7 +27,7 @@ async function main() {
 
     // 1. Duplicate .pot to .po with the same name
     fs.writeFileSync(OUTPUT_PO_FILE, potContent);
-    console.log(`PO file generated: ${OUTPUT_PO_FILE}`);
+    console.log(`✔ PO file generated: ${OUTPUT_PO_FILE}`);
 
     // 2. Create a duplicate of the main .pot file with _en_US.pot suffix
     fs.writeFileSync(OUTPUT_EN_US_POT_FILE, potContent);
