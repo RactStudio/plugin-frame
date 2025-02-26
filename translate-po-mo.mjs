@@ -49,7 +49,7 @@ function convertPoToMo(poPath, moPath) {
             const poData = fs.readFileSync(poPath, 'utf8');
             const moData = gettextParser.mo.compile(gettextParser.po.parse(poData));
             fs.writeFileSync(moPath, moData);
-            console.log(`✅ Generated .mo file: ${moPath}`);
+            console.log(`✔ Generated .mo file: ${moPath}`);
         } else {
             console.error(`❌ .po file not found: ${poPath}`);
         }
@@ -89,7 +89,7 @@ async function generatePoMoFiles() {
 
             // Write to .po file
             fs.writeFileSync(poPath, sanitizedPotContent);
-            console.log(`✅ Created .po file: ${poPath}`);
+            console.log(`✔ Created .po file: ${poPath}`);
 
             // Convert .po to .mo
             convertPoToMo(poPath, moPath);
