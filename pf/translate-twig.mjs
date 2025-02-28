@@ -5,8 +5,8 @@ import glob from 'fast-glob';
 // Configuration
 const PLUGIN_SLUG = 'plugin-frame';
 const TEXT_DOMAIN = 'plugin-frame';
-const OUTPUT_FILE = path.join('languages', `${PLUGIN_SLUG}_twig.pot`);
-const VIEWS_DIRECTORIES = ['resources/views', 'app/Views'];
+const OUTPUT_FILE = path.join(`${PLUGIN_SLUG}/../languages`, `${PLUGIN_SLUG}_twig.pot`);
+const VIEWS_DIRECTORIES = [`${PLUGIN_SLUG}/../resources/views`, `${PLUGIN_SLUG}/../app/Views`];
 const EXTENSIONS = ['twig', 'html'];
 
 // Create POT structure
@@ -124,7 +124,7 @@ async function main() {
     const potContent = generatePotContent(translations);
     fs.writeFileSync(OUTPUT_FILE, potContent);
 
-    console.log(`Twig translations extracted to ${OUTPUT_FILE}`);
+    console.log(`✐ Twig translations extracted: languages/${PLUGIN_SLUG}_twig.pot`);
 
     // Merge with main POT file if exists
     const mainPotFile = path.join('languages', `${PLUGIN_SLUG}.pot`);
@@ -132,16 +132,16 @@ async function main() {
         const mainPotContent = fs.readFileSync(mainPotFile, 'utf8');
         const mergedPotContent = mainPotContent + '\n' + potContent;
         fs.writeFileSync(mainPotFile, mergedPotContent);
-        console.log(`Merged translations into ${mainPotFile}`);
+        console.log(`✐ Merged translations into: languages/${PLUGIN_SLUG}.pot`);
 
         // Delete the temporary Twig POT file
         fs.unlinkSync(OUTPUT_FILE);
-        console.log(`Deleted temporary file: ${OUTPUT_FILE}`);
+        console.log(`✖ Deleted temporary file: languages/${PLUGIN_SLUG}_twig.pot`);
     }
 }
 
 // Run the script
 main().catch(err => {
-    console.error('Error extracting translations:', err);
+    console.error('⛔ Error extracting translations:', err);
     process.exit(1);
 });

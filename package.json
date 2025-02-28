@@ -6,9 +6,9 @@
   "scripts": {
     "tunnel": "sh ./pf/cf-tunnel.sh",
     "translate-wp": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
-    "translate-twig": "node translate-twig.mjs",
-    "translate-gen": "node translate-gen.mjs",
-    "generate-pomo": "node translate-po-mo.mjs",
+    "translate-twig": "node pf/translate-twig.mjs",
+    "translate-gen": "node pf/translate-gen.mjs",
+    "generate-pomo": "node pf/translate-po-mo.mjs",
     "translate": "npm run translate-wp && npm run translate-twig && npm run translate-gen && npm run generate-pomo",
     "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify",
     "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",

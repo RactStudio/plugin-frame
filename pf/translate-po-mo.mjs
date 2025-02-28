@@ -4,11 +4,12 @@ import { fileURLToPath } from 'url';
 import gettextParser from 'gettext-parser';
 
 // Convert import.meta.url to __dirname for CommonJS-like behavior
+const PLUGIN_SLUG = 'plugin-frame';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Languages directory (relative to the script's location)
-const LANG_DIR = path.join(__dirname, 'languages');
+const LANG_DIR = path.join(__dirname, '../languages');
 
 // console.log('Current working directory:', process.cwd());
 // console.log('Resolved languages directory:', LANG_DIR);
@@ -21,9 +22,9 @@ function cleanOldFiles() {
     files.forEach((file) => {
         try {
             fs.unlinkSync(path.join(LANG_DIR, file));
-            console.log(`🗑️ Deleted old file: ${file}`);
+            console.log(`✖ Deleted old file: languages/${file}`);
         } catch (error) {
-            console.error(`❌ Error deleting file ${file}:`, error);
+            console.error(`⛔ Error deleting file languages/${file}:`, error);
         }
     });
 }
@@ -46,15 +47,16 @@ function sanitizePotContent(content) {
 function convertPoToMo(poPath, moPath) {
     try {
         if (fs.existsSync(poPath)) {
+            const baseName = path.basename(poPath, '.po');
             const poData = fs.readFileSync(poPath, 'utf8');
             const moData = gettextParser.mo.compile(gettextParser.po.parse(poData));
             fs.writeFileSync(moPath, moData);
-            console.log(`✔ Generated .mo file: ${moPath}`);
+            console.log(`✚ Generated .mo file: languages/${baseName}.mo`);
         } else {
-            console.error(`❌ .po file not found: ${poPath}`);
+            console.error(`⚠️ .po file not found: ${poPath}`);
         }
     } catch (error) {
-        console.error(`❌ Error converting .po to .mo for ${poPath}:`, error);
+        console.error(`⛔ Error converting .po to .mo for ${poPath}:`, error);
     }
 }
 
@@ -62,14 +64,14 @@ function convertPoToMo(poPath, moPath) {
  * Generates .po and .mo files for each .pot file.
  */
 async function generatePoMoFiles() {
-    console.log('🔍 Searching for .pot files...');
+    console.log('🔎 Searching for .pot files...');
 
     // Find all .pot files in the languages directory
     const potFiles = fs.readdirSync(LANG_DIR).filter(file => file.endsWith('.pot'));
-    console.log('Found .pot files:', potFiles);
+    console.log('🟢 Found .pot files:', potFiles);
 
     if (potFiles.length === 0) {
-        console.log('❌ No .pot files found!');
+        console.log('⚠️ No .pot files found!');
         return;
     }
 
@@ -89,12 +91,12 @@ async function generatePoMoFiles() {
 
             // Write to .po file
             fs.writeFileSync(poPath, sanitizedPotContent);
-            console.log(`✔ Created .po file: ${poPath}`);
+            console.log(`✚ Created .po file: languages/${baseName}.po`);
 
             // Convert .po to .mo
             convertPoToMo(poPath, moPath);
         } catch (error) {
-            console.error(`❌ Error processing .pot file ${potFile}:`, error);
+            console.error(`✖ Error processing .pot file ${potFile}:`, error);
         }
     });
 
@@ -103,5 +105,5 @@ async function generatePoMoFiles() {
 
 // Run the process
 generatePoMoFiles().catch((error) => {
-    console.error('❌ An error occurred during the process:', error);
+    console.error('⛔ An error occurred during the process:', error);
 });
