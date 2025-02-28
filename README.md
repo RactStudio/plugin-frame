@@ -82,7 +82,7 @@ Follow these steps to set up your development environment:
 - **Webpack** | **Babel** | **Grunt**
 - **Tailwind CSS** | **Twig** | **Alpine.js**
 - **JavaScript** | **AJAX** | **CSS**
-- **Cloudflared** | **WP-CLI** | **WordPress-i18n**
+- **Cloudflared** | **WP-CLI**
 
 ---
 
