@@ -9,6 +9,7 @@
  * Text Domain: plugin-frame
  * Domain Path: /languages
  * License:     LGPL-3.0-or-later
+ * License URI: https://www.gnu.org/licenses/lgpl-3.0.html
  */
 
 namespace PluginFrame;

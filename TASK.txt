@@ -1,5 +1,5 @@
-#Task / Features List of Plugin Frame
-
+## Task / Features List of Plugin Frame
+-------------------------------------------
 04. LATER - External API request post and get to do other things
 05. DOING - Add more features in services and complete all incomplete features
 06. DOING - Add features in WP Config and other features
@@ -12,18 +12,34 @@
 12. DONE - Add OWN LOGGING SYSTEM for the framework (eg: pf_log() )
 13. Add own Cron Jobs for the framework
 
-NEED TO REPLACE TEXTS
+## PRODUCTION NEEDS TO REPLACE TEXTS
+-------------------------------------------
 PluginFrame
+Plugin Frame
+plugin frame
 PLUGIN-FRAME
 PLUGIN_FRAME
-Plugin Frame
 pluginframe
 plugin-frame
 plugin_frame
-plugin frame
 pf
 pf-
 pf_
 PF
 PF-
 PF_
+
+## CLI Production Questions:
+-------------------------------------------
+01. Plugin Name:
+02. Plugin Slug:
+03. Plugin Namespace:
+04. Plugin Prefix:
+05. Plugin Text Domain:
+06. Plugin Domain Path:
+07. Plugin Description:
+08. Plugin Author:
+09. Plugin Author URI:
+10. Plugin Version:
+11. Plugin License:
+12. Plugin License URI:
