@@ -2,6 +2,8 @@
 
 namespace PluginFrame\Config;
 
+use PluginFrame\Helpers\BootstrapHelper;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -36,10 +38,14 @@ if ( ! defined( 'PLUGIN_FRAME_BASENAME' ) ) {
     define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
 }
 
-class Main
+class Bootstrap
 {
+    protected $bootstrapHelper;
+
     public function __construct()
     {
+        $this->bootstrapHelper = new BootstrapHelper();
+
         // Perform PHP version check early before plugin execution.
         if ( ! $this->is_php_version_compatible() )
         {

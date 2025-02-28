@@ -33,5 +33,5 @@ define( 'PLUGIN_FRAME_URL', plugin_dir_url( PLUGIN_FRAME_FILE ) ); // Required
 define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
 
 // Load The Plugin Frame Main Bootstrap File
-require_once __DIR__ . '/app/Config/Main.php';
-new \PluginFrame\Config\Main();
+require_once __DIR__ . '/app/Config/Bootstrap.php';
+new \PluginFrame\Config\BootStrap();
