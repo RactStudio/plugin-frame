@@ -54,7 +54,7 @@ module.exports = function (pf) {
                     '!Thumbs.db',
                     '!desktop.ini',
                     '!node_modules/**',
-                    '!storage/**',
+                    '!cache/**',
                     '!logs/**',
                     '!pf/**',
                     '!pf',

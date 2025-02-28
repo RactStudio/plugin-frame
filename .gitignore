@@ -2,7 +2,7 @@
 node_modules/
 
 # Twig compiled files
-storage/
+cache/
 
 # Composer dependencies
 vendor/

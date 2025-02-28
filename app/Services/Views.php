@@ -28,7 +28,7 @@ class Views
         
         // Initialize the Twig environment with cache and auto-reload
         $twig = new Environment($loader, [
-            'cache' => PLUGIN_FRAME_DIR . 'storage',
+            'cache' => PLUGIN_FRAME_DIR . 'cache/twig',
             'auto_reload' => true,
         ]);
 
@@ -50,7 +50,7 @@ class Views
         }));
 
         try {
-            // Render the template, adding the .twig extension automatically
+            // Render the template
             return $twig->render("$template.{$extension}", $data);
         } catch (Exception $e) {
             return '<p>Error rendering twig view: ' . htmlspecialchars($e->getMessage()) . '</p>';

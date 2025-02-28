@@ -23,7 +23,7 @@ class Notices
     {
         $this->notice = new Notice();
         // Display Notices (Comment to DISABLE all Notices)
-        // $this->registerNotices();
+        $this->registerNotices();
     }
 
     /**
