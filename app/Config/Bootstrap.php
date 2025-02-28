@@ -44,7 +44,7 @@ class Bootstrap
 
     public function __construct()
     {
-        $this->bootstrapHelper = new BootstrapHelper();
+        // $this->bootstrapHelper = new BootstrapHelper();
 
         // Perform PHP version check early before plugin execution.
         if ( ! $this->is_php_version_compatible() )

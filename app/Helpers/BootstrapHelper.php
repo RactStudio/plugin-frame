@@ -8,6 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 class BootstrapHelper
 {
 
-    
+    public function __construct()
+    {
+        // Add your constructor logic here
+    }
 
 }
