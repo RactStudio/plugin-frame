@@ -63,8 +63,8 @@ phpunit.xml
 phpunit.xml.dist
 
 # Ignore environment files (dotenv)
-.env
-.env.*
+#.env
+#.env.*
 
 # Ignore temp files
 *.tmp
