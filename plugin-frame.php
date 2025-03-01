@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  */
 define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
 define( 'PLUGIN_FRAME_VERSION', '0.9.1' ); // Required
+define( 'PLUGIN_FRAME_NAMESPACE', 'PluginFrame' ); // Required
 define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
 define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
 define( 'PLUGIN_FRAME_MIN_PHP', '7.4' ); // Required

@@ -16,10 +16,10 @@ Thumbs.db
 desktop.ini
 
 # Cloudflared generated files
-cloudflared.exe
-cloudflared_tunnel.log
 pf/cloudflared.exe
 pf/cloudflared_tunnel.log
+pf/ngrok.exe
+pf/ngrok.log
 
 # Grunt build and watch files
 /resources/assets/css/main.css
@@ -34,8 +34,6 @@ pf/cloudflared_tunnel.log
 # Translations
 languages/*.mo
 languages/*.po
-languages/*.pot
-languages/*.php
 
 # Logs
 logs/

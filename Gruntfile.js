@@ -58,8 +58,6 @@ module.exports = function (pf) {
                     '!logs/**',
                     '!pf/**',
                     '!pf',
-                    '!cloudflared.exe',
-                    '!cloudflared_tunnel.log',
                     '!composer.json',
                     '!composer.lock',
                     '!tests/**',

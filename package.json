@@ -5,6 +5,7 @@
   "main": "plugin-frame.php",
   "scripts": {
     "tunnel": "sh ./pf/cf-tunnel.sh",
+    "ngrok": "sh ./pf/ngrok-tunnel.sh",
     "translate-wp": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
     "translate-twig": "node pf/translate-twig.mjs",
     "translate-gen": "node pf/translate-gen.mjs",
