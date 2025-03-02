@@ -6,6 +6,8 @@
   "scripts": {
     "tunnel": "sh ./pf/cf-tunnel.sh",
     "ngrok": "sh ./pf/ngrok-tunnel.sh",
+    "pf": "node ./pf/pf.mjs",
+    "watch": "grunt watch",
     "translate-wp": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
     "translate-twig": "node pf/translate-twig.mjs",
     "translate-gen": "node pf/translate-gen.mjs",
@@ -13,10 +15,8 @@
     "translate": "npm run translate-wp && npm run translate-twig && npm run translate-gen && npm run generate-pomo",
     "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify",
     "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",
-    "watch": "grunt watch",
     "build": "npm run translate && npm run tailwind && grunt",
-    "pf": "node ./pf/pf.mjs",
-    "prod": "npm run translate && npm run tailwind && grunt build:prod && npm run pf"
+    "build:prod": "composer dump-autoload && npm run translate && npm run tailwind && grunt build:prod && npm run pf"
   },
   "keywords": [],
   "author": "Mahamudul Hasan Rubel",

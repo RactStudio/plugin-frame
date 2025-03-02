@@ -69,8 +69,16 @@ function execWithBuffer(command) {
     const output = await execWithBuffer(command);
     console.log(output);
     console.log("✅ Plugin build completed successfully.");
+
+    // Update Composer autoloader
+    const composerDir = path.resolve(process.cwd(), ".dist", "plugin-frame");
+    console.log(`Updating Composer autoloader in ${composerDir}...`);
+    const composerCommand = `cd "${composerDir}" && composer dump-autoload`;
+    const composerOutput = await execWithBuffer(composerCommand);
+    console.log(composerOutput);
+    console.log("✅ Composer autoloader updated successfully.");
   } catch (error) {
-    console.error(`❌ PHP scoping process failed:\n${error}`);
+    console.error(`❌ Process failed:\n${error}`);
     process.exit(1);
   }
 })();
