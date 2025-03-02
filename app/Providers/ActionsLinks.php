@@ -2,6 +2,8 @@
 
 namespace PluginFrame\Providers;
 
+use PluginFrame\Services\ActionsLinks as ActionsLink;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -11,8 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  */
 class ActionsLinks
 {
+    protected $actionLink;
+
     public function __construct()
     {
+        $this->actionLink = new ActionsLink();
+
         // Register custom action links
         add_filter('plugin_action_links', [$this, 'customizeActionLinks'], 10, 2);
 
@@ -29,8 +35,6 @@ class ActionsLinks
      */
     public function customizeActionLinks(array $links, string $pluginFile): array
     {
-        $service = new \PluginFrame\Services\ActionsLinks();
-
         // Define conditions for action links
         $conditions = [
             'left' => function (): string {
@@ -41,7 +45,7 @@ class ActionsLinks
             },
         ];
 
-        return $service->addActionLinks($links, $pluginFile, $conditions);
+        return $this->actionLink->addActionLinks($links, $pluginFile, $conditions);
     }
 
     /**
@@ -53,8 +57,6 @@ class ActionsLinks
      */
     public function customizeDescriptionLinks(array $links, string $pluginFile): array
     {
-        $service = new \PluginFrame\Services\ActionsLinks();
-
         // Define conditions for description links
         $conditions = [
             'left' => function (): string {
@@ -65,6 +67,6 @@ class ActionsLinks
             },
         ];
 
-        return $service->addDescriptionLinks($links, $pluginFile, $conditions);
+        return $this->actionLink->addDescriptionLinks($links, $pluginFile, $conditions);
     }
 }

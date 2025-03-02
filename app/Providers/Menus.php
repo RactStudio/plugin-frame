@@ -2,6 +2,8 @@
 
 namespace PluginFrame\Providers;
 
+use PluginFrame\Services\Menus as MenusService;
+
 // Standard JS based admin pages
 use PluginFrame\Views\Admin\Dashboard;
 use PluginFrame\Views\Admin\Settings;
@@ -23,7 +25,7 @@ class Menus
      */
     public function __construct()
     {
-        $this->menusService = new \PluginFrame\Services\Menus();
+        $this->menusService = new MenusService();
         $this->registerMenus();
     }
 
