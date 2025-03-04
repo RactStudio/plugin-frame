@@ -1,84 +1,142 @@
-import { exec } from "child_process";
-import path from "path";
-import readline from "readline";
-import fs from "fs";
-import dotenv from "dotenv";
-
-// Load .env file if it exists
-dotenv.config();
+import { exec } from 'child_process';
+import path from 'path';
+import readline from 'readline';
+import fs from 'fs';
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-function askQuestion(query) {
-  return new Promise(resolve => rl.question(query, resolve));
+async function promptInput(question, validator) {
+  return new Promise((resolve) => {
+    const ask = () => {
+      rl.question(question, async (answer) => {
+        try {
+          const input = answer.trim();
+          if (validator) {
+            const validated = await validator(input);
+            resolve(validated);
+          } else {
+            resolve(input);
+          }
+        } catch (error) {
+          console.log(`❌ ${error.message}`);
+          ask();
+        }
+      });
+    };
+    ask();
+  });
 }
 
-// Get values from .env or ask user
-async function getNamespaceAndPrefix() {
-  let NEW_NAMESPACE = process.env.NEW_NAMESPACE || "";
-  let NEW_PREFIX = process.env.NEW_PREFIX || "";
-
-  if (!NEW_NAMESPACE) {
-    NEW_NAMESPACE = await askQuestion("Enter NEW NAMESPACE: ");
-  }
-  if (!NEW_PREFIX) {
-    NEW_PREFIX = await askQuestion("Enter PLUGIN PREFIX: ");
-  }
-
-  rl.close();
-  return { NEW_NAMESPACE, NEW_PREFIX };
-}
-
-// Execute shell commands with increased buffer size
-function execWithBuffer(command) {
+function executeCommand(command, cwd) {
   return new Promise((resolve, reject) => {
-    exec(command, { maxBuffer: 1024 * 1024 }, (error, stdout, stderr) => {
-      if (error) {
-        reject(`Error: ${error.message}\n${stderr}`);
-        return;
-      }
-      resolve(stdout);
+    exec(command, {
+      maxBuffer: 1024 * 1024 * 10,
+      cwd
+    }, (error, stdout, stderr) => {
+      error ? reject(`${error.message}\n${stderr}`) : resolve(stdout);
     });
   });
 }
 
-// Main execution
-(async () => {
-  console.log("Starting plugin build process...");
-
-  const { NEW_NAMESPACE, NEW_PREFIX } = await getNamespaceAndPrefix();
-
-  console.log(`Using NEW_NAMESPACE: ${NEW_NAMESPACE}, NEW_PREFIX: ${NEW_PREFIX}`);
-
-  // Resolve the pf.php script path (cross-platform)
-  const phpScriptPath = path.resolve(process.cwd(), "pf", "pf.php");
-
-  if (!fs.existsSync(phpScriptPath)) {
-    console.error(`ERROR: Could not find pf.php at ${phpScriptPath}`);
-    process.exit(1);
-  }
-
-  // Run the PHP script with arguments
-  const command = `php "${phpScriptPath}" "${NEW_NAMESPACE}" "${NEW_PREFIX}"`;
-  console.log(`Invoking PHP scoper script: ${command}`);
-
+async function main() {
   try {
-    const output = await execWithBuffer(command);
-    console.log(output);
-    console.log("✅ Plugin build completed successfully.");
+    console.log("🚀 Starting plugin production build...");
 
-    // Update Composer autoloader
-    const composerDir = path.resolve(process.cwd(), ".dist", "plugin-frame");
-    console.log(`Updating Composer autoloader in ${composerDir}...`);
-    const composerCommand = `cd "${composerDir}" && composer dump-autoload`;
-    const composerOutput = await execWithBuffer(composerCommand);
-    console.log(composerOutput);
-    console.log("✅ Composer autoloader updated successfully.");
+    // Get or create configuration
+    const configPath = path.resolve(process.cwd(), 'plugin-frame.conf');
+    let config = await readConfig(configPath);
+
+    if (!config) {
+      config = {
+        namespace: await promptInput("Namespace (2-50 letters/numbers): ", validateNamespace),
+        prefix: await promptInput("Prefix (2-10 lowercase letters): ", validatePrefix),
+      };
+      await writeConfig(configPath, config);
+    }
+
+    console.log(`⚙️  Using configuration:\n${JSON.stringify(config, null, 2)}`);
+
+    // Path resolution
+    const phpScriptPath = path.resolve(process.cwd(), 'pf', 'pf.php');
+    const distDir = path.resolve(process.cwd(), '.dist', 'plugin-frame');
+
+    // Validate paths
+    if (!fs.existsSync(phpScriptPath)) throw new Error(`Missing pf.php at ${phpScriptPath}`);
+    if (!fs.existsSync(distDir)) throw new Error(`Missing dist directory at ${distDir}`);
+
+    // Execute PHP processing
+    const phpCommand = `php "${phpScriptPath}" "${config.namespace}" "${config.prefix}" "${config.plugin_frame}"`;
+    console.log(`🔧 Executing: ${phpCommand}`);
+    await executeCommand(phpCommand, process.cwd());
+
+    // Composer operations
+    console.log(`🔄 Updating Composer in ${distDir}`);
+    await executeCommand('composer dump-autoload', distDir);
+
+    console.log(`🧹 Cleaning composer files`);
+    await executeCommand('rm -f composer.lock composer.json', distDir);
+
+    console.log("🎉 Production build completed successfully!");
+
   } catch (error) {
-    console.error(`❌ Process failed:\n${error}`);
+    console.error(`💥 Critical error: ${error}`);
     process.exit(1);
+  } finally {
+    rl.close();
   }
-})();
+}
+
+// Config helpers
+async function readConfig(configPath) {
+  if (!fs.existsSync(configPath)) return null;
+
+  const content = fs.readFileSync(configPath, 'utf-8');
+  const config = {};
+
+  content.split('\n').forEach(line => {
+    const [key, value] = line.split('=').map(s => s.trim());
+    if (key && value) {
+      config[key.toLowerCase()] = value === 'false' ? false : value;
+    }
+  });
+
+  // Set default if not specified
+  if (!('plugin_frame' in config) || (!config.plugin_frame && config.plugin_frame !== false)) {
+    config.plugin_frame = 'PluginFrame';
+  }
+
+  return config.namespace && config.prefix ? config : null;
+}
+
+async function writeConfig(configPath, { namespace, prefix, plugin_frame }) {
+  const content = [
+    `namespace = ${namespace}`,
+    `prefix = ${prefix}`,
+    // `plugin_frame = ${plugin_frame || ''}`
+  ].join('\n');
+
+  fs.writeFileSync(configPath, content);
+}
+
+// Validators
+async function validateNamespace(input) {
+  const cleaned = input.replace(/[^a-zA-Z0-9]/g, '');
+  if (cleaned.length < 2 || cleaned.length > 50) {
+    throw new Error('Namespace must be 2-50 alphanumeric characters');
+  }
+  return cleaned;
+}
+
+async function validatePrefix(input) {
+  const cleaned = input.toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (cleaned.length < 2 || cleaned.length > 10) {
+    throw new Error('Prefix must be 2-10 lowercase alphanumeric characters');
+  }
+  return cleaned;
+}
+
+// Start the process
+main();

@@ -1,152 +1,271 @@
 <?php
+/**
+ * Plugin Framework Production Scoper
+ * Final Working Version
+ */
 
-if ($argc < 3) {
-    die("Usage: php pf.php <NEW_NAMESPACE> <NEW_PREFIX>\n");
+// ==================================================
+// Configuration
+// ==================================================
+define('WP_CORE_CLASSES', [
+    // Exact matches
+    'WP', 'wpdb', 'WP_Error', 'WP_Query', 'WP_Post',
+    'WP_User', 'WP_Roles', 'WP_Admin_Bar', 'WP_Widget',
+    
+    // Prefix matches
+    'WP_', 'wp_', 'WC_', 'WooCommerce_', 'Tribe_'
+]);
+
+// ==================================================
+// Main Execution
+// ==================================================
+try {
+    if ($argc < 3) throw new Exception("Missing required arguments");
+    
+    // the config initialization
+    $pluginFrameArg = isset($argv[3]) ? $argv[3] : '';
+    $config = [
+        'namespace' => $argv[1],
+        'prefix' => $argv[2],
+        'plugin_frame' => $pluginFrameArg === 'false' || $pluginFrameArg === false ? false : $pluginFrameArg,
+    ];
+    
+    validateInputs($config);
+    processFiles(getTargetDir());
+
+} catch (Exception $e) {
+    die("❌ Error: " . $e->getMessage() . PHP_EOL);
 }
 
-$NEW_NAMESPACE = trim($argv[1]);
-$NEW_PREFIX = trim($argv[2]);
-$ROOT_DIR = realpath(__DIR__ . "/../.dist/plugin-frame");
-
-if (!$NEW_NAMESPACE || !$NEW_PREFIX) {
-    die("ERROR: Missing namespace or prefix arguments.\n");
-}
-
-// Exclude vendor directory (commented out for now)
-$EXCLUDED_DIRS = [
-    // realpath($ROOT_DIR . "/vendor"),
-];
-
-// Cache of PHP core classes
-$CORE_PHP_CLASSES = array_flip(get_declared_classes());
-
-// Check if a class is a PHP core class
-function isCoreClass($className) {
-    global $CORE_PHP_CLASSES;
-    $className = ltrim($className, '\\'); // Remove leading backslash
-    return isset($CORE_PHP_CLASSES[$className]);
-}
-
-// Scan and process files
-function collectFiles($dir) {
-    global $EXCLUDED_DIRS;
-    $files = [];
-
-    if (in_array(realpath($dir), $EXCLUDED_DIRS)) {
-        return $files;
+// ==================================================
+// Core Functions
+// ==================================================
+function validateInputs($config) {
+    // Validate namespace
+    if (!preg_match('/^[a-zA-Z0-9]{2,50}$/', $config['namespace'])) {
+        throw new Exception("Invalid namespace format");
     }
-
-    foreach (scandir($dir) as $file) {
-        if ($file === "." || $file === "..") {
-            continue;
-        }
-        $fullPath = "$dir/$file";
-
-        if (is_dir($fullPath)) {
-            $files = array_merge($files, collectFiles($fullPath));
-        } elseif (preg_match('/\.(php|js|css|html|twig)$/', $file)) {
-            $files[] = $fullPath;
-        }
+    
+    // Validate prefix
+    if (!preg_match('/^[a-z0-9]{2,10}$/', $config['prefix'])) {
+        throw new Exception("Invalid prefix format");
     }
-
-    return $files;
 }
 
-// Process PHP files: update namespace, use statements, and class instantiations
-function updateNamespaceAndUsages($filePath) {
-    global $NEW_NAMESPACE;
+function getTargetDir() {
+    $dir = dirname(__DIR__) . '/.dist/plugin-frame';
+    if (!is_dir($dir)) throw new Exception("Missing target directory");
+    return realpath($dir);
+}
 
-    $content = file_get_contents($filePath);
-
-    // Match existing namespace
-    if (preg_match('/^namespace\s+([a-zA-Z0-9_\\\\]+);/m', $content, $matches)) {
-        $existingNamespace = trim($matches[1]);
-
-        // Avoid double-prepending
-        if (strpos($existingNamespace, $NEW_NAMESPACE) !== 0) {
-            $newNamespace = "namespace {$NEW_NAMESPACE}\\{$existingNamespace};";
-            $content = preg_replace('/^namespace\s+[a-zA-Z0-9_\\\\]+;/m', $newNamespace, $content, 1);
+function processFiles($targetDir) {
+    $files = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($targetDir, RecursiveDirectoryIterator::SKIP_DOTS)
+    );
+    
+    foreach ($files as $file) {
+        if ($file->isFile()) {
+            processFile($file->getRealPath());
         }
     }
+}
 
-    // Match use statements (including those with aliases)
+function processFile($path) {
+    $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+    
+    switch ($extension) {
+        case 'php':
+            processPHPFile($path);
+            break;
+        case 'js':
+        case 'css':
+        case 'html':
+        case 'twig':
+            processAssetFile($path);
+            break;
+    }
+}
+
+// ==================================================
+// File Processors
+// ==================================================
+function processPHPFile($path) {
+    $content = file_get_contents($path);
+    $original = $content;
+    
+    // Process namespaces
     $content = preg_replace_callback(
-        '/^use\s+([a-zA-Z0-9_\\\\]+)(?:\s+as\s+[a-zA-Z0-9_]+)?;/m',
-        function ($match) use ($NEW_NAMESPACE) {
-            $existingUse = trim($match[1]);
-            $existingUseWithoutSlash = ltrim($existingUse, '\\');
-
-            // Skip core PHP classes
-            if (isCoreClass($existingUseWithoutSlash)) {
-                return $match[0];
-            }
-
-            // Avoid double-prepending
-            if (strpos($existingUseWithoutSlash, $NEW_NAMESPACE . '\\') === 0) {
-                return $match[0];
-            }
-
-            // Reconstruct the use statement with the new namespace
-            $newUseStatement = "use {$NEW_NAMESPACE}\\{$existingUseWithoutSlash}";
-
-            // Preserve the alias if it exists
-            if (strpos($match[0], ' as ') !== false) {
-                $aliasPart = substr($match[0], strpos($match[0], ' as '));
-                $newUseStatement .= $aliasPart;
-            }
-
-            return $newUseStatement . ';';
-        },
+        '/^namespace\s+([^;]+);/m',
+        'updateNamespace',
         $content
     );
-
-    // Match **only** fully qualified class instantiations
+    
+    // Process use statements
     $content = preg_replace_callback(
-        '/new\s+\\\\?([a-zA-Z0-9_\\\\]+)\s*\(/',
-        function ($match) use ($NEW_NAMESPACE) {
-            $existingClass = trim($match[1]);
-            $existingClassWithoutSlash = ltrim($existingClass, '\\');
-
-            // Skip core PHP classes
-            if (isCoreClass($existingClassWithoutSlash)) {
-                return $match[0];
-            }
-
-            // Avoid modifying relative instantiations
-            if (strpos($existingClassWithoutSlash, '\\') !== false) {
-                return "new \\{$NEW_NAMESPACE}\\{$existingClassWithoutSlash}(";
-            }
-            return $match[0];
-        },
+        '/^use\s+([^;]+);/m',
+        'updateUseStatement',
         $content
     );
-
-    file_put_contents($filePath, $content);
-    echo "✅ Updated namespace and class references in $filePath\n";
-}
-
-// Process other files: update prefix
-function updatePrefix($filePath) {
-    global $NEW_PREFIX;
-
-    $content = file_get_contents($filePath);
-    $updatedContent = preg_replace('/\bpf-/', "{$NEW_PREFIX}-", $content);
-
-    if ($updatedContent !== $content) {
-        file_put_contents($filePath, $updatedContent);
-        echo "✅ Updated prefix in $filePath\n";
+    
+    // Process ONLY fully qualified class instantiations
+    $content = preg_replace_callback(
+        '/\bnew\s+\\\\+([\w\\\\]+)\s*\(/',
+        'updateClassInstantiation',
+        $content
+    );
+    
+    if ($content !== $original) {
+        file_put_contents($path, $content);
+        echo "✅ Updated PHP: $path\n";
     }
 }
 
-// Run processing
-$allFiles = collectFiles($ROOT_DIR);
+function processAssetFile($path) {
+    global $config;
+    
+    $content = file_get_contents($path);
+    $updated = str_replace('pf-', $config['prefix'] . '-', $content);
+    
+    if ($updated !== $content) {
+        file_put_contents($path, $updated);
+        echo "✅ Updated Asset: $path\n";
+    }
+}
 
-foreach ($allFiles as $file) {
-    if (pathinfo($file, PATHINFO_EXTENSION) === "php") {
-        updateNamespaceAndUsages($file);
+// ==================================================
+// Namespace Handlers
+// ==================================================
+function updateNamespace($matches) {
+    global $config;
+    $existing = trim($matches[1]);
+    $parts = [$config['namespace']];
+
+    // Split existing namespace into segments
+    $existingParts = explode('\\', $existing);
+    
+    if ($config['plugin_frame'] === false) {
+        // Remove all PluginFrame segments
+        $existingParts = array_filter($existingParts, function($part) {
+            return $part !== 'PluginFrame';
+        });
+    } elseif (!empty($config['plugin_frame'])) {
+        // Replace PluginFrame segments with custom frame
+        $existingParts = array_map(function($part) use ($config) {
+            return $part === 'PluginFrame' ? $config['plugin_frame'] : $part;
+        }, $existingParts);
+        
+        // Ensure custom frame is at the start if needed
+        if ($existingParts[0] !== $config['plugin_frame']) {
+            array_unshift($existingParts, $config['plugin_frame']);
+        }
     } else {
-        updatePrefix($file);
+        // Default case: Add PluginFrame if missing
+        if (!in_array('PluginFrame', $existingParts, true)) {
+            array_unshift($existingParts, 'PluginFrame');
+        }
     }
+
+    // Rebuild the namespace
+    $existing = implode('\\', array_filter($existingParts));
+    $parts[] = $existing;
+
+    return 'namespace ' . implode('\\', array_filter($parts)) . ';';
 }
 
-echo "✅ Namespace, class references, and prefix updates completed successfully.\n";
+function updateUseStatement($matches) {
+    global $config;
+    $statement = trim($matches[1]);
+    
+    if (shouldSkip($statement)) return "use $statement;";
+    
+    $parts = explode(' as ', $statement, 2);
+    $class = trim($parts[0]);
+    $newClass = buildNamespacedClass($class);
+    
+    return isset($parts[1]) 
+        ? "use $newClass as {$parts[1]};"
+        : "use $newClass;";
+}
+
+// ==================================================
+// Class Instantiation Processor (Updated)
+// ==================================================
+function updateClassInstantiation($matches) {
+    global $config;
+    $class = trim($matches[1]);
+    
+    // Skip if already namespaced correctly
+    if (strpos($class, $config['namespace']) === 0) {
+        return $matches[0];
+    }
+    
+    // Process fully qualified classes
+    $class = ltrim($class, '\\');
+    if (shouldSkip($class)) return $matches[0];
+    
+    return "new \\" . buildNamespacedClass($class) . "(";
+}
+
+function buildNamespacedClass($class) {
+    global $config;
+    $parts = [$config['namespace']];
+    $classParts = explode('\\', $class);
+
+    // Handle plugin_frame=false
+    if ($config['plugin_frame'] === false) {
+        $classParts = array_filter($classParts, function($part) {
+            return $part !== 'PluginFrame';
+        });
+    }
+    // Handle custom plugin_frame value
+    elseif (!empty($config['plugin_frame'])) {
+        $classParts = array_map(function($part) use ($config) {
+            return $part === 'PluginFrame' ? $config['plugin_frame'] : $part;
+        }, $classParts);
+        
+        // Add custom frame if not present at start
+        if ($classParts[0] !== $config['plugin_frame']) {
+            array_unshift($classParts, $config['plugin_frame']);
+        }
+    }
+    // Default case
+    else {
+        if ($classParts[0] !== 'PluginFrame') {
+            array_unshift($classParts, 'PluginFrame');
+        }
+    }
+
+    $parts = array_merge($parts, $classParts);
+    return implode('\\', array_filter($parts));
+}
+
+function shouldSkip($class) {
+    static $phpCoreClasses = null;
+    
+    // Get PHP core classes once
+    if ($phpCoreClasses === null) {
+        $phpCoreClasses = array_flip(array_map('strtolower', get_declared_classes()));
+    }
+    
+    $class = ltrim($class, '\\');
+    $classLower = strtolower($class);
+    
+    // 1. Skip PHP core classes
+    if (isset($phpCoreClasses[$classLower])) {
+        return true;
+    }
+    
+    // 2. Skip WordPress core classes
+    foreach (WP_CORE_CLASSES as $pattern) {
+        $patternLower = strtolower($pattern);
+        if (strpos($patternLower, '_') === false) {
+            // Exact match check
+            if ($classLower === $patternLower) return true;
+        } else {
+            // Prefix match check
+            if (str_starts_with($classLower, $patternLower)) return true;
+        }
+    }
+    
+    return false;
+}
