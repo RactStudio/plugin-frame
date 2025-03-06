@@ -70,7 +70,16 @@ module.exports = function (pf) {
                     '!webpack.config.js',
                     '!translate-gen.mjs',
                     '!translate-twig.mjs',
-                    '!wiki.txt'
+                    '!wiki.txt',
+                    '!composer.lock',
+                    // Exclude vendor packages
+                    '!vendor/squizlabs/**',
+                    '!vendor/dealerdirect/**',
+                    '!vendor/mustache/**',
+                    '!vendor/nikic/**',
+                    '!vendor/phpcsstandards/**',
+                    '!vendor/wp-coding-standards/**',
+                    '!vendor/wp-cli/**'
                 ],
                 dest: '.dist/plugin-frame'
             }

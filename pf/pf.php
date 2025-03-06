@@ -6,12 +6,16 @@
 
 // ==================================================
 // Configuration
+// Excluded WordPress and WP based plugins classes
 // ==================================================
 define('WP_CORE_CLASSES', [
     // Exact matches
     'WP', 'wpdb', 'WP_Error', 'WP_Query', 'WP_Post',
     'WP_User', 'WP_Roles', 'WP_Admin_Bar', 'WP_Widget',
-    
+    'ABSPATH', 'WPINC', 'WP_CONTENT_DIR', 'WP_PLUGIN_DIR',
+    'plugin_dir_path', 'plugin_dir_url', 'plugin_basename',
+    'get_plugin_data', 'load_plugin_textdomain',
+    'add_action', 'do_action', 'add_filter', 'apply_filters',
     // Prefix matches
     'WP_', 'wp_', 'WC_', 'WooCommerce_', 'Tribe_'
 ]);
@@ -113,7 +117,7 @@ function processPHPFile($path) {
         'updateClassInstantiation',
         $content
     );
-    
+
     if ($content !== $original) {
         file_put_contents($path, $content);
         echo "✅ Updated PHP: $path\n";
