@@ -35,4 +35,4 @@ define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Requ
 
 // Load The Plugin Frame Main Bootstrap File
 require_once __DIR__ . '/app/Config/Bootstrap.php';
-new \PluginFrame\Config\BootStrap();
+new \PluginFrame\Config\Bootstrap();
