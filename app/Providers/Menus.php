@@ -57,7 +57,7 @@ class Menus
             'Plugin Frame Settings',        // Submenu page title
             'Settings',                     // Submenu title
             'manage_options',              // Capability
-            'pf-settings',                   // Submenu slug
+            'plugin-frame-settings',                   // Submenu slug
             [new Settings(), 'render']            // Callback method
         );
 
@@ -67,7 +67,7 @@ class Menus
             'Plugin Frame Tools',           // Submenu page title
             'Tools',                        // Submenu title
             'manage_options',              // Capability
-            'pf-tools',                      // Submenu slug
+            'plugin-frame-tools',                      // Submenu slug
             [new Tools(), 'render']               // Callback method
         );
 
@@ -92,7 +92,7 @@ class Menus
             'Plugin Frame Settings',        // Submenu page title
             'Settings',                     // Submenu title
             'manage_options',              // Capability
-            'pf-settings-alpine',                   // Submenu slug
+            'plugin-frame-settings-alpine',                   // Submenu slug
             [new SettingsAlpine(), 'render']            // Callback method
         );
 
@@ -102,7 +102,7 @@ class Menus
             'Plugin Frame Tools',           // Submenu page title
             'Tools',                        // Submenu title
             'manage_options',              // Capability
-            'pf-tools-alpine',                      // Submenu slug
+            'plugin-frame-tools-alpine',                      // Submenu slug
             [new ToolsAlpine(), 'render']               // Callback method
         );
 

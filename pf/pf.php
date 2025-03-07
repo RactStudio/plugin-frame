@@ -6,6 +6,17 @@
 
 // ==================================================
 // Configuration
+// ==================================================
+
+// ==================================================
+// Exclude any directory (commented out for now)
+// ==================================================
+$ROOT_DIR = realpath(__DIR__ . "/../.dist/plugin-frame");
+$EXCLUDED_DIRS = [
+    realpath($ROOT_DIR . "/vendor"), // Exclude all files in vendor directory
+    realpath($ROOT_DIR . "/src/MyClass.php"), // Exclude specific file
+];
+// ==================================================
 // Excluded WordPress and WP based plugins classes
 // ==================================================
 define('WP_CORE_CLASSES', [
@@ -63,13 +74,40 @@ function getTargetDir() {
 }
 
 function processFiles($targetDir) {
+    global $EXCLUDED_DIRS;
+
+    // Preprocess excluded paths into directories and files
+    $excludedDirs = [];
+    $excludedFiles = [];
+    foreach ($EXCLUDED_DIRS as $path) {
+        if (is_dir($path)) {
+            $excludedDirs[] = rtrim($path, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+        } else {
+            $excludedFiles[] = $path;
+        }
+    }
+
     $files = new RecursiveIteratorIterator(
         new RecursiveDirectoryIterator($targetDir, RecursiveDirectoryIterator::SKIP_DOTS)
     );
     
     foreach ($files as $file) {
         if ($file->isFile()) {
-            processFile($file->getRealPath());
+            $filePath = $file->getRealPath();
+            
+            // Check against excluded files
+            if (in_array($filePath, $excludedFiles, true)) {
+                continue;
+            }
+            
+            // Check against excluded directories
+            foreach ($excludedDirs as $dir) {
+                if (strpos($filePath, $dir) === 0) {
+                    continue 2; // Skip to next file
+                }
+            }
+            
+            processFile($filePath);
         }
     }
 }

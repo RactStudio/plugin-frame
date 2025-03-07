@@ -80,7 +80,7 @@ class ScreenHelp
     protected function registerSettingsPageHelp()
     {
         $this->screenHelp
-            ->forScreen('plugin-frame_page_pf-settings')
+            ->forScreen('plugin-frame_page_plugin-frame-settings')
             ->withSharedContext([
                 'plugin_domain'    => PLUGIN_FRAME_SLUG,
                 'plugin_frame_name'=> PLUGIN_FRAME_NAME,
