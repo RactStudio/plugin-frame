@@ -72,6 +72,7 @@ module.exports = function (pf) {
                     '!translate-twig.mjs',
                     '!wiki.txt',
                     '!composer.lock',
+                    '!build.log',
                     // Exclude vendor packages
                     '!vendor/squizlabs/**',
                     '!vendor/dealerdirect/**',

@@ -9,6 +9,10 @@ vendor/
 
 # PF logs
 logs/
+build.log
+
+# PF Configuration files
+plugin-frame.conf
 
 # OS generated files
 .DS_Store
