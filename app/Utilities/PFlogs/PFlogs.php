@@ -34,7 +34,7 @@ class PFlogs
         $logFile = self::$logsDir . "/{$date}.log";
 
         $time = date('Y-m-d H:i:s');
-        $formattedMessage = "[{$time}] [Year-Month-Date] {$message}" . PHP_EOL;
+        $formattedMessage = "[{$time}] [Y-M-D] {$message}" . PHP_EOL;
 
         file_put_contents($logFile, $formattedMessage, FILE_APPEND);
     }

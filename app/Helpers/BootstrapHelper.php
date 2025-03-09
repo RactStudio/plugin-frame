@@ -7,7 +7,6 @@ namespace PluginFrame\Helpers;
 
 class BootstrapHelper
 {
-
     /**
      * Check for minimum PHP version compatibility.
      * 

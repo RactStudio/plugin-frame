@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 }
 
 require_once PLUGIN_FRAME_DIR . 'app/Utilities/PFlogs/PFlogs.php';
-use PluginFrame\Utilities\PFlogs;
+use PluginFrame\Utilities\PFlogs\PFlogs;
 
 require_once PLUGIN_FRAME_DIR . 'app/Services/Scheduler.php';
 use PluginFrame\Services\Scheduler;

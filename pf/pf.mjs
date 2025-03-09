@@ -55,6 +55,11 @@ async function main() {
         prefix: await promptInput("Prefix (2-10 lowercase letters): ", validatePrefix),
       };
       await writeConfig(configPath, config);
+
+      if (!('plugin_frame' in config) || (!config.plugin_frame && config.plugin_frame !== false)) {
+        config.plugin_frame = 'PluginFrame';
+      }
+
     }
 
     console.log(`⚙️  Using configuration:\n${JSON.stringify(config, null, 2)}`);
@@ -69,7 +74,7 @@ async function main() {
 
     // Execute PHP processing
     const phpCommand = `php "${phpScriptPath}" "${config.namespace}" "${config.prefix}" "${config.plugin_frame}"`;
-    console.log(`🔧 Executing: ${phpCommand}`);
+    console.log(`🔧 Executing PHP Scoper: ${phpCommand}`);
     await executeCommand(phpCommand, process.cwd());
 
     // Composer operations
@@ -103,7 +108,6 @@ async function readConfig(configPath) {
     }
   });
 
-  // Set default if not specified
   if (!('plugin_frame' in config) || (!config.plugin_frame && config.plugin_frame !== false)) {
     config.plugin_frame = 'PluginFrame';
   }

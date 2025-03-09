@@ -55,17 +55,12 @@ $MANUAL_REPLACEMENTS = [
     [
         'file' => realpath($ROOT_DIR . "/app/Config/Providers.php"), // Exact file path
         'search' => 'protected $baseNamespace = \'PluginFrame\\Providers\';', // Exact match
-        'type' => 'namespace' // 'namespace' or 'prefix'
+        'type' => 'namespace' // namespace
     ],
     [
         'file' => realpath($ROOT_DIR . "/app/Services/ScreenHelp.php"), // Exact file path
-        'search' => '#pf-load.pf-page  {', // Exact match
-        'type' => 'prefix' // 'namespace' or 'prefix'
-    ],
-    [
-        'file' => realpath($ROOT_DIR . "/app/Services/ScreenHelp.php"), // Exact file path
-        'search' => '#pf-load.pf-page {', // Exact match
-        'type' => 'prefix' // 'namespace' or 'prefix'
+        'search' => '#pf-load.pf-page', // Exact match
+        'type' => 'prefix' // prefix
     ],
     // ... add more entries as needed ...
 ];
@@ -203,7 +198,7 @@ function transformNamespaceString($namespaceString) {
 function processManualReplacements() {
     global $MANUAL_REPLACEMENTS, $config;
     
-    log_message("Starting manual replacements", 'PROCESS');
+    // log_message("Starting manual replacements", 'PROCESS');
     $skippedReplacements = [];
     
     foreach ($MANUAL_REPLACEMENTS as $index => $replacement) {
@@ -270,9 +265,15 @@ function processManualReplacements() {
                     break;
 
                 case 'prefix':
-                    $newPrefix = $config['prefix'] . '-';
-                    $newContent = str_replace($search, $newPrefix, $content);
-                    log_message("$logPrefix - Prefix replacement: " . substr($search, 0, 20) . " => $newPrefix", 'DEBUG');
+                    $newPrefix = $config['prefix'];
+                    $replacementString = str_replace('pf', $newPrefix, $search);
+                    $newContent = str_replace($search, $replacementString, $content);
+                    log_message(
+                        "$logPrefix - Prefix replacement: " . 
+                        substr($search, 0, 20) . " => " . 
+                        substr($replacementString, 0, 20), 
+                        'DEBUG'
+                    );
                     break;
 
                 default:
@@ -342,10 +343,9 @@ try {
     validateInputs($config);
     
     // File processing
-    function getTargetDir() {
-        $dir = dirname(__DIR__) . '/.dist/plugin-frame';
-        if (!is_dir($dir)) throw new Exception("Missing target directory");
-        return realpath($dir);
+    function getTargetDir($ROOT_DIR) {
+        if (!is_dir($ROOT_DIR)) throw new Exception("Missing target directory");
+        return realpath($ROOT_DIR);
     }
     
     function processFiles($targetDir) {
@@ -520,11 +520,80 @@ try {
 
     // Execute processing
     log_message("Starting file processing...", 'PROCESS');
-    processFiles(getTargetDir());
+    processFiles(getTargetDir($ROOT_DIR));
     
     log_message("Starting manual replacements...", 'PROCESS');
     processManualReplacements();
-    
+
+    // ==================================================
+    // Composer Autoloader Hash Replacement
+    // ==================================================
+    log_message("Starting Composer autoloader hash replacement...", 'PROCESS');
+
+    $autoloadFilePath = $ROOT_DIR . '/vendor/autoload.php';
+    if (!file_exists($autoloadFilePath)) {
+        throw new Exception("autoload.php not found in vendor directory");
+    }
+
+    $autoloadContent = file_get_contents($autoloadFilePath);
+    if ($autoloadContent === false) {
+        throw new Exception("Failed to read autoload.php");
+    }
+
+    // Extract existing hash
+    if (!preg_match('/ComposerAutoloaderInit([a-f0-9]{32})/', $autoloadContent, $matches)) {
+        throw new Exception("Could not find existing Composer autoloader hash in autoload.php");
+    }
+    $oldHash = $matches[1];
+    log_message("Existing Composer autoloader hash: $oldHash", 'INFO');
+
+    // Generate new hash
+    $newHash = bin2hex(random_bytes(16));
+    log_message("Generated new Composer autoloader hash: $newHash", 'INFO');
+
+    // Collect files to process
+    $composerDir = $ROOT_DIR . '/vendor/composer';
+    $filesToProcess = [$autoloadFilePath];
+
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($composerDir, RecursiveDirectoryIterator::SKIP_DOTS),
+        RecursiveIteratorIterator::SELF_FIRST
+    );
+    foreach ($iterator as $file) {
+        if ($file->isFile()) {
+            $filesToProcess[] = $file->getRealPath();
+        }
+    }
+
+    log_message("Processing " . count($filesToProcess) . " files for hash replacement", 'INFO');
+
+    // Replace old hash with new hash
+    $totalReplacements = 0;
+    foreach ($filesToProcess as $file) {
+        log_message("Processing file: $file", 'DEBUG');
+        $content = file_get_contents($file);
+        if ($content === false) {
+            log_message("Failed to read file: $file", 'ERROR');
+            continue;
+        }
+
+        $newContent = str_replace($oldHash, $newHash, $content, $count);
+        if ($count > 0) {
+            $bytesWritten = file_put_contents($file, $newContent);
+            if ($bytesWritten === false) {
+                log_message("Failed to write to file: $file", 'ERROR');
+                continue;
+            }
+            log_message("Replaced $count instances in $file", 'SUCCESS');
+            $totalReplacements += $count;
+        } else {
+            log_message("No replacements needed in $file", 'DEBUG');
+        }
+    }
+
+    log_message("Total hash replacements: $totalReplacements", 'INFO');
+    log_message("Composer autoloader hash replacement completed", 'SUCCESS');
+
     log_message("=== SCOPING COMPLETED SUCCESSFULLY ===", 'SUCCESS');
 
 } catch (Exception $e) {

@@ -16,14 +16,8 @@ if ( ! defined( 'PLUGIN_FRAME_NAME' ) ) {
 if ( ! defined( 'PLUGIN_FRAME_VERSION' ) ) {
     define( 'PLUGIN_FRAME_VERSION', '0.9.1' ); // Required
 }
-if ( ! defined( 'PLUGIN_FRAME_NAMESPACE' ) ) {
-    define( 'PLUGIN_FRAME_NAMESPACE', 'PluginFrame' ); // Required
-}
 if ( ! defined( 'PLUGIN_FRAME_SLUG' ) ) {
     define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
-}
-if ( ! defined( 'PLUGIN_FRAME_PREFIX' ) ) {
-    define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
 }
 if ( ! defined( 'PLUGIN_FRAME_FILE' ) ) {
     define( 'PLUGIN_FRAME_FILE', dirname( __DIR__, 2 ) . '/' . PLUGIN_FRAME_SLUG . '.php' ); // Required [MUST BE HERE]

@@ -1,8 +1,8 @@
 <?php
 
-namespace Pluginframe\DB\Seeders;
+namespace PluginFrame\DB\Seeders;
 
-use Pluginframe\DB\Seeders\Seeder;
+use PluginFrame\DB\Seeders\Seeder;
 
 /**
  * SettingsSeeder to seed plugin-specific settings.

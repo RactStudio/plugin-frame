@@ -1,4 +1,5 @@
 <?php
+
 namespace PluginFrame\Providers;
 
 use PluginFrame\Services\ScreenHelp as ScreenHelpService;
