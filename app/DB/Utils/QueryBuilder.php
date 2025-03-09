@@ -1,6 +1,6 @@
 <?php
 
-namespace Pluginframe\DB\Utils;
+namespace PluginFrame\DB\Utils;
 
 /**
  * QueryBuilder class for building, executing dynamic SQL queries, and handling schema operations.

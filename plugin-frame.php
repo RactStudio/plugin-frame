@@ -25,7 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
 define( 'PLUGIN_FRAME_VERSION', '0.9.1' ); // Required
 define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
-define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
 define( 'PLUGIN_FRAME_MIN_PHP', '7.4' ); // Required
 define( 'PLUGIN_FRAME_FILE', __FILE__ ); // Required [MUST BE HERE, IF NOT POSSIBLE THEN, DELETE UNDERNEATH CONSTANT'S AS WELL]
 define( 'PLUGIN_FRAME_DIR', plugin_dir_path( PLUGIN_FRAME_FILE ) ); // Required
@@ -33,5 +32,5 @@ define( 'PLUGIN_FRAME_URL', plugin_dir_url( PLUGIN_FRAME_FILE ) ); // Required
 define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
 
 // Load The Plugin Frame Main Bootstrap File
-require_once __DIR__ . '/app/Config/Main.php';
-new \PluginFrame\Config\Main();
+require_once __DIR__ . '/app/Config/Bootstrap.php';
+new \PluginFrame\Config\Bootstrap();

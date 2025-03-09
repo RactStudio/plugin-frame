@@ -58,10 +58,6 @@ module.exports = function (pf) {
                     '!logs/**',
                     '!pf/**',
                     '!pf',
-                    '!cloudflared.exe',
-                    '!cloudflared_tunnel.log',
-                    '!composer.json',
-                    '!composer.lock',
                     '!tests/**',
                     '!.dist/**',
                     '!Gruntfile.js',
@@ -70,10 +66,21 @@ module.exports = function (pf) {
                     '!README.md',
                     '!tailwind.config.js',
                     '!TASK.txt',
+                    '!plugin-frame.conf',
                     '!webpack.config.js',
                     '!translate-gen.mjs',
                     '!translate-twig.mjs',
-                    '!wiki.txt'
+                    '!wiki.txt',
+                    '!composer.lock',
+                    '!build.log',
+                    // Exclude vendor packages
+                    '!vendor/squizlabs/**',
+                    '!vendor/dealerdirect/**',
+                    '!vendor/mustache/**',
+                    '!vendor/nikic/**',
+                    '!vendor/phpcsstandards/**',
+                    '!vendor/wp-coding-standards/**',
+                    '!vendor/wp-cli/**'
                 ],
                 dest: '.dist/plugin-frame'
             }

@@ -4,7 +4,10 @@
   "description": "Plugin Frame: A modern WordPress plugin development framework with Composer, npm, Tailwind, Twig, and Laravel-like structure. Ideal for lightweight or complex plugins. Complies with WP & PSR-4 standards. Modular, scalable, and dev-friendly.",
   "main": "plugin-frame.php",
   "scripts": {
-    "tunnel": "sh ./pf/cf-tunnel.sh",
+    "tunnel": "bash ./pf/cf-tunnel.sh",
+    "ngrok": "bash ./pf/ngrok-tunnel.sh",
+    "pf": "node ./pf/pf.mjs",
+    "watch": "grunt watch",
     "translate-wp": "wp i18n make-pot . languages/plugin-frame.pot --exclude=node_modules,tests,.dist,vendor --allow-root",
     "translate-twig": "node pf/translate-twig.mjs",
     "translate-gen": "node pf/translate-gen.mjs",
@@ -12,9 +15,8 @@
     "translate": "npm run translate-wp && npm run translate-twig && npm run translate-gen && npm run generate-pomo",
     "tailwind": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify",
     "tailwind-watch": "npx tailwindcss -i ./resources/assets/css/tailwind.css -o ./resources/assets/css/tailwind.min.css --minify --watch",
-    "watch": "grunt watch",
     "build": "npm run translate && npm run tailwind && grunt",
-    "prod": "npm run translate && npm run tailwind && grunt build:prod"
+    "build:prod": "composer dump-autoload && npm run translate && npm run tailwind && grunt build:prod && npm run pf"
   },
   "keywords": [],
   "author": "Mahamudul Hasan Rubel",
@@ -78,6 +80,7 @@
     "detect-file": "^1.0.0",
     "didyoumean": "^1.2.2",
     "dlv": "^1.1.3",
+    "dotenv": "^16.4.7",
     "duplexer": "^0.1.2",
     "eastasianwidth": "^0.3.0",
     "emoji-regex": "^10.4.0",
@@ -195,6 +198,7 @@
     "read-pkg": "^9.0.1",
     "read-pkg-up": "^11.0.0",
     "readable-stream": "^4.5.2",
+    "readline": "^1.3.0",
     "rimraf": "^6.0.1",
     "rxjs": "^7.8.1",
     "semver": "^7.6.3",

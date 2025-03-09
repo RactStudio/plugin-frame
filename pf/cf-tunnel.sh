@@ -4,13 +4,13 @@
 detect_os() {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     DOWNLOAD_URL="https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64"
-    EXECUTABLE="cloudflared"
+    EXECUTABLE="pf/cloudflared"
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     DOWNLOAD_URL="https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-darwin-amd64.tgz"
-    EXECUTABLE="cloudflared"
+    EXECUTABLE="pf/cloudflared"
   elif [[ "$OSTYPE" == "msys"* || "$OSTYPE" == "cygwin"* || "$OSTYPE" == "win32" ]]; then
     DOWNLOAD_URL="https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe"
-    EXECUTABLE="cloudflared.exe"
+    EXECUTABLE="pf/cloudflared.exe"
   else
     echo "Unsupported OS: $OSTYPE"
     exit 1
@@ -35,13 +35,13 @@ download_cloudflared() {
 start_tunnel() {
   local url="http://$1"
   echo "Starting tunnel to $url..."
-  ./"$EXECUTABLE" tunnel --url "$url" &> cloudflared_tunnel.log &
+  ./"$EXECUTABLE" tunnel --url "$url" &> pf/cloudflared_tunnel.log &
   local pid=$!
 
   echo "Waiting for the tunnel URL..."
   while true; do
     local tunnel_url
-    tunnel_url=$(grep -m 1 'https://.*trycloudflare.com' cloudflared_tunnel.log)
+    tunnel_url=$(grep -m 1 'https://.*trycloudflare.com' pf/cloudflared_tunnel.log)
     if [[ -n "$tunnel_url" ]]; then
       echo "Tunnel started successfully!"
       echo "Access your service at: $tunnel_url"
@@ -56,10 +56,12 @@ start_tunnel() {
 # Main Script Logic
 main() {
   detect_os
+  mkdir -p pf
+
   if [[ ! -f "$EXECUTABLE" ]]; then
     download_cloudflared
   else
-    echo "Cloudflared already exists in the current directory."
+    echo "Cloudflared already exists in the pf directory."
   fi
 
   read -p "Enter the URL to tunnel (e.g., localhost:8000): " tunnel_url

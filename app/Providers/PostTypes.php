@@ -2,6 +2,8 @@
 
 namespace PluginFrame\Providers;
 
+use PluginFrame\Services\PostTypes as PostTypesService;
+
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
     exit;
@@ -13,7 +15,7 @@ class PostTypes
 
     public function __construct()
     {
-        $this->postTypes = new \PluginFrame\Services\PostTypes();
+        $this->postTypes = new PostTypesService();
         
         $this->registerCustomPostTypes();
     }

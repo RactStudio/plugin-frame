@@ -7,13 +7,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 use PluginFrame\Services\Enqueue;
 
-class EnqueueAssets
+class Enqueues
 {
-    protected $enqueueFiles;
+    protected $enqueueFile;
 
     public function __construct()
     {
-        $this->enqueueFiles = new Enqueue();
+        $this->enqueueFile = new Enqueue();
 
         $this->registerFrontendAssets();
         $this->registerAdminAssets();
@@ -54,7 +54,7 @@ class EnqueueAssets
     protected function registerFrontendAssets()
     {
         // // Frontend Tailwind styles
-        // $this->enqueueFiles->registerFrontendStyle(
+        // $this->enqueueFile->registerFrontendStyle(
         //     'plugin-frame-frontend-tailwind-styles',
         //     PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
         //     [],
@@ -63,7 +63,7 @@ class EnqueueAssets
         // );
 
         // Frontend styles
-        $this->enqueueFiles->registerFrontendStyle(
+        $this->enqueueFile->registerFrontendStyle(
             'plugin-frame-frontend-styles',
             PLUGIN_FRAME_URL . 'resources/assets/css/frontend.min.css',
             [],
@@ -72,7 +72,7 @@ class EnqueueAssets
         );
 
         // Frontend AlpineJS script
-        $this->enqueueFiles->registerFrontendScript(
+        $this->enqueueFile->registerFrontendScript(
             'plugin-frame-frontend-alpine-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
             [],
@@ -86,7 +86,7 @@ class EnqueueAssets
         );
         
         // // Frontend Flowbite script
-        // $this->enqueueFiles->registerFrontendScript(
+        // $this->enqueueFile->registerFrontendScript(
         //     'plugin-frame-frontend-flowbite-script',
         //     PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
         //     [],
@@ -96,7 +96,7 @@ class EnqueueAssets
         // );
 
         // // Frontend Lucide script
-        // $this->enqueueFiles->registerFrontendScript(
+        // $this->enqueueFile->registerFrontendScript(
         //     'plugin-frame-frontend-lucide-script',
         //     PLUGIN_FRAME_URL . 'resources/assets/js/lucide.min.js',
         //     [],
@@ -106,7 +106,7 @@ class EnqueueAssets
         // );
 
         // Frontend Main Scripts (Auto generated)
-        $this->enqueueFiles->registerFrontendScript(
+        $this->enqueueFile->registerFrontendScript(
             'plugin-frame-frontend-main-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/frontend.min.js',
             [],
@@ -116,7 +116,7 @@ class EnqueueAssets
         );
 
         // // Example with condition
-        // $this->enqueueFiles->registerFrontendScript(
+        // $this->enqueueFile->registerFrontendScript(
         //     'plugin-frame-conditional-frontend-script',
         //     PLUGIN_FRAME_URL . 'resources/assets/js/frontend-conditional.js',
         //     ['jquery'],
@@ -136,7 +136,7 @@ class EnqueueAssets
     protected function registerAdminAssets()
     {
         // Admin Tailwind styles
-        $this->enqueueFiles->registerAdminStyle(
+        $this->enqueueFile->registerAdminStyle(
             'plugin-frame-admin-tailwind-styles',
             PLUGIN_FRAME_URL . 'resources/assets/css/tailwind.min.css',
             [],
@@ -145,7 +145,7 @@ class EnqueueAssets
         );
 
         // Admin styles
-        $this->enqueueFiles->registerAdminStyle(
+        $this->enqueueFile->registerAdminStyle(
             'plugin-frame-admin-styles',
             PLUGIN_FRAME_URL . 'resources/assets/css/admin.min.css',
             ['plugin-frame-admin-tailwind-styles'],
@@ -154,7 +154,7 @@ class EnqueueAssets
         );
 
         // Admin AlpineJS script
-        $this->enqueueFiles->registerAdminScript(
+        $this->enqueueFile->registerAdminScript(
             'plugin-frame-admin-alpine-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/alpine.min.js',
             [],
@@ -168,7 +168,7 @@ class EnqueueAssets
         );
 
         // Admin Flowbite script
-        $this->enqueueFiles->registerAdminScript(
+        $this->enqueueFile->registerAdminScript(
             'plugin-frame-admin-flowbite-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/flowbite.min.js',
             [],
@@ -178,7 +178,7 @@ class EnqueueAssets
         );
 
         // Admin Lucide script
-        $this->enqueueFiles->registerAdminScript(
+        $this->enqueueFile->registerAdminScript(
             'plugin-frame-admin-lucide-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/lucide.min.js',
             [],
@@ -188,7 +188,7 @@ class EnqueueAssets
         );
 
         // Admin Main Scripts (Auto generated)
-        $this->enqueueFiles->registerAdminScript(
+        $this->enqueueFile->registerAdminScript(
             'plugin-frame-admin-main-script',
             PLUGIN_FRAME_URL . 'resources/assets/js/admin.min.js',
             [],
@@ -198,7 +198,7 @@ class EnqueueAssets
         );
 
         // // Example with condition
-        // $this->enqueueFiles->registerAdminScript(
+        // $this->enqueueFile->registerAdminScript(
         //     'admin-conditional-script',
         //     PLUGIN_FRAME_URL . 'resources/assets/js/admin-conditional.js',
         //     [],

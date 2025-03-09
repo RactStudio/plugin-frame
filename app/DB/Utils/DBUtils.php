@@ -1,6 +1,6 @@
 <?php
 
-namespace Pluginframe\DB\Utils;
+namespace PluginFrame\DB\Utils;
 
 /**
  * DBUtils class for utility methods related to the database.

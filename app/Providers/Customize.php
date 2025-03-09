@@ -2,6 +2,8 @@
 
 namespace PluginFrame\Providers;
 
+use PluginFrame\Services\Customize as CustomizeService;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 

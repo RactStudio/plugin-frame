@@ -1,8 +1,8 @@
 <?php
 
-namespace Pluginframe\DB\Utils;
+namespace PluginFrame\DB\Utils;
 
-use Pluginframe\DB\Utils\QueryBuilder;
+use PluginFrame\DB\Utils\QueryBuilder;
 
 /**
  * DBHelper class for providing helper methods for database tasks.

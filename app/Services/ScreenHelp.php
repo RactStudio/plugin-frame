@@ -1,4 +1,5 @@
 <?php
+
 namespace PluginFrame\Services;
 
 use Exception;
@@ -186,13 +187,13 @@ class ScreenHelp
      */
     public function adjustAdminStyles()
     {
-        add_action('admin_head', function() {
-            $screen = get_current_screen();
+        \add_action('admin_head', function() {
+            $screen = \get_current_screen();
             $margin_needed = isset($this->groups[$screen->id]) || $screen->show_screen_options();
     
             if ($margin_needed) {
                 echo '<style>
-                    #pf-load.pf-page  {
+                    #pf-load.pf-page {
                         margin-top: 30px;
                         position: relative;
                         z-index: 999;

@@ -12,6 +12,11 @@
 12. DONE - Add OWN LOGGING SYSTEM for the framework (eg: pf_log() )
 13. Add own Cron Jobs for the framework
 
+.env file contents:
+-------------------------------------------
+NEW_NAMESPACE=ExampleWeather
+NEW_PREFIX=ew
+
 ## PRODUCTION NEEDS TO REPLACE TEXTS
 -------------------------------------------
 PluginFrame

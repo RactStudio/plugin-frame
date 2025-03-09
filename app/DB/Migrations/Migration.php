@@ -1,9 +1,9 @@
 <?php
 
-namespace Pluginframe\DB\Migrations;
+namespace PluginFrame\DB\Migrations;
 
 use Exception;
-use Pluginframe\DB\Utils\QueryBuilder;
+use PluginFrame\DB\Utils\QueryBuilder;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }

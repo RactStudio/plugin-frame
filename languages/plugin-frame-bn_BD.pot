@@ -1,0 +1,265 @@
+# Copyright (C) 2025 Mahamudul Hasan Rubel
+# This file is distributed under the LGPL-3.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugin Frame 0.9.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plugin-frame\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Bengali <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-02-24T16:45:34+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: plugin-frame\n"
+
+#. Plugin Name of the plugin
+#: C:\Users\ract\Local Sites\pluginframe\app\public\wp-content\plugins\plugin-frame\plugin-frame.php
+msgid "Plugin Frame"
+msgstr "প্লাগিন ফ্রেম"
+
+#. Plugin URI of the plugin
+#: C:\Users\ract\Local Sites\pluginframe\app\public\wp-content\plugins\plugin-frame\plugin-frame.php
+msgid "https://wp-frame.com"
+msgstr "https://wp-frame.com"
+
+#. Description of the plugin
+#: C:\Users\ract\Local Sites\pluginframe\app\public\wp-content\plugins\plugin-frame\plugin-frame.php
+msgid "Plugin Frame: A modern WordPress plugin development framework with Composer, npm, Tailwind, Twig, and Laravel-like structure. Ideal for lightweight or complex plugins. Complies with WP & PSR-4 standards. Modular, scalable, and dev-friendly."
+msgstr "প্লাগিন ফ্রেম: একটি আধুনিক ওয়ার্ডপ্রেস প্লাগিন ডেভেলপমেন্ট ফ্রেমওয়ার্ক যেখানে কম্পোজার, npm, টেইলউইন্ড, টুইগ, এবং লারাভেল-এর মতো স্ট্রাকচার রয়েছে। হালকা বা জটিল প্লাগিনের জন্য আদর্শ। WP এবং PSR-4 স্ট্যান্ডার্ড মেনে চলে। মডুলার, স্কেলেবল এবং ডেভেলপার-বান্ধব।"
+
+#. Author of the plugin
+#: C:\Users\ract\Local Sites\pluginframe\app\public\wp-content\plugins\plugin-frame\plugin-frame.php
+msgid "Mahamudul Hasan Rubel"
+msgstr "মাহমুদুল হাসান রুবেল"
+
+#. Author URI of the plugin
+#: C:\Users\ract\Local Sites\pluginframe\app\public\wp-content\plugins\plugin-frame\plugin-frame.php
+msgid "https://mhrubel.com"
+msgstr "https://mhrubel.com"
+
+#: app/Hooks/Activation.php:43
+msgid "Plugin activation failed. Please check the error logs for details."
+msgstr "প্লাগিন সক্রিয়করণ ব্যর্থ হয়েছে। বিস্তারিত জানার জন্য ত্রুটি লগগুলি পরীক্ষা করুন।"
+
+#: app/Hooks/Deactivation.php:43
+msgid "Plugin deactivation failed. Please check the error logs for details."
+msgstr "প্লাগিন নিষ্ক্রিয়করণ ব্যর্থ হয়েছে। বিস্তারিত জানার জন্য ত্রুটি লগগুলি পরীক্ষা করুন।"
+
+#: app/Hooks/Uninstall.php:43
+msgid "Plugin uninstallation failed. Please check the error logs for details."
+msgstr "প্লাগিন আনইনস্টল ব্যর্থ হয়েছে। বিস্তারিত জানার জন্য ত্রুটি লগগুলি পরীক্ষা করুন।"
+
+#: app/Hooks/Upgrade.php:126
+msgid "You cannot upload this plugin."
+msgstr "আপনি এই প্লাগিনটি আপলোড করতে পারবেন না।"
+
+#: app/Providers/PageScreenHelp.php:56
+msgid "Getting Started"
+msgstr "শুরু করুন"
+
+#: app/Providers/PageScreenHelp.php:62
+msgid "Advanced Usage"
+msgstr "উন্নত ব্যবহার"
+
+#: app/Providers/PageScreenHelp.php:86
+msgid "General Settings"
+msgstr "সাধারণ সেটিংস"
+
+#: app/Providers/PageScreenHelp.php:90
+msgid "Privacy Guide"
+msgstr "গোপনীয়তা গাইড"
+
+#: app/Routes/Handlers/OtherHandlers.php:170
+msgid "This is an error response"
+msgstr "এটি একটি ত্রুটি প্রতিক্রিয়া"
+
+#: app/Routes/Middleware/AuthMiddleware.php:18
+msgid "Missing Authorization header."
+msgstr "অনুমোদন হেডার অনুপস্থিত।"
+
+#: app/Routes/Middleware/AuthMiddleware.php:24
+msgid "Invalid Authorization header format."
+msgstr "অনুমোদন হেডার ফরম্যাট অবৈধ।"
+
+#: app/Routes/Middleware/AuthMiddleware.php:38
+msgid "Invalid credentials."
+msgstr "অবৈধ প্রমাণপত্র।"
+
+#: app/Routes/Middleware/RoleMiddleware.php:14
+msgid "Permission denied."
+msgstr "অনুমতি অস্বীকৃত।"
+
+#: app/Services/ScreenHelp.php:76
+msgid "Help Documentation"
+msgstr "সহায়তা ডকুমেন্টেশন"
+
+#: app/Services/ScreenHelp.php:144
+msgid "Error loading help content"
+msgstr "সহায়তা বিষয়বস্তু লোড করতে ত্রুটি"
+
+#: app/Views/Admin/Dashboard.php:21
+#: app/Views/AdminAlpine/DashboardAlpine.php:21
+msgid "Dashboard"
+msgstr "ড্যাশবোর্ড"
+
+#: app/Views/Admin/Dashboard.php:22
+#: app/Views/AdminAlpine/DashboardAlpine.php:22
+msgid "Plugin Frame Admin Dashboard!"
+msgstr "প্লাগিন ফ্রেম অ্যাডমিন ড্যাশবোর্ড!"
+
+#: app/Views/Admin/Dashboard.php:23
+#: app/Views/AdminAlpine/DashboardAlpine.php:23
+msgid "Plugin Frame Dashboard description for without text-domain"
+msgstr "প্লাগিন ফ্রেম ড্যাশবোর্ডের বিবরণ (টেক্সট-ডোমেন ছাড়া)"
+
+#: app/Views/Admin/Settings.php:21
+#: app/Views/AdminAlpine/SettingsAlpine.php:21
+msgid "Settings"
+msgstr "সেটিংস"
+
+#: app/Views/Admin/Settings.php:22
+#: app/Views/AdminAlpine/SettingsAlpine.php:22
+msgid "Plugin Frame Settings Dashboard!"
+msgstr "প্লাগিন ফ্রেম সেটিংস ড্যাশবোর্ড!"
+
+#: app/Views/Admin/Settings.php:23
+#: app/Views/AdminAlpine/SettingsAlpine.php:23
+msgid "Plugin Frame Settings description for without text-domain"
+msgstr "প্লাগিন ফ্রেম সেটিংসের বিবরণ (টেক্সট-ডোমেন ছাড়া)"
+
+#: app/Views/Admin/Tools.php:21
+#: app/Views/AdminAlpine/ToolsAlpine.php:21
+msgid "Tools"
+msgstr "টুলস"
+
+#: app/Views/Admin/Tools.php:22
+#: app/Views/AdminAlpine/ToolsAlpine.php:22
+msgid "Plugin Frame Tools Dashboard!"
+msgstr "প্লাগিন ফ্রেম টুলস ড্যাশবোর্ড!"
+
+#: app/Views/Admin/Tools.php:23
+#: app/Views/AdminAlpine/ToolsAlpine.php:23
+msgid "Plugin Frame Tools description for without text-domain"
+msgstr "প্লাগিন ফ্রেম টুলসের বিবরণ (টেক্সট-ডোমেন ছাড়া)"
+
+#: resources/views/admin/dashboard.twig:28
+msgid "Open Modal"
+msgstr "মোডাল খুলুন"
+
+#: resources/views/admin/dashboard.twig:55
+msgid "Modal Title"
+msgstr "মোডাল শিরোনাম"
+
+#: resources/views/admin/dashboard.twig:56
+msgid "This is a Flowbite modal controlled by Alpine.js."
+msgstr "এটি একটি ফ্লোবাইট মোডাল যা Alpine.js দ্বারা নিয়ন্ত্রিত।"
+
+#: resources/views/admin/dashboard.twig:58
+msgid "Close"
+msgstr "বন্ধ করুন"
+
+#: resources/views/admin/dashboard.twig:68
+msgid "Lucide Icons"
+msgstr "লুসিড আইকন"
+
+#: resources/views/screen-help/dashboard/advanced-usage.twig:2
+msgid "Advanced Features"
+msgstr "উন্নত বৈশিষ্ট্য"
+
+#: resources/views/screen-help/dashboard/advanced-usage.twig:5
+#: resources/views/screen-help/dashboard/getting-started.twig:3
+msgid "Custom Shortcodes"
+msgstr "কাস্টম শর্টকোড"
+
+#: resources/views/screen-help/dashboard/advanced-usage.twig:10
+msgid "API Integration"
+msgstr "API ইন্টিগ্রেশন"
+
+#: resources/views/screen-help/dashboard/advanced-usage.twig:11
+msgid "Access our REST API endpoints:"
+msgstr "আমাদের REST API এন্ডপয়েন্টগুলি অ্যাক্সেস করুন:"
+
+#: resources/views/screen-help/dashboard/getting-started.twig:2
+msgid "Welcome to Plugin Frame!"
+msgstr "প্লাগিন ফ্রেমে স্বাগতম!"
+
+#: resources/views/screen-help/dashboard/getting-started.twig:4
+msgid "Here\"
+msgstr "এখানে"
+
+#: resources/views/screen-help/dashboard/getting-started.twig:7
+msgid "Configure your basic settings"
+msgstr "আপনার মৌলিক সেটিংস কনফিগার করুন"
+
+#: resources/views/screen-help/dashboard/getting-started.twig:8
+msgid "Connect to your website"
+msgstr "আপনার ওয়েবসাইটের সাথে সংযোগ করুন"
+
+#: resources/views/screen-help/dashboard/getting-started.twig:9
+msgid "Review the dashboard metrics"
+msgstr "ড্যাশবোর্ড মেট্রিক্স পর্যালোচনা করুন"
+
+#: resources/views/screen-help/dashboard/getting-started.twig:13
+msgid "Need help? Contact us at"
+msgstr "সাহায্য প্রয়োজন? আমাদের সাথে যোগাযোগ করুন"
+
+#: resources/views/screen-help/settings/general-settings.twig:2
+msgid "Configuration Guide"
+msgstr "কনফিগারেশন গাইড"
+
+#: resources/views/screen-help/settings/general-settings.twig:6
+msgid "Setting"
+msgstr "সেটিং"
+
+#: resources/views/screen-help/settings/general-settings.twig:7
+msgid "Recommended Value"
+msgstr "প্রস্তাবিত মান"
+
+#: resources/views/screen-help/settings/general-settings.twig:10
+msgid "Cache Duration"
+msgstr "ক্যাশে সময়কাল"
+
+#: resources/views/screen-help/settings/general-settings.twig:11
+msgid "hours"
+msgstr "ঘন্টা"
+
+#: resources/views/screen-help/settings/general-settings.twig:14
+msgid "Log Level"
+msgstr "লগ লেভেল"
+
+#: resources/views/screen-help/settings/privacy.twig:2
+msgctxt "undefined"
+msgid "Data Handling"
+msgstr "ডেটা হ্যান্ডলিং"
+
+#: resources/views/screen-help/settings/privacy.twig:4
+msgctxt "undefined"
+msgid "We respect your privacy:"
+msgstr "আমরা আপনার গোপনীয়তা সম্মান করি:"
+
+#: resources/views/screen-help/settings/privacy.twig:7
+msgctxt "undefined"
+msgid "No personal data collection"
+msgstr "কোন ব্যক্তিগত ডেটা সংগ্রহ নেই"
+
+#: resources/views/screen-help/settings/privacy.twig:8
+msgctxt "undefined"
+msgid "All analytics are anonymized"
+msgstr "সমস্ত বিশ্লেষণ বেনামী করা হয়"
+
+#: resources/views/screen-help/settings/privacy.twig:9
+msgctxt "undefined"
+msgid "Regular security audits"
+msgstr "নিয়মিত নিরাপত্তা অডিট"
+
+#: resources/views/screen-help/settings/privacy.twig:12
+msgctxt "undefined"
+msgid "Review our full"
+msgstr "আমাদের সম্পূর্ণ পর্যালোচনা করুন"
+
+#: resources/views/screen-help/settings/privacy.twig:12
+msgctxt "undefined"
+msgid "Privacy Policy"
+msgstr "গোপনীয়তা নীতি"

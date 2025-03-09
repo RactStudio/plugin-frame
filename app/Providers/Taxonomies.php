@@ -2,6 +2,8 @@
 
 namespace PluginFrame\Providers;
 
+use PluginFrame\Services\Taxonomies as TaxonomiesService;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -11,7 +13,7 @@ class Taxonomies
 
     public function __construct()
     {
-        $this->taxonomies = new \PluginFrame\Services\Taxonomies();
+        $this->taxonomies = new TaxonomiesService();
 
         $this->registerCustomTaxonomies();
     }
