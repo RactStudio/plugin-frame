@@ -81,14 +81,16 @@ async function main() {
     const phpScriptPath = path.resolve(process.cwd(), 'pf', 'pf.php');
     const baseDistDir = path.resolve(process.cwd(), '.dist', 'plugin-frame');
     const distDir = `.dist/${config.slug}-${config.rand_num}`;
+    const baseFileName = path.resolve(process.cwd(), distDir, 'plugin-frame.php');
+    const renameFileName = path.resolve(process.cwd(), distDir, `${config.slug}.php`.toLowerCase());
 
     // Rename the directory
     if (fs.existsSync(baseDistDir)) {
       console.log(`🔄 Renaming ${baseDistDir} to ${distDir}`);
 
       let attempt = 0;
-      const maxAttempts = 5;
-      const retryDelay = 200; // 200ms delay between retries
+      const maxAttempts = 9;
+      const retryDelay = 300; // 300ms delay between retries
 
       while (attempt < maxAttempts) {
         try {
@@ -112,6 +114,33 @@ async function main() {
     const phpCommand = `php "${phpScriptPath}" "${config.namespace}" "${config.prefix}" "${config.name}" "${config.version}" "${config.slug}" "${config.rand_num}" "${config.plugin_frame}"`;
     console.log(`🔧 Executing PHP Scoper: ${phpCommand}`);
     await executeCommand(phpCommand, process.cwd());
+
+    // Rename the plugin main php file (if exists)
+    if (fs.existsSync(baseFileName)) {
+      console.log(`🔄 Renaming ${baseFileName} to ${renameFileName}`);
+
+      let attempt = 0;
+      const maxAttempts = 9;
+      const retryDelay = 300;
+
+      while (attempt < maxAttempts) {
+        try {
+          fs.accessSync(baseFileName, fs.constants.W_OK);
+          fs.renameSync(baseFileName, renameFileName);
+          break;
+        } catch (err) {
+          attempt++;
+          console.warn(`⚠️ Attempt ${attempt}: Failed to rename plugin main file. Retrying in ${retryDelay}ms...`);
+          if (attempt >= maxAttempts) {
+            console.error(`❌ Failed to rename plugin main file after ${maxAttempts} attempts. Continuing without rename.`);
+            break;
+          }
+          await new Promise(res => setTimeout(res, retryDelay));
+        }
+      }
+    } else {
+      console.log(`ℹ️  Plugin main file not found at ${baseFileName}, continuing without rename`);
+    }
 
     // **Composer operations**
     console.log(`🔄 Updating Composer in ${distDir}`);

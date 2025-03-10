@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Plugin Frame
- * Plugin URI:   https://mhr.ractstudio.com
+ * Plugin URI:  https://mhr.ractstudio.com
  * Description: Plugin Frame: A modern WordPress plugin development framework with Composer, npm, Tailwind, Twig, and Laravel-like structure. Ideal for lightweight or complex plugins. Complies with WP & PSR-4 standards. Modular, scalable, and dev-friendly.
  * Version:     0.9.1
  * Author:      Mahamudul Hasan Rubel

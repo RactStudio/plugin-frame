@@ -18,9 +18,12 @@ try {
         'namespace' => $argv[1],
         'prefix' => $argv[2],
         'name' => $argv[3],
+        'name_lower' => strtolower($argv[3]),
         'version' => $argv[4],
         'slug' => $argv[5],
         'rand_num' => $argv[6],
+        'slug_upper' => strtoupper(str_replace('-', '_', $argv[5])),
+        'slug_lower' => strtolower(str_replace('-', '_', $argv[5])),
         'plugin_frame' => ($pluginFrameArg === 'false') ? false : $pluginFrameArg,
     ];
 } catch (Exception $e) {
@@ -82,12 +85,110 @@ $MANUAL_REPLACEMENTS = [
     [
         'file' => realpath($ROOT_DIR . "/app/Config/Providers.php"), // Exact file path
         'search' => 'protected $baseNamespace = \'PluginFrame\\Providers\';', // Exact match
-        'type' => 'namespace' // namespace
+        'type' => 'namespace', // namespace
     ],
     [
         'file' => realpath($ROOT_DIR . "/app/Services/ScreenHelp.php"), // Exact file path
         'search' => '#pf-load.pf-page', // Exact match
-        'type' => 'prefix' // prefix
+        'type' => 'prefix', // prefix
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/"), // Exact directory path
+        'search' => 'PLUGIN_FRAME_', // Partial match for all entries
+        'type' => 'replace-dir', // replace-dir for all directory files
+        'replace' => 'PLUGIN_FRAME', // replace
+        'with' => $config['slug_upper'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/"), // Exact directory path
+        'search' => 'plugin-frame', // Partial match for all entries
+        'type' => 'replace-dir', // replace-dir for all directory files
+        'replace' => 'plugin-frame', // replace
+        'with' => $config['slug'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/"), // Exact directory path
+        'search' => 'plugin_frame', // Partial match for all entries
+        'type' => 'replace-dir', // replace-dir for all directory files
+        'replace' => 'plugin_frame', // replace
+        'with' => $config['slug_lower'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/"), // Exact directory path
+        'search' => 'plugin frame', // Partial match for all entries
+        'type' => 'replace-dir', // replace-dir for all directory files
+        'replace' => 'plugin frame', // replace
+        'with' => $config['name_lower'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/"), // Exact directory path
+        'search' => 'Plugin Frame', // Partial match for all entries
+        'type' => 'replace-dir', // replace-dir for all directory files
+        'replace' => 'Plugin Frame', // replace
+        'with' => $config['name'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
+        'search' => 'Plugin Name: Plugin Frame', // Exact match
+        'type' => 'replace', // replace
+        'replace' => 'Plugin Frame', // replace
+        'with' => $config['name'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
+        'search' => 'Version:     0.9.1', // Exact match
+        'type' => 'replace', // replace
+        'replace' => '0.9.1', // replace
+        'with' => $config['version'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
+        'search' => 'Text Domain: plugin-frame', // Exact match
+        'type' => 'replace', // replace
+        'replace' => 'plugin-frame', // replace
+        'with' => $config['slug'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
+        'search' => '\''.$config['slug_upper'].'_NAME\', \'Plugin Frame\'', // Exact match
+        'type' => 'replace', // replace
+        'replace' => 'Plugin Frame', // replace
+        'with' => $config['name'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
+        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.1\'', // Exact match
+        'type' => 'replace', // replace
+        'replace' => '0.9.1', // replace
+        'with' => $config['version'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
+        'search' => '\''.$config['slug_upper'].'_SLUG\', \'plugin-frame\'', // Exact match
+        'type' => 'replace', // replace
+        'replace' => 'plugin-frame', // replace
+        'with' => $config['slug'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/app/Config/Bootstrap.php"), // Exact file path
+        'search' => '\''.$config['slug_upper'].'_NAME\', \'Plugin Frame\'', // Exact match
+        'type' => 'replace', // replace
+        'replace' => 'Plugin Frame', // replace
+        'with' => $config['name'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/app/Config/Bootstrap.php"), // Exact file path
+        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.1\'', // Exact match
+        'type' => 'replace', // replace
+        'replace' => '0.9.1', // replace
+        'with' => $config['version'], // with
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/app/Config/Bootstrap.php"), // Exact file path
+        'search' => '\''.$config['slug_upper'].'_SLUG\', \'plugin-frame\'', // Exact match
+        'type' => 'replace', // replace
+        'replace' => 'plugin-frame', // replace
+        'with' => $config['slug'], // with
     ],
     // ... add more entries as needed ...
 ];
@@ -223,35 +324,113 @@ function transformNamespaceString($namespaceString) {
 // Manual Replacement Processor
 // ==================================================
 function processManualReplacements() {
-    global $MANUAL_REPLACEMENTS, $config;
+    global $MANUAL_REPLACEMENTS, $config, $EXCLUDED_DIRS;
     
-    // log_message("Starting manual replacements", 'PROCESS');
     $skippedReplacements = [];
     
     foreach ($MANUAL_REPLACEMENTS as $index => $replacement) {
         $logPrefix = "Replacement #" . ($index + 1);
-        log_message("$logPrefix - Starting processing", 'DEBUG');
+        log_message("$logPrefix - Starting manual replacement processing", 'DEBUG');
         
         try {
             $filePath = $replacement['file'] ?? '';
             $search = $replacement['search'] ?? '';
             $type = $replacement['type'] ?? '';
+            $replace = $replacement['replace'] ?? null;
+            $with = $replacement['with'] ?? null;
 
             // Validation
-            if (!$filePath || !$search || !$type) {
-                $reason = 'Invalid configuration: ' . 
-                         (!$filePath ? 'Missing file ' : '') .
-                         (!$search ? 'Missing search ' : '') .
-                         (!$type ? 'Missing type' : '');
+            $validationErrors = [];
+            if (!$filePath) $validationErrors[] = 'Missing file';
+            if (!$search) $validationErrors[] = 'Missing search';
+            if (!$type) $validationErrors[] = 'Missing type';
+            
+            // Additional validation for specific types
+            if ($type === 'replace') {
+                if ($replace === null) $validationErrors[] = 'Missing replace';
+                if ($with === null) $validationErrors[] = 'Missing with';
+            }
+            if ($type === 'replace-dir') {
+                if ($replace === null) $validationErrors[] = 'Missing replace';
+                if ($with === null) $validationErrors[] = 'Missing with';
+            }
+            
+            if (!empty($validationErrors)) {
+                $reason = 'Invalid configuration: ' . implode(', ', $validationErrors);
                 log_message("$logPrefix - $reason", 'ERROR');
                 $skippedReplacements[] = compact('filePath', 'search', 'reason');
                 continue;
             }
 
-            log_message("$logPrefix - Target file: $filePath", 'DEBUG');
+            log_message("$logPrefix - Target path: $filePath", 'DEBUG');
             log_message("$logPrefix - Search pattern: " . substr($search, 0, 50), 'DEBUG');
             log_message("$logPrefix - Replacement type: $type", 'DEBUG');
 
+            // Handle directory-wide replacements
+            if ($type === 'replace-dir') {
+                if (!is_dir($filePath)) {
+                    $reason = "Directory not found: $filePath";
+                    log_message("$logPrefix - $reason", 'ERROR');
+                    $skippedReplacements[] = compact('filePath', 'search', 'reason');
+                    continue;
+                }
+
+                $iterator = new RecursiveIteratorIterator(
+                    new RecursiveDirectoryIterator($filePath, RecursiveDirectoryIterator::SKIP_DOTS),
+                    RecursiveIteratorIterator::SELF_FIRST
+                );
+
+                foreach ($iterator as $file) {
+                    if ($file->isDir()) continue;
+
+                    $currentFilePath = $file->getRealPath();
+                    $isExcluded = false;
+
+                    // Check against excluded directories/files
+                    foreach ($EXCLUDED_DIRS as $excludedPath) {
+                        if (strpos($currentFilePath, $excludedPath) === 0) {
+                            $isExcluded = true;
+                            break;
+                        }
+                    }
+
+                    if ($isExcluded) {
+                        log_message("$logPrefix - Skipping excluded file: $currentFilePath", 'DEBUG');
+                        continue;
+                    }
+
+                    // Process file
+                    log_message("$logPrefix - Processing file: $currentFilePath", 'DEBUG');
+                    $content = file_get_contents($currentFilePath);
+                    if ($content === false) {
+                        $reason = "Could not read file: $currentFilePath";
+                        log_message("$logPrefix - $reason", 'ERROR');
+                        $skippedReplacements[] = compact('filePath', 'search', 'reason');
+                        continue;
+                    }
+
+                    // Replace in lines containing search pattern
+                    $pattern = '/^.*?' . preg_quote($search, '/') . '.*$/m';
+                    $newContent = preg_replace_callback($pattern, function($matches) use ($replace, $with) {
+                        return str_replace($replace, $with, $matches[0]);
+                    }, $content);
+
+                    if ($newContent !== $content) {
+                        if (file_put_contents($currentFilePath, $newContent) === false) {
+                            $reason = "Failed to write file: $currentFilePath";
+                            log_message("$logPrefix - $reason", 'ERROR');
+                            $skippedReplacements[] = compact('filePath', 'search', 'reason');
+                        } else {
+                            log_message("$logPrefix - Updated file: $currentFilePath", 'SUCCESS');
+                        }
+                    } else {
+                        log_message("$logPrefix - No changes in file: $currentFilePath", 'DEBUG');
+                    }
+                }
+                continue; // Skip further processing for this entry
+            }
+
+            // Single file validations
             if (!file_exists($filePath)) {
                 $reason = "File not found";
                 log_message("$logPrefix - $reason", 'ERROR');
@@ -299,6 +478,17 @@ function processManualReplacements() {
                         "$logPrefix - Prefix replacement: " . 
                         substr($search, 0, 20) . " => " . 
                         substr($replacementString, 0, 20), 
+                        'DEBUG'
+                    );
+                    break;
+
+                case 'replace':
+                    $newString = str_replace($replace, $with, $search);
+                    $newContent = str_replace($search, $newString, $content);
+                    log_message(
+                        "$logPrefix - String replacement: " .
+                        substr($replace, 0, 20) . " => " .
+                        substr($with, 0, 20),
                         'DEBUG'
                     );
                     break;
