@@ -219,7 +219,7 @@ function processPHPFile($path, $config) {
             
             $classParts = explode('\\', $class);
             
-            // Handle plugin frame namespace
+            // Handle Plugin Frame namespace
             if ($this->config['plugin_frame'] !== false) {
                 $framePart = $this->config['plugin_frame'] ?: 'PluginFrame';
                 if ($classParts[0] !== $framePart && !$isNamespace) {

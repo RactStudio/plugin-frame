@@ -53,31 +53,67 @@ async function main() {
       config = {
         namespace: await promptInput("Namespace (2-50 letters/numbers): ", validateNamespace),
         prefix: await promptInput("Prefix (2-10 lowercase letters): ", validatePrefix),
+        name: await promptInput("Name (2-50 characters): "),
+        version: await promptInput("Version (e.g., 1.0.0): "),
+        slug: await promptInput("Slug (2-50 characters): ")
       };
       await writeConfig(configPath, config);
+    }
 
-      if (!('plugin_frame' in config) || (!config.plugin_frame && config.plugin_frame !== false)) {
-        config.plugin_frame = 'PluginFrame';
-      }
-
+    if (!('rand_num' in config)) {
+      const now = new Date();
+      const month = now.toLocaleString('en-US', { month: 'long' }).toLowerCase();
+      const day = String(now.getDate()).padStart(2, '0');
+      const year = now.getFullYear();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      config.rand_num = `${month}-${day}-${year}-${hours}-${minutes}-${seconds}`;
     }
 
     console.log(`⚙️  Using configuration:\n${JSON.stringify(config, null, 2)}`);
 
-    // Path resolution
+    if (!('plugin_frame' in config) || (!config.plugin_frame && config.plugin_frame !== false)) {
+      config.plugin_frame = 'PluginFrame';
+    }
+
+    // **Path resolution**
     const phpScriptPath = path.resolve(process.cwd(), 'pf', 'pf.php');
-    const distDir = path.resolve(process.cwd(), '.dist', 'plugin-frame');
+    const baseDistDir = path.resolve(process.cwd(), '.dist', 'plugin-frame');
+    const distDir = `.dist/${config.slug}-${config.rand_num}`;
 
-    // Validate paths
-    if (!fs.existsSync(phpScriptPath)) throw new Error(`Missing pf.php at ${phpScriptPath}`);
-    if (!fs.existsSync(distDir)) throw new Error(`Missing dist directory at ${distDir}`);
+    // Rename the directory
+    if (fs.existsSync(baseDistDir)) {
+      console.log(`🔄 Renaming ${baseDistDir} to ${distDir}`);
 
-    // Execute PHP processing
-    const phpCommand = `php "${phpScriptPath}" "${config.namespace}" "${config.prefix}" "${config.plugin_frame}"`;
+      let attempt = 0;
+      const maxAttempts = 5;
+      const retryDelay = 200; // 200ms delay between retries
+
+      while (attempt < maxAttempts) {
+        try {
+          fs.accessSync(baseDistDir, fs.constants.W_OK);
+          fs.renameSync(baseDistDir, distDir);
+          break; // Success, exit loop
+        } catch (err) {
+          attempt++;
+          console.warn(`⚠️ Attempt ${attempt}: Failed to rename. Retrying in ${retryDelay}ms...`);
+          if (attempt >= maxAttempts) {
+            throw new Error(`Failed to rename directory after ${maxAttempts} attempts. Check file locks or permissions.`);
+          }
+          await new Promise(res => setTimeout(res, retryDelay));
+        }
+      }
+    } else {
+      throw new Error(`Missing dist directory at ${baseDistDir}`);
+    }
+
+    // **Execute PHP processing**
+    const phpCommand = `php "${phpScriptPath}" "${config.namespace}" "${config.prefix}" "${config.name}" "${config.version}" "${config.slug}" "${config.rand_num}" "${config.plugin_frame}"`;
     console.log(`🔧 Executing PHP Scoper: ${phpCommand}`);
     await executeCommand(phpCommand, process.cwd());
 
-    // Composer operations
+    // **Composer operations**
     console.log(`🔄 Updating Composer in ${distDir}`);
     await executeCommand('composer dump-autoload', distDir);
 
@@ -94,7 +130,7 @@ async function main() {
   }
 }
 
-// Config helpers
+// **Config helpers**
 async function readConfig(configPath) {
   if (!fs.existsSync(configPath)) return null;
 
@@ -108,6 +144,16 @@ async function readConfig(configPath) {
     }
   });
 
+  if (!('rand_num' in config)) {
+    const now = new Date();
+    const month = now.toLocaleString('en-US', { month: 'long' }).toLowerCase();
+    const day = String(now.getDate()).padStart(2, '0');
+    const year = now.getFullYear();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    config.rand_num = `${month}-${day}-${year}-${hours}-${minutes}-${seconds}`;
+  }
   if (!('plugin_frame' in config) || (!config.plugin_frame && config.plugin_frame !== false)) {
     config.plugin_frame = 'PluginFrame';
   }
@@ -115,17 +161,19 @@ async function readConfig(configPath) {
   return config.namespace && config.prefix ? config : null;
 }
 
-async function writeConfig(configPath, { namespace, prefix, plugin_frame }) {
+async function writeConfig(configPath, { namespace, prefix, name, version, slug }) {
   const content = [
     `namespace = ${namespace}`,
     `prefix = ${prefix}`,
-    // `plugin_frame = ${plugin_frame || ''}`
+    `name = ${name}`,
+    `version = ${version}`,
+    `slug = ${slug}`
   ].join('\n');
 
   fs.writeFileSync(configPath, content);
 }
 
-// Validators
+// **Validators**
 async function validateNamespace(input) {
   const cleaned = input.replace(/[^a-zA-Z0-9]/g, '');
   if (cleaned.length < 2 || cleaned.length > 50) {
@@ -142,5 +190,5 @@ async function validatePrefix(input) {
   return cleaned;
 }
 
-// Start the process
+// **Start the process**
 main();

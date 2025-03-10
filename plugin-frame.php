@@ -19,8 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
  * Define Constants.
- * Also declared in app/config/Main.php for redundancy.
- * This will override the constant defined in app/config/Main.php
+ * Also declared in app/config/Bootstrap.php for redundancy.
+ * This will override the constant defined in app/config/Bootstrap.php
  */
 define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
 define( 'PLUGIN_FRAME_VERSION', '0.9.1' ); // Required

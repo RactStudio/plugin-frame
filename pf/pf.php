@@ -4,9 +4,34 @@
  */
 
 // ==================================================
+// Command-line Argument Processing & Config Setup
+// ==================================================
+global $config;
+
+try {
+    if ($argc < 7) {
+        throw new Exception("Missing required arguments");
+    }
+
+    $pluginFrameArg = $argv[7] ?? 'PluginFrame';
+    $config = [
+        'namespace' => $argv[1],
+        'prefix' => $argv[2],
+        'name' => $argv[3],
+        'version' => $argv[4],
+        'slug' => $argv[5],
+        'rand_num' => $argv[6],
+        'plugin_frame' => ($pluginFrameArg === 'false') ? false : $pluginFrameArg,
+    ];
+} catch (Exception $e) {
+    fwrite(STDERR, "FATAL ERROR: " . $e->getMessage() . "\n");
+    exit(1);
+}
+
+// ==================================================
 // Logging Configuration
 // ==================================================
-define('LOG_FILE', realpath(__DIR__ . '/..') . '/build.log');
+define('LOG_FILE', realpath(__DIR__ . '/../.dist') . '/build-'.$config['rand_num'].'.log');
 @unlink(LOG_FILE); // Remove previous log file
 $logHandle = fopen(LOG_FILE, 'w');
 if (!$logHandle) die("❌ Cannot create log file");
@@ -28,12 +53,14 @@ function log_message($message, $type = 'INFO') {
 // ==================================================
 // Initialization
 // ==================================================
-log_message("=== STARTING SCOPING PROCESS ===", 'PROCESS');
+log_message("=== STARTING PLUGIN FRAME SCOPING PROCESS ===", 'PROCESS');
+log_message("Configuration received:", 'CONFIG');
+log_message(print_r($config, true), 'CONFIG');
 
 // ==================================================
-// Configuration
+// Directory Configuration
 // ==================================================
-$ROOT_DIR = realpath(__DIR__ . "/../.dist/plugin-frame");
+$ROOT_DIR = realpath(__DIR__ . "/../.dist/".$config['slug']."-".$config['rand_num']);
 log_message("Root directory: $ROOT_DIR", 'CONFIG');
 
 // Exclude directory or a single file from scoping
@@ -317,18 +344,6 @@ function processManualReplacements() {
 // Main Execution
 // ==================================================
 try {
-    if ($argc < 3) throw new Exception("Missing required arguments");
-    
-    $pluginFrameArg = $argv[3] ?? 'PluginFrame';
-    $config = [
-        'namespace' => $argv[1],
-        'prefix' => $argv[2],
-        'plugin_frame' => ($pluginFrameArg === 'false') ? false : $pluginFrameArg,
-    ];
-    
-    log_message("Configuration received:", 'CONFIG');
-    log_message(print_r($config, true), 'CONFIG');
-
     // Validation
     function validateInputs($config) {
         log_message("Validating inputs...", 'PROCESS');
@@ -594,7 +609,7 @@ try {
     log_message("Total hash replacements: $totalReplacements", 'INFO');
     log_message("Composer autoloader hash replacement completed", 'SUCCESS');
 
-    log_message("=== SCOPING COMPLETED SUCCESSFULLY ===", 'SUCCESS');
+    log_message("=== PLUGIN FRAME SCOPING COMPLETED SUCCESSFULLY ===", 'SUCCESS');
 
 } catch (Exception $e) {
     log_message("FATAL ERROR: " . $e->getMessage(), 'ERROR');

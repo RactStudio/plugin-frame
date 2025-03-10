@@ -15,7 +15,7 @@ class PFlogs
     public static string $logsDir = PLUGIN_FRAME_DIR . '/logs'; // Directory for logs
 
     /**
-     * Logs a message to the plugin frame logs.
+     * Logs a message to the Plugin Frame logs.
      *
      * @param string $message The log message.
      * @return void
