@@ -60,7 +60,7 @@ async function main() {
       await writeConfig(configPath, config);
     }
 
-    if (!('rand_num' in config)) {
+    if (!('rand_num' in config) || (config.rand_num && config.rand_num === '')) {
       const now = new Date();
       const month = now.toLocaleString('en-US', { month: 'long' }).toLowerCase();
       const day = String(now.getDate()).padStart(2, '0');
@@ -73,7 +73,7 @@ async function main() {
 
     console.log(`⚙️  Using configuration:\n${JSON.stringify(config, null, 2)}`);
 
-    if (!('plugin_frame' in config) || (!config.plugin_frame && config.plugin_frame !== false)) {
+    if (!('plugin_frame' in config) || (config.plugin_frame && config.plugin_frame === '') || (config.plugin_frame && config.plugin_frame !== false)) {
       config.plugin_frame = 'PluginFrame';
     }
 
@@ -144,7 +144,7 @@ async function readConfig(configPath) {
     }
   });
 
-  if (!('rand_num' in config)) {
+  if (!('rand_num' in config) || (config.rand_num && config.rand_num === '')) {
     const now = new Date();
     const month = now.toLocaleString('en-US', { month: 'long' }).toLowerCase();
     const day = String(now.getDate()).padStart(2, '0');
@@ -154,7 +154,7 @@ async function readConfig(configPath) {
     const seconds = String(now.getSeconds()).padStart(2, '0');
     config.rand_num = `${month}-${day}-${year}-${hours}-${minutes}-${seconds}`;
   }
-  if (!('plugin_frame' in config) || (!config.plugin_frame && config.plugin_frame !== false)) {
+  if (!('plugin_frame' in config) || (config.plugin_frame && config.plugin_frame === '') || (config.plugin_frame && config.plugin_frame !== false)) {
     config.plugin_frame = 'PluginFrame';
   }
 
