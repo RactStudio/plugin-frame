@@ -1,67 +1,18 @@
 <?php
 
-namespace PluginFrame\Config;
+namespace PluginFrame\Helpers;
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+// if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-/**
- * Define plugin constants if not already defined
- */
-if ( ! defined( 'PLUGIN_FRAME_NAME' ) ) {
-    define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
-}
-if ( ! defined( 'PLUGIN_FRAME_VERSION' ) ) {
-    define( 'PLUGIN_FRAME_VERSION', '0.9.1' ); // Required
-}
-if ( ! defined( 'PLUGIN_FRAME_SLUG' ) ) {
-    define( 'PLUGIN_FRAME_SLUG', 'plugin-frame' ); // Required
-}
-if ( ! defined( 'PLUGIN_FRAME_PREFIX' ) ) {
-    define( 'PLUGIN_FRAME_PREFIX', 'plugin_frame' ); // Required
-}
-if ( ! defined( 'PLUGIN_FRAME_FILE' ) ) {
-    define( 'PLUGIN_FRAME_FILE', dirname( __DIR__, 2 ) . '/' . PLUGIN_FRAME_SLUG . '.php' ); // Required [MUST BE HERE]
-}
-if ( ! defined( 'PLUGIN_FRAME_DIR' ) ) {
-    define( 'PLUGIN_FRAME_DIR', plugin_dir_path( PLUGIN_FRAME_FILE ) ); // Required
-}
-if ( ! defined( 'PLUGIN_FRAME_URL' ) ) {
-    define( 'PLUGIN_FRAME_URL', plugin_dir_url( PLUGIN_FRAME_FILE ) ); // Required
-}
-if ( ! defined( 'PLUGIN_FRAME_MIN_PHP' ) ) {
-    define( 'PLUGIN_FRAME_MIN_PHP', '7.4' ); // Required
-}
-if ( ! defined( 'PLUGIN_FRAME_BASENAME' ) ) {
-    define( 'PLUGIN_FRAME_BASENAME', plugin_basename( PLUGIN_FRAME_FILE ) ); // Required
-}
-
-class Main
+class BootstrapHelper
 {
-    public function __construct()
-    {
-        // Perform PHP version check early before plugin execution.
-        if ( ! $this->is_php_version_compatible() )
-        {
-            return; // Stop plugin execution if PHP version requirement is not met.
-        }
-
-        // Initialize plugin functionalities after all plugins are loaded.
-        add_action('plugins_loaded', [$this, 'initialize_plugin']);
-
-        // Register hooks dynamically.
-        $this->on_plugin_activation();
-        $this->on_plugin_deactivation();
-        $this->on_plugin_uninstall();
-        $this->on_plugin_upgrade();
-    }
-
     /**
      * Check for minimum PHP version compatibility.
      * 
      * @return bool True if compatible, otherwise false.
      */
-    private function is_php_version_compatible(): bool
+    public function is_php_version_compatible(): bool
     {
         if ( ! defined('PLUGIN_FRAME_MIN_PHP') ) {
             define('PLUGIN_FRAME_MIN_PHP', '7.4');
@@ -90,6 +41,54 @@ class Main
             </p>
         </div>
         <?php
+    }
+    
+    /**
+     * Initialize the plugin: load dependencies, configurations, and features.
+     */
+    public function initialize_plugin(): void
+    {
+        do_action('plugin_frame_load_start');
+
+        // Load all required files and features.
+        $this->load_dependencies();
+        $this->load_features();
+
+        do_action('plugin_frame_load_end');
+    }
+
+    /**
+     * Load all dependencies required for the plugin.
+     */
+    private function load_dependencies(): void
+    {
+        $this->load_composer_autoload();
+        $this->load_directory_files([
+            PLUGIN_FRAME_DIR . 'app/',       // Main app files.
+            PLUGIN_FRAME_DIR . 'resources/', // Resources and assets.
+            PLUGIN_FRAME_DIR . 'languages/', // Language files.
+        ]);
+    }
+
+    /**
+     * Load plugin-specific features.
+     */
+    private function load_features(): void
+    {
+        // Load debugging utilities.
+        $this->load_debugger();
+
+        (new \PluginFrame\Config\Config())->priority_load_first();
+
+        // Initialize service providers and configuration.
+        new \PluginFrame\Config\Providers();
+        new \PluginFrame\Config\HooksLoader();
+
+        // Initialize plugin routes and APIs.
+        new \PluginFrame\Routes\Register();
+        new \PluginFrame\Config\APIbase();
+
+        (new \PluginFrame\Config\Config())->priority_load_last();
     }
 
     /**
@@ -153,33 +152,6 @@ class Main
     }
 
     /**
-     * Initialize the plugin: load dependencies, configurations, and features.
-     */
-    public function initialize_plugin(): void
-    {
-        do_action('plugin_frame_load_start');
-
-        // Load all required files and features.
-        $this->load_dependencies();
-        $this->load_features();
-
-        do_action('plugin_frame_load_end');
-    }
-
-    /**
-     * Load all dependencies required for the plugin.
-     */
-    private function load_dependencies(): void
-    {
-        $this->load_composer_autoload();
-        $this->load_directory_files([
-            PLUGIN_FRAME_DIR . 'app/',       // Main app files.
-            PLUGIN_FRAME_DIR . 'resources/', // Resources and assets.
-            PLUGIN_FRAME_DIR . 'languages/', // Language files.
-        ]);
-    }
-
-    /**
      * Load Composer autoload file.
      */
     private function load_composer_autoload(): void
@@ -217,27 +189,6 @@ class Main
         {
             $this->load_files_recursively($subdir);
         }
-    }
-
-    /**
-     * Load plugin-specific features.
-     */
-    private function load_features(): void
-    {
-        // Load debugging utilities.
-        $this->load_debugger();
-
-        (new \PluginFrame\Config\Config())->priority_load_first();
-
-        // Initialize plugin routes and APIs.
-        new \PluginFrame\Routes\Register();
-        new \PluginFrame\Config\APIbase();
-
-        // Initialize service providers and configuration.
-        new \PluginFrame\Config\Providers();
-        new \PluginFrame\Config\HooksLoader();
-
-        (new \PluginFrame\Config\Config())->priority_load_last();
     }
 
     /**

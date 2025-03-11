@@ -1,9 +1,9 @@
 <?php
 
-namespace Pluginframe\DB\Models;
+namespace PluginFrame\DB\Models;
 
-use Pluginframe\DB\Models\BaseModel;
-use Pluginframe\DB\Utils\QueryBuilder;
+use PluginFrame\DB\Models\BaseModel;
+use PluginFrame\DB\Utils\QueryBuilder;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }

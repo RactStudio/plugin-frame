@@ -40,10 +40,12 @@ Follow these steps to set up your development environment:
 
 4. **Build the plugin:**
 
+    - Global PHP and WP Cli is required.
+    - Command with `php` and `wp` must be available in terminal.
     - Development Build: `npm run build`
     - Tailwind CSS Build: `npm run tailwind`
     - WP Languages Build: `npm run translate`
-    - Production Build (dist): `npm run prod`
+    - Production Build (dist): `npm run build:prod`
 
 5. **Dev Tools:**
 

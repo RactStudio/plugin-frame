@@ -15,7 +15,7 @@ class PFlogs
     public static string $logsDir = PLUGIN_FRAME_DIR . '/logs'; // Directory for logs
 
     /**
-     * Logs a message to the plugin frame logs.
+     * Logs a message to the Plugin Frame logs.
      *
      * @param string $message The log message.
      * @return void
@@ -34,7 +34,7 @@ class PFlogs
         $logFile = self::$logsDir . "/{$date}.log";
 
         $time = date('Y-m-d H:i:s');
-        $formattedMessage = "[{$time}] [Year-Month-Date] {$message}" . PHP_EOL;
+        $formattedMessage = "[{$time}] [Y-M-D] {$message}" . PHP_EOL;
 
         file_put_contents($logFile, $formattedMessage, FILE_APPEND);
     }

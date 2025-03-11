@@ -1,7 +1,8 @@
 <?php
+
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\ScreenHelp;
+use PluginFrame\Services\ScreenHelp as ScreenHelpService;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -12,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * Example implementation demonstrating help tab configuration
  * Defines help content structure for specific admin pages
  */
-class PageScreenHelp
+class ScreenHelp
 {
     protected $screenHelp;
 
@@ -21,7 +22,7 @@ class PageScreenHelp
      */
     public function __construct()
     {
-        $this->screenHelp = new ScreenHelp();
+        $this->screenHelp = new ScreenHelpService();
         $this->screenHelp->adjustAdminStyles();
         $this->registerHelpTabs();
     }
@@ -80,7 +81,7 @@ class PageScreenHelp
     protected function registerSettingsPageHelp()
     {
         $this->screenHelp
-            ->forScreen('plugin-frame_page_pf-settings')
+            ->forScreen('plugin-frame_page_plugin-frame-settings')
             ->withSharedContext([
                 'plugin_domain'    => PLUGIN_FRAME_SLUG,
                 'plugin_frame_name'=> PLUGIN_FRAME_NAME,

@@ -16,7 +16,8 @@
     "require-dev": {
         "squizlabs/php_codesniffer": "*",
         "dealerdirect/phpcodesniffer-composer-installer": "*",
-        "wp-coding-standards/wpcs": "*"
+        "wp-coding-standards/wpcs": "*",
+        "wp-cli/wp-cli": "^2.11"
     },
     "config": {
         "platform": {
@@ -29,6 +30,6 @@
     "require": {
         "php": ">=7.4",
         "twig/twig": "^3.3",
-        "wp-cli/wp-cli": "^2.11"
+        "nikic/php-parser": "^5.4"
     }
 }
