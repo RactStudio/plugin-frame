@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name
- *
+ * 
  * @package           PluginFrame
  * @author            Mahamudul Hasan Rubel
  * @copyright         2025 Mahamudul Hasan Rubel or RactStudio
