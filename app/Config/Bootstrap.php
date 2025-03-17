@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Config;
 
-use PluginFrame\Helpers\BootstrapHelper;
+use PluginFrame\Core\Helpers\BootstrapHelper;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -41,7 +41,7 @@ class Bootstrap
 
     public function __construct()
     {
-        require_once PLUGIN_FRAME_DIR . 'app/Helpers/BootstrapHelper.php';
+        require_once PLUGIN_FRAME_DIR . 'app/Core/Helpers/BootstrapHelper.php';
         $this->bootHelper = new BootstrapHelper();
 
         // Perform PHP version check early before plugin execution.

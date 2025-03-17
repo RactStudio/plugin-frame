@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\Notice;
+use PluginFrame\Core\Services\Notice;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }

@@ -5,24 +5,24 @@ namespace PluginFrame\Config;
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }
 
-use PluginFrame\Routes\Helpers;
+use PluginFrame\Core\Routes\Helpers;
 
 // Middleware classes
-use PluginFrame\Routes\Middleware\PublicMiddleware;
-use PluginFrame\Routes\Middleware\CORSMiddleware;
-use PluginFrame\Routes\Middleware\AuthMiddleware;
-use PluginFrame\Routes\Middleware\AuthUserPassMiddleware;
-use PluginFrame\Routes\Middleware\AuthAppPassMiddleware;
-use PluginFrame\Routes\Middleware\RoleMiddleware;
-use PluginFrame\Routes\Middleware\RateLimitMiddleware;
+use PluginFrame\Core\Routes\Middleware\CORSMiddleware;
+use PluginFrame\Core\Routes\Middleware\PublicMiddleware;
+use PluginFrame\Core\Routes\Middleware\AuthMiddleware;
+use PluginFrame\Core\Routes\Middleware\AuthUserPassMiddleware;
+use PluginFrame\Core\Routes\Middleware\AuthAppPassMiddleware;
+use PluginFrame\Core\Routes\Middleware\RoleMiddleware;
+use PluginFrame\Core\Routes\Middleware\RateLimitMiddleware;
 
 // Handlers classes
-use PluginFrame\Routes\Handlers\TestData;
-use PluginFrame\Routes\Handlers\HandleData;
-use PluginFrame\Routes\Handlers\PublicData;
-use PluginFrame\Routes\Handlers\DemoData;
-use PluginFrame\Routes\Handlers\OtherHandlers;
-use PluginFrame\Routes\Handlers\WP\CommentsData;
+use PluginFrame\REST\Controllers\TestData;
+use PluginFrame\REST\Controllers\HandleData;
+use PluginFrame\REST\Controllers\PublicData;
+use PluginFrame\REST\Controllers\DemoData;
+use PluginFrame\REST\Controllers\OtherHandlers;
+use PluginFrame\REST\Controllers\WP\CommentsData;
 
 class Routes
 {

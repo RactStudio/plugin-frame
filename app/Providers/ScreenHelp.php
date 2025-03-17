@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\ScreenHelp as ScreenHelpService;
+use PluginFrame\Core\Services\ScreenHelp as ScreenHelpService;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }

@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\PostTypes as PostTypesService;
+use PluginFrame\Core\Services\PostTypes as PostTypesService;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {

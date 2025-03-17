@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\Menus as MenusService;
+use PluginFrame\Core\Services\Menus as MenusService;
 
 // Standard JS based admin pages
 use PluginFrame\Views\Admin\Dashboard;

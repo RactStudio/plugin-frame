@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\ActionsLinks as ActionsLink;
+use PluginFrame\Core\Services\ActionsLinks as ActionsLink;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }

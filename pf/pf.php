@@ -88,7 +88,7 @@ $MANUAL_REPLACEMENTS = [
         'type' => 'namespace', // namespace
     ],
     [
-        'file' => realpath($ROOT_DIR . "/app/Services/ScreenHelp.php"), // Exact file path
+        'file' => realpath($ROOT_DIR . "/app/Core/Services/ScreenHelp.php"), // Exact file path
         'search' => '#pf-load.pf-page', // Exact match
         'type' => 'prefix', // prefix
     ],

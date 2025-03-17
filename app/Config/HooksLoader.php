@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Config;
 
-use PluginFrame\Helpers\LanguageTextDomain;
+use PluginFrame\Core\Helpers\LanguageTextDomain;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-10T23:54:50+00:00\n"
+"POT-Creation-Date: 2025-03-17T07:57:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: plugin-frame\n"
@@ -35,6 +35,26 @@ msgstr ""
 msgid "Mahamudul Hasan Rubel"
 msgstr ""
 
+#: app/Core/Routes/Middleware/AuthMiddleware.php:18
+msgid "Missing Authorization header."
+msgstr ""
+
+#: app/Core/Routes/Middleware/AuthMiddleware.php:24
+msgid "Invalid Authorization header format."
+msgstr ""
+
+#: app/Core/Routes/Middleware/AuthMiddleware.php:38
+msgid "Invalid credentials."
+msgstr ""
+
+#: app/Core/Routes/Middleware/RoleMiddleware.php:14
+msgid "Permission denied."
+msgstr ""
+
+#: app/Core/Services/ScreenHelp.php:145
+msgid "Error loading help content"
+msgstr ""
+
 #: app/Hooks/Activation.php:43
 msgid "Plugin activation failed. Please check the error logs for details."
 msgstr ""
@@ -51,28 +71,8 @@ msgstr ""
 msgid "You cannot upload this plugin."
 msgstr ""
 
-#: app/Routes/Handlers/OtherHandlers.php:170
+#: app/REST/Controllers/OtherHandlers.php:170
 msgid "This is an error response"
-msgstr ""
-
-#: app/Routes/Middleware/AuthMiddleware.php:18
-msgid "Missing Authorization header."
-msgstr ""
-
-#: app/Routes/Middleware/AuthMiddleware.php:24
-msgid "Invalid Authorization header format."
-msgstr ""
-
-#: app/Routes/Middleware/AuthMiddleware.php:38
-msgid "Invalid credentials."
-msgstr ""
-
-#: app/Routes/Middleware/RoleMiddleware.php:14
-msgid "Permission denied."
-msgstr ""
-
-#: app/Services/ScreenHelp.php:145
-msgid "Error loading help content"
 msgstr ""
 
 #: app/Views/Admin/Dashboard.php:22

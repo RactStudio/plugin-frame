@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\ShortCode as ShortCodeService;
+use PluginFrame\Core\Services\ShortCode as ShortCodeService;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }

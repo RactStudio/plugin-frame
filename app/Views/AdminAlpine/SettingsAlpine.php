@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Views\AdminAlpine;
 
-use PluginFrame\Services\Views;
+use PluginFrame\Core\Services\Views;
 
 // Exit if accessed directly
 defined('ABSPATH') || exit;
