@@ -3,7 +3,7 @@
 namespace PluginFrame\Core\DB\Models;
 
 use Exception;
-use PluginFrame\DB\Utils\QueryBuilder;
+use PluginFrame\Core\DB\Utils\QueryBuilder;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }

@@ -2,8 +2,6 @@
 
 namespace PluginFrame\Core\DB\Models;
 
-use PluginFrame\DB\Utils\QueryBuilder;
-
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
     exit;

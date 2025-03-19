@@ -2,8 +2,8 @@
 
 namespace PluginFrame\Core\DB\WP;
 
-use PluginFrame\DB\Utils\QueryBuilder;
-use PluginFrame\DB\Pagination\PaginationManager;
+use PluginFrame\Core\DB\Utils\QueryBuilder;
+use PluginFrame\Core\DB\Pagination\PaginationManager;
 
 /**
  * CommentsMeta class for interacting with wp_commentmeta table.

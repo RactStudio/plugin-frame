@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Core\DB\Migrations;
 
-use PluginFrame\DB\Utils\QueryBuilder;
+use PluginFrame\Core\DB\Utils\QueryBuilder;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) { exit; }

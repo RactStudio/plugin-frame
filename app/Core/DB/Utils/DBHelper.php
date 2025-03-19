@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Core\DB\Utils;
 
-use PluginFrame\DB\Utils\QueryBuilder;
+use PluginFrame\Core\DB\Utils\QueryBuilder;
 
 /**
  * DBHelper class for providing helper methods for database tasks.
