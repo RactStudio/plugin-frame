@@ -57,17 +57,49 @@ class BootstrapHelper
         do_action('plugin_frame_load_end');
     }
 
-    /**
-     * Load all dependencies required for the plugin.
-     */
     private function load_dependencies(): void
     {
+        // Load composer autoloader.
         $this->load_composer_autoload();
-        $this->load_directory_files([
-            PLUGIN_FRAME_DIR . 'app/',       // Main app files.
-            PLUGIN_FRAME_DIR . 'resources/', // Resources and assets.
-            PLUGIN_FRAME_DIR . 'languages/', // Language files.
-        ]);
+        
+        // Replace load_directory_files with autoloader registration
+        spl_autoload_register([$this, 'autoload_classes']);
+    }
+    
+    /**
+     * Load Composer autoload file.
+     */
+    private function load_composer_autoload(): void
+    {
+        $composer_autoload = PLUGIN_FRAME_DIR . 'vendor/autoload.php';
+        if ( file_exists($composer_autoload) ) {
+            require_once $composer_autoload;
+        }
+    }
+
+    /**
+     * Autoload classes from specific directories using PSR-4-like structure.
+     */
+    public function autoload_classes(string $class): void
+    {
+        $prefix = 'PluginFrame';
+        $prefix = $prefix.'\\';
+        $base_dir = PLUGIN_FRAME_DIR . 'app/';
+    
+        // Check if the class uses the namespace prefix
+        $len = strlen($prefix);
+        if (strncmp($prefix, $class, $len) !== 0) {
+            return;
+        }
+    
+        // Get the relative class name and file path
+        $relative_class = substr($class, $len);
+        $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+    
+        // Include the file if it exists
+        if (file_exists($file)) {
+            require_once $file;
+        }
     }
 
     /**
@@ -75,9 +107,6 @@ class BootstrapHelper
      */
     private function load_features(): void
     {
-        // Load debugging utilities.
-        $this->load_debugger();
-
         (new \PluginFrame\Config\Config())->priority_load_first();
 
         // Initialize service providers and configuration.
@@ -130,14 +159,14 @@ class BootstrapHelper
         if ( file_exists($uninstall_hook) )
         {
             require_once $uninstall_hook;
-            (new \PluginFrame\Hooks\Uninstall())->init();
+            new \PluginFrame\Hooks\Uninstall();
         } else {
             error_log('Uninstall hook not found:: '. $uninstall_hook);
         }
     }
 
     /**
-     * Register tasks on plugin upgrade/update.
+     * Register tasks on plugin upgrade.
      */
     public function on_plugin_upgrade(): void
     {
@@ -152,65 +181,17 @@ class BootstrapHelper
     }
 
     /**
-     * Load Composer autoload file.
+     * Register tasks on plugin update.
      */
-    private function load_composer_autoload(): void
+    public function on_plugin_updater(): void
     {
-        $composer_autoload = PLUGIN_FRAME_DIR . 'vendor/autoload.php';
-        if ( file_exists($composer_autoload) ) {
-            require_once $composer_autoload;
-        }
-    }
-
-    /**
-     * Recursively load PHP files from given directories.
-     *
-     * @param array $directories List of directories to scan.
-     */
-    private function load_directory_files(array $directories): void
-    {
-        foreach ($directories as $directory) {
-            $this->load_files_recursively($directory);
-        }
-    }
-
-    /**
-     * Helper to recursively include PHP files.
-     *
-     * @param string $dir Directory path.
-     */
-    private function load_files_recursively(string $dir): void
-    {
-        foreach (glob($dir . '/*.php') as $file) {
-            require_once $file;
-        }
-
-        foreach (glob($dir . '/*', GLOB_ONLYDIR) as $subdir)
+        $updater_hook = PLUGIN_FRAME_DIR . 'app/Config/Updater.php';
+        if ( file_exists($updater_hook) )
         {
-            $this->load_files_recursively($subdir);
-        }
-    }
-
-    /**
-     * Load debugging utilities if files exist.
-     */
-    private function load_debugger(): void
-    {
-        $log_helper = PLUGIN_FRAME_DIR . 'app/Core/Utilities/PFlogs/Helpers.php';
-        if ( file_exists($log_helper) )
-        {
-            require_once $log_helper;
-            require_once PLUGIN_FRAME_DIR . 'app/Core/Utilities/PFlogs/LogCleaner.php';
+            require_once $updater_hook;
+            new \PluginFrame\Config\Updater();
         } else {
-            error_log('PF Log helper not found, and couldn\'t be loaded. File: ' . $log_helper );
-        }
-        
-        $debug_helper = PLUGIN_FRAME_DIR . 'app/Core/Utilities/Debug/Helpers.php';
-        if ( file_exists($debug_helper) )
-        {
-            require_once $debug_helper;
-        } else {
-            error_log('Debug helper not found, and couldn\'t be loaded. File: ' . $debug_helper );
+            error_log('Updater config not found. File:: '. $updater_hook);
         }
     }
 

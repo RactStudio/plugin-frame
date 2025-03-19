@@ -2,12 +2,12 @@
 
 namespace PluginFrame\REST\Controllers\WP;
 
+// Exit if accessed directly
+if (!defined('ABSPATH')) { exit; }
+
 use Exception;
 use WP_REST_Response;
 use PluginFrame\Core\DB\WP\Comments;
-
-// Exit if accessed directly
-if (!defined('ABSPATH')) { exit; }
 
 class CommentsData
 {

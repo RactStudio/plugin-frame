@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-17T07:57:37+00:00\n"
+"POT-Creation-Date: 2025-03-19T15:47:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: plugin-frame\n"
@@ -35,6 +35,18 @@ msgstr ""
 msgid "Mahamudul Hasan Rubel"
 msgstr ""
 
+#: app/Core/Hooks/Activation.php:28
+msgid "Plugin activation failed. Check error logs."
+msgstr ""
+
+#: app/Core/Hooks/Deactivation.php:28
+msgid "Plugin deactivation failed. Check error logs."
+msgstr ""
+
+#: app/Core/Hooks/Uninstall.php:27
+msgid "Plugin uninstall failed. Check error logs."
+msgstr ""
+
 #: app/Core/Routes/Middleware/AuthMiddleware.php:18
 msgid "Missing Authorization header."
 msgstr ""
@@ -53,22 +65,6 @@ msgstr ""
 
 #: app/Core/Services/ScreenHelp.php:145
 msgid "Error loading help content"
-msgstr ""
-
-#: app/Hooks/Activation.php:43
-msgid "Plugin activation failed. Please check the error logs for details."
-msgstr ""
-
-#: app/Hooks/Deactivation.php:43
-msgid "Plugin deactivation failed. Please check the error logs for details."
-msgstr ""
-
-#: app/Hooks/Uninstall.php:43
-msgid "Plugin uninstallation failed. Please check the error logs for details."
-msgstr ""
-
-#: app/Hooks/Upgrade.php:126
-msgid "You cannot upload this plugin."
 msgstr ""
 
 #: app/REST/Controllers/OtherHandlers.php:170

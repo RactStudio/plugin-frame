@@ -3,9 +3,7 @@
 namespace PluginFrame\Core\Utilities\PFlogs;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
-    exit;
-}
+if (!defined('ABSPATH')) { exit; }
 
 require_once PLUGIN_FRAME_DIR . 'app/Core/Utilities/PFlogs/PFlogs.php';
 use PluginFrame\Core\Utilities\PFlogs\PFlogs;

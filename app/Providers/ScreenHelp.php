@@ -2,10 +2,10 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Core\Services\ScreenHelp as ScreenHelpService;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+use PluginFrame\Core\Services\ScreenHelp as ScreenHelpService;
 
 /**
  * Provider class for registering help tabs

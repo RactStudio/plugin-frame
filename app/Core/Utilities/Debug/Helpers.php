@@ -1,10 +1,9 @@
 <?php
 
-namespace PluginFrame\Core\Utilities\Debug;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+// Declare the debug functions in the global
 require_once PLUGIN_FRAME_DIR . 'app/Core/Utilities/Debug/Debugger.php';
 use PluginFrame\Core\Utilities\Debug\Debugger;
 

@@ -2,14 +2,14 @@
 
 namespace PluginFrame\REST\Controllers;
 
+// Exit if accessed directly
+if (!defined('ABSPATH')) { exit; }
+
 use PluginFrame\Core\DB\WP\PostMeta;
 use PluginFrame\Core\DB\WP\Comments;
 use PluginFrame\Core\DB\WP\CommentMeta;
 use PluginFrame\Core\DB\WP\Posts;
 use PluginFrame\Core\DB\Pagination\PaginationManager;
-
-// Exit if accessed directly
-if (!defined('ABSPATH')) { exit; }
 
 class TestData
 {

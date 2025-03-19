@@ -30,11 +30,11 @@ class PFlogs
             mkdir(self::$logsDir, 0755, true);
         }
 
-        $date = date('d-F-Y'); 
+        $date = date('d-M-Y'); 
         $logFile = self::$logsDir . "/{$date}.log";
 
-        $time = date('Y-m-d H:i:s');
-        $formattedMessage = "[{$time}] [Y-M-D] {$message}" . PHP_EOL;
+        $time = date('d-M-Y H:i:s.v');
+        $formattedMessage = "[{$time}] {$message}" . PHP_EOL;
 
         file_put_contents($logFile, $formattedMessage, FILE_APPEND);
     }
@@ -58,7 +58,7 @@ class PFlogs
             $fileName = basename($logFile, '.log');
 
             // Parse the file date from the log file name
-            $fileDate = DateTime::createFromFormat('d-F-Y', $fileName);
+            $fileDate = DateTime::createFromFormat('d-M-Y', $fileName);
 
             if ($fileDate && $fileDate->getTimestamp() < $cutoffDate) {
                 unlink($logFile); // Delete old log file

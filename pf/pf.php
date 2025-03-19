@@ -41,7 +41,7 @@ if (!$logHandle) die("❌ Cannot create log file");
 
 function log_message($message, $type = 'INFO') {
     global $logHandle;
-    $timestamp = date('Y-m-d H:i:s.v');
+    $timestamp = date('d-M-Y H:i:s.v');
     $formatted = "[$timestamp][$type] $message\n";
     
     // Write to terminal and log file
@@ -85,6 +85,11 @@ $MANUAL_REPLACEMENTS = [
     [
         'file' => realpath($ROOT_DIR . "/app/Config/Providers.php"), // Exact file path
         'search' => 'protected $baseNamespace = \'PluginFrame\\Providers\';', // Exact match
+        'type' => 'namespace', // namespace
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/app/Core/Helpers/BootstrapHelper.php"), // Exact file path
+        'search' => '$prefix = \'PluginFrame\';', // Exact match
         'type' => 'namespace', // namespace
     ],
     [

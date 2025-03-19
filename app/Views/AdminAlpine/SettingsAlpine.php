@@ -2,10 +2,10 @@
 
 namespace PluginFrame\Views\AdminAlpine;
 
-use PluginFrame\Core\Services\Views;
-
 // Exit if accessed directly
-defined('ABSPATH') || exit;
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+use PluginFrame\Core\Services\Views;
 
 class SettingsAlpine
 {
