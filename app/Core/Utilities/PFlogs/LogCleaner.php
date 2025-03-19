@@ -13,23 +13,19 @@ use PluginFrame\Core\Services\Scheduler;
 
 class LogCleaner
 {
-    // Cron hook name
     private static string $hookName = 'plugin_frame_log_cleaner';
-    
-    // Instance of Scheduler
     private Scheduler $scheduler;
 
-    /**
-     * Constructor
-     *
-     * @param Scheduler $scheduler
-     */
     public function __construct(Scheduler $scheduler)
     {
         $this->scheduler = $scheduler;
+        $this->registerHooks();
+    }
 
-        // Schedule the log cleaner
+    private function registerHooks(): void
+    {
         add_action('init', [$this, 'scheduleLogCleaner']);
+        add_action(self::$hookName, [$this, 'deleteLogs']);
     }
 
     /**
@@ -39,13 +35,14 @@ class LogCleaner
      */
     public function scheduleLogCleaner(): void
     {
-        // Check if already scheduled
         if (!$this->isScheduled()) {
-            $this->scheduler->scheduleRecurring(self::$hookName, HOUR_IN_SECONDS, [$this, 'deleteLogs']);
+            $this->scheduler->scheduleRecurring(
+                self::$hookName, 
+                3600, // 3600 seconds (1 hour)
+                [$this, 'deleteLogs'],
+                [] // Explicit empty arguments
+            );
         }
-
-        // Register the task handler
-        add_action(self::$hookName, [$this, 'deleteLogs']);
     }
 
     /**
@@ -79,6 +76,7 @@ class LogCleaner
      */
     public function isScheduled(): bool
     {
-        return wp_next_scheduled(self::$hookName) !== false;
+        $next = wp_next_scheduled(self::$hookName, []);
+        return ($next !== false) && ($next !== null);
     }
 }

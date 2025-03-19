@@ -53,9 +53,9 @@ async function main() {
       config = {
         namespace: await promptInput("Namespace (2-50 letters/numbers): ", validateNamespace),
         prefix: await promptInput("Prefix (2-10 lowercase letters): ", validatePrefix),
-        name: await promptInput("Name (2-50 characters): "),
-        version: await promptInput("Version (e.g., 1.0.0): "),
-        slug: await promptInput("Slug (2-50 characters): ")
+        name: await promptInput("Name (2-50 characters): ", validateName),
+        version: await promptInput("Version (e.g., 1.0.0): ", validateVersion),
+        slug: await promptInput("Slug (2-50 characters): ", validateSlug)
       };
       await writeConfig(configPath, config);
     }
@@ -89,8 +89,8 @@ async function main() {
       console.log(`🔄 Renaming ${baseDistDir} to ${distDir}`);
 
       let attempt = 0;
-      const maxAttempts = 9;
-      const retryDelay = 300; // 300ms delay between retries
+      const maxAttempts = 10;
+      const retryDelay = 500; // 500ms delay between retries
 
       while (attempt < maxAttempts) {
         try {
@@ -215,6 +215,30 @@ async function validatePrefix(input) {
   const cleaned = input.toLowerCase().replace(/[^a-z0-9]/g, '');
   if (cleaned.length < 2 || cleaned.length > 10) {
     throw new Error('Prefix must be 2-10 lowercase alphanumeric characters');
+  }
+  return cleaned;
+}
+
+async function validateName(input) {
+  const trimmed = input.trim();
+  if (trimmed.length < 2 || trimmed.length > 50) {
+    throw new Error('Name must be 2-50 characters');
+  }
+  return trimmed;
+}
+
+async function validateVersion(input) {
+  const trimmed = input.trim();
+  if (!/^\d+\.\d+\.\d+$/.test(trimmed)) {
+    throw new Error('Version must be in format x.x.x (e.g., 1.0.0)');
+  }
+  return trimmed;
+}
+
+async function validateSlug(input) {
+  const cleaned = input.trim().toLowerCase().replace(/[^a-z0-9-]/g, '');
+  if (cleaned.length < 2 || cleaned.length > 50) {
+    throw new Error('Slug must be 2-50 characters (lowercase letters, numbers, hyphens)');
   }
   return cleaned;
 }

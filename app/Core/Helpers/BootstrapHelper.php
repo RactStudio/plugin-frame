@@ -109,13 +109,15 @@ class BootstrapHelper
     {
         (new \PluginFrame\Config\Config())->priority_load_first();
 
-        // Initialize service providers and configuration.
+        // Initialize providers and configuration.
         new \PluginFrame\Config\Providers();
-        new \PluginFrame\Config\HooksLoader();
 
-        // Initialize plugin routes and APIs.
-        new \PluginFrame\Core\Routes\Register();
+        // Initialize plugin APIs and WP Routes.
         new \PluginFrame\Config\APIbase();
+        new \PluginFrame\Core\Routes\Register();
+
+        // Initialize WP Hooks
+        new \PluginFrame\Config\HooksLoader();
 
         (new \PluginFrame\Config\Config())->priority_load_last();
     }

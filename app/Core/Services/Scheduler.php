@@ -3,28 +3,65 @@
 namespace PluginFrame\Core\Services;
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if (!defined('ABSPATH')) { exit; }
 
 class Scheduler
 {
+    private $registered_intervals = [];
+
+    public function __construct()
+    {
+        add_filter('cron_schedules', [$this, 'registerCustomIntervals']);
+    }
+
     /**
-     * Schedule a recurring cron job.
+     * Register all custom intervals with WordPress
+     */
+    public function registerCustomIntervals($schedules)
+    {
+        foreach ($this->registered_intervals as $interval => $name) {
+            if (!isset($schedules[$name])) {
+                $schedules[$name] = [
+                    'interval' => $interval,
+                    'display'  => sprintf(__('Every %d seconds'), $interval)
+                ];
+            }
+        }
+        return $schedules;
+    }
+
+    /**
+     * Register a custom interval type
+     */
+    private function registerInterval(int $interval): string
+    {
+        $interval_name = 'pf_scheduler_interval_' . $interval;
+        if (!isset($this->registered_intervals[$interval])) {
+            $this->registered_intervals[$interval] = $interval_name;
+        }
+        return $interval_name;
+    }
+
+    /**
+     * Schedule a recurring cron job
      */
     public function scheduleRecurring(string $hook, int $interval, callable $callback, array $args = []): void
     {
+        // Register the interval first
+        $interval_name = $this->registerInterval($interval);
+        
+        // Add the action hook
         add_action($hook, $callback);
-
+        
+        // Schedule the event if not already scheduled
         if (!wp_next_scheduled($hook, $args)) {
-            wp_schedule_event(time(), 'custom_interval_' . $interval, $hook, $args);
+            wp_schedule_event(
+                time(), 
+                $interval_name, 
+                $hook, 
+                $args
+            );
         }
-
-        add_filter('cron_schedules', function ($schedules) use ($interval) {
-            $schedules['custom_interval_' . $interval] = [
-                'interval' => $interval,
-                'display'  => 'Every ' . $interval . ' seconds',
-            ];
-            return $schedules;
-        });
     }
 
     /**
