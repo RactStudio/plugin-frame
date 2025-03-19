@@ -14,7 +14,7 @@ if ( ! defined( 'PLUGIN_FRAME_NAME' ) ) {
     define( 'PLUGIN_FRAME_NAME', 'Plugin Frame' ); // Required
 }
 if ( ! defined( 'PLUGIN_FRAME_VERSION' ) ) {
-    define( 'PLUGIN_FRAME_VERSION', '0.9.1' ); // Required
+    define( 'PLUGIN_FRAME_VERSION', '0.9.2' ); // Required
 }
 if ( ! defined( 'PLUGIN_FRAME_MIN_WP' ) ) {
     define( 'PLUGIN_FRAME_MIN_WP', '5.2' ); // Required

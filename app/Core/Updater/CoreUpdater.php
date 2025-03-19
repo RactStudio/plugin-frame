@@ -1,4 +1,5 @@
 <?php
+
 namespace PluginFrame\Core\Updater;
 
 // Exit if accessed directly

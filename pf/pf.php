@@ -141,9 +141,9 @@ $MANUAL_REPLACEMENTS = [
     ],
     [
         'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
-        'search' => 'Version:     0.9.1', // Exact match
+        'search' => 'Version:     0.9.2', // Exact match
         'type' => 'replace', // replace
-        'replace' => '0.9.1', // replace
+        'replace' => '0.9.2', // replace
         'with' => $config['version'], // with
     ],
     [
@@ -162,9 +162,9 @@ $MANUAL_REPLACEMENTS = [
     ],
     [
         'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
-        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.1\'', // Exact match
+        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.2\'', // Exact match
         'type' => 'replace', // replace
-        'replace' => '0.9.1', // replace
+        'replace' => '0.9.2', // replace
         'with' => $config['version'], // with
     ],
     [
@@ -183,9 +183,9 @@ $MANUAL_REPLACEMENTS = [
     ],
     [
         'file' => realpath($ROOT_DIR . "/app/Config/Bootstrap.php"), // Exact file path
-        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.1\'', // Exact match
+        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.2\'', // Exact match
         'type' => 'replace', // replace
-        'replace' => '0.9.1', // replace
+        'replace' => '0.9.2', // replace
         'with' => $config['version'], // with
     ],
     [

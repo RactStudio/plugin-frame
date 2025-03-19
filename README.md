@@ -1,4 +1,4 @@
-# Plugin Frame `v0.9.1`
+# Plugin Frame `v0.9.2`
 
 <!-- ![Plugin Frame](https://github.com/RactStudio/plugin-frame/) -->
 

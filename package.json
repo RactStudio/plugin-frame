@@ -1,6 +1,6 @@
 {
   "name": "plugin-frame",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Plugin Frame: A modern WordPress plugin development framework with Composer, npm, Tailwind, Twig, and Laravel-like structure. Ideal for lightweight or complex plugins. Complies with WP & PSR-4 standards. Modular, scalable, and dev-friendly.",
   "main": "plugin-frame.php",
   "scripts": {
