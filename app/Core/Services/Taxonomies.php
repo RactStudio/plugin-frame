@@ -31,7 +31,7 @@ class Taxonomies
      * Register multiple taxonomies at once.
      *
      * @param array $taxonomies Array of taxonomies to register.
-     * Format: ['key' => ['post_types' => [], 'args' => [], 'condition' => callable|null]]
+     * Format: `['key' => ['post_types' => [], 'args' => [], 'condition' => callable|null]]`
      */
     public function registerTaxonomies(array $taxonomies)
     {

@@ -29,7 +29,7 @@ class CoreUpdater {
             $data = json_decode(wp_remote_retrieve_body($response));
             
             if ($data->version !== $this->currentVersion()) {
-                $transient->response['plugin-frame/core'] = (object)[
+                $transient->response['plugin-frame/app/Core'] = (object)[
                     'slug'        => 'plugin-frame-core',
                     'plugin'      => PLUGIN_FRAME_BASENAME,
                     'new_version' => $data->version,
