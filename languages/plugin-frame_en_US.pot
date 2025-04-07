@@ -9,29 +9,29 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-21T13:32:40+00:00\n"
+"POT-Creation-Date: 2025-04-07T07:40:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: plugin-frame\n"
 
 #. Plugin Name of the plugin
-#: C:\Users\ract\Local Sites\pluginframe\app\public\wp-content\plugins\plugin-frame\plugin-frame.php
+#: plugin-frame.php
 msgid "Plugin Frame"
 msgstr ""
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
-#: C:\Users\ract\Local Sites\pluginframe\app\public\wp-content\plugins\plugin-frame\plugin-frame.php
+#: plugin-frame.php
 msgid "https://mhr.ractstudio.com"
 msgstr ""
 
 #. Description of the plugin
-#: C:\Users\ract\Local Sites\pluginframe\app\public\wp-content\plugins\plugin-frame\plugin-frame.php
+#: plugin-frame.php
 msgid "Plugin Frame: A modern WordPress plugin development framework with Composer, npm, Tailwind, Twig, and Laravel-like structure. Ideal for lightweight or complex plugins. Complies with WP & PSR-4 standards. Modular, scalable, and dev-friendly."
 msgstr ""
 
 #. Author of the plugin
-#: C:\Users\ract\Local Sites\pluginframe\app\public\wp-content\plugins\plugin-frame\plugin-frame.php
+#: plugin-frame.php
 msgid "Mahamudul Hasan Rubel"
 msgstr ""
 
@@ -118,116 +118,116 @@ msgstr ""
 
 
 
-#: plugin-frame/../resources/views/admin/dashboard.twig:28
+#: resources/views/admin/dashboard.twig:28
 msgid "Open Modal"
 msgstr ""
 
-#: plugin-frame/../resources/views/admin/dashboard.twig:55
+#: resources/views/admin/dashboard.twig:55
 msgid "Modal Title"
 msgstr ""
 
-#: plugin-frame/../resources/views/admin/dashboard.twig:56
+#: resources/views/admin/dashboard.twig:56
 msgid "This is a Flowbite modal controlled by Alpine.js."
 msgstr ""
 
-#: plugin-frame/../resources/views/admin/dashboard.twig:58
+#: resources/views/admin/dashboard.twig:58
 msgid "Close"
 msgstr ""
 
-#: plugin-frame/../resources/views/admin/dashboard.twig:68
+#: resources/views/admin/dashboard.twig:68
 msgid "Lucide Icons"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/advanced-usage.twig:2
+#: resources/views/screen-help/dashboard/advanced-usage.twig:2
 msgid "Advanced Features"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/advanced-usage.twig:5
-#: plugin-frame/../resources/views/screen-help/dashboard/getting-started.twig:3
+#: resources/views/screen-help/dashboard/advanced-usage.twig:5
+#: resources/views/screen-help/dashboard/getting-started.twig:3
 msgid "Custom Shortcodes"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/advanced-usage.twig:10
+#: resources/views/screen-help/dashboard/advanced-usage.twig:10
 msgid "API Integration"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/advanced-usage.twig:11
+#: resources/views/screen-help/dashboard/advanced-usage.twig:11
 msgid "Access our REST API endpoints:"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/getting-started.twig:2
+#: resources/views/screen-help/dashboard/getting-started.twig:2
 msgid "Welcome to Plugin Frame!"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/getting-started.twig:4
+#: resources/views/screen-help/dashboard/getting-started.twig:4
 msgid "Here\"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/getting-started.twig:7
+#: resources/views/screen-help/dashboard/getting-started.twig:7
 msgid "Configure your basic settings"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/getting-started.twig:8
+#: resources/views/screen-help/dashboard/getting-started.twig:8
 msgid "Connect to your website"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/getting-started.twig:9
+#: resources/views/screen-help/dashboard/getting-started.twig:9
 msgid "Review the dashboard metrics"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/dashboard/getting-started.twig:13
+#: resources/views/screen-help/dashboard/getting-started.twig:13
 msgid "Need help? Contact us at"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/general-settings.twig:2
+#: resources/views/screen-help/settings/general-settings.twig:2
 msgid "Configuration Guide"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/general-settings.twig:6
+#: resources/views/screen-help/settings/general-settings.twig:6
 msgid "Setting"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/general-settings.twig:7
+#: resources/views/screen-help/settings/general-settings.twig:7
 msgid "Recommended Value"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/general-settings.twig:10
+#: resources/views/screen-help/settings/general-settings.twig:10
 msgid "Cache Duration"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/general-settings.twig:11
+#: resources/views/screen-help/settings/general-settings.twig:11
 msgid "hours"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/general-settings.twig:14
+#: resources/views/screen-help/settings/general-settings.twig:14
 msgid "Log Level"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/privacy.twig:2
+#: resources/views/screen-help/settings/privacy.twig:2
 msgid "Data Handling"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/privacy.twig:4
+#: resources/views/screen-help/settings/privacy.twig:4
 msgid "We respect your privacy:"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/privacy.twig:7
+#: resources/views/screen-help/settings/privacy.twig:7
 msgid "No personal data collection"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/privacy.twig:8
+#: resources/views/screen-help/settings/privacy.twig:8
 msgid "All analytics are anonymized"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/privacy.twig:9
+#: resources/views/screen-help/settings/privacy.twig:9
 msgid "Regular security audits"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/privacy.twig:12
+#: resources/views/screen-help/settings/privacy.twig:12
 msgid "Review our full"
 msgstr ""
 
-#: plugin-frame/../resources/views/screen-help/settings/privacy.twig:12
+#: resources/views/screen-help/settings/privacy.twig:12
 msgid "Privacy Policy"
 msgstr ""
 

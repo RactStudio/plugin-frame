@@ -5,8 +5,11 @@ import glob from 'fast-glob';
 // Configuration
 const PLUGIN_SLUG = 'plugin-frame';
 const TEXT_DOMAIN = 'plugin-frame';
-const OUTPUT_FILE = path.join(`${PLUGIN_SLUG}/../languages`, `${PLUGIN_SLUG}_twig.pot`);
-const VIEWS_DIRECTORIES = [`${PLUGIN_SLUG}/../resources/views`, `${PLUGIN_SLUG}/../app/Views`];
+const OUTPUT_FILE = path.join('languages', `${PLUGIN_SLUG}_twig.pot`);
+const VIEWS_DIRECTORIES = [
+  path.join('resources', 'views'),
+  path.join('app', 'Views')  // Simplified path assuming app/Views is in root
+];
 const EXTENSIONS = ['twig', 'html'];
 
 // Create POT structure
