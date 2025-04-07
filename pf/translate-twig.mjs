@@ -8,7 +8,7 @@ const TEXT_DOMAIN = 'plugin-frame';
 const OUTPUT_FILE = path.join('languages', `${PLUGIN_SLUG}_twig.pot`);
 const VIEWS_DIRECTORIES = [
   path.join('resources', 'views'),
-  path.join('app', 'Views')  // Simplified path assuming app/Views is in root
+  path.join('app', 'Views')
 ];
 const EXTENSIONS = ['twig', 'html'];
 
