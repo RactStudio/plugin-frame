@@ -2,7 +2,10 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\Menus as MenusService;
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+use PluginFrame\Core\Services\Menus as MenusService;
 
 // Standard JS based admin pages
 use PluginFrame\Views\Admin\Dashboard;
@@ -12,9 +15,6 @@ use PluginFrame\Views\Admin\Tools;
 use PluginFrame\Views\AdminAlpine\DashboardAlpine;
 use PluginFrame\Views\AdminAlpine\SettingsAlpine;
 use PluginFrame\Views\AdminAlpine\ToolsAlpine;
-
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Menus
 {

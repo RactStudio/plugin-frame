@@ -2,7 +2,7 @@
 
 namespace PluginFrame\Config;
 
-use PluginFrame\Helpers\ProvidersHelper;
+use PluginFrame\Core\Helpers\ProvidersHelper;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }

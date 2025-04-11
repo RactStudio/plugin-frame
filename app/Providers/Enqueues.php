@@ -5,7 +5,7 @@ namespace PluginFrame\Providers;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-use PluginFrame\Services\Enqueue;
+use PluginFrame\Core\Services\Enqueue;
 
 class Enqueues
 {

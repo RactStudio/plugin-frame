@@ -41,7 +41,7 @@ if (!$logHandle) die("❌ Cannot create log file");
 
 function log_message($message, $type = 'INFO') {
     global $logHandle;
-    $timestamp = date('Y-m-d H:i:s.v');
+    $timestamp = date('d-M-Y H:i:s.v');
     $formatted = "[$timestamp][$type] $message\n";
     
     // Write to terminal and log file
@@ -88,7 +88,12 @@ $MANUAL_REPLACEMENTS = [
         'type' => 'namespace', // namespace
     ],
     [
-        'file' => realpath($ROOT_DIR . "/app/Services/ScreenHelp.php"), // Exact file path
+        'file' => realpath($ROOT_DIR . "/app/Core/Helpers/BootstrapHelper.php"), // Exact file path
+        'search' => '$prefix = \'PluginFrame\';', // Exact match
+        'type' => 'namespace', // namespace
+    ],
+    [
+        'file' => realpath($ROOT_DIR . "/app/Core/Services/ScreenHelp.php"), // Exact file path
         'search' => '#pf-load.pf-page', // Exact match
         'type' => 'prefix', // prefix
     ],
@@ -136,9 +141,9 @@ $MANUAL_REPLACEMENTS = [
     ],
     [
         'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
-        'search' => 'Version:     0.9.1', // Exact match
+        'search' => 'Version:     0.9.2', // Exact match
         'type' => 'replace', // replace
-        'replace' => '0.9.1', // replace
+        'replace' => '0.9.2', // replace
         'with' => $config['version'], // with
     ],
     [
@@ -157,9 +162,9 @@ $MANUAL_REPLACEMENTS = [
     ],
     [
         'file' => realpath($ROOT_DIR . "/plugin-frame.php"), // Exact file path
-        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.1\'', // Exact match
+        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.2\'', // Exact match
         'type' => 'replace', // replace
-        'replace' => '0.9.1', // replace
+        'replace' => '0.9.2', // replace
         'with' => $config['version'], // with
     ],
     [
@@ -178,9 +183,9 @@ $MANUAL_REPLACEMENTS = [
     ],
     [
         'file' => realpath($ROOT_DIR . "/app/Config/Bootstrap.php"), // Exact file path
-        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.1\'', // Exact match
+        'search' => '\''.$config['slug_upper'].'_VERSION\', \'0.9.2\'', // Exact match
         'type' => 'replace', // replace
-        'replace' => '0.9.1', // replace
+        'replace' => '0.9.2', // replace
         'with' => $config['version'], // with
     ],
     [

@@ -2,10 +2,10 @@
 
 namespace PluginFrame\Providers;
 
-use PluginFrame\Services\Taxonomies as TaxonomiesService;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+use PluginFrame\Core\Services\Taxonomies as TaxonomiesService;
 
 class Taxonomies
 {
