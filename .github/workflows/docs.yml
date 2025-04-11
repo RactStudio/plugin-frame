@@ -1,0 +1,52 @@
+name: Build and Deploy Plugin Frame Documentation
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Install Doxygen
+      - name: Install Doxygen
+        run: sudo apt-get install -y doxygen
+
+      # Generate PHP documentation
+      - name: Generate API Docs
+        run: |
+          doxygen Doxyfile
+          mv docs/php-api public/api
+
+      # Process Twig templates
+      - name: Generate Twig Docs
+        run: |
+          pip install python-frontmatter
+          python scripts/parse_twig_docs.py ./templates > public/twig.md
+
+      # Build Tailwind CSS
+      - name: Build Styles
+        working-directory: ./docs-theme
+        run: |
+          npm ci
+          npx tailwindcss -i src/input.css -o ../public/css/docs.css --minify
+
+      # Deploy to GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          keep_files: true
