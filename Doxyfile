@@ -1,0 +1,26 @@
+# Plugin Frame Project Info
+PROJECT_NAME           = "Plugin Frame"
+PROJECT_NUMBER         = "0.9.2"
+OUTPUT_DIRECTORY       = .github/public  # Where docs will be generated
+
+# Input Sources
+INPUT                  = app/          # Directory with PHP files
+RECURSIVE              = YES           # Scan subdirectories
+FILE_PATTERNS          = *.php         # File types to process
+
+# Output Formats
+GENERATE_HTML          = YES           # Create HTML docs
+GENERATE_LATEX         = NO            # Disable PDF
+
+# Documentation Behavior
+EXTRACT_ALL            = YES           # Document even undocumented elements
+EXTRACT_PRIVATE        = YES           # Include private methods/properties
+EXTRACT_STATIC         = YES           # Include static members
+
+# WordPress-Specific Tweaks
+ALIASES                = "hook=@hook"
+ALIASES               += "action=@hook Action"
+ALIASES               += "filter=@hook Filter"
+
+# Optional: Use a Markdown file as homepage
+USE_MDFILE_AS_MAINPAGE = README.md
