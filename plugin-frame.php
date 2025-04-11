@@ -13,6 +13,7 @@
  * Description:         Plugin Frame: A modern WordPress plugin development framework with Composer, npm, Tailwind, Twig, and Laravel-like structure. Ideal for lightweight or complex plugins. Complies with WP & PSR-4 standards. Modular, scalable, and dev-friendly.
  * Version:             0.9.2
  * Requires at least:   5.2
+ * Tested up to:        6.8
  * Requires PHP:        7.4
  * Author:              Mahamudul Hasan Rubel
  * Author URI:          https://mhr.ractstudio.com
