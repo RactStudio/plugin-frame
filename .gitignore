@@ -12,12 +12,12 @@ logs/
 build.log
 
 # PF Configuration files
-plugin-frame.conf
+*plugin-frame.conf
 
 # OS generated files
-.DS_Store
-Thumbs.db
-desktop.ini
+*.DS_Store
+*Thumbs.db
+*desktop.ini
 
 # Cloudflared generated files
 pf/cloudflared.exe
