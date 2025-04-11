@@ -20,9 +20,11 @@ jobs:
         with:
           node-version: '20'
 
-      # Install Doxygen
-      - name: Install Doxygen
-        run: sudo apt-get install -y doxygen
+      # Install doxygen, graphviz
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
 
       # Generate PHP documentation
       - name: Generate API Docs
