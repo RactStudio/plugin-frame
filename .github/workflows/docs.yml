@@ -29,8 +29,9 @@ jobs:
       # Generate PHP documentation
       - name: Generate API Docs
         run: |
+          mkdir -p public/api
           doxygen Doxyfile
-          mv docs/php-api public/api
+          mv docs/html public/api
 
       # Process Twig templates
       - name: Generate Twig Docs
