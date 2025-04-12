@@ -19,9 +19,9 @@ jobs:
       - name: Copy Config Files
         run: |
           # Copy Doxygen config to root
-          cp ././.github/docs_config/Doxyfile ./Doxyfile
-          # Copy styling assets
-          cp ././.github/docs_config/* public/assets/
+          cp ././.github/Doxyfile ./Doxyfile
+          # Copy docs_config
+          cp ././.github/docs_config/* public/
 
       - name: Generate Documentation
         run: |
