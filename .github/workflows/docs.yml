@@ -41,7 +41,7 @@ jobs:
 
       # Build Tailwind CSS
       - name: Build Styles
-        working-directory: ./docs-theme
+        working-directory: docs/public/docs-theme
         run: |
           npm ci
           npx tailwindcss -i src/input.css -o ../public/css/docs.css --minify
