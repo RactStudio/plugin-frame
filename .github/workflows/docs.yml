@@ -37,7 +37,7 @@ jobs:
       - name: Generate Twig Docs
         run: |
           pip install python-frontmatter
-          python scripts/parse_twig_docs.py ./templates > public/twig.md
+          python docs/scripts/parse_twig_docs.py ./templates > public/twig.md
 
       # Build Tailwind CSS
       - name: Build Styles
