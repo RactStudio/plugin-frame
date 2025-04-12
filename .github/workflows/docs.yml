@@ -43,7 +43,7 @@ jobs:
       - name: Build Styles
         working-directory: docs/docs-theme
         run: |
-          npm ci
+          npm install
           npx tailwindcss -i src/input.css -o ../public/css/docs.css --minify
 
       # Deploy to GitHub Pages
