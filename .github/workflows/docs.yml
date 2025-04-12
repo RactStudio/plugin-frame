@@ -1,4 +1,4 @@
-name: Documentation Deployment
+name: WordPress Docs Deployment
 on:
   push:
     branches: [master]
@@ -10,23 +10,36 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
+      - name: Setup Environment
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz
+          mkdir -p public public/assets
+
+      - name: Copy Config Files
+        run: |
+          # Copy Doxygen config to root
+          cp .github/docs_config/Doxyfile ./Doxyfile
+          # Copy styling assets
+          cp .github/docs_config/docs-header.html public/
+          cp .github/docs_config/wordpress-docs.css public/
+          cp .github/docs_config/assets/* public/assets/
 
       - name: Generate Documentation
         run: |
-          mkdir -p public
-          echo "pf.ractstudio.com" > public/CNAME  # Add CNAME file
+          echo "pf.ractstudio.com" > public/CNAME
           doxygen Doxyfile
+          # Add WordPress footer
+          echo '<div class="wp-docs-footer">Documentation follows <a href="https://developer.wordpress.org/coding-standards/">WordPress standards</a></div>' >> public/footer.html
 
+      - name: Cleanup & Deploy
+        run: rm Doxyfile  # Remove temporary file
+      
       - name: Deploy to Doc Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          destination_dir: .
           publish_branch: doc
-          keep_files: true  # Preserve existing files
-          force_orphan: false  # Disable orphan branch reset
+          keep_files: true
+          force_orphan: false

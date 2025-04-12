@@ -1,0 +1,40 @@
+# Core Docs Configuration
+PROJECT_NAME           = "Plugin Frame"
+PROJECT_LOGO           = ./assets/wordpress-logo.png
+OUTPUT_DIRECTORY       = public
+INPUT                  = app
+FILE_PATTERNS          = *.php
+
+# DocBlock Standards
+ALIASES                = "since=@since"
+ALIASES               += "see=@see"
+ALIASES               += "link=@link"
+ALIASES               += "global=@global"
+ALIASES               += "action=@action"
+ALIASES               += "filter=@filter"
+ALIASES               += "hook=@hook"
+ALIASES               += "shortcode=@shortcode"
+
+# HTML Output
+HTML_OUTPUT            = .
+HTML_HEADER            = docs-header.html
+HTML_FOOTER            = footer.html
+HTML_STYLESHEET        = pf-docs.css
+GENERATE_TREEVIEW      = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Diagrams & Search
+HAVE_DOT               = YES
+CLASS_GRAPH            = YES
+CALL_GRAPH             = YES
+SEARCHENGINE           = YES
+
+# WordPress Doc Behavior
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+WARN_IF_UNDOCUMENTED   = YES
+
+# Paths relative to project root
+PROJECT_LOGO           = public/assets/pf-logo.png
+HTML_HEADER            = public/docs-header.html
+HTML_STYLESHEET        = public/pf-docs.css
