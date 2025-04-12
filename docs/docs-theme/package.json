@@ -1,12 +1,11 @@
 {
   "name": "docs-theme",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "tailwind.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tailwindcss -i src/input.css -o ../public/css/docs.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3",
+    "@tailwindcss/typography": "^0.5.13"
   }
 }
