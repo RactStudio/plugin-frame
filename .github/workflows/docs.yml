@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir -p public/api
           doxygen Doxyfile
-          mv public/html public/api
+          mv docs/public/html docs/public/api
 
       # Process Twig templates
       - name: Generate Twig Docs
