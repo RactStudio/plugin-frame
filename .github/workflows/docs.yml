@@ -21,7 +21,7 @@ jobs:
           # Copy Doxygen config to root
           cp ././.github/Doxyfile ./Doxyfile
           # Copy docs_config
-          cp ././.github/docs_config/* public/
+          cp -r ././.github/docs_config/* public/
 
       - name: Generate Documentation
         run: |
