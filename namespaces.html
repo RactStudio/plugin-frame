@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Plugin Frame<span id="projectnumber">&#160;0.9.2</span>
+   <div id="projectname">Plugin Frame
    </div>
   </td>
  </tr>
@@ -47,6 +51,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('namespaces.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,47 +93,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock">Here is a list of all namespaces with brief descriptions:</div><div class="directory">
-<div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span><span onclick="javascript:toggleLevel(3);">3</span><span onclick="javascript:toggleLevel(4);">4</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="namespacePluginFrame.html" target="_self">PluginFrame</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_0_" class="arrow" onclick="toggleFolder('0_0_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="namespacePluginFrame_1_1Config.html" target="_self">Config</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1APIbase.html" target="_self">APIbase</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_1_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1Bootstrap.html" target="_self">Bootstrap</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_2_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1Config.html" target="_self">Config</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_3_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1Cron.html" target="_self">Cron</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_4_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1DBconfig.html" target="_self">DBconfig</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_5_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1Debug.html" target="_self">Debug</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_6_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1HooksLoader.html" target="_self">HooksLoader</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_7_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1Providers.html" target="_self">Providers</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_8_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1Routes.html" target="_self">Routes</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_9_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Config_1_1Updater.html" target="_self">Updater</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_1_" class="arrow" onclick="toggleFolder('0_1_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="namespacePluginFrame_1_1Hooks.html" target="_self">Hooks</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_0_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Hooks_1_1Activation.html" target="_self">Activation</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_1_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Hooks_1_1Deactivation.html" target="_self">Deactivation</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_2_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Hooks_1_1Uninstall.html" target="_self">Uninstall</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_3_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Hooks_1_1Upgrade.html" target="_self">Upgrade</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_2_" class="arrow" onclick="toggleFolder('0_2_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="namespacePluginFrame_1_1Providers.html" target="_self">Providers</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span id="arr_0_2_0_" class="arrow" onclick="toggleFolder('0_2_0_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="namespacePluginFrame_1_1Providers_1_1Options.html" target="_self">Options</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_0_0_" class="odd"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Options_1_1Export.html" target="_self">Export</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_0_1_" class="even"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Options_1_1Import.html" target="_self">Import</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_0_2_" class="odd"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Options_1_1Options.html" target="_self">Options</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span id="arr_0_2_1_" class="arrow" onclick="toggleFolder('0_2_1_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="namespacePluginFrame_1_1Providers_1_1Widgets.html" target="_self">Widgets</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_1_0_" class="odd"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Widgets_1_1Block.html" target="_self">Block</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_1_1_" class="even"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Widgets_1_1Classic.html" target="_self">Classic</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_2_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1ActionsLinks.html" target="_self">ActionsLinks</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_3_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Customize.html" target="_self">Customize</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_4_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Enqueues.html" target="_self">Enqueues</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_5_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Menus.html" target="_self">Menus</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_6_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Notices.html" target="_self">Notices</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_7_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1PostTypes.html" target="_self">PostTypes</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_8_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1ScreenHelp.html" target="_self">ScreenHelp</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_9_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1ShortCodes.html" target="_self">ShortCodes</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_10_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classPluginFrame_1_1Providers_1_1Taxonomies.html" target="_self">Taxonomies</a></td><td class="desc"></td></tr>
+<table class="directory">
+<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="namespacePluginFrame.html" target="_self">PluginFrame</a></td><td class="desc"></td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

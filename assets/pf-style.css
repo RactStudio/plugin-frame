@@ -1,0 +1,25 @@
+/* WordPress-like documentation styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #1e1e1e;
+  }
+  
+  .wp-docs-header {
+    background: #f0f0f1;
+    padding: 2rem;
+    border-bottom: 3px solid #3858e9;
+  }
+  
+  .wp-docs-footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: #f0f0f1;
+    text-align: center;
+  }
+  
+  /* Match WordPress code blocks */
+  code {
+    background: #f0f0f1;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }

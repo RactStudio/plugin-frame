@@ -1,30 +1,4 @@
 var searchData=
 [
-  ['pluginframe_0',['PluginFrame',['../namespacePluginFrame.html',1,'']]],
-  ['pluginframe_3a_3aconfig_1',['Config',['../namespacePluginFrame_1_1Config.html',1,'PluginFrame']]],
-  ['pluginframe_3a_3acore_3a_3aapi_2',['API',['../namespacePluginFrame_1_1Core_1_1API.html',1,'PluginFrame::Core']]],
-  ['pluginframe_3a_3acore_3a_3adb_3a_3amigrations_3',['Migrations',['../namespacePluginFrame_1_1Core_1_1DB_1_1Migrations.html',1,'PluginFrame::Core::DB']]],
-  ['pluginframe_3a_3acore_3a_3adb_3a_3amodels_4',['Models',['../namespacePluginFrame_1_1Core_1_1DB_1_1Models.html',1,'PluginFrame::Core::DB']]],
-  ['pluginframe_3a_3acore_3a_3adb_3a_3apagination_5',['Pagination',['../namespacePluginFrame_1_1Core_1_1DB_1_1Pagination.html',1,'PluginFrame::Core::DB']]],
-  ['pluginframe_3a_3acore_3a_3adb_3a_3aseeders_6',['Seeders',['../namespacePluginFrame_1_1Core_1_1DB_1_1Seeders.html',1,'PluginFrame::Core::DB']]],
-  ['pluginframe_3a_3acore_3a_3adb_3a_3autils_7',['Utils',['../namespacePluginFrame_1_1Core_1_1DB_1_1Utils.html',1,'PluginFrame::Core::DB']]],
-  ['pluginframe_3a_3acore_3a_3adb_3a_3awp_8',['WP',['../namespacePluginFrame_1_1Core_1_1DB_1_1WP.html',1,'PluginFrame::Core::DB']]],
-  ['pluginframe_3a_3acore_3a_3ahelpers_9',['Helpers',['../namespacePluginFrame_1_1Core_1_1Helpers.html',1,'PluginFrame::Core']]],
-  ['pluginframe_3a_3acore_3a_3ahooks_10',['Hooks',['../namespacePluginFrame_1_1Core_1_1Hooks.html',1,'PluginFrame::Core']]],
-  ['pluginframe_3a_3acore_3a_3aroutes_11',['Routes',['../namespacePluginFrame_1_1Core_1_1Routes.html',1,'PluginFrame::Core']]],
-  ['pluginframe_3a_3acore_3a_3aroutes_3a_3amiddleware_12',['Middleware',['../namespacePluginFrame_1_1Core_1_1Routes_1_1Middleware.html',1,'PluginFrame::Core::Routes']]],
-  ['pluginframe_3a_3acore_3a_3aservices_13',['Services',['../namespacePluginFrame_1_1Core_1_1Services.html',1,'PluginFrame::Core']]],
-  ['pluginframe_3a_3acore_3a_3aservices_3a_3aoptions_14',['Options',['../namespacePluginFrame_1_1Core_1_1Services_1_1Options.html',1,'PluginFrame::Core::Services']]],
-  ['pluginframe_3a_3acore_3a_3aservices_3a_3awidgets_15',['Widgets',['../namespacePluginFrame_1_1Core_1_1Services_1_1Widgets.html',1,'PluginFrame::Core::Services']]],
-  ['pluginframe_3a_3acore_3a_3aupdater_16',['Updater',['../namespacePluginFrame_1_1Core_1_1Updater.html',1,'PluginFrame::Core']]],
-  ['pluginframe_3a_3acore_3a_3autilities_3a_3adebug_17',['Debug',['../namespacePluginFrame_1_1Core_1_1Utilities_1_1Debug.html',1,'PluginFrame::Core::Utilities']]],
-  ['pluginframe_3a_3acore_3a_3autilities_3a_3apflogs_18',['PFlogs',['../namespacePluginFrame_1_1Core_1_1Utilities_1_1PFlogs.html',1,'PluginFrame::Core::Utilities']]],
-  ['pluginframe_3a_3ahooks_19',['Hooks',['../namespacePluginFrame_1_1Hooks.html',1,'PluginFrame']]],
-  ['pluginframe_3a_3aproviders_20',['Providers',['../namespacePluginFrame_1_1Providers.html',1,'PluginFrame']]],
-  ['pluginframe_3a_3aproviders_3a_3aoptions_21',['Options',['../namespacePluginFrame_1_1Providers_1_1Options.html',1,'PluginFrame::Providers']]],
-  ['pluginframe_3a_3aproviders_3a_3awidgets_22',['Widgets',['../namespacePluginFrame_1_1Providers_1_1Widgets.html',1,'PluginFrame::Providers']]],
-  ['pluginframe_3a_3arest_3a_3acontrollers_23',['Controllers',['../namespacePluginFrame_1_1REST_1_1Controllers.html',1,'PluginFrame::REST']]],
-  ['pluginframe_3a_3arest_3a_3acontrollers_3a_3awp_24',['WP',['../namespacePluginFrame_1_1REST_1_1Controllers_1_1WP.html',1,'PluginFrame::REST::Controllers']]],
-  ['pluginframe_3a_3aviews_3a_3aadmin_25',['Admin',['../namespacePluginFrame_1_1Views_1_1Admin.html',1,'PluginFrame::Views']]],
-  ['pluginframe_3a_3aviews_3a_3aadminalpine_26',['AdminAlpine',['../namespacePluginFrame_1_1Views_1_1AdminAlpine.html',1,'PluginFrame::Views']]]
+  ['pluginframe_0',['PluginFrame',['../namespacePluginFrame.html',1,'']]]
 ];
