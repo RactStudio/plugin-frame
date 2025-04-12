@@ -1,4 +1,4 @@
-name: Build and Deploy Plugin Frame Documentation
+name: Documentation Deployment
 on:
   push:
     branches: [master]
@@ -10,46 +10,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      # Install doxygen, graphviz
       - name: Install Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz
 
-      # Generate PHP documentation
-      - name: Generate API Docs
+      - name: Generate Documentation
         run: |
-          mkdir -p public/api
+          mkdir -p public
           doxygen Doxyfile
-          mv docs/public/html docs/public/api
 
-      # Process Twig templates
-      - name: Generate Twig Docs
-        run: |
-          pip install python-frontmatter
-          python docs/scripts/parse_twig_docs.py ./templates > public/twig.md
-
-      # Build Tailwind CSS
-      - name: Build Styles
-        working-directory: docs/docs-theme
-        run: |
-          npm install
-          npx tailwindcss -i src/input.css -o ../public/css/docs.css --minify
-
-      # Deploy to GitHub Pages
-      - name: Deploy
+      - name: Deploy to Doc Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          keep_files: true
+          destination_dir: .
+          publish_branch: doc
+          force_orphan: true

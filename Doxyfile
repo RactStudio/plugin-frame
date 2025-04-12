@@ -1,36 +1,25 @@
-# Plugin Frame Project Info
+# Core Configuration
 PROJECT_NAME           = "Plugin Frame"
 PROJECT_NUMBER         = "0.9.2"
-OUTPUT_DIRECTORY       = docs/public  # Where docs will be generated
-HTML_OUTPUT            = api  # Add this line
+OUTPUT_DIRECTORY       = public
+INPUT                  = app
+RECURSIVE              = YES
+FILE_PATTERNS          = *.php
 
-# Input Sources
-INPUT                  = app/          # Directory with PHP files
-RECURSIVE              = YES           # Scan subdirectories
-FILE_PATTERNS          = *.php         # File types to process
+# HTML Output
+GENERATE_HTML          = YES
+HTML_OUTPUT            = .
+USE_MDFILE_AS_MAINPAGE = README.md
 
-# Output Formats
-GENERATE_HTML          = YES           # Create HTML docs
-GENERATE_LATEX         = NO            # Disable PDF
-
-# Graphviz diagrams (YES/NO)
+# Diagrams
 HAVE_DOT               = YES
 CLASS_DIAGRAMS         = YES
-COLLABORATION_GRAPH    = YES
-INCLUDE_GRAPH          = YES
-INCLUDED_BY_GRAPH      = YES
 CALL_GRAPH             = YES
 CALLER_GRAPH           = YES
 
 # Documentation Behavior
-EXTRACT_ALL            = YES           # Document even undocumented elements
-EXTRACT_PRIVATE        = YES           # Include private methods/properties
-EXTRACT_STATIC         = YES           # Include static members
-
-# WordPress-Specific Tweaks
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
 ALIASES                = "hook=@hook"
 ALIASES               += "action=@hook Action"
 ALIASES               += "filter=@hook Filter"
-
-# Optional: Use a Markdown file as homepage
-USE_MDFILE_AS_MAINPAGE = README.md
