@@ -28,11 +28,12 @@ var searchData=
   ['shortcode_2ephp_25',['ShortCode.php',['../ShortCode_8php.html',1,'']]],
   ['shortcodes_26',['ShortCodes',['../classPluginFrame_1_1Providers_1_1ShortCodes.html',1,'PluginFrame::Providers']]],
   ['shortcodes_2ephp_27',['ShortCodes.php',['../ShortCodes_8php.html',1,'']]],
-  ['single_28',['single',['../classPluginFrame_1_1Core_1_1Routes_1_1Helpers.html#af1eb0a19a51fe69093a996ed073a3b5d',1,'PluginFrame::Core::Routes::Helpers']]],
-  ['singlepostmeta_29',['singlePostMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1PostMeta.html#a8c5c11e06ff16afc280da13e0ac7f498',1,'PluginFrame::Core::DB::WP::PostMeta']]],
-  ['singleterm_30',['singleTerm',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms.html#a5c469766fe9c4a07f3787e0bf39d7f00',1,'PluginFrame::Core::DB::WP::Terms']]],
-  ['singletermtaxonomy_31',['singleTermTaxonomy',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy.html#a456d5c060b0391d605fbfa32523649b2',1,'PluginFrame::Core::DB::WP::TermTaxonomy']]],
-  ['singleuser_32',['singleUser',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Users.html#a062cff64569e2d64af0db485fbb72676',1,'PluginFrame::Core::DB::WP::Users']]],
-  ['singleusermeta_33',['singleUserMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta.html#aa3c75bbe83118bc664c92c7c1fe013ea',1,'PluginFrame::Core::DB::WP::UserMeta']]],
-  ['sources_34',['SOURCES',['../classPluginFrame_1_1Config_1_1Updater.html#abcfb65eba98ca9932c0f15b2c95b4307',1,'PluginFrame::Config::Updater']]]
+  ['shouldskip_28',['shouldSkip',['../pf_8php.html#a4fe7cecda0c63167ae8c2edd28d3fadc',1,'pf.php']]],
+  ['single_29',['single',['../classPluginFrame_1_1Core_1_1Routes_1_1Helpers.html#af1eb0a19a51fe69093a996ed073a3b5d',1,'PluginFrame::Core::Routes::Helpers']]],
+  ['singlepostmeta_30',['singlePostMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1PostMeta.html#a8c5c11e06ff16afc280da13e0ac7f498',1,'PluginFrame::Core::DB::WP::PostMeta']]],
+  ['singleterm_31',['singleTerm',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms.html#a5c469766fe9c4a07f3787e0bf39d7f00',1,'PluginFrame::Core::DB::WP::Terms']]],
+  ['singletermtaxonomy_32',['singleTermTaxonomy',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy.html#a456d5c060b0391d605fbfa32523649b2',1,'PluginFrame::Core::DB::WP::TermTaxonomy']]],
+  ['singleuser_33',['singleUser',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Users.html#a062cff64569e2d64af0db485fbb72676',1,'PluginFrame::Core::DB::WP::Users']]],
+  ['singleusermeta_34',['singleUserMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta.html#aa3c75bbe83118bc664c92c7c1fe013ea',1,'PluginFrame::Core::DB::WP::UserMeta']]],
+  ['sources_35',['SOURCES',['../classPluginFrame_1_1Config_1_1Updater.html#abcfb65eba98ca9932c0f15b2c95b4307',1,'PluginFrame::Config::Updater']]]
 ];

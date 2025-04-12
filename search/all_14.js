@@ -21,6 +21,8 @@ var searchData=
   ['tools_2ephp_18',['Tools.php',['../Tools_8php.html',1,'']]],
   ['toolsalpine_19',['ToolsAlpine',['../classPluginFrame_1_1Views_1_1AdminAlpine_1_1ToolsAlpine.html',1,'PluginFrame::Views::AdminAlpine']]],
   ['toolsalpine_2ephp_20',['ToolsAlpine.php',['../ToolsAlpine_8php.html',1,'']]],
-  ['trashschedule_21',['trashSchedule',['../classPluginFrame_1_1Core_1_1Services_1_1Scheduler.html#add8048fafc556d1e7c3b59a9f8c136e5',1,'PluginFrame::Core::Services::Scheduler']]],
-  ['truncatetable_22',['truncateTable',['../classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a775aaadb9feae4cce896c82ef1ef1746',1,'PluginFrame::Core::DB::Utils::QueryBuilder']]]
+  ['transformnamespacestring_21',['transformNamespaceString',['../pf_8php.html#a09742a6ead0056c1543e51f4f2bf25bf',1,'pf.php']]],
+  ['trashschedule_22',['trashSchedule',['../classPluginFrame_1_1Core_1_1Services_1_1Scheduler.html#add8048fafc556d1e7c3b59a9f8c136e5',1,'PluginFrame::Core::Services::Scheduler']]],
+  ['truncatetable_23',['truncateTable',['../classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a775aaadb9feae4cce896c82ef1ef1746',1,'PluginFrame::Core::DB::Utils::QueryBuilder']]],
+  ['try_24',['try',['../pf_8php.html#abe4cc9788f52e49485473dc699537388',1,'pf.php']]]
 ];

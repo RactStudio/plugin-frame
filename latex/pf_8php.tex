@@ -1,0 +1,471 @@
+\doxysection{pf/pf.php File Reference}
+\hypertarget{pf_8php}{}\label{pf_8php}\index{pf/pf.php@{pf/pf.php}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pf_8php_a510cdbcd2f805908f31da825a6fc8bec}{log\+\_\+message}} (\$message, \$type=\textquotesingle{}INFO\textquotesingle{})
+\item 
+\mbox{\hyperlink{pf_8php_ae3b3082355cd7209245c704f880473a0}{extract\+Fqcns\+From\+File}} (\$file\+Path)
+\item 
+\mbox{\hyperlink{pf_8php_a75fa555a8a72a2b01bd34dc7e117964e}{collect\+Excluded\+Classes}} ()
+\item 
+\mbox{\hyperlink{pf_8php_a09742a6ead0056c1543e51f4f2bf25bf}{transform\+Namespace\+String}} (\$namespace\+String)
+\item 
+\mbox{\hyperlink{pf_8php_ab7d244910b18ffeb7caaa9b811f9506d}{process\+Manual\+Replacements}} ()
+\item 
+\mbox{\hyperlink{pf_8php_a322a6738037e27a29b7516835a6cb9b2}{get\+Target\+Dir}} (\$ROOT\+\_\+\+DIR)
+\item 
+\mbox{\hyperlink{pf_8php_ab886ccc96499a1ab62157b427de6ca87}{process\+Files}} (\$target\+Dir)
+\item 
+\mbox{\hyperlink{pf_8php_a36de2ec1eada3d9d11468695bb7f74c5}{process\+File}} (\$path)
+\item 
+\mbox{\hyperlink{pf_8php_a4cbf3d54f99969588675df56a001b38e}{process\+PHPFile}} (\$path)
+\item 
+\mbox{\hyperlink{pf_8php_a37711ec25b19cc7dbc45b249e0484c9d}{process\+Asset\+File}} (\$path)
+\item 
+\mbox{\hyperlink{pf_8php_ac363f840e5a544c9b6c74018b95b1dce}{update\+Namespace}} (\$matches)
+\item 
+\mbox{\hyperlink{pf_8php_a9120d007bb574fe7d067adcdbe8b1261}{update\+Use\+Statement}} (\$matches)
+\item 
+\mbox{\hyperlink{pf_8php_a5609ea8de080d5a2a87de08cb0418494}{update\+Class\+Instantiation}} (\$matches)
+\item 
+\mbox{\hyperlink{pf_8php_a3f671d9d75aea53cce472c489af13028}{build\+Namespaced\+Class}} (\$class)
+\item 
+\mbox{\hyperlink{pf_8php_a4fe7cecda0c63167ae8c2edd28d3fadc}{should\+Skip}} (\$class)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+global \mbox{\hyperlink{pf_8php_a49c7011be9c979d9174c52a8b83e5d8e}{\$config}}
+\item 
+\mbox{\hyperlink{pf_8php_abe4cc9788f52e49485473dc699537388}{try}}
+\item 
+const \mbox{\hyperlink{pf_8php_a8637c20b012d564bfd602124bc83f5b2}{LOG\+\_\+\+FILE}} (Exception \$e) realpath(\+\_\+\+\_\+\+DIR\+\_\+\+\_\+ . \textquotesingle{}/../.dist\textquotesingle{}) . \textquotesingle{}/build-\/\textquotesingle{}.\$config\mbox{[}\textquotesingle{}rand\+\_\+num\textquotesingle{}\mbox{]}.\textquotesingle{}.log\textquotesingle{}
+\item 
+\mbox{\hyperlink{pf_8php_a133eb8359a50f498b129aa8e444dee38}{\$log\+Handle}} = fopen(\mbox{\hyperlink{pf_8php_a8637c20b012d564bfd602124bc83f5b2}{LOG\+\_\+\+FILE}}, \textquotesingle{}w\textquotesingle{})
+\item 
+\mbox{\hyperlink{pf_8php_a1e42906f7e81b68b33fc7ca9b36a2748}{\$\+ROOT\+\_\+\+DIR}} = realpath(\+\_\+\+\_\+\+DIR\+\_\+\+\_\+ . "{}/../.dist/"{}.\$config\mbox{[}\textquotesingle{}slug\textquotesingle{}\mbox{]}."{}-\/"{}.\$config\mbox{[}\textquotesingle{}rand\+\_\+num\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{pf_8php_ae2b8f71240c5c2aa2071f25a4e669325}{\$\+EXCLUDED\+\_\+\+DIRS}}
+\item 
+foreach(\$EXCLUDED\+\_\+\+DIRS as \$path) \mbox{\hyperlink{pf_8php_a54d135ff2b56cd46848cf9f20d78a232}{\$\+MANUAL\+\_\+\+REPLACEMENTS}}
+\item 
+const \mbox{\hyperlink{pf_8php_ad5d9e810c93af4d41da34ad35eb1aeee}{WP\+\_\+\+CORE\+\_\+\+CLASSES}} (\$MANUAL\+\_\+\+REPLACEMENTS as \$entry) \mbox{[} \textquotesingle{}WP\textquotesingle{}, \textquotesingle{}wpdb\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Error\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Query\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Post\textquotesingle{}, \textquotesingle{}WP\+\_\+\+User\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Roles\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Admin\+\_\+\+Bar\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Widget\textquotesingle{}, \textquotesingle{}ABSPATH\textquotesingle{}, \textquotesingle{}WPINC\textquotesingle{}, \textquotesingle{}WP\+\_\+\+CONTENT\+\_\+\+DIR\textquotesingle{}, \textquotesingle{}WP\+\_\+\+PLUGIN\+\_\+\+DIR\textquotesingle{}, \textquotesingle{}plugin\+\_\+dir\+\_\+path\textquotesingle{}, \textquotesingle{}plugin\+\_\+dir\+\_\+url\textquotesingle{}, \textquotesingle{}plugin\+\_\+basename\textquotesingle{}, \textquotesingle{}get\+\_\+plugin\+\_\+data\textquotesingle{}, \textquotesingle{}load\+\_\+plugin\+\_\+textdomain\textquotesingle{}, \textquotesingle{}add\+\_\+action\textquotesingle{}, \textquotesingle{}do\+\_\+action\textquotesingle{}, \textquotesingle{}add\+\_\+filter\textquotesingle{}, \textquotesingle{}apply\+\_\+filters\textquotesingle{}, \textquotesingle{}WP\+\_\+\textquotesingle{}, \textquotesingle{}wp\+\_\+\textquotesingle{}, \textquotesingle{}WC\+\_\+\textquotesingle{}, \textquotesingle{}Woo\+Commerce\+\_\+\textquotesingle{}, \textquotesingle{}Tribe\+\_\+\textquotesingle{} \mbox{]}
+\item 
+\mbox{\hyperlink{pf_8php_a0635d06ad7c730a5944a88ad5478e08b}{\$\+EXCLUDED\+\_\+\+CLASSES}} = \mbox{\hyperlink{pf_8php_a75fa555a8a72a2b01bd34dc7e117964e}{collect\+Excluded\+Classes}}()
+\item 
+\mbox{\hyperlink{pf_8php_a570ca5d3807b3db7cd621ccafe2fe98e}{\$autoload\+File\+Path}} = \$ROOT\+\_\+\+DIR . \textquotesingle{}/vendor/autoload.\+php\textquotesingle{}
+\item 
+\mbox{\hyperlink{Utilities_2Debug_2Helpers_8php_a6c65cb3e6351c5b279c3b9418e1b07ac}{if}}(!file\+\_\+exists(\$autoload\+File\+Path)) \mbox{\hyperlink{pf_8php_a230712742d2c97a4afc1be3ee9ce5365}{\$autoload\+Content}} = file\+\_\+get\+\_\+contents(\$autoload\+File\+Path)
+\item 
+\mbox{\hyperlink{Utilities_2Debug_2Helpers_8php_a6c65cb3e6351c5b279c3b9418e1b07ac}{if}}( \$autoload\+Content===false) \mbox{\hyperlink{Utilities_2Debug_2Helpers_8php_a6c65cb3e6351c5b279c3b9418e1b07ac}{if}}(!preg\+\_\+match(\textquotesingle{}/Composer\+Autoloader\+Init(\mbox{[}a-\/f0-\/9\mbox{]}\{32\})/\textquotesingle{}, \$autoload\+Content, \$matches)) \mbox{\hyperlink{pf_8php_a268fc709299abe4cc5afda6eaa3523bb}{\$old\+Hash}} = \$matches\mbox{[}1\mbox{]}
+\item 
+\mbox{\hyperlink{pf_8php_ac58445e650b741d4e5e7cf77240c5b9b}{\$new\+Hash}} = bin2hex(random\+\_\+bytes(16))
+\item 
+\mbox{\hyperlink{pf_8php_afbd449c2c3246b6a327862d8d0839150}{\$composer\+Dir}} = \$ROOT\+\_\+\+DIR . \textquotesingle{}/vendor/composer\textquotesingle{}
+\item 
+\mbox{\hyperlink{pf_8php_a52d10972874a115303f2ddf3ee0e0672}{\$files\+To\+Process}} = \mbox{[}\$autoload\+File\+Path\mbox{]}
+\item 
+\mbox{\hyperlink{pf_8php_a3a999852dfee63e69aacacefb7e33564}{\$iterator}}
+\item 
+\mbox{\hyperlink{pf_8php_a6a61769761d9e55cce6c8e3863fd84f2}{\$total\+Replacements}} = 0
+\item 
+catch(Exception \$e) \mbox{\hyperlink{pf_8php_a1eb47d68a4a4f73debf91b15e179d813}{finally}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pf_8php_a3f671d9d75aea53cce472c489af13028}\label{pf_8php_a3f671d9d75aea53cce472c489af13028} 
+\index{pf.php@{pf.php}!buildNamespacedClass@{buildNamespacedClass}}
+\index{buildNamespacedClass@{buildNamespacedClass}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{buildNamespacedClass()}{buildNamespacedClass()}}
+{\footnotesize\ttfamily build\+Namespaced\+Class (\begin{DoxyParamCaption}\item[{}]{\$class }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_a3f671d9d75aea53cce472c489af13028_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_a75fa555a8a72a2b01bd34dc7e117964e}\label{pf_8php_a75fa555a8a72a2b01bd34dc7e117964e} 
+\index{pf.php@{pf.php}!collectExcludedClasses@{collectExcludedClasses}}
+\index{collectExcludedClasses@{collectExcludedClasses}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{collectExcludedClasses()}{collectExcludedClasses()}}
+{\footnotesize\ttfamily collect\+Excluded\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_a75fa555a8a72a2b01bd34dc7e117964e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_ae3b3082355cd7209245c704f880473a0}\label{pf_8php_ae3b3082355cd7209245c704f880473a0} 
+\index{pf.php@{pf.php}!extractFqcnsFromFile@{extractFqcnsFromFile}}
+\index{extractFqcnsFromFile@{extractFqcnsFromFile}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{extractFqcnsFromFile()}{extractFqcnsFromFile()}}
+{\footnotesize\ttfamily extract\+Fqcns\+From\+File (\begin{DoxyParamCaption}\item[{}]{\$file\+Path }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{pf_8php_ae3b3082355cd7209245c704f880473a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_ae3b3082355cd7209245c704f880473a0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_a322a6738037e27a29b7516835a6cb9b2}\label{pf_8php_a322a6738037e27a29b7516835a6cb9b2} 
+\index{pf.php@{pf.php}!getTargetDir@{getTargetDir}}
+\index{getTargetDir@{getTargetDir}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{getTargetDir()}{getTargetDir()}}
+{\footnotesize\ttfamily get\+Target\+Dir (\begin{DoxyParamCaption}\item[{}]{\$\+ROOT\+\_\+\+DIR }\end{DoxyParamCaption})}
+
+\Hypertarget{pf_8php_a510cdbcd2f805908f31da825a6fc8bec}\label{pf_8php_a510cdbcd2f805908f31da825a6fc8bec} 
+\index{pf.php@{pf.php}!log\_message@{log\_message}}
+\index{log\_message@{log\_message}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{log\_message()}{log\_message()}}
+{\footnotesize\ttfamily log\+\_\+message (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{}]{\$type = {\ttfamily \textquotesingle{}INFO\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_a510cdbcd2f805908f31da825a6fc8bec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_a37711ec25b19cc7dbc45b249e0484c9d}\label{pf_8php_a37711ec25b19cc7dbc45b249e0484c9d} 
+\index{pf.php@{pf.php}!processAssetFile@{processAssetFile}}
+\index{processAssetFile@{processAssetFile}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{processAssetFile()}{processAssetFile()}}
+{\footnotesize\ttfamily process\+Asset\+File (\begin{DoxyParamCaption}\item[{}]{\$path }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{pf_8php_a37711ec25b19cc7dbc45b249e0484c9d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_a37711ec25b19cc7dbc45b249e0484c9d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_a36de2ec1eada3d9d11468695bb7f74c5}\label{pf_8php_a36de2ec1eada3d9d11468695bb7f74c5} 
+\index{pf.php@{pf.php}!processFile@{processFile}}
+\index{processFile@{processFile}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{processFile()}{processFile()}}
+{\footnotesize\ttfamily process\+File (\begin{DoxyParamCaption}\item[{}]{\$path }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_a36de2ec1eada3d9d11468695bb7f74c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{pf_8php_a36de2ec1eada3d9d11468695bb7f74c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_ab886ccc96499a1ab62157b427de6ca87}\label{pf_8php_ab886ccc96499a1ab62157b427de6ca87} 
+\index{pf.php@{pf.php}!processFiles@{processFiles}}
+\index{processFiles@{processFiles}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{processFiles()}{processFiles()}}
+{\footnotesize\ttfamily process\+Files (\begin{DoxyParamCaption}\item[{}]{\$target\+Dir }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_ab886ccc96499a1ab62157b427de6ca87_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_ab7d244910b18ffeb7caaa9b811f9506d}\label{pf_8php_ab7d244910b18ffeb7caaa9b811f9506d} 
+\index{pf.php@{pf.php}!processManualReplacements@{processManualReplacements}}
+\index{processManualReplacements@{processManualReplacements}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{processManualReplacements()}{processManualReplacements()}}
+{\footnotesize\ttfamily process\+Manual\+Replacements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_ab7d244910b18ffeb7caaa9b811f9506d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_a4cbf3d54f99969588675df56a001b38e}\label{pf_8php_a4cbf3d54f99969588675df56a001b38e} 
+\index{pf.php@{pf.php}!processPHPFile@{processPHPFile}}
+\index{processPHPFile@{processPHPFile}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{processPHPFile()}{processPHPFile()}}
+{\footnotesize\ttfamily process\+PHPFile (\begin{DoxyParamCaption}\item[{}]{\$path }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{pf_8php_a4cbf3d54f99969588675df56a001b38e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_a4cbf3d54f99969588675df56a001b38e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_a4fe7cecda0c63167ae8c2edd28d3fadc}\label{pf_8php_a4fe7cecda0c63167ae8c2edd28d3fadc} 
+\index{pf.php@{pf.php}!shouldSkip@{shouldSkip}}
+\index{shouldSkip@{shouldSkip}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{shouldSkip()}{shouldSkip()}}
+{\footnotesize\ttfamily should\+Skip (\begin{DoxyParamCaption}\item[{}]{\$class }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{pf_8php_a4fe7cecda0c63167ae8c2edd28d3fadc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_a09742a6ead0056c1543e51f4f2bf25bf}\label{pf_8php_a09742a6ead0056c1543e51f4f2bf25bf} 
+\index{pf.php@{pf.php}!transformNamespaceString@{transformNamespaceString}}
+\index{transformNamespaceString@{transformNamespaceString}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{transformNamespaceString()}{transformNamespaceString()}}
+{\footnotesize\ttfamily transform\+Namespace\+String (\begin{DoxyParamCaption}\item[{}]{\$namespace\+String }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{pf_8php_a09742a6ead0056c1543e51f4f2bf25bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_a09742a6ead0056c1543e51f4f2bf25bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_a5609ea8de080d5a2a87de08cb0418494}\label{pf_8php_a5609ea8de080d5a2a87de08cb0418494} 
+\index{pf.php@{pf.php}!updateClassInstantiation@{updateClassInstantiation}}
+\index{updateClassInstantiation@{updateClassInstantiation}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{updateClassInstantiation()}{updateClassInstantiation()}}
+{\footnotesize\ttfamily update\+Class\+Instantiation (\begin{DoxyParamCaption}\item[{}]{\$matches }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_a5609ea8de080d5a2a87de08cb0418494_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pf_8php_ac363f840e5a544c9b6c74018b95b1dce}\label{pf_8php_ac363f840e5a544c9b6c74018b95b1dce} 
+\index{pf.php@{pf.php}!updateNamespace@{updateNamespace}}
+\index{updateNamespace@{updateNamespace}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{updateNamespace()}{updateNamespace()}}
+{\footnotesize\ttfamily update\+Namespace (\begin{DoxyParamCaption}\item[{}]{\$matches }\end{DoxyParamCaption})}
+
+\Hypertarget{pf_8php_a9120d007bb574fe7d067adcdbe8b1261}\label{pf_8php_a9120d007bb574fe7d067adcdbe8b1261} 
+\index{pf.php@{pf.php}!updateUseStatement@{updateUseStatement}}
+\index{updateUseStatement@{updateUseStatement}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{updateUseStatement()}{updateUseStatement()}}
+{\footnotesize\ttfamily update\+Use\+Statement (\begin{DoxyParamCaption}\item[{}]{\$matches }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf_8php_a9120d007bb574fe7d067adcdbe8b1261_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{pf_8php_a230712742d2c97a4afc1be3ee9ce5365}\label{pf_8php_a230712742d2c97a4afc1be3ee9ce5365} 
+\index{pf.php@{pf.php}!\$autoloadContent@{\$autoloadContent}}
+\index{\$autoloadContent@{\$autoloadContent}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$autoloadContent}{\$autoloadContent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Utilities_2Debug_2Helpers_8php_a6c65cb3e6351c5b279c3b9418e1b07ac}{if}} (!file\+\_\+exists( \$autoload\+File\+Path)) \$autoload\+Content = file\+\_\+get\+\_\+contents(\$autoload\+File\+Path)}
+
+\Hypertarget{pf_8php_a570ca5d3807b3db7cd621ccafe2fe98e}\label{pf_8php_a570ca5d3807b3db7cd621ccafe2fe98e} 
+\index{pf.php@{pf.php}!\$autoloadFilePath@{\$autoloadFilePath}}
+\index{\$autoloadFilePath@{\$autoloadFilePath}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$autoloadFilePath}{\$autoloadFilePath}}
+{\footnotesize\ttfamily \$autoload\+File\+Path = \$ROOT\+\_\+\+DIR . \textquotesingle{}/vendor/autoload.\+php\textquotesingle{}}
+
+\Hypertarget{pf_8php_afbd449c2c3246b6a327862d8d0839150}\label{pf_8php_afbd449c2c3246b6a327862d8d0839150} 
+\index{pf.php@{pf.php}!\$composerDir@{\$composerDir}}
+\index{\$composerDir@{\$composerDir}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$composerDir}{\$composerDir}}
+{\footnotesize\ttfamily \$composer\+Dir = \$ROOT\+\_\+\+DIR . \textquotesingle{}/vendor/composer\textquotesingle{}}
+
+\Hypertarget{pf_8php_a49c7011be9c979d9174c52a8b83e5d8e}\label{pf_8php_a49c7011be9c979d9174c52a8b83e5d8e} 
+\index{pf.php@{pf.php}!\$config@{\$config}}
+\index{\$config@{\$config}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$config}{\$config}}
+{\footnotesize\ttfamily \$config}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'namespace'}\ =>\ \$argv[1],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'prefix'}\ =>\ \$argv[2],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'name'}\ =>\ \$argv[3],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'name\_lower'}\ =>\ strtolower(\$argv[3]),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'version'}\ =>\ \$argv[4],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'slug'}\ =>\ \$argv[5],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'rand\_num'}\ =>\ \$argv[6],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'slug\_upper'}\ =>\ strtoupper(str\_replace(\textcolor{charliteral}{'-\/'},\ \textcolor{charliteral}{'\_'},\ \$argv[5])),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'slug\_lower'}\ =>\ strtolower(str\_replace(\textcolor{charliteral}{'-\/'},\ \textcolor{charliteral}{'\_'},\ \$argv[5])),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'plugin\_frame'}\ =>\ (\$pluginFrameArg\ ===\ \textcolor{stringliteral}{'false'})\ ?\ \textcolor{keyword}{false}\ :\ \$pluginFrameArg,}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+Plugin Framework Production Scoper with Full Logging \Hypertarget{pf_8php_a0635d06ad7c730a5944a88ad5478e08b}\label{pf_8php_a0635d06ad7c730a5944a88ad5478e08b} 
+\index{pf.php@{pf.php}!\$EXCLUDED\_CLASSES@{\$EXCLUDED\_CLASSES}}
+\index{\$EXCLUDED\_CLASSES@{\$EXCLUDED\_CLASSES}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$EXCLUDED\_CLASSES}{\$EXCLUDED\_CLASSES}}
+{\footnotesize\ttfamily \$EXCLUDED\+\_\+\+CLASSES = \mbox{\hyperlink{pf_8php_a75fa555a8a72a2b01bd34dc7e117964e}{collect\+Excluded\+Classes}}()}
+
+\Hypertarget{pf_8php_ae2b8f71240c5c2aa2071f25a4e669325}\label{pf_8php_ae2b8f71240c5c2aa2071f25a4e669325} 
+\index{pf.php@{pf.php}!\$EXCLUDED\_DIRS@{\$EXCLUDED\_DIRS}}
+\index{\$EXCLUDED\_DIRS@{\$EXCLUDED\_DIRS}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$EXCLUDED\_DIRS}{\$EXCLUDED\_DIRS}}
+{\footnotesize\ttfamily \$EXCLUDED\+\_\+\+DIRS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ [}
+\DoxyCodeLine{\ \ \ \ realpath(\mbox{\hyperlink{pf_8php_a1e42906f7e81b68b33fc7ca9b36a2748}{\$ROOT\_DIR}}\ .\ \textcolor{stringliteral}{"{}/vendor"{}}),}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{]}
+
+\end{DoxyCode}
+\Hypertarget{pf_8php_a52d10972874a115303f2ddf3ee0e0672}\label{pf_8php_a52d10972874a115303f2ddf3ee0e0672} 
+\index{pf.php@{pf.php}!\$filesToProcess@{\$filesToProcess}}
+\index{\$filesToProcess@{\$filesToProcess}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$filesToProcess}{\$filesToProcess}}
+{\footnotesize\ttfamily \$files\+To\+Process = \mbox{[}\$autoload\+File\+Path\mbox{]}}
+
+\Hypertarget{pf_8php_a3a999852dfee63e69aacacefb7e33564}\label{pf_8php_a3a999852dfee63e69aacacefb7e33564} 
+\index{pf.php@{pf.php}!\$iterator@{\$iterator}}
+\index{\$iterator@{\$iterator}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$iterator}{\$iterator}}
+{\footnotesize\ttfamily \$iterator}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}\ RecursiveIteratorIterator(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ RecursiveDirectoryIterator(\mbox{\hyperlink{pf_8php_afbd449c2c3246b6a327862d8d0839150}{\$composerDir}},\ RecursiveDirectoryIterator::SKIP\_DOTS),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ RecursiveIteratorIterator::SELF\_FIRST}
+\DoxyCodeLine{\ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{pf_8php_a133eb8359a50f498b129aa8e444dee38}\label{pf_8php_a133eb8359a50f498b129aa8e444dee38} 
+\index{pf.php@{pf.php}!\$logHandle@{\$logHandle}}
+\index{\$logHandle@{\$logHandle}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$logHandle}{\$logHandle}}
+{\footnotesize\ttfamily \$log\+Handle = fopen(\mbox{\hyperlink{pf_8php_a8637c20b012d564bfd602124bc83f5b2}{LOG\+\_\+\+FILE}}, \textquotesingle{}w\textquotesingle{})}
+
+\Hypertarget{pf_8php_a54d135ff2b56cd46848cf9f20d78a232}\label{pf_8php_a54d135ff2b56cd46848cf9f20d78a232} 
+\index{pf.php@{pf.php}!\$MANUAL\_REPLACEMENTS@{\$MANUAL\_REPLACEMENTS}}
+\index{\$MANUAL\_REPLACEMENTS@{\$MANUAL\_REPLACEMENTS}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$MANUAL\_REPLACEMENTS}{\$MANUAL\_REPLACEMENTS}}
+{\footnotesize\ttfamily foreach ( \$EXCLUDED\+\_\+\+DIRS as \$path) \$MANUAL\+\_\+\+REPLACEMENTS}
+
+\Hypertarget{pf_8php_ac58445e650b741d4e5e7cf77240c5b9b}\label{pf_8php_ac58445e650b741d4e5e7cf77240c5b9b} 
+\index{pf.php@{pf.php}!\$newHash@{\$newHash}}
+\index{\$newHash@{\$newHash}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$newHash}{\$newHash}}
+{\footnotesize\ttfamily \$new\+Hash = bin2hex(random\+\_\+bytes(16))}
+
+\Hypertarget{pf_8php_a268fc709299abe4cc5afda6eaa3523bb}\label{pf_8php_a268fc709299abe4cc5afda6eaa3523bb} 
+\index{pf.php@{pf.php}!\$oldHash@{\$oldHash}}
+\index{\$oldHash@{\$oldHash}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$oldHash}{\$oldHash}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Utilities_2Debug_2Helpers_8php_a6c65cb3e6351c5b279c3b9418e1b07ac}{if}}(\$autoload\+Content===false) \mbox{\hyperlink{Utilities_2Debug_2Helpers_8php_a6c65cb3e6351c5b279c3b9418e1b07ac}{if}} (!preg\+\_\+match(\textquotesingle{}/Composer\+Autoloader\+Init(\mbox{[}a-\/f0-\/9\mbox{]}\{32\})/\textquotesingle{}, \$autoload\+Content, \$matches)) \$old\+Hash = \$matches\mbox{[}1\mbox{]}}
+
+\Hypertarget{pf_8php_a1e42906f7e81b68b33fc7ca9b36a2748}\label{pf_8php_a1e42906f7e81b68b33fc7ca9b36a2748} 
+\index{pf.php@{pf.php}!\$ROOT\_DIR@{\$ROOT\_DIR}}
+\index{\$ROOT\_DIR@{\$ROOT\_DIR}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$ROOT\_DIR}{\$ROOT\_DIR}}
+{\footnotesize\ttfamily \$ROOT\+\_\+\+DIR = realpath(\+\_\+\+\_\+\+DIR\+\_\+\+\_\+ . "{}/../.dist/"{}.\$config\mbox{[}\textquotesingle{}slug\textquotesingle{}\mbox{]}."{}-\/"{}.\$config\mbox{[}\textquotesingle{}rand\+\_\+num\textquotesingle{}\mbox{]})}
+
+\Hypertarget{pf_8php_a6a61769761d9e55cce6c8e3863fd84f2}\label{pf_8php_a6a61769761d9e55cce6c8e3863fd84f2} 
+\index{pf.php@{pf.php}!\$totalReplacements@{\$totalReplacements}}
+\index{\$totalReplacements@{\$totalReplacements}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{\$totalReplacements}{\$totalReplacements}}
+{\footnotesize\ttfamily \$total\+Replacements = 0}
+
+\Hypertarget{pf_8php_a1eb47d68a4a4f73debf91b15e179d813}\label{pf_8php_a1eb47d68a4a4f73debf91b15e179d813} 
+\index{pf.php@{pf.php}!finally@{finally}}
+\index{finally@{finally}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{finally}{finally}}
+{\footnotesize\ttfamily catch (Exception \$e) finally}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ fclose(\mbox{\hyperlink{pf_8php_a133eb8359a50f498b129aa8e444dee38}{\$logHandle}})}
+
+\end{DoxyCode}
+\Hypertarget{pf_8php_a8637c20b012d564bfd602124bc83f5b2}\label{pf_8php_a8637c20b012d564bfd602124bc83f5b2} 
+\index{pf.php@{pf.php}!LOG\_FILE@{LOG\_FILE}}
+\index{LOG\_FILE@{LOG\_FILE}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{LOG\_FILE}{LOG\_FILE}}
+{\footnotesize\ttfamily const LOG\+\_\+\+FILE(Exception \$e) (\begin{DoxyParamCaption}\item[{Exception}]{\$e }\end{DoxyParamCaption}) realpath(\+\_\+\+\_\+\+DIR\+\_\+\+\_\+ . \textquotesingle{}/../.dist\textquotesingle{}) . \textquotesingle{}/build-\/\textquotesingle{}.\$config\mbox{[}\textquotesingle{}rand\+\_\+num\textquotesingle{}\mbox{]}.\textquotesingle{}.log\textquotesingle{}}
+
+\Hypertarget{pf_8php_abe4cc9788f52e49485473dc699537388}\label{pf_8php_abe4cc9788f52e49485473dc699537388} 
+\index{pf.php@{pf.php}!try@{try}}
+\index{try@{try}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{try}{try}}
+{\footnotesize\ttfamily try}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\$argc\ <\ 7)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Missing\ required\ arguments"{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$pluginFrameArg\ =\ \$argv[7]\ ??\ \textcolor{stringliteral}{'PluginFrame'}}
+
+\end{DoxyCode}
+\Hypertarget{pf_8php_ad5d9e810c93af4d41da34ad35eb1aeee}\label{pf_8php_ad5d9e810c93af4d41da34ad35eb1aeee} 
+\index{pf.php@{pf.php}!WP\_CORE\_CLASSES@{WP\_CORE\_CLASSES}}
+\index{WP\_CORE\_CLASSES@{WP\_CORE\_CLASSES}!pf.php@{pf.php}}
+\doxysubsubsection{\texorpdfstring{WP\_CORE\_CLASSES}{WP\_CORE\_CLASSES}}
+{\footnotesize\ttfamily const WP\+\_\+\+CORE\+\_\+\+CLASSES( \$MANUAL\+\_\+\+REPLACEMENTS as \$entry) (\begin{DoxyParamCaption}\item[{}]{\$\+MANUAL\+\_\+\+REPLACEMENTS as }\end{DoxyParamCaption}) \mbox{[} \textquotesingle{}WP\textquotesingle{}, \textquotesingle{}wpdb\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Error\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Query\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Post\textquotesingle{}, \textquotesingle{}WP\+\_\+\+User\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Roles\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Admin\+\_\+\+Bar\textquotesingle{}, \textquotesingle{}WP\+\_\+\+Widget\textquotesingle{}, \textquotesingle{}ABSPATH\textquotesingle{}, \textquotesingle{}WPINC\textquotesingle{}, \textquotesingle{}WP\+\_\+\+CONTENT\+\_\+\+DIR\textquotesingle{}, \textquotesingle{}WP\+\_\+\+PLUGIN\+\_\+\+DIR\textquotesingle{}, \textquotesingle{}plugin\+\_\+dir\+\_\+path\textquotesingle{}, \textquotesingle{}plugin\+\_\+dir\+\_\+url\textquotesingle{}, \textquotesingle{}plugin\+\_\+basename\textquotesingle{}, \textquotesingle{}get\+\_\+plugin\+\_\+data\textquotesingle{}, \textquotesingle{}load\+\_\+plugin\+\_\+textdomain\textquotesingle{}, \textquotesingle{}add\+\_\+action\textquotesingle{}, \textquotesingle{}do\+\_\+action\textquotesingle{}, \textquotesingle{}add\+\_\+filter\textquotesingle{}, \textquotesingle{}apply\+\_\+filters\textquotesingle{}, \textquotesingle{}WP\+\_\+\textquotesingle{}, \textquotesingle{}wp\+\_\+\textquotesingle{}, \textquotesingle{}WC\+\_\+\textquotesingle{}, \textquotesingle{}Woo\+Commerce\+\_\+\textquotesingle{}, \textquotesingle{}Tribe\+\_\+\textquotesingle{} \mbox{]}}
+

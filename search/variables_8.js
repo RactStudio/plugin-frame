@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sources_0',['SOURCES',['../classPluginFrame_1_1Config_1_1Updater.html#abcfb65eba98ca9932c0f15b2c95b4307',1,'PluginFrame::Config::Updater']]]
+  ['log_0',['log',['../classPluginFrame_1_1Config_1_1Cron.html#ad228fdaf3ee4f53bd46928a8c1332104',1,'PluginFrame\Config\Cron\LOG'],['../classPluginFrame_1_1Config_1_1Debug.html#a26f75a8b1e1589f8b503e69efaf907c8',1,'PluginFrame\Config\Debug\LOG']]],
+  ['log_5ffile_1',['LOG_FILE',['../pf_8php.html#a8637c20b012d564bfd602124bc83f5b2',1,'pf.php']]]
 ];

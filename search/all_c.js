@@ -15,7 +15,9 @@ var searchData=
   ['loadpriorityclasses_12',['loadPriorityClasses',['../classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper.html#ad523aa31d1716d84b1d2ca4a55da8826',1,'PluginFrame::Core::Helpers::ProvidersHelper']]],
   ['loadprovidersclasses_13',['loadProvidersClasses',['../classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper.html#a0260fa0d1f3935c8ee70fff8de53e556',1,'PluginFrame::Core::Helpers::ProvidersHelper']]],
   ['log_14',['log',['../classPluginFrame_1_1Core_1_1Utilities_1_1Debug_1_1Debugger.html#abadfa38132eb69f59fd82b56cb2cbbfc',1,'PluginFrame\Core\Utilities\Debug\Debugger\log()'],['../classPluginFrame_1_1Config_1_1Cron.html#ad228fdaf3ee4f53bd46928a8c1332104',1,'PluginFrame\Config\Cron\LOG'],['../classPluginFrame_1_1Config_1_1Debug.html#a26f75a8b1e1589f8b503e69efaf907c8',1,'PluginFrame\Config\Debug\LOG']]],
-  ['logcleaner_15',['LogCleaner',['../classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner.html',1,'PluginFrame::Core::Utilities::PFlogs']]],
-  ['logcleaner_2ephp_16',['LogCleaner.php',['../LogCleaner_8php.html',1,'']]],
-  ['logerror_17',['logError',['../classPluginFrame_1_1Core_1_1Routes_1_1Helpers.html#a0d0c759b38f292ee39ad42f919effacd',1,'PluginFrame::Core::Routes::Helpers']]]
+  ['log_5ffile_15',['LOG_FILE',['../pf_8php.html#a8637c20b012d564bfd602124bc83f5b2',1,'pf.php']]],
+  ['log_5fmessage_16',['log_message',['../pf_8php.html#a510cdbcd2f805908f31da825a6fc8bec',1,'pf.php']]],
+  ['logcleaner_17',['LogCleaner',['../classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner.html',1,'PluginFrame::Core::Utilities::PFlogs']]],
+  ['logcleaner_2ephp_18',['LogCleaner.php',['../LogCleaner_8php.html',1,'']]],
+  ['logerror_19',['logError',['../classPluginFrame_1_1Core_1_1Routes_1_1Helpers.html#a0d0c759b38f292ee39ad42f919effacd',1,'PluginFrame::Core::Routes::Helpers']]]
 ];

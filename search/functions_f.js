@@ -13,5 +13,10 @@ var searchData=
   ['prefix_10',['prefix',['../classPluginFrame_1_1Core_1_1Routes_1_1Helpers.html#aa925c17f6b2d80427bc2187dec71de4b',1,'PluginFrame::Core::Routes::Helpers']]],
   ['priority_5fload_5ffirst_11',['priority_load_first',['../classPluginFrame_1_1Config_1_1Config.html#a4daf6903317fc643daf03ddad1b248eb',1,'PluginFrame::Config::Config']]],
   ['priority_5fload_5flast_12',['priority_load_last',['../classPluginFrame_1_1Config_1_1Config.html#a266236e3d4b755454ac9addacaaa34fe',1,'PluginFrame::Config::Config']]],
-  ['publicdatahandler_13',['publicDataHandler',['../classPluginFrame_1_1REST_1_1Controllers_1_1PublicData.html#a48cd46f9b5d37f245e917aaf7b15c0df',1,'PluginFrame::REST::Controllers::PublicData']]]
+  ['processassetfile_13',['processAssetFile',['../pf_8php.html#a37711ec25b19cc7dbc45b249e0484c9d',1,'pf.php']]],
+  ['processfile_14',['processFile',['../pf_8php.html#a36de2ec1eada3d9d11468695bb7f74c5',1,'pf.php']]],
+  ['processfiles_15',['processFiles',['../pf_8php.html#ab886ccc96499a1ab62157b427de6ca87',1,'pf.php']]],
+  ['processmanualreplacements_16',['processManualReplacements',['../pf_8php.html#ab7d244910b18ffeb7caaa9b811f9506d',1,'pf.php']]],
+  ['processphpfile_17',['processPHPFile',['../pf_8php.html#a4cbf3d54f99969588675df56a001b38e',1,'pf.php']]],
+  ['publicdatahandler_18',['publicDataHandler',['../classPluginFrame_1_1REST_1_1Controllers_1_1PublicData.html#a48cd46f9b5d37f245e917aaf7b15c0df',1,'PluginFrame::REST::Controllers::PublicData']]]
 ];

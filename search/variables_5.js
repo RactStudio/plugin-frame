@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['github_0',['GITHUB',['../classPluginFrame_1_1Config_1_1Updater.html#a55f0fcc04690d60609e6728a5e401552',1,'PluginFrame::Config::Updater']]]
+  ['finally_0',['finally',['../pf_8php.html#a1eb47d68a4a4f73debf91b15e179d813',1,'pf.php']]]
 ];

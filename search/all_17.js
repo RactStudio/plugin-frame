@@ -4,6 +4,7 @@ var searchData=
   ['widget_1',['Widget',['../classPluginFrame_1_1Core_1_1Services_1_1Widgets_1_1Widget.html',1,'PluginFrame::Core::Services::Widgets']]],
   ['widget_2ephp_2',['Widget.php',['../Widget_8php.html',1,'']]],
   ['withsharedcontext_3',['withSharedContext',['../classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp.html#a25e52a7492b4c63a94213f89272e8513',1,'PluginFrame::Core::Services::ScreenHelp']]],
-  ['wp_5fdefault_5ffeatures_5ffirst_4',['wp_default_features_first',['../classPluginFrame_1_1Config_1_1Config.html#a685891629bcebbb74339a606814910fe',1,'PluginFrame::Config::Config']]],
-  ['wp_5fdefault_5ffeatures_5flast_5',['wp_default_features_last',['../classPluginFrame_1_1Config_1_1Config.html#a9488af9fac13c5df79f860f42776080a',1,'PluginFrame::Config::Config']]]
+  ['wp_5fcore_5fclasses_4',['WP_CORE_CLASSES',['../pf_8php.html#ad5d9e810c93af4d41da34ad35eb1aeee',1,'pf.php']]],
+  ['wp_5fdefault_5ffeatures_5ffirst_5',['wp_default_features_first',['../classPluginFrame_1_1Config_1_1Config.html#a685891629bcebbb74339a606814910fe',1,'PluginFrame::Config::Config']]],
+  ['wp_5fdefault_5ffeatures_5flast_6',['wp_default_features_last',['../classPluginFrame_1_1Config_1_1Config.html#a9488af9fac13c5df79f860f42776080a',1,'PluginFrame::Config::Config']]]
 ];

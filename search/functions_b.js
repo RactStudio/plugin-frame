@@ -11,5 +11,6 @@ var searchData=
   ['loadpriorityclasses_8',['loadPriorityClasses',['../classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper.html#ad523aa31d1716d84b1d2ca4a55da8826',1,'PluginFrame::Core::Helpers::ProvidersHelper']]],
   ['loadprovidersclasses_9',['loadProvidersClasses',['../classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper.html#a0260fa0d1f3935c8ee70fff8de53e556',1,'PluginFrame::Core::Helpers::ProvidersHelper']]],
   ['log_10',['log',['../classPluginFrame_1_1Core_1_1Utilities_1_1Debug_1_1Debugger.html#abadfa38132eb69f59fd82b56cb2cbbfc',1,'PluginFrame::Core::Utilities::Debug::Debugger']]],
-  ['logerror_11',['logError',['../classPluginFrame_1_1Core_1_1Routes_1_1Helpers.html#a0d0c759b38f292ee39ad42f919effacd',1,'PluginFrame::Core::Routes::Helpers']]]
+  ['log_5fmessage_11',['log_message',['../pf_8php.html#a510cdbcd2f805908f31da825a6fc8bec',1,'pf.php']]],
+  ['logerror_12',['logError',['../classPluginFrame_1_1Core_1_1Routes_1_1Helpers.html#a0d0c759b38f292ee39ad42f919effacd',1,'PluginFrame::Core::Routes::Helpers']]]
 ];

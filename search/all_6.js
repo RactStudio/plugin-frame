@@ -11,8 +11,9 @@ var searchData=
   ['eventsmeta_8',['EventsMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta.html',1,'PluginFrame::Core::DB::WP']]],
   ['execute_9',['execute',['../classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a9f52e761581c3b6a3cd05ef34f9191b6',1,'PluginFrame::Core::DB::Utils::QueryBuilder']]],
   ['executemiddleware_10',['executeMiddleware',['../classPluginFrame_1_1Core_1_1Routes_1_1Helpers.html#ab9ef4ecaa49e46eb644b5432e68de6d0',1,'PluginFrame::Core::Routes::Helpers']]],
-  ['export_11',['export',['../classPluginFrame_1_1Providers_1_1Options_1_1Export.html',1,'PluginFrame\Providers\Options\Export'],['../classPluginFrame_1_1Core_1_1Services_1_1Options_1_1Export.html',1,'PluginFrame\Core\Services\Options\Export']]],
-  ['export_2ephp_12',['export.php',['../Core_2Services_2Options_2Export_8php.html',1,'(Global Namespace)'],['../Providers_2Options_2Export_8php.html',1,'(Global Namespace)']]],
+  ['export_11',['export',['../classPluginFrame_1_1Core_1_1Services_1_1Options_1_1Export.html',1,'PluginFrame\Core\Services\Options\Export'],['../classPluginFrame_1_1Providers_1_1Options_1_1Export.html',1,'PluginFrame\Providers\Options\Export']]],
+  ['export_2ephp_12',['export.php',['../Providers_2Options_2Export_8php.html',1,'(Global Namespace)'],['../Core_2Services_2Options_2Export_8php.html',1,'(Global Namespace)']]],
   ['exportdatahandler_13',['exportDataHandler',['../classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#ac243320558248fe7d48b7f5b8c3132bb',1,'PluginFrame::REST::Controllers::OtherHandlers']]],
-  ['extractmetadata_14',['extractMetadata',['../classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater.html#ace64b962c01289ec2ab0bc31af4cfcc6',1,'PluginFrame::Core::Updater::GitHubUpdater']]]
+  ['extractfqcnsfromfile_14',['extractFqcnsFromFile',['../pf_8php.html#ae3b3082355cd7209245c704f880473a0',1,'pf.php']]],
+  ['extractmetadata_15',['extractMetadata',['../classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater.html#ace64b962c01289ec2ab0bc31af4cfcc6',1,'PluginFrame::Core::Updater::GitHubUpdater']]]
 ];
