@@ -18,6 +18,7 @@ jobs:
       - name: Generate Documentation
         run: |
           mkdir -p public
+          echo "pf.ractstudio.com" > public/CNAME  # Add CNAME file
           doxygen Doxyfile
 
       - name: Deploy to Doc Branch
@@ -27,4 +28,5 @@ jobs:
           publish_dir: ./public
           destination_dir: .
           publish_branch: doc
-          force_orphan: true
+          keep_files: true  # Preserve existing files
+          force_orphan: false  # Disable orphan branch reset
