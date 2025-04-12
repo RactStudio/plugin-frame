@@ -21,9 +21,7 @@ jobs:
           # Copy Doxygen config to root
           cp ././.github/docs_config/Doxyfile ./Doxyfile
           # Copy styling assets
-          cp ././.github/docs_config/header.html public/
-          cp ././.github/docs_config/footer.html public/
-          cp ././.github/docs_config/assets/* public/assets/
+          cp ././.github/docs_config/* public/assets/
 
       - name: Generate Documentation
         run: |
