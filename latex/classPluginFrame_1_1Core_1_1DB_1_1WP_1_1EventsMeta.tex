@@ -1,0 +1,109 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Events\+Meta Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta}{}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_acb3929009a2a30bfcfa25c52cdc0e72d}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a58b979253e3d17422309374adcdd0e19}{all\+Events}} (\$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a6365a2d9bdfa424c3a633f8ab551851f}{get\+Event}} (\$event\+Id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a0ff97aba6c460c5d681e08a14a18d433}{update\+Event}} (\$event\+Id, \$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a47fb32d872aa811edf3849d0107735ec}{insert\+Event}} (\$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a609601eb57c87cc9c2c10f8420946858}{delete\+Event}} (\$event\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a95e3c9f95c5eb621e4687aeef4b38e9b}{\$query\+Builder}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a14c8e876d93bc92c2989be22a2d4548b}{\$pagination\+Manager}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a807ce18638e103a86f11f56b912f2107}{\$table}} = \textquotesingle{}e\+\_\+events\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Events\+Meta class for interacting with wp\+\_\+e\+\_\+events table. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_acb3929009a2a30bfcfa25c52cdc0e72d}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_acb3929009a2a30bfcfa25c52cdc0e72d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Events\+Meta\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a58b979253e3d17422309374adcdd0e19}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a58b979253e3d17422309374adcdd0e19} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}!allEvents@{allEvents}}
+\index{allEvents@{allEvents}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection{\texorpdfstring{allEvents()}{allEvents()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Events\+Meta\+::all\+Events (\begin{DoxyParamCaption}\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get all events with optional pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a609601eb57c87cc9c2c10f8420946858}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a609601eb57c87cc9c2c10f8420946858} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}!deleteEvent@{deleteEvent}}
+\index{deleteEvent@{deleteEvent}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection{\texorpdfstring{deleteEvent()}{deleteEvent()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Events\+Meta\+::delete\+Event (\begin{DoxyParamCaption}\item[{}]{\$event\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a6365a2d9bdfa424c3a633f8ab551851f}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a6365a2d9bdfa424c3a633f8ab551851f} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}!getEvent@{getEvent}}
+\index{getEvent@{getEvent}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection{\texorpdfstring{getEvent()}{getEvent()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Events\+Meta\+::get\+Event (\begin{DoxyParamCaption}\item[{}]{\$event\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a47fb32d872aa811edf3849d0107735ec}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a47fb32d872aa811edf3849d0107735ec} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}!insertEvent@{insertEvent}}
+\index{insertEvent@{insertEvent}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection{\texorpdfstring{insertEvent()}{insertEvent()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Events\+Meta\+::insert\+Event (\begin{DoxyParamCaption}\item[{}]{\$data }\end{DoxyParamCaption})}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a0ff97aba6c460c5d681e08a14a18d433}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a0ff97aba6c460c5d681e08a14a18d433} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}!updateEvent@{updateEvent}}
+\index{updateEvent@{updateEvent}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection{\texorpdfstring{updateEvent()}{updateEvent()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Events\+Meta\+::update\+Event (\begin{DoxyParamCaption}\item[{}]{\$event\+Id,  }\item[{}]{\$data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a14c8e876d93bc92c2989be22a2d4548b}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a14c8e876d93bc92c2989be22a2d4548b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}!\$paginationManager@{\$paginationManager}}
+\index{\$paginationManager@{\$paginationManager}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection{\texorpdfstring{\$paginationManager}{\$paginationManager}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Events\+Meta\+::\$pagination\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a95e3c9f95c5eb621e4687aeef4b38e9b}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a95e3c9f95c5eb621e4687aeef4b38e9b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Events\+Meta\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a807ce18638e103a86f11f56b912f2107}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta_a807ce18638e103a86f11f56b912f2107} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}EventsMeta}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Events\+Meta\+::\$table = \textquotesingle{}e\+\_\+events\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+WP/\mbox{\hyperlink{Events_8php}{Events.\+php}}\end{DoxyCompactItemize}

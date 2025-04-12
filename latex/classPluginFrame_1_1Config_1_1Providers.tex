@@ -1,0 +1,73 @@
+\doxysection{Plugin\+Frame\textbackslash{}Config\textbackslash{}Providers Class Reference}
+\hypertarget{classPluginFrame_1_1Config_1_1Providers}{}\label{classPluginFrame_1_1Config_1_1Providers}\index{PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Config_1_1Providers_aca6c314a614be8fabebe1daff4f27718}{\+\_\+\+\_\+construct}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Config_1_1Providers_a62bd8aefb1e9443d05c4387409e44384}{\$classes}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Config_1_1Providers_af10544fa830b9102c6fc3e228317b171}{\$providers\+Helper}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Config_1_1Providers_a5a71f5a20aa5bbdc6d899c13769b72f0}{\$directory}} = PLUGIN\+\_\+\+FRAME\+\_\+\+DIR . \textquotesingle{}app/\mbox{\hyperlink{classPluginFrame_1_1Config_1_1Providers}{Providers}}/\textquotesingle{}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Config_1_1Providers_ac706638888ea117059acb6c9a7da824f}{\$base\+Namespace}} = \textquotesingle{}Plugin\+Frame\textbackslash{}\+Providers\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Config_1_1Providers_aca6c314a614be8fabebe1daff4f27718}\label{classPluginFrame_1_1Config_1_1Providers_aca6c314a614be8fabebe1daff4f27718} 
+\index{PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Config\textbackslash{}\+Providers\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor. Loads priority classes first, then dynamically loads standard providers, and finally loads priority last classes. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Config_1_1Providers_ac706638888ea117059acb6c9a7da824f}\label{classPluginFrame_1_1Config_1_1Providers_ac706638888ea117059acb6c9a7da824f} 
+\index{PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}!\$baseNamespace@{\$baseNamespace}}
+\index{\$baseNamespace@{\$baseNamespace}!PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}}
+\doxysubsubsection{\texorpdfstring{\$baseNamespace}{\$baseNamespace}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Config\textbackslash{}\+Providers\+::\$base\+Namespace = \textquotesingle{}Plugin\+Frame\textbackslash{}\+Providers\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Config_1_1Providers_a62bd8aefb1e9443d05c4387409e44384}\label{classPluginFrame_1_1Config_1_1Providers_a62bd8aefb1e9443d05c4387409e44384} 
+\index{PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}!\$classes@{\$classes}}
+\index{\$classes@{\$classes}!PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}}
+\doxysubsubsection{\texorpdfstring{\$classes}{\$classes}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Config\textbackslash{}\+Providers\+::\$classes\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'priority\_first'}\ =>\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'priority\_last'}\ =>\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+Add each class manually. Only from directory inside \mbox{[}app/\+Providers\mbox{]} These will be loaded first and last, and will exclude from the standard providers classes loading. \Hypertarget{classPluginFrame_1_1Config_1_1Providers_a5a71f5a20aa5bbdc6d899c13769b72f0}\label{classPluginFrame_1_1Config_1_1Providers_a5a71f5a20aa5bbdc6d899c13769b72f0} 
+\index{PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}!\$directory@{\$directory}}
+\index{\$directory@{\$directory}!PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}}
+\doxysubsubsection{\texorpdfstring{\$directory}{\$directory}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Config\textbackslash{}\+Providers\+::\$directory = PLUGIN\+\_\+\+FRAME\+\_\+\+DIR . \textquotesingle{}app/\mbox{\hyperlink{classPluginFrame_1_1Config_1_1Providers}{Providers}}/\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Config_1_1Providers_af10544fa830b9102c6fc3e228317b171}\label{classPluginFrame_1_1Config_1_1Providers_af10544fa830b9102c6fc3e228317b171} 
+\index{PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}!\$providersHelper@{\$providersHelper}}
+\index{\$providersHelper@{\$providersHelper}!PluginFrame\textbackslash{}Config\textbackslash{}Providers@{PluginFrame\textbackslash{}Config\textbackslash{}Providers}}
+\doxysubsubsection{\texorpdfstring{\$providersHelper}{\$providersHelper}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Config\textbackslash{}\+Providers\+::\$providers\+Helper\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Config/\mbox{\hyperlink{Providers_8php}{Providers.\+php}}\end{DoxyCompactItemize}

@@ -1,0 +1,257 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers}{}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers}\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a92bbb878d4251fa861ae4c469af3728b}{\+\_\+\+\_\+construct}} (\$routes\+Base=\textquotesingle{}plugin-\/frame/v1\textquotesingle{})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_af1eb0a19a51fe69093a996ed073a3b5d}{single}} (\$method, \$endpoint, \$handler, \$middleware=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_aa925c17f6b2d80427bc2187dec71de4b}{prefix}} (\$prefix, callable \$callback)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ab5f239c002cfc88e270b8cc19f7366b2}{group}} (callable \$callback, array \$middleware=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a0ccbf3bcdb0ab3c69cc0efff4d2eff0a}{remove\+Middleware}} (callable \$callback, \$middleware=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ab9ef4ecaa49e46eb644b5432e68de6d0}{execute\+Middleware}} (\$request, array \$middleware\+Stack, \$is\+Permission\+Check=false)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a8b19ea37111f27587484f7bcf8927d79}{handle\+Method\+Handler}} (\$handler, \$request)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a0d0c759b38f292ee39ad42f919effacd}{log\+Error}} (\$message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a6d76e5dd42583478e1e62d92ab534f47}{\$current\+Middleware}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a6363d770615350f02bbdf70f8345485a}{\$routes\+Base}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_aed3b1e1fe14ad4220411c9f80fa79d7a}{\$middleware\+Cache}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ad259822a58074cffb5f9bbe0b6ccc7d9}{\$prefix\+Stack}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_aa77d35c416a9563d2cf7ede9340db5e5}{\$route\+Specific\+Middleware}} = \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a92bbb878d4251fa861ae4c469af3728b}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a92bbb878d4251fa861ae4c469af3728b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$routes\+Base = {\ttfamily \textquotesingle{}plugin-\/frame/v1\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Constructor to set a dynamic route prefix.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$routes\+Base} & The base URL prefix for the routes (default\+: \textquotesingle{}plugin-\/frame/v1\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ab9ef4ecaa49e46eb644b5432e68de6d0}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ab9ef4ecaa49e46eb644b5432e68de6d0} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!executeMiddleware@{executeMiddleware}}
+\index{executeMiddleware@{executeMiddleware}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{executeMiddleware()}{executeMiddleware()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::execute\+Middleware (\begin{DoxyParamCaption}\item[{}]{\$request,  }\item[{array}]{\$middleware\+Stack,  }\item[{}]{\$is\+Permission\+Check = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Execute middleware stack for a request.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+WP\+\_\+\+REST\+\_\+\+Request & {\em \$request} & The current request object. \\
+\hline
+array & {\em \$middleware\+Stack} & List of middleware classes. \\
+\hline
+bool & {\em \$is\+Permission\+Check} & Whether this is for a permission check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\texorpdfstring{$\vert$}{|}\textbackslash{}\+WP\+\_\+\+Error True if middleware passes, or WP\+\_\+\+Error if it fails. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ab9ef4ecaa49e46eb644b5432e68de6d0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ab9ef4ecaa49e46eb644b5432e68de6d0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ab5f239c002cfc88e270b8cc19f7366b2}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ab5f239c002cfc88e270b8cc19f7366b2} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!group@{group}}
+\index{group@{group}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{group()}{group()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::group (\begin{DoxyParamCaption}\item[{callable}]{\$callback,  }\item[{array}]{\$middleware = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Group multiple routes with shared middleware.
+
+
+\begin{DoxyParams}[1]{Parameters}
+callable & {\em \$callback} & A callback that registers the routes in the group. \\
+\hline
+array & {\em \$middleware} & Optional middleware classes to apply to the group. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a8b19ea37111f27587484f7bcf8927d79}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a8b19ea37111f27587484f7bcf8927d79} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!handleMethodHandler@{handleMethodHandler}}
+\index{handleMethodHandler@{handleMethodHandler}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{handleMethodHandler()}{handleMethodHandler()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::handle\+Method\+Handler (\begin{DoxyParamCaption}\item[{}]{\$handler,  }\item[{}]{\$request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Invoke a handler dynamically.
+
+
+\begin{DoxyParams}[1]{Parameters}
+callable | string | array & {\em \$handler} & The handler to invoke. \\
+\hline
+\textbackslash{}\+WP\+\_\+\+REST\+\_\+\+Request & {\em \$request} & The request object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed The handler result or a WP\+\_\+\+Error. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a8b19ea37111f27587484f7bcf8927d79_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a8b19ea37111f27587484f7bcf8927d79_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a0d0c759b38f292ee39ad42f919effacd}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a0d0c759b38f292ee39ad42f919effacd} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!logError@{logError}}
+\index{logError@{logError}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{logError()}{logError()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::log\+Error (\begin{DoxyParamCaption}\item[{}]{\$message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Log an error message.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & The error message to log. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a0d0c759b38f292ee39ad42f919effacd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_aa925c17f6b2d80427bc2187dec71de4b}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_aa925c17f6b2d80427bc2187dec71de4b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!prefix@{prefix}}
+\index{prefix@{prefix}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{prefix()}{prefix()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::prefix (\begin{DoxyParamCaption}\item[{}]{\$prefix,  }\item[{callable}]{\$callback }\end{DoxyParamCaption})}
+
+Add a prefix to the multiple route group / single routes.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$prefix} & The URL prefix for the group. \\
+\hline
+callable & {\em \$callback} & A callback that registers routes within this group. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a0ccbf3bcdb0ab3c69cc0efff4d2eff0a}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a0ccbf3bcdb0ab3c69cc0efff4d2eff0a} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!removeMiddleware@{removeMiddleware}}
+\index{removeMiddleware@{removeMiddleware}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{removeMiddleware()}{removeMiddleware()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::remove\+Middleware (\begin{DoxyParamCaption}\item[{callable}]{\$callback,  }\item[{}]{\$middleware = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Temporarily remove middleware for a group of routes.
+
+
+\begin{DoxyParams}[1]{Parameters}
+callable & {\em \$callback} & The callback that registers routes in the context. \\
+\hline
+string | array | null & {\em \$middleware} & The specific middleware(s) to remove, or null to remove all. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_af1eb0a19a51fe69093a996ed073a3b5d}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_af1eb0a19a51fe69093a996ed073a3b5d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!single@{single}}
+\index{single@{single}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{single()}{single()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::single (\begin{DoxyParamCaption}\item[{}]{\$method,  }\item[{}]{\$endpoint,  }\item[{}]{\$handler,  }\item[{}]{\$middleware = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Register a single REST API route.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$method} & HTTP method (GET, POST, etc.). \\
+\hline
+string & {\em \$endpoint} & The route endpoint. \\
+\hline
+callable | string | array & {\em \$handler} & A callable, a class, or an array with class and method. \\
+\hline
+array & {\em \$middleware} & Middleware classes to execute before the handler. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_af1eb0a19a51fe69093a996ed073a3b5d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a6d76e5dd42583478e1e62d92ab534f47}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a6d76e5dd42583478e1e62d92ab534f47} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!\$currentMiddleware@{\$currentMiddleware}}
+\index{\$currentMiddleware@{\$currentMiddleware}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{\$currentMiddleware}{\$currentMiddleware}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::\$current\+Middleware = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_aed3b1e1fe14ad4220411c9f80fa79d7a}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_aed3b1e1fe14ad4220411c9f80fa79d7a} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!\$middlewareCache@{\$middlewareCache}}
+\index{\$middlewareCache@{\$middlewareCache}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{\$middlewareCache}{\$middlewareCache}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::\$middleware\+Cache = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ad259822a58074cffb5f9bbe0b6ccc7d9}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_ad259822a58074cffb5f9bbe0b6ccc7d9} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!\$prefixStack@{\$prefixStack}}
+\index{\$prefixStack@{\$prefixStack}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{\$prefixStack}{\$prefixStack}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::\$prefix\+Stack = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a6363d770615350f02bbdf70f8345485a}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_a6363d770615350f02bbdf70f8345485a} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!\$routesBase@{\$routesBase}}
+\index{\$routesBase@{\$routesBase}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{\$routesBase}{\$routesBase}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::\$routes\+Base\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_aa77d35c416a9563d2cf7ede9340db5e5}\label{classPluginFrame_1_1Core_1_1Routes_1_1Helpers_aa77d35c416a9563d2cf7ede9340db5e5} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}!\$routeSpecificMiddleware@{\$routeSpecificMiddleware}}
+\index{\$routeSpecificMiddleware@{\$routeSpecificMiddleware}!PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers@{PluginFrame\textbackslash{}Core\textbackslash{}Routes\textbackslash{}Helpers}}
+\doxysubsubsection{\texorpdfstring{\$routeSpecificMiddleware}{\$routeSpecificMiddleware}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Routes\textbackslash{}\+Helpers\+::\$route\+Specific\+Middleware = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Routes/\mbox{\hyperlink{Routes_2Helpers_8php}{Helpers.\+php}}\end{DoxyCompactItemize}

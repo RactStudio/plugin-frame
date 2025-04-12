@@ -1,0 +1,162 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}Log\+Cleaner Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner}{}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner}\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}}
+
+
+Collaboration diagram for Plugin\+Frame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}Log\+Cleaner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a87bc1346b08056570762ed477af7157d}{\+\_\+\+\_\+construct}} (\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler}{Scheduler}} \$scheduler)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_ae12606d224884509d5289246a77376cb}{schedule\+Log\+Cleaner}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_af49d4ad60c6669b43dc7c1b75aa6575d}{delete\+Logs}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_ac495c217f62c34b0575d8facca705325}{unschedule}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_aafe5ece94e4020ffab020908338b0f65}{is\+Scheduled}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a3b619729a0168eff0446cd62b6587b88}{register\+Hooks}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler}{Scheduler}} \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_abe51c0e46f62d640fd24d4acf9511d61}{\$scheduler}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a0751f9586193a3757a3a17c13fcd369e}{\$hook\+Name}} = \textquotesingle{}plugin\+\_\+frame\+\_\+log\+\_\+cleaner\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a87bc1346b08056570762ed477af7157d}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a87bc1346b08056570762ed477af7157d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+Log\+Cleaner\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler}{Scheduler}}}]{\$scheduler }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a87bc1346b08056570762ed477af7157d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_af49d4ad60c6669b43dc7c1b75aa6575d}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_af49d4ad60c6669b43dc7c1b75aa6575d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}!deleteLogs@{deleteLogs}}
+\index{deleteLogs@{deleteLogs}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}}
+\doxysubsubsection{\texorpdfstring{deleteLogs()}{deleteLogs()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+Log\+Cleaner\+::delete\+Logs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Deletes old log files based on retention period.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_af49d4ad60c6669b43dc7c1b75aa6575d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_aafe5ece94e4020ffab020908338b0f65}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_aafe5ece94e4020ffab020908338b0f65} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}!isScheduled@{isScheduled}}
+\index{isScheduled@{isScheduled}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}}
+\doxysubsubsection{\texorpdfstring{isScheduled()}{isScheduled()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+Log\+Cleaner\+::is\+Scheduled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check if the log cleaner is already scheduled.
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_aafe5ece94e4020ffab020908338b0f65_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a3b619729a0168eff0446cd62b6587b88}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a3b619729a0168eff0446cd62b6587b88} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}!registerHooks@{registerHooks}}
+\index{registerHooks@{registerHooks}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}}
+\doxysubsubsection{\texorpdfstring{registerHooks()}{registerHooks()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+Log\+Cleaner\+::register\+Hooks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a3b619729a0168eff0446cd62b6587b88_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_ae12606d224884509d5289246a77376cb}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_ae12606d224884509d5289246a77376cb} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}!scheduleLogCleaner@{scheduleLogCleaner}}
+\index{scheduleLogCleaner@{scheduleLogCleaner}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}}
+\doxysubsubsection{\texorpdfstring{scheduleLogCleaner()}{scheduleLogCleaner()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+Log\+Cleaner\+::schedule\+Log\+Cleaner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Schedules the log cleaner cron job.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_ae12606d224884509d5289246a77376cb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_ac495c217f62c34b0575d8facca705325}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_ac495c217f62c34b0575d8facca705325} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}!unschedule@{unschedule}}
+\index{unschedule@{unschedule}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}}
+\doxysubsubsection{\texorpdfstring{unschedule()}{unschedule()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+Log\+Cleaner\+::unschedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Unschedules the log cleaner cron job.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a0751f9586193a3757a3a17c13fcd369e}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_a0751f9586193a3757a3a17c13fcd369e} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}!\$hookName@{\$hookName}}
+\index{\$hookName@{\$hookName}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}}
+\doxysubsubsection{\texorpdfstring{\$hookName}{\$hookName}}
+{\footnotesize\ttfamily string Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+Log\+Cleaner\+::\$hook\+Name = \textquotesingle{}plugin\+\_\+frame\+\_\+log\+\_\+cleaner\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_abe51c0e46f62d640fd24d4acf9511d61}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner_abe51c0e46f62d640fd24d4acf9511d61} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}!\$scheduler@{\$scheduler}}
+\index{\$scheduler@{\$scheduler}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}LogCleaner}}
+\doxysubsubsection{\texorpdfstring{\$scheduler}{\$scheduler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler}{Scheduler}} Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+Log\+Cleaner\+::\$scheduler\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Utilities/\+PFlogs/\mbox{\hyperlink{LogCleaner_8php}{Log\+Cleaner.\+php}}\end{DoxyCompactItemize}

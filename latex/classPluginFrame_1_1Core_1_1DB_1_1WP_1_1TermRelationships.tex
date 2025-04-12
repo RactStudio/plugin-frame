@@ -1,0 +1,132 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Term\+Relationships Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships}{}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_ae5c4c2d7063a8946e28104895da757d8}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_a1185da2e06a7b1836570637d59c56674}{all\+Term\+Relationships}} (\$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aca0ffcdac39aa703f9e94836237511d1}{get\+Term\+Relationships}} (\$object\+Id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_a1a2831a91ca951c95abf1a7a79b0dd7d}{insert\+Term\+Relationship}} (\$object\+Id, \$term\+Taxonomy\+Id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aab80325b1880141d25261908949471af}{delete\+Term\+Relationship}} (\$object\+Id, \$term\+Taxonomy\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aa973a468cdeba031520eb26e22036111}{\$query\+Builder}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aad4c73d0f58e3c32056b295488f469d7}{\$pagination\+Manager}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_ab5b562efb5fc3c2106c8316f9da0588b}{\$table}} = \textquotesingle{}term\+\_\+relationships\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_ae5c4c2d7063a8946e28104895da757d8}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_ae5c4c2d7063a8946e28104895da757d8} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Relationships\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_a1185da2e06a7b1836570637d59c56674}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_a1185da2e06a7b1836570637d59c56674} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}!allTermRelationships@{allTermRelationships}}
+\index{allTermRelationships@{allTermRelationships}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}}
+\doxysubsubsection{\texorpdfstring{allTermRelationships()}{allTermRelationships()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Relationships\+::all\+Term\+Relationships (\begin{DoxyParamCaption}\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get all term relationships with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aab80325b1880141d25261908949471af}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aab80325b1880141d25261908949471af} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}!deleteTermRelationship@{deleteTermRelationship}}
+\index{deleteTermRelationship@{deleteTermRelationship}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}}
+\doxysubsubsection{\texorpdfstring{deleteTermRelationship()}{deleteTermRelationship()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Relationships\+::delete\+Term\+Relationship (\begin{DoxyParamCaption}\item[{}]{\$object\+Id,  }\item[{}]{\$term\+Taxonomy\+Id }\end{DoxyParamCaption})}
+
+Delete a term relationship by object ID and term taxonomy ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$object\+Id} & The object ID. \\
+\hline
+int & {\em \$term\+Taxonomy\+Id} & The term taxonomy ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aca0ffcdac39aa703f9e94836237511d1}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aca0ffcdac39aa703f9e94836237511d1} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}!getTermRelationships@{getTermRelationships}}
+\index{getTermRelationships@{getTermRelationships}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}}
+\doxysubsubsection{\texorpdfstring{getTermRelationships()}{getTermRelationships()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Relationships\+::get\+Term\+Relationships (\begin{DoxyParamCaption}\item[{}]{\$object\+Id }\end{DoxyParamCaption})}
+
+Get term relationships for a specific object (e.\+g., post).
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$object\+Id} & The object ID (e.\+g., post ID). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_a1a2831a91ca951c95abf1a7a79b0dd7d}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_a1a2831a91ca951c95abf1a7a79b0dd7d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}!insertTermRelationship@{insertTermRelationship}}
+\index{insertTermRelationship@{insertTermRelationship}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}}
+\doxysubsubsection{\texorpdfstring{insertTermRelationship()}{insertTermRelationship()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Relationships\+::insert\+Term\+Relationship (\begin{DoxyParamCaption}\item[{}]{\$object\+Id,  }\item[{}]{\$term\+Taxonomy\+Id }\end{DoxyParamCaption})}
+
+Insert a new term relationship.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$object\+Id} & The object ID (e.\+g., post ID). \\
+\hline
+int & {\em \$term\+Taxonomy\+Id} & The term taxonomy ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\texorpdfstring{$\vert$}{|}int 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aad4c73d0f58e3c32056b295488f469d7}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aad4c73d0f58e3c32056b295488f469d7} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}!\$paginationManager@{\$paginationManager}}
+\index{\$paginationManager@{\$paginationManager}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}}
+\doxysubsubsection{\texorpdfstring{\$paginationManager}{\$paginationManager}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Relationships\+::\$pagination\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aa973a468cdeba031520eb26e22036111}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_aa973a468cdeba031520eb26e22036111} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Relationships\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_ab5b562efb5fc3c2106c8316f9da0588b}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships_ab5b562efb5fc3c2106c8316f9da0588b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermRelationships}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Relationships\+::\$table = \textquotesingle{}term\+\_\+relationships\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+WP/\mbox{\hyperlink{TermRelationships_8php}{Term\+Relationships.\+php}}\end{DoxyCompactItemize}

@@ -1,0 +1,158 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments}{}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a6a3d878c380c19483bc4577748582a20}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a494f7a2a722548e3e028b6c92a50672e}{all\+Comments}} (\$request, \$page=1, \$per\+Page=10, \$sort\+Column=null, \$sort\+By=\textquotesingle{}desc\textquotesingle{}, \$columns=\mbox{[}\textquotesingle{} \texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a9fc3b49e08b4ff3f7e8032d638d955f8}{get\+Comment}} (\$request, \$comment\+Id, \$page=1, \$per\+Page=10, \$sort\+Column=null, \$sort\+By=\textquotesingle{}desc\textquotesingle{}, \$columns=\mbox{[}\textquotesingle{} \texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a2d5d26ecb40381cee46303ef07047138}{get\+Post\+Comment}} (\$request, \$post\+Id, \$page=1, \$per\+Page=10, \$sort\+Column=null, \$sort\+By=\textquotesingle{}desc\textquotesingle{}, \$columns=\mbox{[}\textquotesingle{} \texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_aab272840399aa4b7fee8e909729177e0}{insert\+Comment}} (\$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a625a6da0687e4ca000f84e5e5ce0926c}{update\+Comment}} (\$comment\+Id, \$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_ac5d941b2e706848e7d3bc1ba2e6a0b66}{delete\+Comment}} (\$comment\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a59006f046f66d303c114e14b2e6cd281}{\$query\+Builder}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_add757e24c12f39085b6ebf72d79a5cc8}{\$pagination\+Manager}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_aa42926cd322a23d2653ea5af6fb61685}{\$table}} = \textquotesingle{}comments\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a6a3d878c380c19483bc4577748582a20}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a6a3d878c380c19483bc4577748582a20} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a494f7a2a722548e3e028b6c92a50672e}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a494f7a2a722548e3e028b6c92a50672e} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!allComments@{allComments}}
+\index{allComments@{allComments}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{allComments()}{allComments()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::all\+Comments (\begin{DoxyParamCaption}\item[{}]{\$request,  }\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10},  }\item[{}]{\$sort\+Column = {\ttfamily null},  }\item[{}]{\$sort\+By = {\ttfamily \textquotesingle{}desc\textquotesingle{}},  }\item[{}]{\$columns = {\ttfamily \mbox{[}\textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]}} }\end{DoxyParamCaption})}
+
+Get all comments with optional pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \$request} & The request object. \\
+\hline
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+string & {\em \$sort\+Column} & The column to sort by -\/ Default is {\ttfamily null}. \\
+\hline
+string & {\em \$sort\+By} & The sort direction (\textquotesingle{}asc\textquotesingle{} or \textquotesingle{}desc\textquotesingle{}). \\
+\hline
+array & {\em \$columns} & The items is selected (default is all {\ttfamily \texorpdfstring{$\ast$}{*}}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_ac5d941b2e706848e7d3bc1ba2e6a0b66}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_ac5d941b2e706848e7d3bc1ba2e6a0b66} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!deleteComment@{deleteComment}}
+\index{deleteComment@{deleteComment}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{deleteComment()}{deleteComment()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::delete\+Comment (\begin{DoxyParamCaption}\item[{}]{\$comment\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a9fc3b49e08b4ff3f7e8032d638d955f8}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a9fc3b49e08b4ff3f7e8032d638d955f8} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!getComment@{getComment}}
+\index{getComment@{getComment}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{getComment()}{getComment()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::get\+Comment (\begin{DoxyParamCaption}\item[{}]{\$request,  }\item[{}]{\$comment\+Id,  }\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10},  }\item[{}]{\$sort\+Column = {\ttfamily null},  }\item[{}]{\$sort\+By = {\ttfamily \textquotesingle{}desc\textquotesingle{}},  }\item[{}]{\$columns = {\ttfamily \mbox{[}\textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]}} }\end{DoxyParamCaption})}
+
+Get Comment data for a specific Comment with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \$request} & The request object. \\
+\hline
+int & {\em \$comment\+Id} & The Comment ID to get data for. \\
+\hline
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+string & {\em \$sort\+By} & The \textquotesingle{}asc\textquotesingle{} or \textquotesingle{}desc\textquotesingle{} for sorting by comment\+\_\+date. \\
+\hline
+array & {\em \$columns} & The items is selected (default is all {\ttfamily \texorpdfstring{$\ast$}{*}}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a2d5d26ecb40381cee46303ef07047138}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a2d5d26ecb40381cee46303ef07047138} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!getPostComment@{getPostComment}}
+\index{getPostComment@{getPostComment}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{getPostComment()}{getPostComment()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::get\+Post\+Comment (\begin{DoxyParamCaption}\item[{}]{\$request,  }\item[{}]{\$post\+Id,  }\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10},  }\item[{}]{\$sort\+Column = {\ttfamily null},  }\item[{}]{\$sort\+By = {\ttfamily \textquotesingle{}desc\textquotesingle{}},  }\item[{}]{\$columns = {\ttfamily \mbox{[}\textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]}} }\end{DoxyParamCaption})}
+
+Get Post Comment data for a specific Post with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$post\+Id} & The Post ID to get data for. \\
+\hline
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+array & {\em \$columns} & The items is selected (default is all {\ttfamily \texorpdfstring{$\ast$}{*}}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_aab272840399aa4b7fee8e909729177e0}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_aab272840399aa4b7fee8e909729177e0} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!insertComment@{insertComment}}
+\index{insertComment@{insertComment}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{insertComment()}{insertComment()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::insert\+Comment (\begin{DoxyParamCaption}\item[{}]{\$data }\end{DoxyParamCaption})}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a625a6da0687e4ca000f84e5e5ce0926c}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a625a6da0687e4ca000f84e5e5ce0926c} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!updateComment@{updateComment}}
+\index{updateComment@{updateComment}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{updateComment()}{updateComment()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::update\+Comment (\begin{DoxyParamCaption}\item[{}]{\$comment\+Id,  }\item[{}]{\$data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_add757e24c12f39085b6ebf72d79a5cc8}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_add757e24c12f39085b6ebf72d79a5cc8} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!\$paginationManager@{\$paginationManager}}
+\index{\$paginationManager@{\$paginationManager}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{\$paginationManager}{\$paginationManager}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::\$pagination\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a59006f046f66d303c114e14b2e6cd281}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_a59006f046f66d303c114e14b2e6cd281} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_aa42926cd322a23d2653ea5af6fb61685}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments_aa42926cd322a23d2653ea5af6fb61685} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Comments}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Comments\+::\$table = \textquotesingle{}comments\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+WP/\mbox{\hyperlink{Comments_8php}{Comments.\+php}}\end{DoxyCompactItemize}

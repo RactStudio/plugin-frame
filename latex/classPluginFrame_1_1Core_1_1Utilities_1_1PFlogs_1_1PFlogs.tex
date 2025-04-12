@@ -1,0 +1,114 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs}{}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs}\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_ac911d2bbff08a618e5527d44bb631dc8}{pf\+\_\+log}} (string \$message)
+\item 
+static \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_aec2ba4bbbe8fa793fcac1d0f846f27f9}{delete\+\_\+old\+\_\+logs}} ()
+\item 
+static \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_aae776a78bc4557be9b99c3050490bf12}{is\+Logging\+Enabled}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_af01cfe80d19f7f5259f7791785d2631b}{\$logging\+Enabled}} = true
+\item 
+static string \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_ae0ffd920d3ce3dc7d8a474fe03de3195}{\$logs\+Dir}} = PLUGIN\+\_\+\+FRAME\+\_\+\+DIR . \textquotesingle{}/logs\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_a68e7880606fb7efb8fc1be509c3e0b76}{\$retention\+Days}} = 7
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_aec2ba4bbbe8fa793fcac1d0f846f27f9}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_aec2ba4bbbe8fa793fcac1d0f846f27f9} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}!delete\_old\_logs@{delete\_old\_logs}}
+\index{delete\_old\_logs@{delete\_old\_logs}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}}
+\doxysubsubsection{\texorpdfstring{delete\_old\_logs()}{delete\_old\_logs()}}
+{\footnotesize\ttfamily static Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+PFlogs\+::delete\+\_\+old\+\_\+logs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Deletes log files older than the retention period.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_aec2ba4bbbe8fa793fcac1d0f846f27f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_aec2ba4bbbe8fa793fcac1d0f846f27f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_aae776a78bc4557be9b99c3050490bf12}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_aae776a78bc4557be9b99c3050490bf12} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}!isLoggingEnabled@{isLoggingEnabled}}
+\index{isLoggingEnabled@{isLoggingEnabled}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}}
+\doxysubsubsection{\texorpdfstring{isLoggingEnabled()}{isLoggingEnabled()}}
+{\footnotesize\ttfamily static Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+PFlogs\+::is\+Logging\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns whether logging is enabled.
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_ac911d2bbff08a618e5527d44bb631dc8}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_ac911d2bbff08a618e5527d44bb631dc8} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}!pf\_log@{pf\_log}}
+\index{pf\_log@{pf\_log}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}}
+\doxysubsubsection{\texorpdfstring{pf\_log()}{pf\_log()}}
+{\footnotesize\ttfamily static Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+PFlogs\+::pf\+\_\+log (\begin{DoxyParamCaption}\item[{string}]{\$message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Logs a message to the Plugin Frame logs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & The log message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_ac911d2bbff08a618e5527d44bb631dc8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_af01cfe80d19f7f5259f7791785d2631b}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_af01cfe80d19f7f5259f7791785d2631b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}!\$loggingEnabled@{\$loggingEnabled}}
+\index{\$loggingEnabled@{\$loggingEnabled}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}}
+\doxysubsubsection{\texorpdfstring{\$loggingEnabled}{\$loggingEnabled}}
+{\footnotesize\ttfamily bool Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+PFlogs\+::\$logging\+Enabled = true\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_ae0ffd920d3ce3dc7d8a474fe03de3195}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_ae0ffd920d3ce3dc7d8a474fe03de3195} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}!\$logsDir@{\$logsDir}}
+\index{\$logsDir@{\$logsDir}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}}
+\doxysubsubsection{\texorpdfstring{\$logsDir}{\$logsDir}}
+{\footnotesize\ttfamily string Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+PFlogs\+::\$logs\+Dir = PLUGIN\+\_\+\+FRAME\+\_\+\+DIR . \textquotesingle{}/logs\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_a68e7880606fb7efb8fc1be509c3e0b76}\label{classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs_a68e7880606fb7efb8fc1be509c3e0b76} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}!\$retentionDays@{\$retentionDays}}
+\index{\$retentionDays@{\$retentionDays}!PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs@{PluginFrame\textbackslash{}Core\textbackslash{}Utilities\textbackslash{}PFlogs\textbackslash{}PFlogs}}
+\doxysubsubsection{\texorpdfstring{\$retentionDays}{\$retentionDays}}
+{\footnotesize\ttfamily int Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Utilities\textbackslash{}\+PFlogs\textbackslash{}\+PFlogs\+::\$retention\+Days = 7\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Utilities/\+PFlogs/\mbox{\hyperlink{PFlogs_8php}{PFlogs.\+php}}\end{DoxyCompactItemize}

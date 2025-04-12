@@ -1,0 +1,134 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}Providers\+Helper Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper}{}\label{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper}\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_ad523aa31d1716d84b1d2ca4a55da8826}{load\+Priority\+Classes}} (\$classes, string \$priority)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_a0260fa0d1f3935c8ee70fff8de53e556}{load\+Providers\+Classes}} (\$classes, \$directory=null, \$base\+Namespace=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_af6fc6080b22f76599970d92789995f3d}{construct\+Class\+Name}} (string \$file, string \$directory, string \$base\+Namespace)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_ae208492737e8b9001964d332495839cf}{instantiate\+Class}} (string \$class\+Name)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_a76d36119fd10dc961180d71902eb934c}{scan\+Directory}} (string \$directory)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_af6fc6080b22f76599970d92789995f3d}\label{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_af6fc6080b22f76599970d92789995f3d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}!constructClassName@{constructClassName}}
+\index{constructClassName@{constructClassName}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}}
+\doxysubsubsection{\texorpdfstring{constructClassName()}{constructClassName()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Providers\+Helper\+::construct\+Class\+Name (\begin{DoxyParamCaption}\item[{string}]{\$file,  }\item[{string}]{\$directory,  }\item[{string}]{\$base\+Namespace }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Construct a fully qualified class name from a file path.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$file} & The full file path. \\
+\hline
+string & {\em \$directory} & The base directory. \\
+\hline
+string & {\em \$base\+Namespace} & The base namespace. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The fully qualified class name. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_af6fc6080b22f76599970d92789995f3d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_ae208492737e8b9001964d332495839cf}\label{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_ae208492737e8b9001964d332495839cf} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}!instantiateClass@{instantiateClass}}
+\index{instantiateClass@{instantiateClass}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}}
+\doxysubsubsection{\texorpdfstring{instantiateClass()}{instantiateClass()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Providers\+Helper\+::instantiate\+Class (\begin{DoxyParamCaption}\item[{string}]{\$class\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Instantiate a class if it exists.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$class\+Name} & The fully qualified class name. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_ae208492737e8b9001964d332495839cf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_ad523aa31d1716d84b1d2ca4a55da8826}\label{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_ad523aa31d1716d84b1d2ca4a55da8826} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}!loadPriorityClasses@{loadPriorityClasses}}
+\index{loadPriorityClasses@{loadPriorityClasses}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}}
+\doxysubsubsection{\texorpdfstring{loadPriorityClasses()}{loadPriorityClasses()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Providers\+Helper\+::load\+Priority\+Classes (\begin{DoxyParamCaption}\item[{}]{\$classes,  }\item[{string}]{\$priority }\end{DoxyParamCaption})}
+
+Load priority classes (first or last).
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$priority} & Key for the priority group (\textquotesingle{}priority\+\_\+first\textquotesingle{} or \textquotesingle{}priority\+\_\+last\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_ad523aa31d1716d84b1d2ca4a55da8826_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_a0260fa0d1f3935c8ee70fff8de53e556}\label{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_a0260fa0d1f3935c8ee70fff8de53e556} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}!loadProvidersClasses@{loadProvidersClasses}}
+\index{loadProvidersClasses@{loadProvidersClasses}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}}
+\doxysubsubsection{\texorpdfstring{loadProvidersClasses()}{loadProvidersClasses()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Providers\+Helper\+::load\+Providers\+Classes (\begin{DoxyParamCaption}\item[{}]{\$classes,  }\item[{}]{\$directory = {\ttfamily null},  }\item[{}]{\$base\+Namespace = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Dynamically load classes from the app/\+Providers directory. Excludes classes in priority\+\_\+first and priority\+\_\+last. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_a0260fa0d1f3935c8ee70fff8de53e556_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_a76d36119fd10dc961180d71902eb934c}\label{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_a76d36119fd10dc961180d71902eb934c} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}!scanDirectory@{scanDirectory}}
+\index{scanDirectory@{scanDirectory}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}ProvidersHelper}}
+\doxysubsubsection{\texorpdfstring{scanDirectory()}{scanDirectory()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Providers\+Helper\+::scan\+Directory (\begin{DoxyParamCaption}\item[{string}]{\$directory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Recursively scan a directory for PHP files.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$directory} & The directory to scan. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An array of file paths. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper_a76d36119fd10dc961180d71902eb934c_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Helpers/\mbox{\hyperlink{ProvidersHelper_8php}{Providers\+Helper.\+php}}\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+<map id="PluginFrame\Core\DB\Migrations\Migration\createTable" name="PluginFrame\Core\DB\Migrations\Migration\createTable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="479,45,640,100"/>
+<area shape="rect" id="Node000002" href="$classPluginFrame_1_1Core_1_1DB_1_1Migrations_1_1Migration.html#adec2cf5fcd9a4d3d23786dcd4f5b8ec8" title=" " alt="" coords="240,5,431,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="464,58,430,52,431,47,465,53"/>
+<area shape="rect" id="Node000004" href="$classPluginFrame_1_1Core_1_1DB_1_1Migrations_1_1Migration.html#af6cdb8367c5590cd0512e19a8ec11ff2" title=" " alt="" coords="250,84,421,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="465,92,421,99,420,94,464,86"/>
+<area shape="rect" id="Node000003" href="$classPluginFrame_1_1Core_1_1DB_1_1Migrations_1_1Migration.html#accaa2198ab8683111d409b4641366fd5" title=" " alt="" coords="5,53,192,93"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="227,54,193,60,192,54,226,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="236,98,192,91,193,85,237,93"/>
+</map>

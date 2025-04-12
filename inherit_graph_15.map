@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel.html" title=" " alt="" coords="5,69,165,109"/>
+<area shape="rect" id="Node000001" href="$classPluginFrame_1_1Core_1_1DB_1_1Models_1_1CustomQueryModel.html" title=" " alt="" coords="213,5,420,45"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="171,63,243,43,245,48,172,68"/>
+<area shape="rect" id="Node000002" href="$classPluginFrame_1_1Core_1_1DB_1_1Models_1_1JobCategory.html" title=" " alt="" coords="237,69,397,109"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="179,87,236,87,236,92,179,92"/>
+<area shape="rect" id="Node000003" href="$classPluginFrame_1_1Core_1_1DB_1_1Models_1_1JobListing.html" title=" " alt="" coords="237,133,397,173"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="172,110,245,131,243,136,171,116"/>
+</map>

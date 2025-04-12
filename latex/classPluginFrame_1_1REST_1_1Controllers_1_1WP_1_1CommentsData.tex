@@ -1,0 +1,103 @@
+\doxysection{Plugin\+Frame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}Comments\+Data Class Reference}
+\hypertarget{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData}{}\label{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData}\index{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData@{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_aafc1bb8a5aefe2519f2e556ba1d4adef}{get\+All\+Comments}} (\$request)
+\item 
+static \mbox{\hyperlink{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_accb513aca5c516cba44462027393c123}{get\+Comment}} (\$request)
+\item 
+static \mbox{\hyperlink{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_acb88c4b80f22e64604bfdbcb08f2482a}{get\+Post\+Comment}} (\$request)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_aafc1bb8a5aefe2519f2e556ba1d4adef}\label{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_aafc1bb8a5aefe2519f2e556ba1d4adef} 
+\index{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData@{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData}!getAllComments@{getAllComments}}
+\index{getAllComments@{getAllComments}!PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData@{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData}}
+\doxysubsubsection{\texorpdfstring{getAllComments()}{getAllComments()}}
+{\footnotesize\ttfamily static Plugin\+Frame\textbackslash{}\+REST\textbackslash{}\+Controllers\textbackslash{}\+WP\textbackslash{}\+Comments\+Data\+::get\+All\+Comments (\begin{DoxyParamCaption}\item[{}]{\$request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+all\+Comments \mbox{[}root-\/domain\mbox{]}/wp-\/json/plugin-\/frame/v1/comments/all/?page=1\&per\+\_\+page=10
+
+
+\begin{DoxyParams}[1]{Parameters}
+WP\+\_\+\+REST\+\_\+\+Request & {\em \$request} & \\
+\hline
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+string & {\em \$sort\+Column} & The column to sort by -\/ Default is {\ttfamily null}. \\
+\hline
+string & {\em \$sort\+By} & The sort direction (\textquotesingle{}asc\textquotesingle{} or \textquotesingle{}desc\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+WP\+\_\+\+REST\+\_\+\+Response 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_accb513aca5c516cba44462027393c123}\label{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_accb513aca5c516cba44462027393c123} 
+\index{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData@{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData}!getComment@{getComment}}
+\index{getComment@{getComment}!PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData@{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData}}
+\doxysubsubsection{\texorpdfstring{getComment()}{getComment()}}
+{\footnotesize\ttfamily static Plugin\+Frame\textbackslash{}\+REST\textbackslash{}\+Controllers\textbackslash{}\+WP\textbackslash{}\+Comments\+Data\+::get\+Comment (\begin{DoxyParamCaption}\item[{}]{\$request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+get\+Comment \mbox{[}root-\/domain\mbox{]}/wp-\/json/plugin-\/frame/v1/comments/single/?comment\+\_\+id=11 
+\begin{DoxyParams}[1]{Parameters}
+WP\+\_\+\+REST\+\_\+\+Request & {\em \$request} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+WP\+\_\+\+REST\+\_\+\+Response 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_accb513aca5c516cba44462027393c123_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_accb513aca5c516cba44462027393c123_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_acb88c4b80f22e64604bfdbcb08f2482a}\label{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_acb88c4b80f22e64604bfdbcb08f2482a} 
+\index{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData@{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData}!getPostComment@{getPostComment}}
+\index{getPostComment@{getPostComment}!PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData@{PluginFrame\textbackslash{}REST\textbackslash{}Controllers\textbackslash{}WP\textbackslash{}CommentsData}}
+\doxysubsubsection{\texorpdfstring{getPostComment()}{getPostComment()}}
+{\footnotesize\ttfamily static Plugin\+Frame\textbackslash{}\+REST\textbackslash{}\+Controllers\textbackslash{}\+WP\textbackslash{}\+Comments\+Data\+::get\+Post\+Comment (\begin{DoxyParamCaption}\item[{}]{\$request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+get\+Post\+Comment \mbox{[}root-\/domain\mbox{]}/wp-\/json/plugin-\/frame/v1/comments/post/?post\+\_\+id=1 
+\begin{DoxyParams}[1]{Parameters}
+WP\+\_\+\+REST\+\_\+\+Request & {\em \$request} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+WP\+\_\+\+REST\+\_\+\+Response 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_acb88c4b80f22e64604bfdbcb08f2482a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{classPluginFrame_1_1REST_1_1Controllers_1_1WP_1_1CommentsData_acb88c4b80f22e64604bfdbcb08f2482a_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+REST/\+Controllers/\+WP/\mbox{\hyperlink{CommentsData_8php}{Comments\+Data.\+php}}\end{DoxyCompactItemize}

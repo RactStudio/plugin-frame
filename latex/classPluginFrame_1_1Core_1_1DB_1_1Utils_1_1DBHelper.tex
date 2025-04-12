@@ -1,0 +1,99 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper}{}\label{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a1431d09da677f9836b1c67bf551d0590}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a6d508de421907d91a197ca490bd23223}{column\+Exists}} (\$table, \$column)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a6ceb14a82eca30767b0f92d483a4c48a}{add\+Column\+If\+Not\+Exists}} (\$table, \$column, \$definition)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a44220a5f23e9c461ca702b3080af1cd5}{\$query\+Builder}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+DBHelper class for providing helper methods for database tasks. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a1431d09da677f9836b1c67bf551d0590}\label{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a1431d09da677f9836b1c67bf551d0590} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Utils\textbackslash{}\+DBHelper\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a6ceb14a82eca30767b0f92d483a4c48a}\label{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a6ceb14a82eca30767b0f92d483a4c48a} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper}!addColumnIfNotExists@{addColumnIfNotExists}}
+\index{addColumnIfNotExists@{addColumnIfNotExists}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper}}
+\doxysubsubsection{\texorpdfstring{addColumnIfNotExists()}{addColumnIfNotExists()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Utils\textbackslash{}\+DBHelper\+::add\+Column\+If\+Not\+Exists (\begin{DoxyParamCaption}\item[{}]{\$table,  }\item[{}]{\$column,  }\item[{}]{\$definition }\end{DoxyParamCaption})}
+
+Add a column to a table if it doesn\textquotesingle{}t exist.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & The table name. \\
+\hline
+string & {\em \$column} & The column name. \\
+\hline
+string & {\em \$definition} & The column definition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a6ceb14a82eca30767b0f92d483a4c48a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a6d508de421907d91a197ca490bd23223}\label{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a6d508de421907d91a197ca490bd23223} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper}!columnExists@{columnExists}}
+\index{columnExists@{columnExists}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper}}
+\doxysubsubsection{\texorpdfstring{columnExists()}{columnExists()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Utils\textbackslash{}\+DBHelper\+::column\+Exists (\begin{DoxyParamCaption}\item[{}]{\$table,  }\item[{}]{\$column }\end{DoxyParamCaption})}
+
+Check if a column exists in a table.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & The table name. \\
+\hline
+string & {\em \$column} & The column name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Whether the column exists. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a6d508de421907d91a197ca490bd23223_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a44220a5f23e9c461ca702b3080af1cd5}\label{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper_a44220a5f23e9c461ca702b3080af1cd5} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Utils\textbackslash{}DBHelper}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Utils\textbackslash{}\+DBHelper\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+Utils/\mbox{\hyperlink{DBHelper_8php}{DBHelper.\+php}}\end{DoxyCompactItemize}

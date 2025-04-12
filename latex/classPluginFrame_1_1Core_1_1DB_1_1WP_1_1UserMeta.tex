@@ -1,0 +1,178 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}User\+Meta Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta}{}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a30050b8f967d485092521d0e1656ea50}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a42239b956da731a97a88337fa8f6e156}{all\+User\+Meta}} (\$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_aa3c75bbe83118bc664c92c7c1fe013ea}{single\+User\+Meta}} (\$user\+Id, \$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a16c2300a5c9be11e3700a96c923e5b20}{get\+User\+Meta}} (\$user\+Id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a71a3f68adedd0160c09d6892d8930de9}{insert\+User\+Meta}} (\$user\+Id, \$meta\+Key, \$meta\+Value)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_ac13949143c8a75d933ce5437ab698e18}{update\+User\+Meta}} (\$user\+Id, \$meta\+Key, \$meta\+Value)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_aab880bda8a168d31ec273b6019f67d50}{delete\+User\+Meta}} (\$user\+Id, \$meta\+Key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a5e87448d05cc3c74d70cbb9e77a5a3e8}{\$query\+Builder}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a5284fd555a56870a4cbdeaea9089d13c}{\$pagination\+Manager}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a47b68a20ab88ada5a203d947362fd642}{\$table}} = \textquotesingle{}usermeta\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a30050b8f967d485092521d0e1656ea50}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a30050b8f967d485092521d0e1656ea50} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a42239b956da731a97a88337fa8f6e156}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a42239b956da731a97a88337fa8f6e156} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!allUserMeta@{allUserMeta}}
+\index{allUserMeta@{allUserMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{allUserMeta()}{allUserMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::all\+User\+Meta (\begin{DoxyParamCaption}\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get all user metadata with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_aab880bda8a168d31ec273b6019f67d50}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_aab880bda8a168d31ec273b6019f67d50} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!deleteUserMeta@{deleteUserMeta}}
+\index{deleteUserMeta@{deleteUserMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{deleteUserMeta()}{deleteUserMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::delete\+User\+Meta (\begin{DoxyParamCaption}\item[{}]{\$user\+Id,  }\item[{}]{\$meta\+Key }\end{DoxyParamCaption})}
+
+Delete metadata for a user by key.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$user\+Id} & The user ID. \\
+\hline
+string & {\em \$meta\+Key} & The metadata key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a16c2300a5c9be11e3700a96c923e5b20}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a16c2300a5c9be11e3700a96c923e5b20} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!getUserMeta@{getUserMeta}}
+\index{getUserMeta@{getUserMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{getUserMeta()}{getUserMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::get\+User\+Meta (\begin{DoxyParamCaption}\item[{}]{\$user\+Id }\end{DoxyParamCaption})}
+
+Get metadata for a specific user by user ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$user\+Id} & The user ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a71a3f68adedd0160c09d6892d8930de9}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a71a3f68adedd0160c09d6892d8930de9} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!insertUserMeta@{insertUserMeta}}
+\index{insertUserMeta@{insertUserMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{insertUserMeta()}{insertUserMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::insert\+User\+Meta (\begin{DoxyParamCaption}\item[{}]{\$user\+Id,  }\item[{}]{\$meta\+Key,  }\item[{}]{\$meta\+Value }\end{DoxyParamCaption})}
+
+Insert new metadata for a user.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$user\+Id} & The user ID. \\
+\hline
+string & {\em \$meta\+Key} & The metadata key. \\
+\hline
+mixed & {\em \$meta\+Value} & The metadata value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\texorpdfstring{$\vert$}{|}int 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_aa3c75bbe83118bc664c92c7c1fe013ea}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_aa3c75bbe83118bc664c92c7c1fe013ea} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!singleUserMeta@{singleUserMeta}}
+\index{singleUserMeta@{singleUserMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{singleUserMeta()}{singleUserMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::single\+User\+Meta (\begin{DoxyParamCaption}\item[{}]{\$user\+Id,  }\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get User Metadata for a specific User with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$user\+Id} & The User ID to get metadata for. \\
+\hline
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_ac13949143c8a75d933ce5437ab698e18}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_ac13949143c8a75d933ce5437ab698e18} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!updateUserMeta@{updateUserMeta}}
+\index{updateUserMeta@{updateUserMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{updateUserMeta()}{updateUserMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::update\+User\+Meta (\begin{DoxyParamCaption}\item[{}]{\$user\+Id,  }\item[{}]{\$meta\+Key,  }\item[{}]{\$meta\+Value }\end{DoxyParamCaption})}
+
+Update metadata for a user.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$user\+Id} & The user ID. \\
+\hline
+string & {\em \$meta\+Key} & The metadata key. \\
+\hline
+mixed & {\em \$meta\+Value} & The metadata value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a5284fd555a56870a4cbdeaea9089d13c}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a5284fd555a56870a4cbdeaea9089d13c} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!\$paginationManager@{\$paginationManager}}
+\index{\$paginationManager@{\$paginationManager}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{\$paginationManager}{\$paginationManager}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::\$pagination\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a5e87448d05cc3c74d70cbb9e77a5a3e8}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a5e87448d05cc3c74d70cbb9e77a5a3e8} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a47b68a20ab88ada5a203d947362fd642}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta_a47b68a20ab88ada5a203d947362fd642} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}UserMeta}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+User\+Meta\+::\$table = \textquotesingle{}usermeta\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+WP/\mbox{\hyperlink{UserMeta_8php}{User\+Meta.\+php}}\end{DoxyCompactItemize}

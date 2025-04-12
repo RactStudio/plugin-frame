@@ -1,0 +1,65 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies}{}\label{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies}\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies_a2c0d9d78a6f2e8713aaed80d118773c7}{register\+Taxonomy}} (string \$key, array \$post\+Types, array \$args, ?callable \$condition=null)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies_a41c66ac5d29c0b9593eb1bc2f70a3935}{register\+Taxonomies}} (array \$taxonomies)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies_a41c66ac5d29c0b9593eb1bc2f70a3935}\label{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies_a41c66ac5d29c0b9593eb1bc2f70a3935} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies}!registerTaxonomies@{registerTaxonomies}}
+\index{registerTaxonomies@{registerTaxonomies}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies}}
+\doxysubsubsection{\texorpdfstring{registerTaxonomies()}{registerTaxonomies()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Taxonomies\+::register\+Taxonomies (\begin{DoxyParamCaption}\item[{array}]{\$taxonomies }\end{DoxyParamCaption})}
+
+Register multiple taxonomies at once.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$taxonomies} & Array of taxonomies to register. Format\+: `\mbox{[}\textquotesingle{}key' =\texorpdfstring{$>$}{>} \mbox{[}\textquotesingle{}post\+\_\+types\textquotesingle{} =\texorpdfstring{$>$}{>} \mbox{[}\mbox{]}, \textquotesingle{}args\textquotesingle{} =\texorpdfstring{$>$}{>} \mbox{[}\mbox{]}, \textquotesingle{}condition\textquotesingle{} =\texorpdfstring{$>$}{>} callable\texorpdfstring{$\vert$}{|}null\mbox{]}\mbox{]}\`{} \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies_a41c66ac5d29c0b9593eb1bc2f70a3935_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies_a2c0d9d78a6f2e8713aaed80d118773c7}\label{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies_a2c0d9d78a6f2e8713aaed80d118773c7} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies}!registerTaxonomy@{registerTaxonomy}}
+\index{registerTaxonomy@{registerTaxonomy}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Taxonomies}}
+\doxysubsubsection{\texorpdfstring{registerTaxonomy()}{registerTaxonomy()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Taxonomies\+::register\+Taxonomy (\begin{DoxyParamCaption}\item[{string}]{\$key,  }\item[{array}]{\$post\+Types,  }\item[{array}]{\$args,  }\item[{?callable}]{\$condition = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Register a single taxonomy.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Taxonomy key/slug. \\
+\hline
+array & {\em \$post\+Types} & Post types to associate this taxonomy with. \\
+\hline
+array & {\em \$args} & Taxonomy arguments. \\
+\hline
+callable | null & {\em \$condition} & Optional condition to evaluate before registration. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Taxonomies_a2c0d9d78a6f2e8713aaed80d118773c7_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Services/\mbox{\hyperlink{Core_2Services_2Taxonomies_8php}{Taxonomies.\+php}}\end{DoxyCompactItemize}

@@ -1,0 +1,217 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}Git\+Hub\+Updater Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater}{}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater}\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a8d4f43d2daf6c541bd70139586b6050d}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a9db7f61e4715a1bf3498071691c9463d}{check\+Updates}} (\$transient)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a7e1df3a77b64f85487c6e0695806921b}{get\+Plugin\+Info}} (\$false, \$action, \$args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a971dce7bb3a247028f60f027c2110bc6}{API\+\_\+\+URL}} = \textquotesingle{}https\+://api.\+github.\+com/repos/\%s/\%s/releases/latest\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a085ae68bfd5ac0bf5c1b4bb55f1e6c15}{get\+Release\+Data}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a53dd9409ef70548dfc139da3984e3f34}{parse\+Release\+Data}} (array \$release)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a3ffb5d3a8259903a1f9ff5d1fd88b26c}{parse\+Readme}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_af3242ba3220f318e42ec466d00e81604}{parse\+Readme\+Content}} (string \$content)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_ace64b962c01289ec2ab0bc31af4cfcc6}{extract\+Metadata}} (string \$content, string \$field, string \$fallback)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_ab633a18d31f2f70c8b3a3a2a73f3cf50}{get\+Download\+Url}} (array \$release\+\_\+data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a779b82af0bc5abcde28462fb314758bf}{current\+Version}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a8d4f43d2daf6c541bd70139586b6050d}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a8d4f43d2daf6c541bd70139586b6050d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a9db7f61e4715a1bf3498071691c9463d}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a9db7f61e4715a1bf3498071691c9463d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!checkUpdates@{checkUpdates}}
+\index{checkUpdates@{checkUpdates}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{checkUpdates()}{checkUpdates()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::check\+Updates (\begin{DoxyParamCaption}\item[{}]{\$transient }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a9db7f61e4715a1bf3498071691c9463d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a779b82af0bc5abcde28462fb314758bf}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a779b82af0bc5abcde28462fb314758bf} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!currentVersion@{currentVersion}}
+\index{currentVersion@{currentVersion}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{currentVersion()}{currentVersion()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::current\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a779b82af0bc5abcde28462fb314758bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_ace64b962c01289ec2ab0bc31af4cfcc6}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_ace64b962c01289ec2ab0bc31af4cfcc6} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!extractMetadata@{extractMetadata}}
+\index{extractMetadata@{extractMetadata}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{extractMetadata()}{extractMetadata()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::extract\+Metadata (\begin{DoxyParamCaption}\item[{string}]{\$content,  }\item[{string}]{\$field,  }\item[{string}]{\$fallback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_ace64b962c01289ec2ab0bc31af4cfcc6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_ab633a18d31f2f70c8b3a3a2a73f3cf50}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_ab633a18d31f2f70c8b3a3a2a73f3cf50} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!getDownloadUrl@{getDownloadUrl}}
+\index{getDownloadUrl@{getDownloadUrl}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{getDownloadUrl()}{getDownloadUrl()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::get\+Download\+Url (\begin{DoxyParamCaption}\item[{array}]{\$release\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_ab633a18d31f2f70c8b3a3a2a73f3cf50_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a7e1df3a77b64f85487c6e0695806921b}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a7e1df3a77b64f85487c6e0695806921b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!getPluginInfo@{getPluginInfo}}
+\index{getPluginInfo@{getPluginInfo}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{getPluginInfo()}{getPluginInfo()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::get\+Plugin\+Info (\begin{DoxyParamCaption}\item[{}]{\$false,  }\item[{}]{\$action,  }\item[{}]{\$args }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a7e1df3a77b64f85487c6e0695806921b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a085ae68bfd5ac0bf5c1b4bb55f1e6c15}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a085ae68bfd5ac0bf5c1b4bb55f1e6c15} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!getReleaseData@{getReleaseData}}
+\index{getReleaseData@{getReleaseData}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{getReleaseData()}{getReleaseData()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::get\+Release\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a085ae68bfd5ac0bf5c1b4bb55f1e6c15_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a085ae68bfd5ac0bf5c1b4bb55f1e6c15_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a3ffb5d3a8259903a1f9ff5d1fd88b26c}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a3ffb5d3a8259903a1f9ff5d1fd88b26c} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!parseReadme@{parseReadme}}
+\index{parseReadme@{parseReadme}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{parseReadme()}{parseReadme()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::parse\+Readme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a3ffb5d3a8259903a1f9ff5d1fd88b26c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a3ffb5d3a8259903a1f9ff5d1fd88b26c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_af3242ba3220f318e42ec466d00e81604}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_af3242ba3220f318e42ec466d00e81604} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!parseReadmeContent@{parseReadmeContent}}
+\index{parseReadmeContent@{parseReadmeContent}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{parseReadmeContent()}{parseReadmeContent()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::parse\+Readme\+Content (\begin{DoxyParamCaption}\item[{string}]{\$content }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_af3242ba3220f318e42ec466d00e81604_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_af3242ba3220f318e42ec466d00e81604_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a53dd9409ef70548dfc139da3984e3f34}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a53dd9409ef70548dfc139da3984e3f34} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!parseReleaseData@{parseReleaseData}}
+\index{parseReleaseData@{parseReleaseData}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{parseReleaseData()}{parseReleaseData()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::parse\+Release\+Data (\begin{DoxyParamCaption}\item[{array}]{\$release }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a53dd9409ef70548dfc139da3984e3f34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a53dd9409ef70548dfc139da3984e3f34_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a971dce7bb3a247028f60f027c2110bc6}\label{classPluginFrame_1_1Core_1_1Updater_1_1GitHubUpdater_a971dce7bb3a247028f60f027c2110bc6} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}!API\_URL@{API\_URL}}
+\index{API\_URL@{API\_URL}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}GitHubUpdater}}
+\doxysubsubsection{\texorpdfstring{API\_URL}{API\_URL}}
+{\footnotesize\ttfamily const Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Git\+Hub\+Updater\+::\+API\+\_\+\+URL = \textquotesingle{}https\+://api.\+github.\+com/repos/\%s/\%s/releases/latest\textquotesingle{}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Updater/\mbox{\hyperlink{GitHubUpdater_8php}{Git\+Hub\+Updater.\+php}}\end{DoxyCompactItemize}

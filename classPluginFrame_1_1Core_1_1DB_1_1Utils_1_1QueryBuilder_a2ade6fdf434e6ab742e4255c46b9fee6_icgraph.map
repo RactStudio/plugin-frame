@@ -1,0 +1,11 @@
+<map id="PluginFrame\Core\DB\Utils\QueryBuilder\orderBy" name="PluginFrame\Core\DB\Utils\QueryBuilder\orderBy">
+<area shape="rect" id="Node000001" title=" " alt="" coords="765,43,925,97"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="881,32,868,24,845,21,826,23,814,28,809,34,809,43,803,43,804,32,811,24,825,18,845,16,870,19,883,27"/>
+<area shape="rect" id="Node000002" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a9e487658a23a8febf28f249fe20d95ee" title=" " alt="" coords="547,17,717,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="751,58,717,53,718,47,752,53"/>
+<area shape="rect" id="Node000004" href="$classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager.html#a12090430167a4a36eb4192e79e8a5d68" title=" " alt="" coords="5,39,228,93"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="751,75,534,77,276,75,228,74,228,69,276,70,534,72,751,69"/>
+<area shape="rect" id="Node000003" href="$classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager.html#acdc7307b9c17a6708927d08e4c067eb9" title=" " alt="" coords="276,5,499,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="533,38,499,37,499,32,533,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="263,51,229,55,228,50,262,45"/>
+</map>

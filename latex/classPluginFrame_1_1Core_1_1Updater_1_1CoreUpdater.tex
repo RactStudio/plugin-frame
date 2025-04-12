@@ -1,0 +1,152 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}Core\+Updater Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater}{}\label{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater}\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a420c5510610037c2fe80c64e97a10fb7}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a10785dfd9410f5a572919e7e97c367c1}{check\+Updates}} (\$transient)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_adc30b448240f4504e31c559ff4475b5d}{install\+Core\+Update}} (\$response, \$hook\+\_\+extra, \$result)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_af02e0e317312b6a611dd446a10446381}{CORE\+\_\+\+API}} = \textquotesingle{}https\+://core.\+plugin-\/frame.\+com/v1/check-\/update\textquotesingle{}
+\item 
+const \mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_aed46da03024c6cac2db3aecd64b2f0c1}{CORE\+\_\+\+PATHS}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a1e2878f356b541cc1e76ac0e97e753a5}{current\+Version}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a4ebec5abd08aec683259b18b435c9d59}{move\+Files}} (\$source, \$dest, \$paths)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a6a408e7b67e9fc707fb5595286a56746}{recurse\+Copy}} (\$src, \$dst)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a420c5510610037c2fe80c64e97a10fb7}\label{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a420c5510610037c2fe80c64e97a10fb7} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Core\+Updater\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a10785dfd9410f5a572919e7e97c367c1}\label{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a10785dfd9410f5a572919e7e97c367c1} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}!checkUpdates@{checkUpdates}}
+\index{checkUpdates@{checkUpdates}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}}
+\doxysubsubsection{\texorpdfstring{checkUpdates()}{checkUpdates()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Core\+Updater\+::check\+Updates (\begin{DoxyParamCaption}\item[{}]{\$transient }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a10785dfd9410f5a572919e7e97c367c1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a1e2878f356b541cc1e76ac0e97e753a5}\label{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a1e2878f356b541cc1e76ac0e97e753a5} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}!currentVersion@{currentVersion}}
+\index{currentVersion@{currentVersion}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}}
+\doxysubsubsection{\texorpdfstring{currentVersion()}{currentVersion()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Core\+Updater\+::current\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a1e2878f356b541cc1e76ac0e97e753a5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_adc30b448240f4504e31c559ff4475b5d}\label{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_adc30b448240f4504e31c559ff4475b5d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}!installCoreUpdate@{installCoreUpdate}}
+\index{installCoreUpdate@{installCoreUpdate}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}}
+\doxysubsubsection{\texorpdfstring{installCoreUpdate()}{installCoreUpdate()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Core\+Updater\+::install\+Core\+Update (\begin{DoxyParamCaption}\item[{}]{\$response,  }\item[{}]{\$hook\+\_\+extra,  }\item[{}]{\$result }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_adc30b448240f4504e31c559ff4475b5d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a4ebec5abd08aec683259b18b435c9d59}\label{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a4ebec5abd08aec683259b18b435c9d59} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}!moveFiles@{moveFiles}}
+\index{moveFiles@{moveFiles}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}}
+\doxysubsubsection{\texorpdfstring{moveFiles()}{moveFiles()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Core\+Updater\+::move\+Files (\begin{DoxyParamCaption}\item[{}]{\$source,  }\item[{}]{\$dest,  }\item[{}]{\$paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a4ebec5abd08aec683259b18b435c9d59_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a4ebec5abd08aec683259b18b435c9d59_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a6a408e7b67e9fc707fb5595286a56746}\label{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a6a408e7b67e9fc707fb5595286a56746} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}!recurseCopy@{recurseCopy}}
+\index{recurseCopy@{recurseCopy}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}}
+\doxysubsubsection{\texorpdfstring{recurseCopy()}{recurseCopy()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Core\+Updater\+::recurse\+Copy (\begin{DoxyParamCaption}\item[{}]{\$src,  }\item[{}]{\$dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a6a408e7b67e9fc707fb5595286a56746_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_a6a408e7b67e9fc707fb5595286a56746_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_af02e0e317312b6a611dd446a10446381}\label{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_af02e0e317312b6a611dd446a10446381} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}!CORE\_API@{CORE\_API}}
+\index{CORE\_API@{CORE\_API}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}}
+\doxysubsubsection{\texorpdfstring{CORE\_API}{CORE\_API}}
+{\footnotesize\ttfamily const Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Core\+Updater\+::\+CORE\+\_\+\+API = \textquotesingle{}https\+://core.\+plugin-\/frame.\+com/v1/check-\/update\textquotesingle{}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_aed46da03024c6cac2db3aecd64b2f0c1}\label{classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater_aed46da03024c6cac2db3aecd64b2f0c1} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}!CORE\_PATHS@{CORE\_PATHS}}
+\index{CORE\_PATHS@{CORE\_PATHS}!PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater@{PluginFrame\textbackslash{}Core\textbackslash{}Updater\textbackslash{}CoreUpdater}}
+\doxysubsubsection{\texorpdfstring{CORE\_PATHS}{CORE\_PATHS}}
+{\footnotesize\ttfamily const Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Updater\textbackslash{}\+Core\+Updater\+::\+CORE\+\_\+\+PATHS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'app/Core/'}}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Updater/\mbox{\hyperlink{CoreUpdater_8php}{Core\+Updater.\+php}}\end{DoxyCompactItemize}

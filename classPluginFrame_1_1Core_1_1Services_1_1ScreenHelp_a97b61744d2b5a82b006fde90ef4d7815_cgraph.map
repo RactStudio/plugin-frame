@@ -1,0 +1,11 @@
+<map id="PluginFrame\Core\Services\ScreenHelp\registerGroups" name="PluginFrame\Core\Services\ScreenHelp\registerGroups">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,205,77"/>
+<area shape="rect" id="Node000002" href="$classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp.html#abe6c6db01fbfd140e0b4872aa751ed66" title=" " alt="" coords="253,37,469,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,55,240,55,240,60,205,60"/>
+<area shape="rect" id="Node000003" href="$classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp.html#aa6fbd85dd1e92fc8658dc570ceb2bf74" title=" " alt="" coords="517,37,736,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="470,55,504,55,504,60,470,60"/>
+<area shape="rect" id="Node000004" href="$classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp.html#ac28f45fe7d91d627523bff2b16198b29" title=" " alt="" coords="784,5,988,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="736,41,770,37,771,42,736,47"/>
+<area shape="rect" id="Node000005" href="$classPluginFrame_1_1Core_1_1Services_1_1Views.html#a385d700c76c80f3049faf9090c2bbd7b" title=" " alt="" coords="788,69,984,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="736,68,774,73,774,78,736,73"/>
+</map>

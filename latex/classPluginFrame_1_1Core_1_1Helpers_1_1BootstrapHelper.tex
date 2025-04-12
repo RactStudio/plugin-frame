@@ -1,0 +1,157 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}Bootstrap\+Helper Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper}{}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper}\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a874e7faa68b0c5dbcc4f45082e1726d5}{is\+\_\+php\+\_\+version\+\_\+compatible}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a89af59fd04e8a146023350421ff9d46c}{php\+\_\+version\+\_\+notice}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_ae1736ba95ebf394df9a7143dfcf75731}{initialize\+\_\+plugin}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a7f705b11586f687676b444bcbb6c02b0}{autoload\+\_\+classes}} (string \$class)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a4fbaee01faac41c3f1372da96f8a6931}{on\+\_\+plugin\+\_\+activation}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a51d5a3fa2fc314d326153e81f436eb23}{on\+\_\+plugin\+\_\+deactivation}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_ace6c11f7ae781439bb66d57b7243302c}{on\+\_\+plugin\+\_\+uninstall}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_acf49c9b659eaf07e6d31d0514ffd90a8}{on\+\_\+plugin\+\_\+upgrade}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a62d6d18da122a34d6349349502e6c74a}{on\+\_\+plugin\+\_\+updater}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a689c317bda44b77b38a2d453d503d42c}{load\+\_\+dependencies}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a6251a42f6d08b0078db7bb7f9401a766}{load\+\_\+composer\+\_\+autoload}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a16b8206e1c6f64a0dd15828517903b20}{load\+\_\+features}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a7f705b11586f687676b444bcbb6c02b0}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a7f705b11586f687676b444bcbb6c02b0} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!autoload\_classes@{autoload\_classes}}
+\index{autoload\_classes@{autoload\_classes}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{autoload\_classes()}{autoload\_classes()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::autoload\+\_\+classes (\begin{DoxyParamCaption}\item[{string}]{\$class }\end{DoxyParamCaption})}
+
+Autoload classes from specific directories using PSR-\/4-\/like structure. \Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_ae1736ba95ebf394df9a7143dfcf75731}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_ae1736ba95ebf394df9a7143dfcf75731} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!initialize\_plugin@{initialize\_plugin}}
+\index{initialize\_plugin@{initialize\_plugin}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{initialize\_plugin()}{initialize\_plugin()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::initialize\+\_\+plugin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize the plugin\+: load dependencies, configurations, and features. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_ae1736ba95ebf394df9a7143dfcf75731_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a874e7faa68b0c5dbcc4f45082e1726d5}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a874e7faa68b0c5dbcc4f45082e1726d5} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!is\_php\_version\_compatible@{is\_php\_version\_compatible}}
+\index{is\_php\_version\_compatible@{is\_php\_version\_compatible}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{is\_php\_version\_compatible()}{is\_php\_version\_compatible()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::is\+\_\+php\+\_\+version\+\_\+compatible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check for minimum PHP version compatibility.
+
+\begin{DoxyReturn}{Returns}
+bool True if compatible, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a6251a42f6d08b0078db7bb7f9401a766}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a6251a42f6d08b0078db7bb7f9401a766} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!load\_composer\_autoload@{load\_composer\_autoload}}
+\index{load\_composer\_autoload@{load\_composer\_autoload}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{load\_composer\_autoload()}{load\_composer\_autoload()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::load\+\_\+composer\+\_\+autoload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Load Composer autoload file. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a6251a42f6d08b0078db7bb7f9401a766_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a689c317bda44b77b38a2d453d503d42c}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a689c317bda44b77b38a2d453d503d42c} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!load\_dependencies@{load\_dependencies}}
+\index{load\_dependencies@{load\_dependencies}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{load\_dependencies()}{load\_dependencies()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::load\+\_\+dependencies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a689c317bda44b77b38a2d453d503d42c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a689c317bda44b77b38a2d453d503d42c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a16b8206e1c6f64a0dd15828517903b20}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a16b8206e1c6f64a0dd15828517903b20} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!load\_features@{load\_features}}
+\index{load\_features@{load\_features}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{load\_features()}{load\_features()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::load\+\_\+features (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Load plugin-\/specific features. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a16b8206e1c6f64a0dd15828517903b20_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a4fbaee01faac41c3f1372da96f8a6931}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a4fbaee01faac41c3f1372da96f8a6931} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!on\_plugin\_activation@{on\_plugin\_activation}}
+\index{on\_plugin\_activation@{on\_plugin\_activation}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{on\_plugin\_activation()}{on\_plugin\_activation()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::on\+\_\+plugin\+\_\+activation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Register tasks on plugin activation. \Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a51d5a3fa2fc314d326153e81f436eb23}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a51d5a3fa2fc314d326153e81f436eb23} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!on\_plugin\_deactivation@{on\_plugin\_deactivation}}
+\index{on\_plugin\_deactivation@{on\_plugin\_deactivation}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{on\_plugin\_deactivation()}{on\_plugin\_deactivation()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::on\+\_\+plugin\+\_\+deactivation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Register tasks on plugin deactivation. \Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_ace6c11f7ae781439bb66d57b7243302c}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_ace6c11f7ae781439bb66d57b7243302c} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!on\_plugin\_uninstall@{on\_plugin\_uninstall}}
+\index{on\_plugin\_uninstall@{on\_plugin\_uninstall}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{on\_plugin\_uninstall()}{on\_plugin\_uninstall()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::on\+\_\+plugin\+\_\+uninstall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Register tasks on plugin uninstall. \Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a62d6d18da122a34d6349349502e6c74a}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a62d6d18da122a34d6349349502e6c74a} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!on\_plugin\_updater@{on\_plugin\_updater}}
+\index{on\_plugin\_updater@{on\_plugin\_updater}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{on\_plugin\_updater()}{on\_plugin\_updater()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::on\+\_\+plugin\+\_\+updater (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Register tasks on plugin update. \Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_acf49c9b659eaf07e6d31d0514ffd90a8}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_acf49c9b659eaf07e6d31d0514ffd90a8} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!on\_plugin\_upgrade@{on\_plugin\_upgrade}}
+\index{on\_plugin\_upgrade@{on\_plugin\_upgrade}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{on\_plugin\_upgrade()}{on\_plugin\_upgrade()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::on\+\_\+plugin\+\_\+upgrade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Register tasks on plugin upgrade. \Hypertarget{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a89af59fd04e8a146023350421ff9d46c}\label{classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper_a89af59fd04e8a146023350421ff9d46c} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}!php\_version\_notice@{php\_version\_notice}}
+\index{php\_version\_notice@{php\_version\_notice}!PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper@{PluginFrame\textbackslash{}Core\textbackslash{}Helpers\textbackslash{}BootstrapHelper}}
+\doxysubsubsection{\texorpdfstring{php\_version\_notice()}{php\_version\_notice()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Helpers\textbackslash{}\+Bootstrap\+Helper\+::php\+\_\+version\+\_\+notice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Show admin notice for incompatible PHP version. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Helpers/\mbox{\hyperlink{BootstrapHelper_8php}{Bootstrap\+Helper.\+php}}\end{DoxyCompactItemize}

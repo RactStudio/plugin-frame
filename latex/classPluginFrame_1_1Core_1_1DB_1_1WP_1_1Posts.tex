@@ -1,0 +1,160 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts}{}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a531a7583db0f61f0f320ea70b4e750d9}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a2e62c2e13799a128dc87ebee5e2b4c0d}{all\+Posts}} (\$page=1, \$per\+Page=10, \$columns=\mbox{[}\textquotesingle{} \texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a68d66b82144d5ce116288144b2e595a8}{get\+Post}} (\$post\+Id, \$page=1, \$per\+Page=10, \$columns=\mbox{[}\textquotesingle{} \texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_ac3fb3dcebc36d60662c58b699d7b96f9}{insert\+Post}} (\$post\+Data, \$meta\+Data=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a941feb4d2675dd17d667edb8f0081f35}{update\+Post}} (\$post\+Id, \$post\+Data, \$meta\+Data=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_aed7574410436c2b43faac9806d4e9575}{delete\+Post}} (\$post\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a63c883920458e3c0887f07f942d5a455}{\$query\+Builder}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a42c3f9dcfc986387ce6aba421a745ebc}{\$pagination\+Manager}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a401be9cefaee032577152f402d006299}{\$table}} = \textquotesingle{}posts\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a531a7583db0f61f0f320ea70b4e750d9}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a531a7583db0f61f0f320ea70b4e750d9} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Posts\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a2e62c2e13799a128dc87ebee5e2b4c0d}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a2e62c2e13799a128dc87ebee5e2b4c0d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}!allPosts@{allPosts}}
+\index{allPosts@{allPosts}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection{\texorpdfstring{allPosts()}{allPosts()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Posts\+::all\+Posts (\begin{DoxyParamCaption}\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10},  }\item[{}]{\$columns = {\ttfamily \mbox{[}\textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]}} }\end{DoxyParamCaption})}
+
+Get all posts with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+array & {\em \$columns} & The items is selected (default is all {\ttfamily \texorpdfstring{$\ast$}{*}}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_aed7574410436c2b43faac9806d4e9575}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_aed7574410436c2b43faac9806d4e9575} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}!deletePost@{deletePost}}
+\index{deletePost@{deletePost}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection{\texorpdfstring{deletePost()}{deletePost()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Posts\+::delete\+Post (\begin{DoxyParamCaption}\item[{}]{\$post\+Id }\end{DoxyParamCaption})}
+
+Delete a post and its metadata.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$post\+Id} & Post ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure. 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a68d66b82144d5ce116288144b2e595a8}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a68d66b82144d5ce116288144b2e595a8} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}!getPost@{getPost}}
+\index{getPost@{getPost}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection{\texorpdfstring{getPost()}{getPost()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Posts\+::get\+Post (\begin{DoxyParamCaption}\item[{}]{\$post\+Id,  }\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10},  }\item[{}]{\$columns = {\ttfamily \mbox{[}\textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]}} }\end{DoxyParamCaption})}
+
+Get a specific post by its ID with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$post\+Id} & The post ID. \\
+\hline
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+array & {\em \$columns} & The items is selected (default is all {\ttfamily \texorpdfstring{$\ast$}{*}}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_ac3fb3dcebc36d60662c58b699d7b96f9}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_ac3fb3dcebc36d60662c58b699d7b96f9} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}!insertPost@{insertPost}}
+\index{insertPost@{insertPost}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection{\texorpdfstring{insertPost()}{insertPost()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Posts\+::insert\+Post (\begin{DoxyParamCaption}\item[{}]{\$post\+Data,  }\item[{}]{\$meta\+Data = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Insert a new post with optional metadata.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$post\+Data} & The post data. \\
+\hline
+array & {\em \$meta\+Data} & Optional metadata. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int\texorpdfstring{$\vert$}{|}\+WP\+\_\+\+Error Post ID or error. 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a941feb4d2675dd17d667edb8f0081f35}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a941feb4d2675dd17d667edb8f0081f35} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}!updatePost@{updatePost}}
+\index{updatePost@{updatePost}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection{\texorpdfstring{updatePost()}{updatePost()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Posts\+::update\+Post (\begin{DoxyParamCaption}\item[{}]{\$post\+Id,  }\item[{}]{\$post\+Data,  }\item[{}]{\$meta\+Data = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Update a post and its metadata.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$post\+Id} & Post ID. \\
+\hline
+array & {\em \$post\+Data} & The post data. \\
+\hline
+array & {\em \$meta\+Data} & Optional metadata updates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\texorpdfstring{$\vert$}{|}\+WP\+\_\+\+Error True on success, WP\+\_\+\+Error on failure. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a42c3f9dcfc986387ce6aba421a745ebc}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a42c3f9dcfc986387ce6aba421a745ebc} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}!\$paginationManager@{\$paginationManager}}
+\index{\$paginationManager@{\$paginationManager}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection{\texorpdfstring{\$paginationManager}{\$paginationManager}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Posts\+::\$pagination\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a63c883920458e3c0887f07f942d5a455}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a63c883920458e3c0887f07f942d5a455} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Posts\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a401be9cefaee032577152f402d006299}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts_a401be9cefaee032577152f402d006299} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Posts}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Posts\+::\$table = \textquotesingle{}posts\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+WP/\mbox{\hyperlink{Posts_8php}{Posts.\+php}}\end{DoxyCompactItemize}

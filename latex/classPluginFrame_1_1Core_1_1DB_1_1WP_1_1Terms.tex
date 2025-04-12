@@ -1,0 +1,170 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms}{}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a87882e1f763766b60f064bb7fd9f69ae}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a7d81d37859b84a98f12fa4354cb5f567}{all\+Terms}} (\$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a5c469766fe9c4a07f3787e0bf39d7f00}{single\+Term}} (\$term\+Id, \$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a1f79ad0dec886baf70df32363c3be287}{get\+Term}} (\$term\+Id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_af877fc9c096f925b9bf6724d1c50ac14}{insert\+Term}} (\$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a79a9bbe02d76a33620776b9e0d0c48d6}{update\+Term}} (\$term\+Id, \$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_aede437a378c316dff88e1cf13a1706d9}{delete\+Term}} (\$term\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a7715f6d8a5e0794aafcc83aec7f1e67f}{\$query\+Builder}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_adf98d817ce77b368e8b2d1624db312a8}{\$pagination\+Manager}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a3308a139f5c8f105987234b73756b772}{\$table}} = \textquotesingle{}terms\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a87882e1f763766b60f064bb7fd9f69ae}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a87882e1f763766b60f064bb7fd9f69ae} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a7d81d37859b84a98f12fa4354cb5f567}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a7d81d37859b84a98f12fa4354cb5f567} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!allTerms@{allTerms}}
+\index{allTerms@{allTerms}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{allTerms()}{allTerms()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::all\+Terms (\begin{DoxyParamCaption}\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get all terms with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_aede437a378c316dff88e1cf13a1706d9}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_aede437a378c316dff88e1cf13a1706d9} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!deleteTerm@{deleteTerm}}
+\index{deleteTerm@{deleteTerm}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{deleteTerm()}{deleteTerm()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::delete\+Term (\begin{DoxyParamCaption}\item[{}]{\$term\+Id }\end{DoxyParamCaption})}
+
+Delete a term by its ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Id} & The term ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a1f79ad0dec886baf70df32363c3be287}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a1f79ad0dec886baf70df32363c3be287} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!getTerm@{getTerm}}
+\index{getTerm@{getTerm}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{getTerm()}{getTerm()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::get\+Term (\begin{DoxyParamCaption}\item[{}]{\$term\+Id }\end{DoxyParamCaption})}
+
+Get a specific term by its ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Id} & The term ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_af877fc9c096f925b9bf6724d1c50ac14}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_af877fc9c096f925b9bf6724d1c50ac14} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!insertTerm@{insertTerm}}
+\index{insertTerm@{insertTerm}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{insertTerm()}{insertTerm()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::insert\+Term (\begin{DoxyParamCaption}\item[{}]{\$data }\end{DoxyParamCaption})}
+
+Insert a new term.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & The data to insert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\texorpdfstring{$\vert$}{|}int 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a5c469766fe9c4a07f3787e0bf39d7f00}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a5c469766fe9c4a07f3787e0bf39d7f00} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!singleTerm@{singleTerm}}
+\index{singleTerm@{singleTerm}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{singleTerm()}{singleTerm()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::single\+Term (\begin{DoxyParamCaption}\item[{}]{\$term\+Id,  }\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get Term data for a specific Term with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Id} & The Term ID to get data for. \\
+\hline
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a79a9bbe02d76a33620776b9e0d0c48d6}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a79a9bbe02d76a33620776b9e0d0c48d6} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!updateTerm@{updateTerm}}
+\index{updateTerm@{updateTerm}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{updateTerm()}{updateTerm()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::update\+Term (\begin{DoxyParamCaption}\item[{}]{\$term\+Id,  }\item[{}]{\$data }\end{DoxyParamCaption})}
+
+Update a term by its ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Id} & The term ID. \\
+\hline
+array & {\em \$data} & The data to update. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_adf98d817ce77b368e8b2d1624db312a8}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_adf98d817ce77b368e8b2d1624db312a8} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!\$paginationManager@{\$paginationManager}}
+\index{\$paginationManager@{\$paginationManager}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{\$paginationManager}{\$paginationManager}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::\$pagination\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a7715f6d8a5e0794aafcc83aec7f1e67f}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a7715f6d8a5e0794aafcc83aec7f1e67f} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a3308a139f5c8f105987234b73756b772}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms_a3308a139f5c8f105987234b73756b772} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Terms}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Terms\+::\$table = \textquotesingle{}terms\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+WP/\mbox{\hyperlink{Terms_8php}{Terms.\+php}}\end{DoxyCompactItemize}

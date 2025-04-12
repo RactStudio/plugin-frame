@@ -1,0 +1,156 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Term\+Meta Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta}{}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ac5bbbd7cc2d6211448d144efc7d812a9}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ac60397f7c1cc3d374111c4fed97f69a6}{all\+Term\+Meta}} (\$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a7c7b4c27d55afeaf22c8bd9a777ec237}{get\+Term\+Meta}} (\$term\+Id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ad0fc1209fba8db82c7bb6057d466db42}{insert\+Term\+Meta}} (\$term\+Id, \$meta\+Key, \$meta\+Value)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a08a4a85b10ab15fa6d9d4341f77c9fef}{update\+Term\+Meta}} (\$term\+Id, \$meta\+Key, \$meta\+Value)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a28f587324be037048d9c1e9f58116a73}{delete\+Term\+Meta}} (\$term\+Id, \$meta\+Key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_acd9f39866fad0c809782f3e977bc6d73}{\$query\+Builder}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a270bb37e2c8cdb77ff64118b616ef13b}{\$pagination\+Manager}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ac168dcf00b4ebda6e86d3d8f585fef36}{\$table}} = \textquotesingle{}termmeta\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ac5bbbd7cc2d6211448d144efc7d812a9}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ac5bbbd7cc2d6211448d144efc7d812a9} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Meta\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ac60397f7c1cc3d374111c4fed97f69a6}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ac60397f7c1cc3d374111c4fed97f69a6} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}!allTermMeta@{allTermMeta}}
+\index{allTermMeta@{allTermMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection{\texorpdfstring{allTermMeta()}{allTermMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Meta\+::all\+Term\+Meta (\begin{DoxyParamCaption}\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get all term metadata with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a28f587324be037048d9c1e9f58116a73}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a28f587324be037048d9c1e9f58116a73} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}!deleteTermMeta@{deleteTermMeta}}
+\index{deleteTermMeta@{deleteTermMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection{\texorpdfstring{deleteTermMeta()}{deleteTermMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Meta\+::delete\+Term\+Meta (\begin{DoxyParamCaption}\item[{}]{\$term\+Id,  }\item[{}]{\$meta\+Key }\end{DoxyParamCaption})}
+
+Delete metadata for a term.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Id} & The term ID. \\
+\hline
+string & {\em \$meta\+Key} & The metadata key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a7c7b4c27d55afeaf22c8bd9a777ec237}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a7c7b4c27d55afeaf22c8bd9a777ec237} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}!getTermMeta@{getTermMeta}}
+\index{getTermMeta@{getTermMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection{\texorpdfstring{getTermMeta()}{getTermMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Meta\+::get\+Term\+Meta (\begin{DoxyParamCaption}\item[{}]{\$term\+Id }\end{DoxyParamCaption})}
+
+Get metadata for a specific term by its ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Id} & The term ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ad0fc1209fba8db82c7bb6057d466db42}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ad0fc1209fba8db82c7bb6057d466db42} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}!insertTermMeta@{insertTermMeta}}
+\index{insertTermMeta@{insertTermMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection{\texorpdfstring{insertTermMeta()}{insertTermMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Meta\+::insert\+Term\+Meta (\begin{DoxyParamCaption}\item[{}]{\$term\+Id,  }\item[{}]{\$meta\+Key,  }\item[{}]{\$meta\+Value }\end{DoxyParamCaption})}
+
+Insert new metadata for a term.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Id} & The term ID. \\
+\hline
+string & {\em \$meta\+Key} & The metadata key. \\
+\hline
+mixed & {\em \$meta\+Value} & The metadata value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\texorpdfstring{$\vert$}{|}int 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a08a4a85b10ab15fa6d9d4341f77c9fef}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a08a4a85b10ab15fa6d9d4341f77c9fef} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}!updateTermMeta@{updateTermMeta}}
+\index{updateTermMeta@{updateTermMeta}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection{\texorpdfstring{updateTermMeta()}{updateTermMeta()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Meta\+::update\+Term\+Meta (\begin{DoxyParamCaption}\item[{}]{\$term\+Id,  }\item[{}]{\$meta\+Key,  }\item[{}]{\$meta\+Value }\end{DoxyParamCaption})}
+
+Update metadata for a specific term.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Id} & The term ID. \\
+\hline
+string & {\em \$meta\+Key} & The metadata key. \\
+\hline
+mixed & {\em \$meta\+Value} & The metadata value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a270bb37e2c8cdb77ff64118b616ef13b}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_a270bb37e2c8cdb77ff64118b616ef13b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}!\$paginationManager@{\$paginationManager}}
+\index{\$paginationManager@{\$paginationManager}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection{\texorpdfstring{\$paginationManager}{\$paginationManager}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Meta\+::\$pagination\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_acd9f39866fad0c809782f3e977bc6d73}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_acd9f39866fad0c809782f3e977bc6d73} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Meta\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ac168dcf00b4ebda6e86d3d8f585fef36}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta_ac168dcf00b4ebda6e86d3d8f585fef36} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermMeta}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Meta\+::\$table = \textquotesingle{}termmeta\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+WP/\mbox{\hyperlink{TermMeta_8php}{Term\+Meta.\+php}}\end{DoxyCompactItemize}

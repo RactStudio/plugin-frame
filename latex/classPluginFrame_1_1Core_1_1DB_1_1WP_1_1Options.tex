@@ -1,0 +1,150 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options}{}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a64fdfbab33b9db6abecfdccbee18b76b}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_ae62f85a565aceadd7bfffb52a000ff62}{all\+Options}} (\$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a6ea8874368af2272f589a67e0fb7fd3f}{get\+Option}} (\$option\+Name)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a9ac28e5a89591499e2be4889fee4ccdc}{update\+Option}} (\$option\+Name, \$option\+Value)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a09ca9839c345a11655a67f67ae47fade}{insert\+Option}} (\$option\+Name, \$option\+Value)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a6bd4211ba0d8f41f4fba4dcf971569e4}{delete\+Option}} (\$option\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a6447f344df875c23c0aec17b0dbbdde3}{\$query\+Builder}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_adc22eb45db186276a81d83c1e752585a}{\$pagination\+Manager}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_aacc99c015ab9be836b6b9effd78e77a1}{\$table}} = \textquotesingle{}options\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a64fdfbab33b9db6abecfdccbee18b76b}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a64fdfbab33b9db6abecfdccbee18b76b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Options\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_ae62f85a565aceadd7bfffb52a000ff62}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_ae62f85a565aceadd7bfffb52a000ff62} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}!allOptions@{allOptions}}
+\index{allOptions@{allOptions}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection{\texorpdfstring{allOptions()}{allOptions()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Options\+::all\+Options (\begin{DoxyParamCaption}\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get all options with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a6bd4211ba0d8f41f4fba4dcf971569e4}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a6bd4211ba0d8f41f4fba4dcf971569e4} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}!deleteOption@{deleteOption}}
+\index{deleteOption@{deleteOption}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection{\texorpdfstring{deleteOption()}{deleteOption()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Options\+::delete\+Option (\begin{DoxyParamCaption}\item[{}]{\$option\+Name }\end{DoxyParamCaption})}
+
+Delete an option by name.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$option\+Name} & The option name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a6ea8874368af2272f589a67e0fb7fd3f}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a6ea8874368af2272f589a67e0fb7fd3f} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}!getOption@{getOption}}
+\index{getOption@{getOption}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection{\texorpdfstring{getOption()}{getOption()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Options\+::get\+Option (\begin{DoxyParamCaption}\item[{}]{\$option\+Name }\end{DoxyParamCaption})}
+
+Get a specific option by name.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$option\+Name} & The option name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a09ca9839c345a11655a67f67ae47fade}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a09ca9839c345a11655a67f67ae47fade} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}!insertOption@{insertOption}}
+\index{insertOption@{insertOption}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection{\texorpdfstring{insertOption()}{insertOption()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Options\+::insert\+Option (\begin{DoxyParamCaption}\item[{}]{\$option\+Name,  }\item[{}]{\$option\+Value }\end{DoxyParamCaption})}
+
+Insert a new option.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$option\+Name} & The option name. \\
+\hline
+mixed & {\em \$option\+Value} & The option value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\texorpdfstring{$\vert$}{|}int 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a9ac28e5a89591499e2be4889fee4ccdc}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a9ac28e5a89591499e2be4889fee4ccdc} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}!updateOption@{updateOption}}
+\index{updateOption@{updateOption}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection{\texorpdfstring{updateOption()}{updateOption()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Options\+::update\+Option (\begin{DoxyParamCaption}\item[{}]{\$option\+Name,  }\item[{}]{\$option\+Value }\end{DoxyParamCaption})}
+
+Update an option value by its name.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$option\+Name} & The option name. \\
+\hline
+mixed & {\em \$option\+Value} & The new value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_adc22eb45db186276a81d83c1e752585a}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_adc22eb45db186276a81d83c1e752585a} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}!\$paginationManager@{\$paginationManager}}
+\index{\$paginationManager@{\$paginationManager}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection{\texorpdfstring{\$paginationManager}{\$paginationManager}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Options\+::\$pagination\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a6447f344df875c23c0aec17b0dbbdde3}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_a6447f344df875c23c0aec17b0dbbdde3} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Options\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_aacc99c015ab9be836b6b9effd78e77a1}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options_aacc99c015ab9be836b6b9effd78e77a1} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Options}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Options\+::\$table = \textquotesingle{}options\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+WP/\mbox{\hyperlink{Core_2DB_2WP_2Options_8php}{Options.\+php}}\end{DoxyCompactItemize}

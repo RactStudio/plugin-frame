@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['table_0',['table',['../classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a54f183ae53836c139e12ddc8975ee7c4',1,'PluginFrame::Core::DB::Utils::QueryBuilder']]],
+  ['tableexists_1',['tableExists',['../classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBUtils.html#a6668152ded066790111f4bc50ed812d8',1,'PluginFrame::Core::DB::Utils::DBUtils']]],
+  ['tablename_2',['tableName',['../classPluginFrame_1_1Config_1_1DBconfig.html#ab60fa3df4811698cb10c144c4aa4e6cd',1,'PluginFrame::Config::DBconfig']]],
+  ['taxonomies_3',['taxonomies',['../classPluginFrame_1_1Providers_1_1Taxonomies.html',1,'PluginFrame\Providers\Taxonomies'],['../classPluginFrame_1_1Core_1_1Services_1_1Taxonomies.html',1,'PluginFrame\Core\Services\Taxonomies']]],
+  ['taxonomies_2ephp_4',['taxonomies.php',['../Core_2Services_2Taxonomies_8php.html',1,'(Global Namespace)'],['../Providers_2Taxonomies_8php.html',1,'(Global Namespace)']]],
+  ['termmeta_5',['TermMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta.html',1,'PluginFrame::Core::DB::WP']]],
+  ['termmeta_2ephp_6',['TermMeta.php',['../TermMeta_8php.html',1,'']]],
+  ['termrelationships_7',['TermRelationships',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships.html',1,'PluginFrame::Core::DB::WP']]],
+  ['termrelationships_2ephp_8',['TermRelationships.php',['../TermRelationships_8php.html',1,'']]],
+  ['terms_9',['Terms',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms.html',1,'PluginFrame::Core::DB::WP']]],
+  ['terms_2ephp_10',['Terms.php',['../Terms_8php.html',1,'']]],
+  ['termtaxonomy_11',['TermTaxonomy',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy.html',1,'PluginFrame::Core::DB::WP']]],
+  ['termtaxonomy_2ephp_12',['TermTaxonomy.php',['../TermTaxonomy_8php.html',1,'']]],
+  ['testdata_13',['TestData',['../classPluginFrame_1_1REST_1_1Controllers_1_1TestData.html',1,'PluginFrame::REST::Controllers']]],
+  ['testdata_2ephp_14',['TestData.php',['../TestData_8php.html',1,'']]],
+  ['testdatahandler_15',['testDataHandler',['../classPluginFrame_1_1REST_1_1Controllers_1_1TestData.html#a80d5baf5e8b8502e63a0fe78a4963af0',1,'PluginFrame::REST::Controllers::TestData']]],
+  ['testdbposts_16',['testDBposts',['../classPluginFrame_1_1REST_1_1Controllers_1_1TestData.html#af842442fc0cda705a8f83b0cfe44d661',1,'PluginFrame::REST::Controllers::TestData']]],
+  ['tools_17',['Tools',['../classPluginFrame_1_1Views_1_1Admin_1_1Tools.html',1,'PluginFrame::Views::Admin']]],
+  ['tools_2ephp_18',['Tools.php',['../Tools_8php.html',1,'']]],
+  ['toolsalpine_19',['ToolsAlpine',['../classPluginFrame_1_1Views_1_1AdminAlpine_1_1ToolsAlpine.html',1,'PluginFrame::Views::AdminAlpine']]],
+  ['toolsalpine_2ephp_20',['ToolsAlpine.php',['../ToolsAlpine_8php.html',1,'']]],
+  ['trashschedule_21',['trashSchedule',['../classPluginFrame_1_1Core_1_1Services_1_1Scheduler.html#add8048fafc556d1e7c3b59a9f8c136e5',1,'PluginFrame::Core::Services::Scheduler']]],
+  ['truncatetable_22',['truncateTable',['../classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a775aaadb9feae4cce896c82ef1ef1746',1,'PluginFrame::Core::DB::Utils::QueryBuilder']]]
+];

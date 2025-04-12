@@ -1,0 +1,294 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}Pagination\+Manager Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager}{}\label{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a12090430167a4a36eb4192e79e8a5d68}{get\+Paginated\+Results}} (\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}} \$query\+Builder, \$request, \$page=1, \$per\+Page=10, \$sort\+Column=null, \$sort\+By=\textquotesingle{}desc\textquotesingle{}, \$table=\textquotesingle{}\textquotesingle{}, \$select=\textquotesingle{} \texorpdfstring{$\ast$}{*}\textquotesingle{}, \$where=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a69af1670f623592e271db496211a07a6}{generate\+Prev\+Next\+Links\+Param}} (\$current\+Page, \$per\+Page, \$sort\+Column, \$sort\+By, \$total\+Pages, \$query\+Param=\textquotesingle{}page\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a0a142fa9e104d21e5b57bef9727c3301}{apply\+Where\+Conditions}} (\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}} \$query\+Builder, array \$where)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_ae21019a931129e220366a0d67d6db438}{apply\+Pagination}} (\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}} \$query\+Builder, \$page, \$per\+Page)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_acdc7307b9c17a6708927d08e4c067eb9}{fetch\+Results\+With\+Metadata}} (\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}} \$query\+Builder, \$page, \$per\+Page, \$sort\+Column, \$sort\+By, \$start\+Time)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a75d393753ee5c845892f09ac9f98370b}{generate\+Pagination\+Metadata}} (\$page, \$per\+Page, \$sort\+Column, \$sort\+By, \$total\+Records, \$total\+Pages, \$query\+Time, \$start\+Time)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a750f2091443aae8bb9c8532a36b2a55c}{get\+Total\+Records}} (\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}} \$query\+Builder)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pagination\+Manager handles the pagination logic for any database-\/related query. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_ae21019a931129e220366a0d67d6db438}\label{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_ae21019a931129e220366a0d67d6db438} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}!applyPagination@{applyPagination}}
+\index{applyPagination@{applyPagination}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}}
+\doxysubsubsection{\texorpdfstring{applyPagination()}{applyPagination()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Pagination\textbackslash{}\+Pagination\+Manager\+::apply\+Pagination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}}}]{\$query\+Builder,  }\item[{}]{\$page,  }\item[{}]{\$per\+Page }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Apply pagination (LIMIT and OFFSET) to the query.
+
+
+\begin{DoxyParams}[1]{Parameters}
+Query\+Builder & {\em \$query\+Builder} & \\
+\hline
+int & {\em \$page} & The current page number. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_ae21019a931129e220366a0d67d6db438_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_ae21019a931129e220366a0d67d6db438_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a0a142fa9e104d21e5b57bef9727c3301}\label{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a0a142fa9e104d21e5b57bef9727c3301} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}!applyWhereConditions@{applyWhereConditions}}
+\index{applyWhereConditions@{applyWhereConditions}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}}
+\doxysubsubsection{\texorpdfstring{applyWhereConditions()}{applyWhereConditions()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Pagination\textbackslash{}\+Pagination\+Manager\+::apply\+Where\+Conditions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}}}]{\$query\+Builder,  }\item[{array}]{\$where }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Apply WHERE conditions to the query.
+
+
+\begin{DoxyParams}[1]{Parameters}
+Query\+Builder & {\em \$query\+Builder} & \\
+\hline
+array & {\em \$where} & The WHERE conditions. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a0a142fa9e104d21e5b57bef9727c3301_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a0a142fa9e104d21e5b57bef9727c3301_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_acdc7307b9c17a6708927d08e4c067eb9}\label{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_acdc7307b9c17a6708927d08e4c067eb9} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}!fetchResultsWithMetadata@{fetchResultsWithMetadata}}
+\index{fetchResultsWithMetadata@{fetchResultsWithMetadata}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}}
+\doxysubsubsection{\texorpdfstring{fetchResultsWithMetadata()}{fetchResultsWithMetadata()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Pagination\textbackslash{}\+Pagination\+Manager\+::fetch\+Results\+With\+Metadata (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}}}]{\$query\+Builder,  }\item[{}]{\$page,  }\item[{}]{\$per\+Page,  }\item[{}]{\$sort\+Column,  }\item[{}]{\$sort\+By,  }\item[{}]{\$start\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Fetch the results and include pagination metadata.
+
+
+\begin{DoxyParams}[1]{Parameters}
+Query\+Builder & {\em \$query\+Builder} & \\
+\hline
+int & {\em \$page} & The current page number. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+string & {\em \$sort\+Column} & The column to sort by -\/ Default is {\ttfamily null}. \\
+\hline
+string & {\em \$sort\+By} & The sort direction (\textquotesingle{}asc\textquotesingle{} or \textquotesingle{}desc\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array The results with pagination metadata. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_acdc7307b9c17a6708927d08e4c067eb9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_acdc7307b9c17a6708927d08e4c067eb9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a75d393753ee5c845892f09ac9f98370b}\label{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a75d393753ee5c845892f09ac9f98370b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}!generatePaginationMetadata@{generatePaginationMetadata}}
+\index{generatePaginationMetadata@{generatePaginationMetadata}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}}
+\doxysubsubsection{\texorpdfstring{generatePaginationMetadata()}{generatePaginationMetadata()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Pagination\textbackslash{}\+Pagination\+Manager\+::generate\+Pagination\+Metadata (\begin{DoxyParamCaption}\item[{}]{\$page,  }\item[{}]{\$per\+Page,  }\item[{}]{\$sort\+Column,  }\item[{}]{\$sort\+By,  }\item[{}]{\$total\+Records,  }\item[{}]{\$total\+Pages,  }\item[{}]{\$query\+Time,  }\item[{}]{\$start\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Generate the pagination metadata.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$page} & The current page number. \\
+\hline
+int & {\em \$total\+Records} & The total number of records. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+string & {\em \$sort\+Column} & The column to sort by -\/ Default is {\ttfamily null}. \\
+\hline
+string & {\em \$sort\+By} & The sort direction (\textquotesingle{}asc\textquotesingle{} or \textquotesingle{}desc\textquotesingle{}). \\
+\hline
+int & {\em \$total\+Records} & The total number of records. \\
+\hline
+int & {\em \$total\+Pages} & The total number of pages. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array The pagination metadata. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a75d393753ee5c845892f09ac9f98370b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a75d393753ee5c845892f09ac9f98370b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a69af1670f623592e271db496211a07a6}\label{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a69af1670f623592e271db496211a07a6} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}!generatePrevNextLinksParam@{generatePrevNextLinksParam}}
+\index{generatePrevNextLinksParam@{generatePrevNextLinksParam}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}}
+\doxysubsubsection{\texorpdfstring{generatePrevNextLinksParam()}{generatePrevNextLinksParam()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Pagination\textbackslash{}\+Pagination\+Manager\+::generate\+Prev\+Next\+Links\+Param (\begin{DoxyParamCaption}\item[{}]{\$current\+Page,  }\item[{}]{\$per\+Page,  }\item[{}]{\$sort\+Column,  }\item[{}]{\$sort\+By,  }\item[{}]{\$total\+Pages,  }\item[{}]{\$query\+Param = {\ttfamily \textquotesingle{}page\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Generate only previous and next pagination links.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$current\+Page} & The current page number. \\
+\hline
+int & {\em \$total\+Pages} & The total number of pages. \\
+\hline
+int & {\em \$per\+Page} & The base URL for pagination links. \\
+\hline
+string & {\em \$sort\+Column} & The column to sort by -\/ Default is null. \\
+\hline
+string & {\em \$sort\+By} & The sort direction (\textquotesingle{}asc\textquotesingle{} or \textquotesingle{}desc\textquotesingle{}). \\
+\hline
+int & {\em \$total\+Pages} & The base URL for pagination links. \\
+\hline
+string & {\em \$query\+Param} & The query parameter name for pagination. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Associative array with URLs. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a69af1670f623592e271db496211a07a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a12090430167a4a36eb4192e79e8a5d68}\label{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a12090430167a4a36eb4192e79e8a5d68} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}!getPaginatedResults@{getPaginatedResults}}
+\index{getPaginatedResults@{getPaginatedResults}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}}
+\doxysubsubsection{\texorpdfstring{getPaginatedResults()}{getPaginatedResults()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Pagination\textbackslash{}\+Pagination\+Manager\+::get\+Paginated\+Results (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}}}]{\$query\+Builder,  }\item[{}]{\$request,  }\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10},  }\item[{}]{\$sort\+Column = {\ttfamily null},  }\item[{}]{\$sort\+By = {\ttfamily \textquotesingle{}desc\textquotesingle{}},  }\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{\$select = {\ttfamily \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}},  }\item[{}]{\$where = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Get paginated results for any query.
+
+
+\begin{DoxyParams}[1]{Parameters}
+Query\+Builder & {\em \$query\+Builder} & The query builder instance. \\
+\hline
+object & {\em \$request} & The request object. \\
+\hline
+int & {\em \$page} & The current page number. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+string & {\em \$sort\+Column} & The column to sort by -\/ Default is {\ttfamily null}. \\
+\hline
+string & {\em \$sort\+By} & The sort direction (\textquotesingle{}asc\textquotesingle{} or \textquotesingle{}desc\textquotesingle{}). \\
+\hline
+string & {\em \$table} & The table name for the query. \\
+\hline
+array & {\em \$select} & The columns to select (default is all {\ttfamily \texorpdfstring{$\ast$}{*}}). \\
+\hline
+array & {\em \$where} & The WHERE conditions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array The results or the total record count. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If the table name is missing. \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a12090430167a4a36eb4192e79e8a5d68_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a750f2091443aae8bb9c8532a36b2a55c}\label{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a750f2091443aae8bb9c8532a36b2a55c} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}!getTotalRecords@{getTotalRecords}}
+\index{getTotalRecords@{getTotalRecords}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Pagination\textbackslash{}PaginationManager}}
+\doxysubsubsection{\texorpdfstring{getTotalRecords()}{getTotalRecords()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Pagination\textbackslash{}\+Pagination\+Manager\+::get\+Total\+Records (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder}{Query\+Builder}}}]{\$query\+Builder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Get the total number of records for the current query.
+
+
+\begin{DoxyParams}[1]{Parameters}
+Query\+Builder & {\em \$query\+Builder} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The total number of records. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a750f2091443aae8bb9c8532a36b2a55c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager_a750f2091443aae8bb9c8532a36b2a55c_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+Pagination/\mbox{\hyperlink{PaginationManager_8php}{Pagination\+Manager.\+php}}\end{DoxyCompactItemize}

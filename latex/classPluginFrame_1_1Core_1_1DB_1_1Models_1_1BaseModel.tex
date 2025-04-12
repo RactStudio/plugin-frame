@@ -1,0 +1,238 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}Base\+Model Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel}{}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+
+
+Inheritance diagram for Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}Base\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_adb9df1ad9e85ad39cf7fc005f966e0e6}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a9fa28136950c8b2420aa30e839e4e805}{all}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_abd1479cc88dd7f27eec4c12367020ac7}{find}} (\$id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a088fc9e4007a9f05741daf31aeaba16d}{create}} (array \$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_ae6defc0bc71b1b6ad42077aea7b420ee}{update}} (\$id, array \$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a4706a3cf4d17bd133e0518cd47a30738}{delete}} (\$id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a257d85b80dbd320d71b15aa3ba4e26a6}{paginate}} (\$per\+Page=10, \$current\+Page=1)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_acbe91694b79ecfa8358980b038e796b3}{join}} (\$table, \$first, \$operator, \$second, \$type=\textquotesingle{}INNER\textquotesingle{})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_acb38187e4ed6bc1150295417b8de0220}{left\+Join}} (\$table, \$first, \$operator, \$second)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_ae47e6cc22496d023560050e5d448ef02}{right\+Join}} (\$table, \$first, \$operator, \$second)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a9bb56e9fa70d4572512777c77f7c24b7}{filter}} (array \$filters)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_ae9abde95ca4268852daad51f6d64321e}{\$table}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a85be75077602421badf7e65503370657}{\$primary\+Key}} = \textquotesingle{}ID\textquotesingle{}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_afdc3a70706b80d26ea04b14fa4f8ae6b}{\$query\+Builder}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base Model class to handle common database operations 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_adb9df1ad9e85ad39cf7fc005f966e0e6}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_adb9df1ad9e85ad39cf7fc005f966e0e6} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1JobCategory_a6fe72f93f9818751f552df0b698901ac}{Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Job\+Category}}, and \mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1JobListing_af5531cee59e2bf1baa5fdfc583eab47f}{Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Job\+Listing}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a9fa28136950c8b2420aa30e839e4e805}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a9fa28136950c8b2420aa30e839e4e805} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!all@{all}}
+\index{all@{all}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{all()}{all()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::all (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all records from the model\textquotesingle{}s table.
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a088fc9e4007a9f05741daf31aeaba16d}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a088fc9e4007a9f05741daf31aeaba16d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!create@{create}}
+\index{create@{create}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::create (\begin{DoxyParamCaption}\item[{array}]{\$data }\end{DoxyParamCaption})}
+
+Insert a record into the model\textquotesingle{}s table.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int\texorpdfstring{$\vert$}{|}false Inserted ID or false on failure. 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a4706a3cf4d17bd133e0518cd47a30738}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a4706a3cf4d17bd133e0518cd47a30738} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!delete@{delete}}
+\index{delete@{delete}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::delete (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Delete a record by primary key.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int\texorpdfstring{$\vert$}{|}false Number of rows deleted or false on failure. 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a9bb56e9fa70d4572512777c77f7c24b7}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a9bb56e9fa70d4572512777c77f7c24b7} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!filter@{filter}}
+\index{filter@{filter}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::filter (\begin{DoxyParamCaption}\item[{array}]{\$filters }\end{DoxyParamCaption})}
+
+Fetch a list of records with custom filters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$filters} & Associative array of column =\texorpdfstring{$>$}{>} value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_abd1479cc88dd7f27eec4c12367020ac7}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_abd1479cc88dd7f27eec4c12367020ac7} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!find@{find}}
+\index{find@{find}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::find (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Find a record by primary key.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_acbe91694b79ecfa8358980b038e796b3}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_acbe91694b79ecfa8358980b038e796b3} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!join@{join}}
+\index{join@{join}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::join (\begin{DoxyParamCaption}\item[{}]{\$table,  }\item[{}]{\$first,  }\item[{}]{\$operator,  }\item[{}]{\$second,  }\item[{}]{\$type = {\ttfamily \textquotesingle{}INNER\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Perform a custom JOIN query.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & The table to join. \\
+\hline
+string & {\em \$first} & The first column for the join condition. \\
+\hline
+string & {\em \$operator} & The comparison operator. \\
+\hline
+string & {\em \$second} & The second column for the join condition. \\
+\hline
+string & {\em \$type} & The type of join (INNER, LEFT, RIGHT). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$this 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_acb38187e4ed6bc1150295417b8de0220}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_acb38187e4ed6bc1150295417b8de0220} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!leftJoin@{leftJoin}}
+\index{leftJoin@{leftJoin}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{leftJoin()}{leftJoin()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::left\+Join (\begin{DoxyParamCaption}\item[{}]{\$table,  }\item[{}]{\$first,  }\item[{}]{\$operator,  }\item[{}]{\$second }\end{DoxyParamCaption})}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a257d85b80dbd320d71b15aa3ba4e26a6}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a257d85b80dbd320d71b15aa3ba4e26a6} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!paginate@{paginate}}
+\index{paginate@{paginate}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{paginate()}{paginate()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::paginate (\begin{DoxyParamCaption}\item[{}]{\$per\+Page = {\ttfamily 10},  }\item[{}]{\$current\+Page = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Paginate records from the model\textquotesingle{}s table.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$per\+Page} & Number of records per page. \\
+\hline
+int & {\em \$current\+Page} & Current page number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An array containing paginated records and metadata. 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_ae47e6cc22496d023560050e5d448ef02}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_ae47e6cc22496d023560050e5d448ef02} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!rightJoin@{rightJoin}}
+\index{rightJoin@{rightJoin}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{rightJoin()}{rightJoin()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::right\+Join (\begin{DoxyParamCaption}\item[{}]{\$table,  }\item[{}]{\$first,  }\item[{}]{\$operator,  }\item[{}]{\$second }\end{DoxyParamCaption})}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_ae6defc0bc71b1b6ad42077aea7b420ee}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_ae6defc0bc71b1b6ad42077aea7b420ee} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!update@{update}}
+\index{update@{update}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::update (\begin{DoxyParamCaption}\item[{}]{\$id,  }\item[{array}]{\$data }\end{DoxyParamCaption})}
+
+Update a record by primary key.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & \\
+\hline
+array & {\em \$data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int\texorpdfstring{$\vert$}{|}false Number of rows updated or false on failure. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a85be75077602421badf7e65503370657}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_a85be75077602421badf7e65503370657} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!\$primaryKey@{\$primaryKey}}
+\index{\$primaryKey@{\$primaryKey}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{\$primaryKey}{\$primaryKey}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::\$primary\+Key = \textquotesingle{}ID\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_afdc3a70706b80d26ea04b14fa4f8ae6b}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_afdc3a70706b80d26ea04b14fa4f8ae6b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_ae9abde95ca4268852daad51f6d64321e}\label{classPluginFrame_1_1Core_1_1DB_1_1Models_1_1BaseModel_ae9abde95ca4268852daad51f6d64321e} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}Models\textbackslash{}BaseModel}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+Models\textbackslash{}\+Base\+Model\+::\$table\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+Models/\mbox{\hyperlink{BaseModel_8php}{Base\+Model.\+php}}\end{DoxyCompactItemize}

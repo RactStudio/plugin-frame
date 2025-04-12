@@ -1,0 +1,249 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade}{}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade}\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+
+
+Inheritance diagram for Plugin\+Frame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a20c573dde68520d709004f259d4e6dec}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ac19b28911d3d1ecf1636103480a6c9e2}{on\+Upgrade\+Process\+Complete}} (\$upgrader, \$options)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ad274bfb1cea05f2c5c0888ce472c2b5f}{before\+Upload}} (\$return, \$hook\+Extra)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ace7033c6aecebd2d824f1ad447c2ac01}{after\+Upload}} (\$response, \$hook\+Extra)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a43dbd8d9e6313cc603b577511bbc4b23}{register\+Hooks}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a6fed084d332f6551c10fda0543b4461d}{is\+Plugin\+Update}} (array \$options)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a0baa9b5264a5f2bca05a0641a18d3cc3}{handle\+Upgrade\+Process}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ab9e43051403c41aaf06f278be0d72b9f}{perform\+Upgrade\+Tasks}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a50a47cffc891f4ff84fdba2fe8591d99}{update\+Database\+Schema}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a4c596cb8706d65b3f2ca9a3a25e3151d}{is\+Plugin\+Upload}} (array \$hook\+Extra)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_aff153b55d515bb6a9c15c6c9d4493704}{handle\+Before\+Upload}} (array \$hook\+Extra)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a0a49a8d317a22f655580821deedbfbaf}{handle\+After\+Upload}} (\$response, array \$hook\+Extra)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a20c573dde68520d709004f259d4e6dec}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a20c573dde68520d709004f259d4e6dec} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a20c573dde68520d709004f259d4e6dec_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ace7033c6aecebd2d824f1ad447c2ac01}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ace7033c6aecebd2d824f1ad447c2ac01} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!afterUpload@{afterUpload}}
+\index{afterUpload@{afterUpload}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{afterUpload()}{afterUpload()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::after\+Upload (\begin{DoxyParamCaption}\item[{}]{\$response,  }\item[{}]{\$hook\+Extra }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ace7033c6aecebd2d824f1ad447c2ac01_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ad274bfb1cea05f2c5c0888ce472c2b5f}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ad274bfb1cea05f2c5c0888ce472c2b5f} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!beforeUpload@{beforeUpload}}
+\index{beforeUpload@{beforeUpload}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{beforeUpload()}{beforeUpload()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::before\+Upload (\begin{DoxyParamCaption}\item[{}]{\$return,  }\item[{}]{\$hook\+Extra }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ad274bfb1cea05f2c5c0888ce472c2b5f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a0a49a8d317a22f655580821deedbfbaf}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a0a49a8d317a22f655580821deedbfbaf} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!handleAfterUpload@{handleAfterUpload}}
+\index{handleAfterUpload@{handleAfterUpload}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{handleAfterUpload()}{handleAfterUpload()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::handle\+After\+Upload (\begin{DoxyParamCaption}\item[{}]{\$response,  }\item[{array}]{\$hook\+Extra }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classPluginFrame_1_1Hooks_1_1Upgrade_ac4eb3db8c6044e6ef554388975bcaeeb}{Plugin\+Frame\textbackslash{}\+Hooks\textbackslash{}\+Upgrade}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a0a49a8d317a22f655580821deedbfbaf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_aff153b55d515bb6a9c15c6c9d4493704}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_aff153b55d515bb6a9c15c6c9d4493704} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!handleBeforeUpload@{handleBeforeUpload}}
+\index{handleBeforeUpload@{handleBeforeUpload}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{handleBeforeUpload()}{handleBeforeUpload()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::handle\+Before\+Upload (\begin{DoxyParamCaption}\item[{array}]{\$hook\+Extra }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classPluginFrame_1_1Hooks_1_1Upgrade_a047bc405815d725ea8ff51c458497411}{Plugin\+Frame\textbackslash{}\+Hooks\textbackslash{}\+Upgrade}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_aff153b55d515bb6a9c15c6c9d4493704_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a0baa9b5264a5f2bca05a0641a18d3cc3}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a0baa9b5264a5f2bca05a0641a18d3cc3} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!handleUpgradeProcess@{handleUpgradeProcess}}
+\index{handleUpgradeProcess@{handleUpgradeProcess}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{handleUpgradeProcess()}{handleUpgradeProcess()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::handle\+Upgrade\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a0baa9b5264a5f2bca05a0641a18d3cc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a0baa9b5264a5f2bca05a0641a18d3cc3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a6fed084d332f6551c10fda0543b4461d}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a6fed084d332f6551c10fda0543b4461d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!isPluginUpdate@{isPluginUpdate}}
+\index{isPluginUpdate@{isPluginUpdate}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{isPluginUpdate()}{isPluginUpdate()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::is\+Plugin\+Update (\begin{DoxyParamCaption}\item[{array}]{\$options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a6fed084d332f6551c10fda0543b4461d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a4c596cb8706d65b3f2ca9a3a25e3151d}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a4c596cb8706d65b3f2ca9a3a25e3151d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!isPluginUpload@{isPluginUpload}}
+\index{isPluginUpload@{isPluginUpload}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{isPluginUpload()}{isPluginUpload()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::is\+Plugin\+Upload (\begin{DoxyParamCaption}\item[{array}]{\$hook\+Extra }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a4c596cb8706d65b3f2ca9a3a25e3151d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ac19b28911d3d1ecf1636103480a6c9e2}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ac19b28911d3d1ecf1636103480a6c9e2} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!onUpgradeProcessComplete@{onUpgradeProcessComplete}}
+\index{onUpgradeProcessComplete@{onUpgradeProcessComplete}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{onUpgradeProcessComplete()}{onUpgradeProcessComplete()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::on\+Upgrade\+Process\+Complete (\begin{DoxyParamCaption}\item[{}]{\$upgrader,  }\item[{}]{\$options }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ac19b28911d3d1ecf1636103480a6c9e2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ab9e43051403c41aaf06f278be0d72b9f}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ab9e43051403c41aaf06f278be0d72b9f} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!performUpgradeTasks@{performUpgradeTasks}}
+\index{performUpgradeTasks@{performUpgradeTasks}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{performUpgradeTasks()}{performUpgradeTasks()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::perform\+Upgrade\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ab9e43051403c41aaf06f278be0d72b9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_ab9e43051403c41aaf06f278be0d72b9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a43dbd8d9e6313cc603b577511bbc4b23}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a43dbd8d9e6313cc603b577511bbc4b23} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!registerHooks@{registerHooks}}
+\index{registerHooks@{registerHooks}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{registerHooks()}{registerHooks()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::register\+Hooks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a43dbd8d9e6313cc603b577511bbc4b23_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a50a47cffc891f4ff84fdba2fe8591d99}\label{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a50a47cffc891f4ff84fdba2fe8591d99} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}!updateDatabaseSchema@{updateDatabaseSchema}}
+\index{updateDatabaseSchema@{updateDatabaseSchema}!PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade@{PluginFrame\textbackslash{}Core\textbackslash{}Hooks\textbackslash{}Upgrade}}
+\doxysubsubsection{\texorpdfstring{updateDatabaseSchema()}{updateDatabaseSchema()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Hooks\textbackslash{}\+Upgrade\+::update\+Database\+Schema (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classPluginFrame_1_1Hooks_1_1Upgrade_a31efb9f8eb4fd8d2c55ef6bcfb9e5e3e}{Plugin\+Frame\textbackslash{}\+Hooks\textbackslash{}\+Upgrade}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade_a50a47cffc891f4ff84fdba2fe8591d99_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Hooks/\mbox{\hyperlink{Core_2Hooks_2Upgrade_8php}{Upgrade.\+php}}\end{DoxyCompactItemize}

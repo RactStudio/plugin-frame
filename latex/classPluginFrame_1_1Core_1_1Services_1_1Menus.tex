@@ -1,0 +1,71 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Menus}{}\label{classPluginFrame_1_1Core_1_1Services_1_1Menus}\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Menus_acb5544447890694c0b48d59d4b9c312f}{add\+Menu\+Page}} (string \$page\+Title, string \$menu\+Title, string \$capability, string \$menu\+Slug, callable \$callback, ?string \$icon\+Url=null, ?int \$position=null)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Menus_a4408fca6a2edf60bdf8dca3d14a6750a}{add\+Submenu\+Page}} (string \$parent\+Slug, string \$page\+Title, string \$menu\+Title, string \$capability, string \$menu\+Slug, callable \$callback)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Menus_acb5544447890694c0b48d59d4b9c312f}\label{classPluginFrame_1_1Core_1_1Services_1_1Menus_acb5544447890694c0b48d59d4b9c312f} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus}!addMenuPage@{addMenuPage}}
+\index{addMenuPage@{addMenuPage}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus}}
+\doxysubsubsection{\texorpdfstring{addMenuPage()}{addMenuPage()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Menus\+::add\+Menu\+Page (\begin{DoxyParamCaption}\item[{string}]{\$page\+Title,  }\item[{string}]{\$menu\+Title,  }\item[{string}]{\$capability,  }\item[{string}]{\$menu\+Slug,  }\item[{callable}]{\$callback,  }\item[{?string}]{\$icon\+Url = {\ttfamily null},  }\item[{?int}]{\$position = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Register a menu page.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$page\+Title} & The title of the page. \\
+\hline
+string & {\em \$menu\+Title} & The title of the menu item. \\
+\hline
+string & {\em \$capability} & The capability required to view this menu. \\
+\hline
+string & {\em \$menu\+Slug} & A unique slug for the menu. \\
+\hline
+callable & {\em \$callback} & The callback function to render the menu page. \\
+\hline
+string | null & {\em \$icon\+Url} & Optional. The URL of the menu icon. \\
+\hline
+int | null & {\em \$position} & Optional. The position of the menu in the admin sidebar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Menus_a4408fca6a2edf60bdf8dca3d14a6750a}\label{classPluginFrame_1_1Core_1_1Services_1_1Menus_a4408fca6a2edf60bdf8dca3d14a6750a} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus}!addSubmenuPage@{addSubmenuPage}}
+\index{addSubmenuPage@{addSubmenuPage}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Menus}}
+\doxysubsubsection{\texorpdfstring{addSubmenuPage()}{addSubmenuPage()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Menus\+::add\+Submenu\+Page (\begin{DoxyParamCaption}\item[{string}]{\$parent\+Slug,  }\item[{string}]{\$page\+Title,  }\item[{string}]{\$menu\+Title,  }\item[{string}]{\$capability,  }\item[{string}]{\$menu\+Slug,  }\item[{callable}]{\$callback }\end{DoxyParamCaption})}
+
+Register a submenu page.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$parent\+Slug} & The slug of the parent menu. \\
+\hline
+string & {\em \$page\+Title} & The title of the submenu page. \\
+\hline
+string & {\em \$menu\+Title} & The title of the submenu item. \\
+\hline
+string & {\em \$capability} & The capability required to view this submenu. \\
+\hline
+string & {\em \$menu\+Slug} & A unique slug for the submenu. \\
+\hline
+callable & {\em \$callback} & The callback function to render the submenu page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Services/\mbox{\hyperlink{Core_2Services_2Menus_8php}{Menus.\+php}}\end{DoxyCompactItemize}

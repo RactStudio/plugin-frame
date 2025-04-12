@@ -1,0 +1,32 @@
+<map id="PluginFrame\Core\DB\Pagination\PaginationManager\fetchResultsWithMetadata" name="PluginFrame\Core\DB\Pagination\PaginationManager\fetchResultsWithMetadata">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,279,228,333"/>
+<area shape="rect" id="Node000002" href="$classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager.html#a75d393753ee5c845892f09ac9f98370b" title=" " alt="" coords="276,83,499,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,276,335,144,339,148,157,280"/>
+<area shape="rect" id="Node000004" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a9e487658a23a8febf28f249fe20d95ee" title=" " alt="" coords="302,286,473,326"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,303,288,303,288,309,228,309"/>
+<area shape="rect" id="Node000011" href="$classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager.html#a750f2091443aae8bb9c8532a36b2a55c" title=" " alt="" coords="276,427,499,481"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="169,331,326,418,324,423,166,336"/>
+<area shape="rect" id="Node000003" href="$classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager.html#a69af1670f623592e271db496211a07a6" title=" " alt="" coords="547,5,769,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="483,80,548,61,549,66,484,85"/>
+<area shape="rect" id="Node000005" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a30135c4ba542746751b1fb870ce5c4db" title=" " alt="" coords="578,84,738,139"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="404,284,463,223,502,187,545,156,568,143,571,147,548,160,506,192,467,226,408,288"/>
+<area shape="rect" id="Node000006" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a13e7f7ed95d4d4121af780e95c08d9b8" title=" " alt="" coords="832,117,992,172"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="410,284,469,240,506,218,546,200,615,177,687,162,818,146,819,151,688,167,616,183,548,204,509,223,472,245,414,288"/>
+<area shape="rect" id="Node000007" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#ab8a7ee9ad75fbcebff4661a5da2573dc" title=" " alt="" coords="569,238,747,278"/>
+<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="472,288,555,274,556,279,473,294"/>
+<area shape="rect" id="Node000008" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#af4317b51de3bb21ed4a492d2ab1ee47c" title=" " alt="" coords="578,327,738,381"/>
+<area shape="poly" id="edge10_Node000004_Node000008" title=" " alt="" coords="473,318,565,335,564,340,472,324"/>
+<area shape="rect" id="Node000009" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a2ade6fdf434e6ab742e4255c46b9fee6" title=" " alt="" coords="578,429,738,484"/>
+<area shape="poly" id="edge12_Node000004_Node000009" title=" " alt="" coords="426,324,597,420,594,425,423,328"/>
+<area shape="rect" id="Node000010" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#af590277f847d7e4f97c700c15639ac4f" title=" " alt="" coords="817,530,1007,570"/>
+<area shape="poly" id="edge14_Node000004_Node000010" title=" " alt="" coords="415,324,457,363,501,412,515,437,522,458,530,477,548,494,592,512,657,526,804,542,804,547,656,531,590,517,545,499,526,480,517,460,510,439,497,416,453,367,411,328"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="739,119,819,130,818,135,738,124"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="863,117,863,107,872,98,888,93,912,91,941,94,957,102,954,106,939,99,912,96,889,98,875,103,868,109,868,117"/>
+<area shape="poly" id="edge9_Node000007_Node000007" title=" " alt="" coords="611,238,608,228,616,219,632,213,658,211,687,214,703,221,701,226,686,219,658,217,633,219,619,223,613,229,616,237"/>
+<area shape="poly" id="edge11_Node000008_Node000008" title=" " alt="" coords="609,327,609,316,618,308,634,302,658,300,687,303,703,311,700,316,685,308,658,305,635,307,621,312,614,318,614,327"/>
+<area shape="poly" id="edge13_Node000009_Node000009" title=" " alt="" coords="609,429,609,419,618,410,634,405,658,403,687,406,703,414,700,418,685,411,658,408,635,410,621,415,614,421,614,429"/>
+<area shape="poly" id="edge15_Node000010_Node000010" title=" " alt="" coords="865,530,862,520,870,511,886,505,912,503,941,506,957,513,955,518,940,511,912,509,887,511,873,515,867,521,870,529"/>
+<area shape="rect" id="Node000012" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#ad600f8b0e95e096f1eee61c45ed3edfc" title=" " alt="" coords="565,559,751,599"/>
+<area shape="poly" id="edge17_Node000011_Node000012" title=" " alt="" coords="435,479,489,509,548,538,582,552,580,557,546,543,486,514,433,484"/>
+<area shape="poly" id="edge18_Node000012_Node000010" title=" " alt="" coords="750,566,803,560,804,565,751,571"/>
+</map>

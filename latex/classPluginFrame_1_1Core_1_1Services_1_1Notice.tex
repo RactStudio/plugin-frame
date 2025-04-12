@@ -1,0 +1,165 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Notice}{}\label{classPluginFrame_1_1Core_1_1Services_1_1Notice}\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Notice_aa09cc94e5336ebd28f3a960a019be90f}{add\+Notice}} (\$message, \$type=\textquotesingle{}info\textquotesingle{}, \$dismiss=true, \$icon=null, \$condition=null)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Notice_a0c59d65d0bc6825635ec2efd9b2cceeb}{add\+Debug\+Notice}} (\$message, \$show=false, \$icon=null)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Notice_aaae5d3a92fdd3a2db826d0caf72f6720}{add\+Role\+Based\+Notice}} (\$message, \$role=\textquotesingle{}administrator\textquotesingle{}, \$type=\textquotesingle{}info\textquotesingle{}, \$dismiss=true, \$icon=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Notice_a267193b94e42a5c540ca6d4f25459262}{get\+Default\+Icon}} (\$type)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Notice_a77a450f33c3cf68477097baec07e7745}{format\+Icon}} (\$icon)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Notice_a0c59d65d0bc6825635ec2efd9b2cceeb}\label{classPluginFrame_1_1Core_1_1Services_1_1Notice_a0c59d65d0bc6825635ec2efd9b2cceeb} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}!addDebugNotice@{addDebugNotice}}
+\index{addDebugNotice@{addDebugNotice}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}}
+\doxysubsubsection{\texorpdfstring{addDebugNotice()}{addDebugNotice()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Notice\+::add\+Debug\+Notice (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{}]{\$show = {\ttfamily false},  }\item[{}]{\$icon = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Add a debug notice.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & The debug message. \\
+\hline
+bool & {\em \$show} & Whether to show the debug notice. Default is false. \\
+\hline
+string | bool | null & {\em \$icon} & Optional icon HTML, URL, or false to disable. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Notice_a0c59d65d0bc6825635ec2efd9b2cceeb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Notice_aa09cc94e5336ebd28f3a960a019be90f}\label{classPluginFrame_1_1Core_1_1Services_1_1Notice_aa09cc94e5336ebd28f3a960a019be90f} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}!addNotice@{addNotice}}
+\index{addNotice@{addNotice}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}}
+\doxysubsubsection{\texorpdfstring{addNotice()}{addNotice()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Notice\+::add\+Notice (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{}]{\$type = {\ttfamily \textquotesingle{}info\textquotesingle{}},  }\item[{}]{\$dismiss = {\ttfamily true},  }\item[{}]{\$icon = {\ttfamily null},  }\item[{}]{\$condition = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Add a notice to the Word\+Press admin area.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & The notice message. \\
+\hline
+string & {\em \$type} & The type of the notice. (\textquotesingle{}info\textquotesingle{}, \textquotesingle{}success\textquotesingle{}, \textquotesingle{}warning\textquotesingle{}, \textquotesingle{}error\textquotesingle{}) \\
+\hline
+bool & {\em \$dismiss} & Whether the notice is dismissible. Default is true. \\
+\hline
+string | bool | null & {\em \$icon} & Optional icon HTML, URL, or false to disable. \\
+\hline
+callable | null & {\em \$condition} & Optional callback for conditional logic. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Notice_aa09cc94e5336ebd28f3a960a019be90f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Notice_aa09cc94e5336ebd28f3a960a019be90f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Notice_aaae5d3a92fdd3a2db826d0caf72f6720}\label{classPluginFrame_1_1Core_1_1Services_1_1Notice_aaae5d3a92fdd3a2db826d0caf72f6720} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}!addRoleBasedNotice@{addRoleBasedNotice}}
+\index{addRoleBasedNotice@{addRoleBasedNotice}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}}
+\doxysubsubsection{\texorpdfstring{addRoleBasedNotice()}{addRoleBasedNotice()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Notice\+::add\+Role\+Based\+Notice (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{}]{\$role = {\ttfamily \textquotesingle{}administrator\textquotesingle{}},  }\item[{}]{\$type = {\ttfamily \textquotesingle{}info\textquotesingle{}},  }\item[{}]{\$dismiss = {\ttfamily true},  }\item[{}]{\$icon = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Add a role-\/based notice.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & The notice message. \\
+\hline
+string & {\em \$role} & The user role to target. Default is \textquotesingle{}administrator\textquotesingle{}. \\
+\hline
+string & {\em \$type} & The type of the notice. (\textquotesingle{}info\textquotesingle{}, \textquotesingle{}success\textquotesingle{}, \textquotesingle{}warning\textquotesingle{}, \textquotesingle{}error\textquotesingle{}) \\
+\hline
+bool & {\em \$dismiss} & Whether the notice is dismissible. Default is true. \\
+\hline
+string | bool | null & {\em \$icon} & Optional icon HTML, URL, or false to disable. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Notice_aaae5d3a92fdd3a2db826d0caf72f6720_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Notice_a77a450f33c3cf68477097baec07e7745}\label{classPluginFrame_1_1Core_1_1Services_1_1Notice_a77a450f33c3cf68477097baec07e7745} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}!formatIcon@{formatIcon}}
+\index{formatIcon@{formatIcon}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}}
+\doxysubsubsection{\texorpdfstring{formatIcon()}{formatIcon()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Notice\+::format\+Icon (\begin{DoxyParamCaption}\item[{}]{\$icon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Format the icon for rendering in the notice.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string | null & {\em \$icon} & Icon URL, HTML, or raw content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string HTML for the icon. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Notice_a77a450f33c3cf68477097baec07e7745_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Notice_a267193b94e42a5c540ca6d4f25459262}\label{classPluginFrame_1_1Core_1_1Services_1_1Notice_a267193b94e42a5c540ca6d4f25459262} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}!getDefaultIcon@{getDefaultIcon}}
+\index{getDefaultIcon@{getDefaultIcon}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Notice}}
+\doxysubsubsection{\texorpdfstring{getDefaultIcon()}{getDefaultIcon()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Notice\+::get\+Default\+Icon (\begin{DoxyParamCaption}\item[{}]{\$type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Get default icon based on the notice type.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & The notice type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string HTML for the default icon. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Notice_a267193b94e42a5c540ca6d4f25459262_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Services/\mbox{\hyperlink{Notice_8php}{Notice.\+php}}\end{DoxyCompactItemize}

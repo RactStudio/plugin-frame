@@ -1,0 +1,20 @@
+<map id="PluginFrame\Core\DB\Utils\QueryBuilder\groupBy" name="PluginFrame\Core\DB\Utils\QueryBuilder\groupBy">
+<area shape="rect" id="Node000001" title=" " alt="" coords="976,52,1136,107"/>
+<area shape="poly" id="edge10_Node000001_Node000001" title=" " alt="" coords="1090,41,1078,33,1056,31,1038,33,1026,37,1020,44,1020,52,1015,52,1015,42,1023,33,1036,27,1056,25,1080,28,1093,36"/>
+<area shape="rect" id="Node000002" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a30135c4ba542746751b1fb870ce5c4db" title=" " alt="" coords="768,84,928,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="963,96,929,102,928,96,962,91"/>
+<area shape="rect" id="Node000003" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#a9e487658a23a8febf28f249fe20d95ee" title=" " alt="" coords="548,26,719,66"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="962,75,719,55,719,50,962,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="754,85,699,69,701,64,755,80"/>
+<area shape="rect" id="Node000006" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#ac09606ccddf53f74c7ad5791c7bad981" title=" " alt="" coords="547,91,720,131"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="754,114,720,114,720,109,754,109"/>
+<area shape="rect" id="Node000008" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#ade3e4f7922e82476c7ee4026773728e3" title=" " alt="" coords="307,163,467,217"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="755,138,721,146,587,168,468,184,467,179,586,163,719,141,754,133"/>
+<area shape="rect" id="Node000004" href="$classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager.html#acdc7307b9c17a6708927d08e4c067eb9" title=" " alt="" coords="276,5,499,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="534,43,499,41,499,36,535,38"/>
+<area shape="rect" id="Node000005" href="$classPluginFrame_1_1Core_1_1DB_1_1Pagination_1_1PaginationManager.html#a12090430167a4a36eb4192e79e8a5d68" title=" " alt="" coords="5,84,228,139"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="280,66,212,86,211,81,279,61"/>
+<area shape="rect" id="Node000007" href="$classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#af11cf4d0552d2545f74003bf52a6a36c" title=" " alt="" coords="307,84,467,139"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="533,114,467,114,467,109,533,109"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="293,166,211,141,212,136,295,160"/>
+</map>

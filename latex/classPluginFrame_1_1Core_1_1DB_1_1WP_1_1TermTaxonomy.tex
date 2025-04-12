@@ -1,0 +1,170 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}Term\+Taxonomy Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy}{}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy}\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_abacdbf75889a40b51eb7aef7dd5e0903}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a7a781b3b21692c67283f0061bcc872ab}{all\+Term\+Taxonomy}} (\$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a456d5c060b0391d605fbfa32523649b2}{single\+Term\+Taxonomy}} (\$term\+Taxonomy\+Id, \$page=1, \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a9eac61c5849260498738f5d1cf618a5f}{get\+Term\+Taxonomy}} (\$term\+Taxonomy\+Id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a0e512ab4a9348b18f0598b2a07c954e8}{insert\+Term\+Taxonomy}} (\$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_ae5447e718a47f0f7144fbba6e7e02b16}{update\+Term\+Taxonomy}} (\$term\+Taxonomy\+Id, \$data)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_abf1342291dcde16db9940402df70d4c4}{delete\+Term\+Taxonomy}} (\$term\+Taxonomy\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_aad396e3ba385cfcd8359f58af1a096ae}{\$query\+Builder}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_aab469b10edc509b41a749aa3edbad6d5}{\$pagination\+Manager}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a37182b82c01ed355f5c79fc35e1f629b}{\$table}} = \textquotesingle{}term\+\_\+taxonomy\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_abacdbf75889a40b51eb7aef7dd5e0903}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_abacdbf75889a40b51eb7aef7dd5e0903} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a7a781b3b21692c67283f0061bcc872ab}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a7a781b3b21692c67283f0061bcc872ab} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!allTermTaxonomy@{allTermTaxonomy}}
+\index{allTermTaxonomy@{allTermTaxonomy}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{allTermTaxonomy()}{allTermTaxonomy()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::all\+Term\+Taxonomy (\begin{DoxyParamCaption}\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get all term taxonomy records with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_abf1342291dcde16db9940402df70d4c4}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_abf1342291dcde16db9940402df70d4c4} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!deleteTermTaxonomy@{deleteTermTaxonomy}}
+\index{deleteTermTaxonomy@{deleteTermTaxonomy}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{deleteTermTaxonomy()}{deleteTermTaxonomy()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::delete\+Term\+Taxonomy (\begin{DoxyParamCaption}\item[{}]{\$term\+Taxonomy\+Id }\end{DoxyParamCaption})}
+
+Delete a term taxonomy by its ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Taxonomy\+Id} & The term taxonomy ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a9eac61c5849260498738f5d1cf618a5f}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a9eac61c5849260498738f5d1cf618a5f} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!getTermTaxonomy@{getTermTaxonomy}}
+\index{getTermTaxonomy@{getTermTaxonomy}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{getTermTaxonomy()}{getTermTaxonomy()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::get\+Term\+Taxonomy (\begin{DoxyParamCaption}\item[{}]{\$term\+Taxonomy\+Id }\end{DoxyParamCaption})}
+
+Get a specific term taxonomy by its ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Taxonomy\+Id} & The term taxonomy ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a0e512ab4a9348b18f0598b2a07c954e8}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a0e512ab4a9348b18f0598b2a07c954e8} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!insertTermTaxonomy@{insertTermTaxonomy}}
+\index{insertTermTaxonomy@{insertTermTaxonomy}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{insertTermTaxonomy()}{insertTermTaxonomy()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::insert\+Term\+Taxonomy (\begin{DoxyParamCaption}\item[{}]{\$data }\end{DoxyParamCaption})}
+
+Insert a new term taxonomy record.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & The data to insert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\texorpdfstring{$\vert$}{|}int 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a456d5c060b0391d605fbfa32523649b2}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a456d5c060b0391d605fbfa32523649b2} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!singleTermTaxonomy@{singleTermTaxonomy}}
+\index{singleTermTaxonomy@{singleTermTaxonomy}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{singleTermTaxonomy()}{singleTermTaxonomy()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::single\+Term\+Taxonomy (\begin{DoxyParamCaption}\item[{}]{\$term\+Taxonomy\+Id,  }\item[{}]{\$page = {\ttfamily 1},  }\item[{}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Get Term Taxonomy data for a specific Term Taxonomy with pagination.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Taxonomy\+Id} & The Term Taxonomy ID to get data for. \\
+\hline
+int & {\em \$page} & The current page. \\
+\hline
+int & {\em \$per\+Page} & The number of items per page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_ae5447e718a47f0f7144fbba6e7e02b16}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_ae5447e718a47f0f7144fbba6e7e02b16} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!updateTermTaxonomy@{updateTermTaxonomy}}
+\index{updateTermTaxonomy@{updateTermTaxonomy}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{updateTermTaxonomy()}{updateTermTaxonomy()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::update\+Term\+Taxonomy (\begin{DoxyParamCaption}\item[{}]{\$term\+Taxonomy\+Id,  }\item[{}]{\$data }\end{DoxyParamCaption})}
+
+Update a term taxonomy by its ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$term\+Taxonomy\+Id} & The term taxonomy ID. \\
+\hline
+array & {\em \$data} & The data to update. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_aab469b10edc509b41a749aa3edbad6d5}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_aab469b10edc509b41a749aa3edbad6d5} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!\$paginationManager@{\$paginationManager}}
+\index{\$paginationManager@{\$paginationManager}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{\$paginationManager}{\$paginationManager}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::\$pagination\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_aad396e3ba385cfcd8359f58af1a096ae}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_aad396e3ba385cfcd8359f58af1a096ae} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!\$queryBuilder@{\$queryBuilder}}
+\index{\$queryBuilder@{\$queryBuilder}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{\$queryBuilder}{\$queryBuilder}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::\$query\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a37182b82c01ed355f5c79fc35e1f629b}\label{classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy_a37182b82c01ed355f5c79fc35e1f629b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}!\$table@{\$table}}
+\index{\$table@{\$table}!PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy@{PluginFrame\textbackslash{}Core\textbackslash{}DB\textbackslash{}WP\textbackslash{}TermTaxonomy}}
+\doxysubsubsection{\texorpdfstring{\$table}{\$table}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+DB\textbackslash{}\+WP\textbackslash{}\+Term\+Taxonomy\+::\$table = \textquotesingle{}term\+\_\+taxonomy\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+DB/\+WP/\mbox{\hyperlink{TermTaxonomy_8php}{Term\+Taxonomy.\+php}}\end{DoxyCompactItemize}

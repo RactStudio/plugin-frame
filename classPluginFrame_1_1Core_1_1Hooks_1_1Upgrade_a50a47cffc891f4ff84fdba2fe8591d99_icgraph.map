@@ -1,0 +1,9 @@
+<map id="PluginFrame\Core\Hooks\Upgrade\updateDatabaseSchema" name="PluginFrame\Core\Hooks\Upgrade\updateDatabaseSchema">
+<area shape="rect" id="Node000001" title=" " alt="" coords="881,5,1125,45"/>
+<area shape="rect" id="Node000002" href="$classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade.html#ab9e43051403c41aaf06f278be0d72b9f" title=" " alt="" coords="605,5,833,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="868,28,833,28,833,23,868,23"/>
+<area shape="rect" id="Node000003" href="$classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade.html#a0baa9b5264a5f2bca05a0641a18d3cc3" title=" " alt="" coords="323,5,557,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="591,28,557,28,557,23,591,23"/>
+<area shape="rect" id="Node000004" href="$classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade.html#ac19b28911d3d1ecf1636103480a6c9e2" title=" " alt="" coords="5,5,275,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
+</map>

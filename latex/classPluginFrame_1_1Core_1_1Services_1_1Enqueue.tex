@@ -1,0 +1,230 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Enqueue}{}\label{classPluginFrame_1_1Core_1_1Services_1_1Enqueue}\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_ac2715cb803375f4b8cd92b23b226562b}{register\+Frontend\+Style}} (\$handle, \$src, \$deps=\mbox{[}$\,$\mbox{]}, \$ver=false, \$media=\textquotesingle{}all\textquotesingle{}, \$condition=null, \$attributes=null)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a117ad4f59295d13a6ab919e484b5870b}{register\+Admin\+Style}} (\$handle, \$src, \$deps=\mbox{[}$\,$\mbox{]}, \$ver=false, \$media=\textquotesingle{}all\textquotesingle{}, \$condition=null, \$attributes=null)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a9de8a5dac0785e88115d231c773016c4}{register\+Frontend\+Script}} (\$handle, \$src, \$deps=\mbox{[}$\,$\mbox{]}, \$ver=false, \$in\+Footer=false, \$condition=null, \$attributes=null)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_ab36f1a7899492c5d7d6f86cec6ee4bb5}{register\+Admin\+Script}} (\$handle, \$src, \$deps=\mbox{[}$\,$\mbox{]}, \$ver=false, \$in\+Footer=false, \$condition=null, \$attributes=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_aeb033f2649d328c9f4b72001ba238fc5}{register\+Style}} (\$hook, \$handle, \$src, \$deps=\mbox{[}$\,$\mbox{]}, \$ver=false, \$media=\textquotesingle{}all\textquotesingle{}, \$condition=null, \$attributes=null)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a14bccd479af2eb487937e2b331b27f19}{register\+Script}} (\$hook, \$handle, \$src, \$deps=\mbox{[}$\,$\mbox{]}, \$ver=false, \$in\+Footer=false, \$condition=null, \$attributes=null)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_ab36f1a7899492c5d7d6f86cec6ee4bb5}\label{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_ab36f1a7899492c5d7d6f86cec6ee4bb5} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}!registerAdminScript@{registerAdminScript}}
+\index{registerAdminScript@{registerAdminScript}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}}
+\doxysubsubsection{\texorpdfstring{registerAdminScript()}{registerAdminScript()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Enqueue\+::register\+Admin\+Script (\begin{DoxyParamCaption}\item[{}]{\$handle,  }\item[{}]{\$src,  }\item[{}]{\$deps = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{\$ver = {\ttfamily false},  }\item[{}]{\$in\+Footer = {\ttfamily false},  }\item[{}]{\$condition = {\ttfamily null},  }\item[{}]{\$attributes = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Register an admin script.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$handle} & The unique identifier for the script. \\
+\hline
+string & {\em \$src} & The URL to the script. \\
+\hline
+array & {\em \$deps} & Optional. An array of registered script handles this script depends on. \\
+\hline
+string | bool & {\em \$ver} & Optional. Script version number, if it has one. \\
+\hline
+bool & {\em \$in\+Footer} & Optional. Whether to enqueue the script before $<$/body$>$ instead of in the $<$head$>$. \\
+\hline
+callable | null & {\em \$condition} & Optional. A callable that determines if the script should be enqueued. \\
+\hline
+array | null & {\em \$attributes} & Optional. An associative array of additional attributes to add to the script tag. Each key is an attribute name and the value is the attribute value. If the value is empty, the attribute will be rendered without a value. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_ab36f1a7899492c5d7d6f86cec6ee4bb5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a117ad4f59295d13a6ab919e484b5870b}\label{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a117ad4f59295d13a6ab919e484b5870b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}!registerAdminStyle@{registerAdminStyle}}
+\index{registerAdminStyle@{registerAdminStyle}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}}
+\doxysubsubsection{\texorpdfstring{registerAdminStyle()}{registerAdminStyle()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Enqueue\+::register\+Admin\+Style (\begin{DoxyParamCaption}\item[{}]{\$handle,  }\item[{}]{\$src,  }\item[{}]{\$deps = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{\$ver = {\ttfamily false},  }\item[{}]{\$media = {\ttfamily \textquotesingle{}all\textquotesingle{}},  }\item[{}]{\$condition = {\ttfamily null},  }\item[{}]{\$attributes = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Register an admin style.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$handle} & The unique identifier for the style. \\
+\hline
+string & {\em \$src} & The URL to the style. \\
+\hline
+array & {\em \$deps} & Optional. An array of registered style handles this style depends on. \\
+\hline
+string | bool & {\em \$ver} & Optional. Style version number, if it has one. \\
+\hline
+string & {\em \$media} & Optional. The media for which this stylesheet has been defined. Defaults to \textquotesingle{}all\textquotesingle{}. \\
+\hline
+callable | null & {\em \$condition} & Optional. A callable that determines if the style should be enqueued. \\
+\hline
+array | null & {\em \$attributes} & Optional. An associative array of additional attributes to add to the $<$link$>$ tag. Each key is an attribute name and its value is the attribute value. If the value is empty, the attribute will be rendered without a value. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a117ad4f59295d13a6ab919e484b5870b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a9de8a5dac0785e88115d231c773016c4}\label{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a9de8a5dac0785e88115d231c773016c4} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}!registerFrontendScript@{registerFrontendScript}}
+\index{registerFrontendScript@{registerFrontendScript}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}}
+\doxysubsubsection{\texorpdfstring{registerFrontendScript()}{registerFrontendScript()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Enqueue\+::register\+Frontend\+Script (\begin{DoxyParamCaption}\item[{}]{\$handle,  }\item[{}]{\$src,  }\item[{}]{\$deps = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{\$ver = {\ttfamily false},  }\item[{}]{\$in\+Footer = {\ttfamily false},  }\item[{}]{\$condition = {\ttfamily null},  }\item[{}]{\$attributes = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Register a frontend script.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$handle} & The unique identifier for the script. \\
+\hline
+string & {\em \$src} & The URL to the script. \\
+\hline
+array & {\em \$deps} & Optional. An array of registered script handles this script depends on. \\
+\hline
+string | bool & {\em \$ver} & Optional. Script version number, if it has one. \\
+\hline
+bool & {\em \$in\+Footer} & Optional. Whether to enqueue the script before $<$/body$>$ instead of in the $<$head$>$. \\
+\hline
+callable | null & {\em \$condition} & Optional. A callable that determines if the script should be enqueued. \\
+\hline
+array | null & {\em \$attributes} & Optional. An associative array of additional attributes to add to the script tag. Each key is an attribute name and the value is the attribute value. If the value is empty, the attribute will be rendered without a value. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a9de8a5dac0785e88115d231c773016c4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_ac2715cb803375f4b8cd92b23b226562b}\label{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_ac2715cb803375f4b8cd92b23b226562b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}!registerFrontendStyle@{registerFrontendStyle}}
+\index{registerFrontendStyle@{registerFrontendStyle}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}}
+\doxysubsubsection{\texorpdfstring{registerFrontendStyle()}{registerFrontendStyle()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Enqueue\+::register\+Frontend\+Style (\begin{DoxyParamCaption}\item[{}]{\$handle,  }\item[{}]{\$src,  }\item[{}]{\$deps = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{\$ver = {\ttfamily false},  }\item[{}]{\$media = {\ttfamily \textquotesingle{}all\textquotesingle{}},  }\item[{}]{\$condition = {\ttfamily null},  }\item[{}]{\$attributes = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Register a frontend style.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$handle} & The unique identifier for the style. \\
+\hline
+string & {\em \$src} & The URL to the style. \\
+\hline
+array & {\em \$deps} & Optional. An array of registered style handles this style depends on. \\
+\hline
+string | bool & {\em \$ver} & Optional. Style version number, if it has one. \\
+\hline
+string & {\em \$media} & Optional. The media for which this stylesheet has been defined. Defaults to \textquotesingle{}all\textquotesingle{}. \\
+\hline
+callable | null & {\em \$condition} & Optional. A callable that determines if the style should be enqueued. \\
+\hline
+array | null & {\em \$attributes} & Optional. An associative array of additional attributes to add to the $<$link$>$ tag. Each key is an attribute name and its value is the attribute value. If the value is empty, the attribute will be rendered without a value. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_ac2715cb803375f4b8cd92b23b226562b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a14bccd479af2eb487937e2b331b27f19}\label{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a14bccd479af2eb487937e2b331b27f19} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}!registerScript@{registerScript}}
+\index{registerScript@{registerScript}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}}
+\doxysubsubsection{\texorpdfstring{registerScript()}{registerScript()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Enqueue\+::register\+Script (\begin{DoxyParamCaption}\item[{}]{\$hook,  }\item[{}]{\$handle,  }\item[{}]{\$src,  }\item[{}]{\$deps = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{\$ver = {\ttfamily false},  }\item[{}]{\$in\+Footer = {\ttfamily false},  }\item[{}]{\$condition = {\ttfamily null},  }\item[{}]{\$attributes = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Register a script for a given hook.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$hook} & The action hook to enqueue the script. e.\+g. \textquotesingle{}wp\+\_\+enqueue\+\_\+scripts\textquotesingle{} or \textquotesingle{}admin\+\_\+enqueue\+\_\+scripts\textquotesingle{}. \\
+\hline
+string & {\em \$handle} & The unique identifier for the script. \\
+\hline
+string & {\em \$src} & The URL to the script. \\
+\hline
+array & {\em \$deps} & Optional. An array of registered script handles this script depends on. \\
+\hline
+string | bool & {\em \$ver} & Optional. Script version number, if it has one. \\
+\hline
+bool & {\em \$in\+Footer} & Optional. Whether to enqueue the script before $<$/body$>$ instead of in the $<$head$>$. \\
+\hline
+callable | null & {\em \$condition} & Optional. A callable that determines if the script should be enqueued. \\
+\hline
+array | null & {\em \$attributes} & Optional. An associative array of additional attributes to add to the script tag. Each key is an attribute name and the corresponding value is the attribute value. If the value is empty, the attribute will be rendered without a value. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_a14bccd479af2eb487937e2b331b27f19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_aeb033f2649d328c9f4b72001ba238fc5}\label{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_aeb033f2649d328c9f4b72001ba238fc5} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}!registerStyle@{registerStyle}}
+\index{registerStyle@{registerStyle}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Enqueue}}
+\doxysubsubsection{\texorpdfstring{registerStyle()}{registerStyle()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Enqueue\+::register\+Style (\begin{DoxyParamCaption}\item[{}]{\$hook,  }\item[{}]{\$handle,  }\item[{}]{\$src,  }\item[{}]{\$deps = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{\$ver = {\ttfamily false},  }\item[{}]{\$media = {\ttfamily \textquotesingle{}all\textquotesingle{}},  }\item[{}]{\$condition = {\ttfamily null},  }\item[{}]{\$attributes = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Register a style for a given hook.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$hook} & The action hook to enqueue the style. For frontend styles, use \textquotesingle{}wp\+\_\+enqueue\+\_\+scripts\textquotesingle{}. For admin styles, use \textquotesingle{}admin\+\_\+enqueue\+\_\+scripts\textquotesingle{}. \\
+\hline
+string & {\em \$handle} & The unique identifier for the style. \\
+\hline
+string & {\em \$src} & The URL to the style. \\
+\hline
+array & {\em \$deps} & Optional. An array of registered style handles this style depends on. \\
+\hline
+string | bool & {\em \$ver} & Optional. Style version number, if it has one. \\
+\hline
+string & {\em \$media} & Optional. The media for which this stylesheet has been defined. Defaults to \textquotesingle{}all\textquotesingle{}. \\
+\hline
+callable | null & {\em \$condition} & Optional. A callable that determines if the style should be enqueued. \\
+\hline
+array | null & {\em \$attributes} & Optional. An associative array of additional attributes to add to the $<$link$>$ tag. Each key is an attribute name and its value is the attribute value. If the value is empty, the attribute will be rendered without a value. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Enqueue_aeb033f2649d328c9f4b72001ba238fc5_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Services/\mbox{\hyperlink{Enqueue_8php}{Enqueue.\+php}}\end{DoxyCompactItemize}

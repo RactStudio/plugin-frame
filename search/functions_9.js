@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['importdatahandler_0',['importDataHandler',['../classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a0ec6f6844a56120503054023d72a202a',1,'PluginFrame::REST::Controllers::OtherHandlers']]],
+  ['initialize_5fplugin_1',['initialize_plugin',['../classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper.html#ae1736ba95ebf394df9a7143dfcf75731',1,'PluginFrame::Core::Helpers::BootstrapHelper']]],
+  ['initupdaters_2',['initUpdaters',['../classPluginFrame_1_1Core_1_1Updater_1_1UpdateManager.html#a5be5e3e0011fde4cf7b23a68e8f5fb88',1,'PluginFrame::Core::Updater::UpdateManager']]],
+  ['insert_3',['insert',['../classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1QueryBuilder.html#aa9b5a86602959784b27af7b4b95ee132',1,'PluginFrame::Core::DB::Utils::QueryBuilder']]],
+  ['insertcomment_4',['insertComment',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Comments.html#aab272840399aa4b7fee8e909729177e0',1,'PluginFrame::Core::DB::WP::Comments']]],
+  ['insertcommentmeta_5',['insertCommentMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1CommentMeta.html#a35f8fd7e9e3ad5718ad5a51d1c0fd721',1,'PluginFrame::Core::DB::WP::CommentMeta']]],
+  ['insertevent_6',['insertEvent',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1EventsMeta.html#a47fb32d872aa811edf3849d0107735ec',1,'PluginFrame::Core::DB::WP::EventsMeta']]],
+  ['insertlink_7',['insertLink',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Links.html#a9992fe33479141fd916b4db32a0c89bd',1,'PluginFrame::Core::DB::WP::Links']]],
+  ['insertoption_8',['insertOption',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Options.html#a09ca9839c345a11655a67f67ae47fade',1,'PluginFrame::Core::DB::WP::Options']]],
+  ['insertpost_9',['insertPost',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Posts.html#ac3fb3dcebc36d60662c58b699d7b96f9',1,'PluginFrame::Core::DB::WP::Posts']]],
+  ['insertpostmeta_10',['insertPostMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1PostMeta.html#af75545c2e9131b4bef6f92d35d54f61b',1,'PluginFrame::Core::DB::WP::PostMeta']]],
+  ['insertterm_11',['insertTerm',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Terms.html#af877fc9c096f925b9bf6724d1c50ac14',1,'PluginFrame::Core::DB::WP::Terms']]],
+  ['inserttermmeta_12',['insertTermMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermMeta.html#ad0fc1209fba8db82c7bb6057d466db42',1,'PluginFrame::Core::DB::WP::TermMeta']]],
+  ['inserttermrelationship_13',['insertTermRelationship',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermRelationships.html#a1a2831a91ca951c95abf1a7a79b0dd7d',1,'PluginFrame::Core::DB::WP::TermRelationships']]],
+  ['inserttermtaxonomy_14',['insertTermTaxonomy',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1TermTaxonomy.html#a0e512ab4a9348b18f0598b2a07c954e8',1,'PluginFrame::Core::DB::WP::TermTaxonomy']]],
+  ['insertuser_15',['insertUser',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1Users.html#a526e7332d52ce8d229749da3acda03b6',1,'PluginFrame::Core::DB::WP::Users']]],
+  ['insertusermeta_16',['insertUserMeta',['../classPluginFrame_1_1Core_1_1DB_1_1WP_1_1UserMeta.html#a71a3f68adedd0160c09d6892d8930de9',1,'PluginFrame::Core::DB::WP::UserMeta']]],
+  ['installcoreupdate_17',['installCoreUpdate',['../classPluginFrame_1_1Core_1_1Updater_1_1CoreUpdater.html#adc30b448240f4504e31c559ff4475b5d',1,'PluginFrame::Core::Updater::CoreUpdater']]],
+  ['instantiateclass_18',['instantiateClass',['../classPluginFrame_1_1Core_1_1Helpers_1_1ProvidersHelper.html#ae208492737e8b9001964d332495839cf',1,'PluginFrame::Core::Helpers::ProvidersHelper']]],
+  ['is_5fphp_5fversion_5fcompatible_19',['is_php_version_compatible',['../classPluginFrame_1_1Core_1_1Helpers_1_1BootstrapHelper.html#a874e7faa68b0c5dbcc4f45082e1726d5',1,'PluginFrame::Core::Helpers::BootstrapHelper']]],
+  ['isloggingenabled_20',['isLoggingEnabled',['../classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1PFlogs.html#aae776a78bc4557be9b99c3050490bf12',1,'PluginFrame::Core::Utilities::PFlogs::PFlogs']]],
+  ['ispluginupdate_21',['isPluginUpdate',['../classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade.html#a6fed084d332f6551c10fda0543b4461d',1,'PluginFrame::Core::Hooks::Upgrade']]],
+  ['ispluginupload_22',['isPluginUpload',['../classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade.html#a4c596cb8706d65b3f2ca9a3a25e3151d',1,'PluginFrame::Core::Hooks::Upgrade']]],
+  ['isscheduled_23',['isScheduled',['../classPluginFrame_1_1Core_1_1Utilities_1_1PFlogs_1_1LogCleaner.html#aafe5ece94e4020ffab020908338b0f65',1,'PluginFrame::Core::Utilities::PFlogs::LogCleaner']]]
+];

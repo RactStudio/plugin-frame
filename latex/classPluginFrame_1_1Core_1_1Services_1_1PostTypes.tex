@@ -1,0 +1,63 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Post\+Types Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Services_1_1PostTypes}{}\label{classPluginFrame_1_1Core_1_1Services_1_1PostTypes}\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1PostTypes_a24c574debd16294bbe97a50201de73a4}{register\+Post\+Type}} (string \$key, array \$args, ?callable \$condition=null)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1PostTypes_a21fe028e4b837b33eb4b67f3cebf92d1}{register\+Post\+Types}} (array \$post\+Types)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1PostTypes_a24c574debd16294bbe97a50201de73a4}\label{classPluginFrame_1_1Core_1_1Services_1_1PostTypes_a24c574debd16294bbe97a50201de73a4} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes}!registerPostType@{registerPostType}}
+\index{registerPostType@{registerPostType}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes}}
+\doxysubsubsection{\texorpdfstring{registerPostType()}{registerPostType()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Post\+Types\+::register\+Post\+Type (\begin{DoxyParamCaption}\item[{string}]{\$key,  }\item[{array}]{\$args,  }\item[{?callable}]{\$condition = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Register a single custom post type.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Post type key/slug. \\
+\hline
+array & {\em \$args} & Post type arguments. \\
+\hline
+callable | null & {\em \$condition} & Optional condition to evaluate before registration. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1PostTypes_a24c574debd16294bbe97a50201de73a4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1PostTypes_a21fe028e4b837b33eb4b67f3cebf92d1}\label{classPluginFrame_1_1Core_1_1Services_1_1PostTypes_a21fe028e4b837b33eb4b67f3cebf92d1} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes}!registerPostTypes@{registerPostTypes}}
+\index{registerPostTypes@{registerPostTypes}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}PostTypes}}
+\doxysubsubsection{\texorpdfstring{registerPostTypes()}{registerPostTypes()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Post\+Types\+::register\+Post\+Types (\begin{DoxyParamCaption}\item[{array}]{\$post\+Types }\end{DoxyParamCaption})}
+
+Register multiple custom post types at once.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$post\+Types} & Array of post types to register. Format\+: \mbox{[}\textquotesingle{}key\textquotesingle{} =\texorpdfstring{$>$}{>} \mbox{[}\textquotesingle{}args\textquotesingle{} =\texorpdfstring{$>$}{>} \mbox{[}\mbox{]}, \textquotesingle{}condition\textquotesingle{} =\texorpdfstring{$>$}{>} callable\texorpdfstring{$\vert$}{|}null\mbox{]}\mbox{]} \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1PostTypes_a21fe028e4b837b33eb4b67f3cebf92d1_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Services/\mbox{\hyperlink{Core_2Services_2PostTypes_8php}{Post\+Types.\+php}}\end{DoxyCompactItemize}

@@ -1,0 +1,161 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler}{}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler}\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_af56c144a491367e4a54e21b269bdd08d}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a93cb885f3c2b634591fa3014766122a2}{register\+Custom\+Intervals}} (\$schedules)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a7df13f80dc50310cb55326cdadcd1208}{schedule\+Recurring}} (string \$hook, int \$interval, callable \$callback, array \$args=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_aa7b5d0f38c339dda676494a8b4c7558d}{schedule\+Single}} (string \$hook, int \$time, callable \$callback, array \$args=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a80b4b44669efe4ae3f38e26c1e33960c}{clear\+Scheduled}} (string \$hook, array \$args=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a1ad49c830c5e9305f71039228c9d0ab0}{list\+Schedules}} (string \$prefix, string \$status=\textquotesingle{}\textquotesingle{}, int \$page=1, int \$per\+Page=10)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_add8048fafc556d1e7c3b59a9f8c136e5}{trash\+Schedule}} (string \$hook, array \$args=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a547f5c280c4339e0fbec279a78ce129d}{clear\+Trash}} (string \$prefix)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a2eab471618c9296ba08beb0122f199b1}{register\+Interval}} (int \$interval)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a33071f17bcba0bf245196fef42d1a562}{get\+Schedule\+Status}} (int \$timestamp)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_ae6e2180245528facda45f8eab31c3f1e}{\$registered\+\_\+intervals}} = \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_af56c144a491367e4a54e21b269bdd08d}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_af56c144a491367e4a54e21b269bdd08d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a80b4b44669efe4ae3f38e26c1e33960c}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a80b4b44669efe4ae3f38e26c1e33960c} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!clearScheduled@{clearScheduled}}
+\index{clearScheduled@{clearScheduled}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{clearScheduled()}{clearScheduled()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::clear\+Scheduled (\begin{DoxyParamCaption}\item[{string}]{\$hook,  }\item[{array}]{\$args = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Clear a scheduled cron job. \Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a547f5c280c4339e0fbec279a78ce129d}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a547f5c280c4339e0fbec279a78ce129d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!clearTrash@{clearTrash}}
+\index{clearTrash@{clearTrash}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{clearTrash()}{clearTrash()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::clear\+Trash (\begin{DoxyParamCaption}\item[{string}]{\$prefix }\end{DoxyParamCaption})}
+
+Clear all trashed schedules. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a547f5c280c4339e0fbec279a78ce129d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a33071f17bcba0bf245196fef42d1a562}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a33071f17bcba0bf245196fef42d1a562} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!getScheduleStatus@{getScheduleStatus}}
+\index{getScheduleStatus@{getScheduleStatus}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{getScheduleStatus()}{getScheduleStatus()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::get\+Schedule\+Status (\begin{DoxyParamCaption}\item[{int}]{\$timestamp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Determine the status of a schedule based on the timestamp. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a33071f17bcba0bf245196fef42d1a562_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a1ad49c830c5e9305f71039228c9d0ab0}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a1ad49c830c5e9305f71039228c9d0ab0} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!listSchedules@{listSchedules}}
+\index{listSchedules@{listSchedules}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{listSchedules()}{listSchedules()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::list\+Schedules (\begin{DoxyParamCaption}\item[{string}]{\$prefix,  }\item[{string}]{\$status = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{int}]{\$page = {\ttfamily 1},  }\item[{int}]{\$per\+Page = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Categorize and list schedules with pagination support. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a1ad49c830c5e9305f71039228c9d0ab0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a1ad49c830c5e9305f71039228c9d0ab0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a93cb885f3c2b634591fa3014766122a2}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a93cb885f3c2b634591fa3014766122a2} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!registerCustomIntervals@{registerCustomIntervals}}
+\index{registerCustomIntervals@{registerCustomIntervals}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{registerCustomIntervals()}{registerCustomIntervals()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::register\+Custom\+Intervals (\begin{DoxyParamCaption}\item[{}]{\$schedules }\end{DoxyParamCaption})}
+
+Register all custom intervals with Word\+Press \Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a2eab471618c9296ba08beb0122f199b1}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a2eab471618c9296ba08beb0122f199b1} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!registerInterval@{registerInterval}}
+\index{registerInterval@{registerInterval}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{registerInterval()}{registerInterval()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::register\+Interval (\begin{DoxyParamCaption}\item[{int}]{\$interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Register a custom interval type Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a2eab471618c9296ba08beb0122f199b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a7df13f80dc50310cb55326cdadcd1208}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a7df13f80dc50310cb55326cdadcd1208} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!scheduleRecurring@{scheduleRecurring}}
+\index{scheduleRecurring@{scheduleRecurring}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{scheduleRecurring()}{scheduleRecurring()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::schedule\+Recurring (\begin{DoxyParamCaption}\item[{string}]{\$hook,  }\item[{int}]{\$interval,  }\item[{callable}]{\$callback,  }\item[{array}]{\$args = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Schedule a recurring cron job Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_a7df13f80dc50310cb55326cdadcd1208_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_aa7b5d0f38c339dda676494a8b4c7558d}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_aa7b5d0f38c339dda676494a8b4c7558d} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!scheduleSingle@{scheduleSingle}}
+\index{scheduleSingle@{scheduleSingle}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{scheduleSingle()}{scheduleSingle()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::schedule\+Single (\begin{DoxyParamCaption}\item[{string}]{\$hook,  }\item[{int}]{\$time,  }\item[{callable}]{\$callback,  }\item[{array}]{\$args = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Schedule a single cron job. \Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_add8048fafc556d1e7c3b59a9f8c136e5}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_add8048fafc556d1e7c3b59a9f8c136e5} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!trashSchedule@{trashSchedule}}
+\index{trashSchedule@{trashSchedule}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{trashSchedule()}{trashSchedule()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::trash\+Schedule (\begin{DoxyParamCaption}\item[{string}]{\$hook,  }\item[{array}]{\$args = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Move a schedule to the trash. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_ae6e2180245528facda45f8eab31c3f1e}\label{classPluginFrame_1_1Core_1_1Services_1_1Scheduler_ae6e2180245528facda45f8eab31c3f1e} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}!\$registered\_intervals@{\$registered\_intervals}}
+\index{\$registered\_intervals@{\$registered\_intervals}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Scheduler}}
+\doxysubsubsection{\texorpdfstring{\$registered\_intervals}{\$registered\_intervals}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Scheduler\+::\$registered\+\_\+intervals = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Services/\mbox{\hyperlink{Scheduler_8php}{Scheduler.\+php}}\end{DoxyCompactItemize}

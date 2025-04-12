@@ -1,0 +1,246 @@
+\doxysection{Plugin\+Frame\textbackslash{}Core\textbackslash{}Services\textbackslash{}Screen\+Help Class Reference}
+\hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp}{}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp}\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a556018413fcc7b38809f144a659ead49}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_afe43315177c52ba2c8214ece6e784526}{for\+Screen}} (string \$screen\+Id)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_ad316439fefad4fd6eca291736f38d204}{add\+Tab}} (string \$tab\+Id, array \$config)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a25e52a7492b4c63a94213f89272e8513}{with\+Shared\+Context}} (array \$context)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a97b61744d2b5a82b006fde90ef4d7815}{register\+Groups}} ()
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a3d924f7af98266b0af2913f3caf3dafd}{add\+Global\+Context}} (array \$context)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a0695eb9f7b02402d8d3cba43d215291b}{adjust\+Admin\+Styles}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_abe6c6db01fbfd140e0b4872aa751ed66}{register\+Single\+Tab}} (WP\+\_\+\+Screen \$screen, string \$tab\+Id, array \$tab\+Config)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_aa6fbd85dd1e92fc8658dc570ceb2bf74}{render\+Tab\+Content}} (array \$tab\+Config)
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_ac28f45fe7d91d627523bff2b16198b29}{merge\+Contexts}} (array \$tab\+Config)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a2460bcbc1b3c780abd491911b1c2bb52}{\$groups}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_aaff29ea2f7091cbb264573b67693df52}{\$twig}}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a2c23957cfc809588e37e2038c5f664da}{\$global\+Context}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a0b0ab50351d9ba28453dcc0331cea031}{\$current\+Screen\+Id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages Word\+Press admin help tabs with Twig template support
+
+Provides fluent interface for registering context-\/aware help tabs Handles template rendering, context merging, and access control 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a556018413fcc7b38809f144a659ead49}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a556018413fcc7b38809f144a659ead49} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize service and register Word\+Press hooks 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a3d924f7af98266b0af2913f3caf3dafd}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a3d924f7af98266b0af2913f3caf3dafd} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!addGlobalContext@{addGlobalContext}}
+\index{addGlobalContext@{addGlobalContext}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{addGlobalContext()}{addGlobalContext()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::add\+Global\+Context (\begin{DoxyParamCaption}\item[{array}]{\$context }\end{DoxyParamCaption})}
+
+Add global template variables available to all screens
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$context} & Associative array of template variables \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self Fluent interface 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_ad316439fefad4fd6eca291736f38d204}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_ad316439fefad4fd6eca291736f38d204} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!addTab@{addTab}}
+\index{addTab@{addTab}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{addTab()}{addTab()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::add\+Tab (\begin{DoxyParamCaption}\item[{string}]{\$tab\+Id,  }\item[{array}]{\$config }\end{DoxyParamCaption})}
+
+Register a help tab for current screen
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$tab\+Id} & Unique tab identifier \\
+\hline
+array & {\em \$config} & \{ @type string \$template Relative path to Twig template (without extension) @type string \$title Display title @type array \$context Tab-\/specific template variables @type int \$priority Display order (lower numbers first) @type string \$capability Required user capability \} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self Fluent interface 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Runtime\+Exception} & If no screen selected \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a0695eb9f7b02402d8d3cba43d215291b}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a0695eb9f7b02402d8d3cba43d215291b} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!adjustAdminStyles@{adjustAdminStyles}}
+\index{adjustAdminStyles@{adjustAdminStyles}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{adjustAdminStyles()}{adjustAdminStyles()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::adjust\+Admin\+Styles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Adjust admin page styles when help tabs are present
+
+Adds dynamic CSS for proper spacing above Plugin Frame Page Content Applies responsive margins for mobile devices \Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_afe43315177c52ba2c8214ece6e784526}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_afe43315177c52ba2c8214ece6e784526} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!forScreen@{forScreen}}
+\index{forScreen@{forScreen}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{forScreen()}{forScreen()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::for\+Screen (\begin{DoxyParamCaption}\item[{string}]{\$screen\+Id }\end{DoxyParamCaption})}
+
+Set current screen for help tab configuration
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$screen\+Id} & Word\+Press screen ID (e.\+g., \textquotesingle{}dashboard\textquotesingle{}, \textquotesingle{}edit-\/post\textquotesingle{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self Fluent interface 
+\end{DoxyReturn}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_ac28f45fe7d91d627523bff2b16198b29}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_ac28f45fe7d91d627523bff2b16198b29} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!mergeContexts@{mergeContexts}}
+\index{mergeContexts@{mergeContexts}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{mergeContexts()}{mergeContexts()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::merge\+Contexts (\begin{DoxyParamCaption}\item[{array}]{\$tab\+Config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_ac28f45fe7d91d627523bff2b16198b29_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a97b61744d2b5a82b006fde90ef4d7815}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a97b61744d2b5a82b006fde90ef4d7815} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!registerGroups@{registerGroups}}
+\index{registerGroups@{registerGroups}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{registerGroups()}{registerGroups()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::register\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Register all configured help tabs with Word\+Press
+
+Automatically called via admin\+\_\+head hook Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a97b61744d2b5a82b006fde90ef4d7815_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_abe6c6db01fbfd140e0b4872aa751ed66}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_abe6c6db01fbfd140e0b4872aa751ed66} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!registerSingleTab@{registerSingleTab}}
+\index{registerSingleTab@{registerSingleTab}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{registerSingleTab()}{registerSingleTab()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::register\+Single\+Tab (\begin{DoxyParamCaption}\item[{WP\+\_\+\+Screen}]{\$screen,  }\item[{string}]{\$tab\+Id,  }\item[{array}]{\$tab\+Config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_abe6c6db01fbfd140e0b4872aa751ed66_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_abe6c6db01fbfd140e0b4872aa751ed66_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_aa6fbd85dd1e92fc8658dc570ceb2bf74}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_aa6fbd85dd1e92fc8658dc570ceb2bf74} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!renderTabContent@{renderTabContent}}
+\index{renderTabContent@{renderTabContent}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{renderTabContent()}{renderTabContent()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::render\+Tab\+Content (\begin{DoxyParamCaption}\item[{array}]{\$tab\+Config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_aa6fbd85dd1e92fc8658dc570ceb2bf74_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_aa6fbd85dd1e92fc8658dc570ceb2bf74_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a25e52a7492b4c63a94213f89272e8513}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a25e52a7492b4c63a94213f89272e8513} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!withSharedContext@{withSharedContext}}
+\index{withSharedContext@{withSharedContext}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{withSharedContext()}{withSharedContext()}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::with\+Shared\+Context (\begin{DoxyParamCaption}\item[{array}]{\$context }\end{DoxyParamCaption})}
+
+Add shared template variables for current screen\textquotesingle{}s tabs
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$context} & Associative array of template variables \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self Fluent interface 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Runtime\+Exception} & If no screen selected \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a0b0ab50351d9ba28453dcc0331cea031}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a0b0ab50351d9ba28453dcc0331cea031} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!\$currentScreenId@{\$currentScreenId}}
+\index{\$currentScreenId@{\$currentScreenId}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{\$currentScreenId}{\$currentScreenId}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::\$current\+Screen\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a2c23957cfc809588e37e2038c5f664da}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a2c23957cfc809588e37e2038c5f664da} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!\$globalContext@{\$globalContext}}
+\index{\$globalContext@{\$globalContext}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{\$globalContext}{\$globalContext}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::\$global\+Context = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a2460bcbc1b3c780abd491911b1c2bb52}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_a2460bcbc1b3c780abd491911b1c2bb52} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!\$groups@{\$groups}}
+\index{\$groups@{\$groups}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{\$groups}{\$groups}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::\$groups = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_aaff29ea2f7091cbb264573b67693df52}\label{classPluginFrame_1_1Core_1_1Services_1_1ScreenHelp_aaff29ea2f7091cbb264573b67693df52} 
+\index{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}!\$twig@{\$twig}}
+\index{\$twig@{\$twig}!PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp@{PluginFrame\textbackslash{}Core\textbackslash{}Services\textbackslash{}ScreenHelp}}
+\doxysubsubsection{\texorpdfstring{\$twig}{\$twig}}
+{\footnotesize\ttfamily Plugin\+Frame\textbackslash{}\+Core\textbackslash{}\+Services\textbackslash{}\+Screen\+Help\+::\$twig\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Core/\+Services/\mbox{\hyperlink{Core_2Services_2ScreenHelp_8php}{Screen\+Help.\+php}}\end{DoxyCompactItemize}
