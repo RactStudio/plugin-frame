@@ -1,4 +1,4 @@
-name: WordPress Docs Deployment
+name: Plugin Frame Docs Deployment
 on:
   push:
     branches: [master]
@@ -19,18 +19,16 @@ jobs:
       - name: Copy Config Files
         run: |
           # Copy Doxygen config to root
-          cp .github/docs_config/Doxyfile ./Doxyfile
+          cp ./docs_config/Doxyfile ./Doxyfile
           # Copy styling assets
-          cp .github/docs_config/docs-header.html public/
-          cp .github/docs_config/wordpress-docs.css public/
-          cp .github/docs_config/assets/* public/assets/
+          cp ./docs_config/header.html public/
+          cp ./docs_config/footer.html public/
+          cp ./docs_config/assets/* public/assets/
 
       - name: Generate Documentation
         run: |
           echo "pf.ractstudio.com" > public/CNAME
           doxygen Doxyfile
-          # Add WordPress footer
-          echo '<div class="wp-docs-footer">Documentation follows <a href="https://developer.wordpress.org/coding-standards/">WordPress standards</a></div>' >> public/footer.html
 
       - name: Cleanup & Deploy
         run: rm Doxyfile  # Remove temporary file

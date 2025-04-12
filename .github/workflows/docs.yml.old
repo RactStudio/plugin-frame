@@ -1,0 +1,32 @@
+name: Plugin Frame Docs Deployment
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+
+      - name: Generate Documentation
+        run: |
+          mkdir -p public
+          echo "pf.ractstudio.com" > public/CNAME  # Add CNAME file
+          doxygen Doxyfile
+
+      - name: Deploy to Doc Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          destination_dir: .
+          publish_branch: doc
+          keep_files: true  # Preserve existing files
+          force_orphan: false  # Disable orphan branch reset
