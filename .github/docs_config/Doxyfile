@@ -17,10 +17,10 @@ ALIASES               += "shortcode=@shortcode"
 
 # HTML Output
 HTML_OUTPUT            = .
-PF_LOGO				   = public/assets/pf-logo.png
-HTML_HEADER            = header.html
-HTML_FOOTER            = footer.html
-HTML_STYLESHEET        = public/assets/pf-style.css
+#PF_LOGO				   = public/assets/pf-logo.png
+#HTML_HEADER            = header.html
+#HTML_FOOTER            = footer.html
+#HTML_STYLESHEET        = public/assets/pf-style.css
 GENERATE_TREEVIEW      = YES
 USE_MDFILE_AS_MAINPAGE = README.md
 
