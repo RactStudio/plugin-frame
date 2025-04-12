@@ -18,6 +18,6 @@ for root, _, files in os.walk('templates'):
                     output.append(f"- **{k}**: {v}\n")
             output.append("\n---\n")
 
-with open('docs/public/twig.md', 'w') as f:
+with open('public/twig.md', 'w') as f:
     f.write("# Twig Template Reference\n\n")
     f.write("".join(output))

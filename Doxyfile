@@ -1,7 +1,7 @@
 # Plugin Frame Project Info
 PROJECT_NAME           = "Plugin Frame"
 PROJECT_NUMBER         = "0.9.2"
-OUTPUT_DIRECTORY       = public  # Where docs will be generated
+OUTPUT_DIRECTORY       = docs/public  # Where docs will be generated
 HTML_OUTPUT            = api  # Add this line
 
 # Input Sources
