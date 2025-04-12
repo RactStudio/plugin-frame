@@ -17,8 +17,8 @@ ALIASES               += "shortcode=@shortcode"
 
 # HTML Output
 HTML_OUTPUT            = .
-HTML_HEADER            = ./header.html
-HTML_FOOTER            = ./footer.html
+#HTML_HEADER            = header.html
+#HTML_FOOTER            = footer.html
 HTML_STYLESHEET        = assets/pf-style.css
 GENERATE_TREEVIEW      = YES
 USE_MDFILE_AS_MAINPAGE = README.md
