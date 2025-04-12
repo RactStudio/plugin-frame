@@ -14,28 +14,30 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz
-          mkdir -p public public/assets
+          mkdir -p public
 
       - name: Copy Config Files
         run: |
-          # Copy Doxygen config to root
-          cp ././.github/Doxyfile ./Doxyfile
-          # Copy docs_config
-          cp -r ././.github/docs_config/* public/
+          cp .github/Doxyfile ./Doxyfile
+          cp -r .github/docs_config/* public/
+          mkdir -p public/assets
+          cp -r .github/docs_config/assets/* public/assets/
+
+      - name: Verify Files
+        run: ls -la public/
 
       - name: Generate Documentation
         run: |
           echo "pf.ractstudio.com" > public/CNAME
           doxygen Doxyfile
 
-      - name: Cleanup & Deploy
-        run: rm Doxyfile  # Remove temporary file
+      - name: Cleanup
+        run: rm Doxyfile
       
-      - name: Deploy to Doc Branch
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: doc
           keep_files: true
-          force_orphan: false
