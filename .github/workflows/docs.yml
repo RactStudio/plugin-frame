@@ -19,8 +19,9 @@ jobs:
       - name: Copy Config Files
         run: |
           cp .github/Doxyfile ./Doxyfile
-          cp -r .github/docs_config/* public/
           mkdir -p public/assets
+          cp .github/docs_config/header.html public/header.html
+          cp .github/docs_config/footer.html public/footer.html
           cp -r .github/docs_config/assets/* public/assets/
 
       - name: Verify Files
