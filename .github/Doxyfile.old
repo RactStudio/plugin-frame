@@ -8,6 +8,7 @@ FILE_PATTERNS          = *.php
 
 # HTML Output
 GENERATE_HTML          = YES
+GENERATE_TREEVIEW      = YES
 HTML_OUTPUT            = .
 USE_MDFILE_AS_MAINPAGE = README.md
 
