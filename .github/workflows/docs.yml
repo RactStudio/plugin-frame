@@ -20,6 +20,7 @@ jobs:
         run: |
           cp .github/Doxyfile ./Doxyfile
           cp -r .github/docs_config/* public/
+          cp -r ././README.md public/README.md
           mkdir -p public/assets
           cp -r .github/docs_config/assets/* public/assets/
 
