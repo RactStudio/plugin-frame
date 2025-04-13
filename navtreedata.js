@@ -32,15 +32,33 @@ var NAVTREE =
         [ "Variables", "namespacemembers_vars.html", null ]
       ] ]
     ] ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
+    ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"files.html"
+"APIbase_8php.html",
+"classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper.html",
+"classPluginFrame_1_1Core_1_1Routes_1_1Middleware_1_1RoleMiddleware.html#aaab887d7ae1dfeb20fbd953d3e010ad9",
+"classPluginFrame_1_1REST_1_1Controllers_1_1DemoData.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

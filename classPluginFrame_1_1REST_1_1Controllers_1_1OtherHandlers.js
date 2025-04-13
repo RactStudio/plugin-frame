@@ -1,0 +1,25 @@
+var classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers =
+[
+    [ "addDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#acb61c42784d99431e218d74f393f5578", null ],
+    [ "adminOnlyHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#abf0e48f62bef9cefb29d3bfee767fb8d", null ],
+    [ "bulkDeleteHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a9b343e331a3634a696c9b026b284ad12", null ],
+    [ "bulkUpdateHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a3b08925ca27c534e70d31306ff10fbfa", null ],
+    [ "customResponseHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a356e6a92221c0c59032c5f1a9c4db5d6", null ],
+    [ "deleteDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a5455ba305f52a9c7bb5aadb84b3827e2", null ],
+    [ "duplicateDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#affbfa3e0369e9730e9ba94785d531eda", null ],
+    [ "editDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a6e0cc56dd66a68bd64de994768d171cf", null ],
+    [ "errorExampleHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a3b0a5fb1cdcca4c85b1e78274321bb19", null ],
+    [ "exportDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#ac243320558248fe7d48b7f5b8c3132bb", null ],
+    [ "fileUploadHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a5c83b92069b12d3a9f7dc891b5a58742", null ],
+    [ "getDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a711dd47fe5b351c068f93218065b1dc9", null ],
+    [ "getDataHistoryHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#abc50b9414d8b5161c0112f91d1ef8c07", null ],
+    [ "getSecureData", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a35405507bdf111cfcb651812dfb78617", null ],
+    [ "handleApplicationPasswordAuth", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a513fd09a6d4f072a31ad12a59cc0142b", null ],
+    [ "handleUsernamePasswordAuth", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#ab84e1135994c38a92d3997850298c613", null ],
+    [ "importDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a0ec6f6844a56120503054023d72a202a", null ],
+    [ "listDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a5e4b4d6df3a05bd31bf04b43bd29fc0c", null ],
+    [ "nestedAdminDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#ab7fc95625b322dc1d2bea8ff6669c5fe", null ],
+    [ "postSecureData", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#aa95944022a9893cee8adc8b2b4c2ce06", null ],
+    [ "restoreDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a27e80ea6b1d8e373a0034a9b51eb8bbd", null ],
+    [ "searchDataHandler", "classPluginFrame_1_1REST_1_1Controllers_1_1OtherHandlers.html#a4a0c65c3f84347a7f9bf84ed5d393d59", null ]
+];
