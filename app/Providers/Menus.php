@@ -71,40 +71,40 @@ class Menus
             [new Tools(), 'render']               // Callback method
         );
 
-        /**
-         * Alpine JS based admin pages
-         */
+        // /**
+        //  * Alpine JS based admin pages
+        //  */
         
-        // Register the main menu page (DashboardAlpine)
-        $this->menusService->addMenuPage(
-            'Plugin Frame Dashboard',       // Page title
-            'Plugin Frame',                 // Menu title
-            'manage_options',              // Capability
-            'plugin-frame-alpine',                  // Menu slug
-            [new DashboardAlpine(), 'render'],     // Callback method
-            'dashicons-image-filter',            // Icon
-            3                                // Position
-        );
+        // // Register the main menu page (DashboardAlpine)
+        // $this->menusService->addMenuPage(
+        //     'Plugin Frame Dashboard',       // Page title
+        //     'Plugin Frame',                 // Menu title
+        //     'manage_options',              // Capability
+        //     'plugin-frame-alpine',                  // Menu slug
+        //     [new DashboardAlpine(), 'render'],     // Callback method
+        //     'dashicons-image-filter',            // Icon
+        //     3                                // Position
+        // );
 
-        // Register a submenu page (SettingsAlpine)
-        $this->menusService->addSubmenuPage(
-            'plugin-frame-alpine',                // Parent menu slug
-            'Plugin Frame Settings',        // Submenu page title
-            'Settings',                     // Submenu title
-            'manage_options',              // Capability
-            'plugin-frame-settings-alpine',                   // Submenu slug
-            [new SettingsAlpine(), 'render']            // Callback method
-        );
+        // // Register a submenu page (SettingsAlpine)
+        // $this->menusService->addSubmenuPage(
+        //     'plugin-frame-alpine',                // Parent menu slug
+        //     'Plugin Frame Settings',        // Submenu page title
+        //     'Settings',                     // Submenu title
+        //     'manage_options',              // Capability
+        //     'plugin-frame-settings-alpine',                   // Submenu slug
+        //     [new SettingsAlpine(), 'render']            // Callback method
+        // );
 
-        // Register a submenu page (ToolsAlpine)
-        $this->menusService->addSubmenuPage(
-            'plugin-frame-alpine',                // Parent menu slug
-            'Plugin Frame Tools',           // Submenu page title
-            'Tools',                        // Submenu title
-            'manage_options',              // Capability
-            'plugin-frame-tools-alpine',                      // Submenu slug
-            [new ToolsAlpine(), 'render']               // Callback method
-        );
+        // // Register a submenu page (ToolsAlpine)
+        // $this->menusService->addSubmenuPage(
+        //     'plugin-frame-alpine',                // Parent menu slug
+        //     'Plugin Frame Tools',           // Submenu page title
+        //     'Tools',                        // Submenu title
+        //     'manage_options',              // Capability
+        //     'plugin-frame-tools-alpine',                      // Submenu slug
+        //     [new ToolsAlpine(), 'render']               // Callback method
+        // );
 
         // Add more menus or submenus here as needed
 
