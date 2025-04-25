@@ -1,6 +1,6 @@
 <?php 
 
-namespace PluginFrame\Core\Services;
+namespace PluginFrame\Core\Services\Options;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
