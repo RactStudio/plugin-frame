@@ -7,6 +7,7 @@ var dir_b637f0ba58af9ab360e18c3e1d9bdbed =
     [ "DBconfig.php", "DBconfig_8php.html", "DBconfig_8php" ],
     [ "Debug.php", "Debug_8php.html", "Debug_8php" ],
     [ "HooksLoader.php", "HooksLoader_8php.html", "HooksLoader_8php" ],
+    [ "index.php", "app_2Config_2index_8php.html", null ],
     [ "Providers.php", "Providers_8php.html", "Providers_8php" ],
     [ "Routes.php", "Routes_8php.html", "Routes_8php" ],
     [ "Updater.php", "Updater_8php.html", "Updater_8php" ]

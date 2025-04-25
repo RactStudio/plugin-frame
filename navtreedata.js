@@ -56,9 +56,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "APIbase_8php.html",
-"classPluginFrame_1_1Core_1_1DB_1_1Utils_1_1DBHelper.html",
-"classPluginFrame_1_1Core_1_1Routes_1_1Middleware_1_1RoleMiddleware.html#aaab887d7ae1dfeb20fbd953d3e010ad9",
-"classPluginFrame_1_1REST_1_1Controllers_1_1DemoData.html"
+"classPluginFrame_1_1Core_1_1DB_1_1Models_1_1CustomQueryModel.html#a2aa6a8bc3315a23854203eca3e43a6b6",
+"classPluginFrame_1_1Core_1_1Hooks_1_1Upgrade.html#ab9e43051403c41aaf06f278be0d72b9f",
+"classPluginFrame_1_1Providers_1_1ScreenHelp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

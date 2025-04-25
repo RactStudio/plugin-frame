@@ -5,6 +5,7 @@ var dir_f0b0d2a19437dba5283222c30fc83fe4 =
     [ "ActionsLinks.php", "Core_2Services_2ActionsLinks_8php.html", "Core_2Services_2ActionsLinks_8php" ],
     [ "Customize.php", "Core_2Services_2Customize_8php.html", "Core_2Services_2Customize_8php" ],
     [ "Enqueue.php", "Enqueue_8php.html", "Enqueue_8php" ],
+    [ "index.php", "app_2Core_2Services_2index_8php.html", null ],
     [ "Menus.php", "Core_2Services_2Menus_8php.html", "Core_2Services_2Menus_8php" ],
     [ "Notice.php", "Notice_8php.html", "Notice_8php" ],
     [ "PostTypes.php", "Core_2Services_2PostTypes_8php.html", "Core_2Services_2PostTypes_8php" ],

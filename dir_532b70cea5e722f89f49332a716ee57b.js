@@ -8,5 +8,6 @@ var dir_532b70cea5e722f89f49332a716ee57b =
     [ "Services", "dir_f0b0d2a19437dba5283222c30fc83fe4.html", "dir_f0b0d2a19437dba5283222c30fc83fe4" ],
     [ "Updater", "dir_4f51bf7336d63891cd4280ec5adb71ec.html", "dir_4f51bf7336d63891cd4280ec5adb71ec" ],
     [ "Utilities", "dir_3352547b243690063bcf07f7a0ce42bb.html", "dir_3352547b243690063bcf07f7a0ce42bb" ],
+    [ "index.php", "app_2Core_2index_8php.html", null ],
     [ "PluginFrame.php", "PluginFrame_8php.html", null ]
 ];
