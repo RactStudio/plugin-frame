@@ -109,6 +109,9 @@ class BootstrapHelper
     {
         (new \PluginFrame\Config\Config())->priority_load_first();
 
+        // Initialize Options Container and Storage Services
+        new \PluginFrame\Config\Options();
+
         // Initialize providers and configuration.
         new \PluginFrame\Config\Providers();
 
