@@ -16,7 +16,7 @@ class CustomTableOption implements OptionStorageInterface
     {
         global $wpdb;
         $this->db    = $wpdb;
-        $this->table = $wpdb->prefix . 'plugin_options';
+        $this->table = $wpdb->prefix . 'pf_options';
     }
 
     public function register(string $key, $default = null, array $args = []): void

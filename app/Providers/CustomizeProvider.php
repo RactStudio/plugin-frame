@@ -5,11 +5,11 @@ namespace PluginFrame\Providers;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-use PluginFrame\Core\Services\ShortCode as ShortCodeService;
+use PluginFrame\Services\Customize as CustomizeService;
 
-class ShortCodes
+class CustomizeProvider
 {
-    // Add
+    // Plugin Options Customize in Apperance Customizer
     public function __construct()
     {
         // Do something

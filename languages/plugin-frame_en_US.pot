@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-25T05:26:00+00:00\n"
+"POT-Creation-Date: 2025-05-07T06:46:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: plugin-frame\n"
@@ -71,17 +71,17 @@ msgstr ""
 msgid "This is an error response"
 msgstr ""
 
-#: app/Views/Admin/Dashboard.php:22
+#: app/Views/Admin/Dashboard.php:31
 #: app/Views/AdminAlpine/DashboardAlpine.php:22
 msgid "Dashboard"
 msgstr ""
 
-#: app/Views/Admin/Dashboard.php:23
+#: app/Views/Admin/Dashboard.php:32
 #: app/Views/AdminAlpine/DashboardAlpine.php:23
 msgid "Plugin Frame Admin Dashboard!"
 msgstr ""
 
-#: app/Views/Admin/Dashboard.php:24
+#: app/Views/Admin/Dashboard.php:33
 #: app/Views/AdminAlpine/DashboardAlpine.php:24
 msgid "Plugin Frame Dashboard description for without text-domain"
 msgstr ""

@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 use PluginFrame\Core\Services\PostTypes as PostTypesService;
 
-class PostTypes
+class PostTypesProvider
 {
     protected $postTypes;
 

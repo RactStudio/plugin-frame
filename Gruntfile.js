@@ -53,6 +53,8 @@ module.exports = function (pf) {
                     '!.DS_Store',
                     '!Thumbs.db',
                     '!desktop.ini',
+                    '!.github/**',
+                    '!CNAME',
                     '!node_modules/**',
                     '!cache/**',
                     '!logs/**',

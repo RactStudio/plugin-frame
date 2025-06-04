@@ -13,7 +13,7 @@ use PluginFrame\Core\Services\ScreenHelp as ScreenHelpService;
  * Example implementation demonstrating help tab configuration
  * Defines help content structure for specific admin pages
  */
-class ScreenHelp
+class ScreenHelpProvider
 {
     protected $screenHelp;
 

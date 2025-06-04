@@ -16,7 +16,7 @@ use PluginFrame\Views\AdminAlpine\DashboardAlpine;
 use PluginFrame\Views\AdminAlpine\SettingsAlpine;
 use PluginFrame\Views\AdminAlpine\ToolsAlpine;
 
-class Menus
+class MenusProvider
 {
     protected $menusService;
 

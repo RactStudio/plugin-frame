@@ -2,12 +2,10 @@
 
 namespace PluginFrame\Providers\Options;
 
-use PluginFrame\Services\Options\Export as ExportService;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Export
+class OptionsImporterProvider
 {
     // Add
     public function __construct()

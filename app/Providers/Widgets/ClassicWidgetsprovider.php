@@ -2,12 +2,10 @@
 
 namespace PluginFrame\Providers\Widgets;
 
-use PluginFrame\Services\Widgets;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Classic
+class ClassicWidgetsprovider
 {
     // Add Widgets (Classic)
     public function __construct()

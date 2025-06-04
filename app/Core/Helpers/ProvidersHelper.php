@@ -2,19 +2,24 @@
 
 namespace PluginFrame\Core\Helpers;
 
+use PluginFrame\Core\Services\Container;
+
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 class ProvidersHelper
 {
     /**
-     * Load priority classes (first or last).
+     * Load classes in the given priority group.
      *
-     * @param string $priority Key for the priority group ('priority_first' or 'priority_last').
+     * @param array  $classes  Full providers list with 'priority_first'/'priority_last' keys.
+     * @param string $priority 'priority_first' or 'priority_last'.
      */
-    public function loadPriorityClasses($classes, string $priority): void
+    public function loadPriorityClasses(array $classes, string $priority): void
     {
-        if (!isset($classes[$priority])) {
+        if (! isset($classes[$priority])) {
             error_log("Invalid priority group: {$priority}");
             return;
         }
@@ -25,95 +30,110 @@ class ProvidersHelper
     }
 
     /**
-     * Dynamically load classes from the app/Providers directory.
-     * Excludes classes in priority_first and priority_last.
+     * Scan app/Providers and instantiate each provider (excluding priority groups).
+     *
+     * @param array       $classes       Providers list with priority keys.
+     * @param string|null $directory     Path to app/Providers (defaults to PLUGIN_FRAME_DIR . 'app/Providers/').
+     * @param string|null $baseNamespace Base namespace for providers (defaults to 'PluginFrame\Providers').
      */
-    public function loadProvidersClasses($classes, $directory = null, $baseNamespace = null): void
-    {
-        if ($directory === null) {
-            $directory = PLUGIN_FRAME_DIR . 'app/Providers/';
-        }
-        if ($baseNamespace === null) {
-            $baseNamespace = 'PluginFrame\Providers';
-        }
+    public function loadProvidersClasses(
+        array   $classes,
+        ?string $directory     = null,
+        ?string $baseNamespace = null
+    ): void {
+        $directory     = $directory     ?? PLUGIN_FRAME_DIR . 'app/Providers/';
+        $baseNamespace = $baseNamespace ?? 'PluginFrame\Providers';
 
-        // Get all priority class names for exclusion
-        $excludedClasses = array_merge(
-            $classes['priority_first'],
-            $classes['priority_last']
+        $excluded = array_merge(
+            $classes['priority_first'] ?? [],
+            $classes['priority_last']  ?? []
         );
 
-        // Recursively scan the directory for provider files
-        $files = $this->scanDirectory($directory);
-
-        foreach ($files as $file) {
+        foreach ($this->scanDirectory($directory) as $file) {
             $className = $this->constructClassName($file, $directory, $baseNamespace);
-
-            // Skip excluded classes
-            if (in_array($className, $excludedClasses, true)) {
+            if (in_array($className, $excluded, true)) {
                 continue;
             }
-
             $this->instantiateClass($className);
         }
     }
 
     /**
-     * Construct a fully qualified class name from a file path.
+     * Scan app/Views and instantiate each view class (autowiring dependencies).
      *
-     * @param string $file The full file path.
-     * @param string $directory The base directory.
-     * @param string $baseNamespace The base namespace.
-     * @return string The fully qualified class name.
+     * @param ?string|null $directory     Path to app/Views (defaults to PLUGIN_FRAME_DIR . 'app/Views/').
+     * @param ?string|null $baseNamespace Base namespace for views (defaults to 'PluginFrame\Views').
      */
-    protected function constructClassName(string $file, string $directory, string $baseNamespace): string
-    {
-        // Strip the base directory and file extension
-        $relativePath = substr($file, strlen($directory), -4); // Remove '.php'
+    public function loadViewClasses(
+        ?string $directory     = null,
+        ?string $baseNamespace = null
+    ): void {
+        $directory     = $directory     ?? PLUGIN_FRAME_DIR . 'app/Views/';
+        $baseNamespace = $baseNamespace ?? 'PluginFrame\Views';
 
-        // Convert directory separators to namespace separators
-        $relativeNamespace = str_replace(DIRECTORY_SEPARATOR, '\\', $relativePath);
-
-        // Construct the full class name
-        return $baseNamespace . '\\' . $relativeNamespace;
-    }
-
-    /**
-     * Instantiate a class if it exists.
-     *
-     * @param string $className The fully qualified class name.
-     */
-    protected function instantiateClass(string $className): void
-    {
-        if (class_exists($className)) {
-            new $className();
-        } else {
-            error_log("Class not found: {$className}");
+        foreach ($this->scanDirectory($directory) as $file) {
+            $className = $this->constructClassName($file, $directory, $baseNamespace);
+            $this->instantiateClass($className);
         }
     }
 
     /**
-     * Recursively scan a directory for PHP files.
+     * Convert a file path to the fully-qualified class name.
      *
-     * @param string $directory The directory to scan.
-     * @return array An array of file paths.
+     * @param string $file           Full filesystem path to the file.
+     * @param string $directory      Base directory path.
+     * @param string $baseNamespace  Corresponding PSR-4 base namespace.
+     * @return string
+     */
+    protected function constructClassName(string $file, string $directory, string $baseNamespace): string
+    {
+        $relativePath      = substr($file, strlen($directory), -4); // strip ".php"
+        $relativeNamespace = str_replace(DIRECTORY_SEPARATOR, '\\', $relativePath);
+        return "{$baseNamespace}\\{$relativeNamespace}";
+    }
+
+    /**
+     * Instantiate a class, injecting via the container if available,
+     * then calling register() and/or boot() if present.
+     */
+    protected function instantiateClass(string $className): void
+    {
+        if (! class_exists($className)) {
+            error_log("ProvidersHelper: Class not found: {$className}");
+            return;
+        }
+
+        $container = Container::getInstance();
+
+        // Autowiring fallback means get() will handle both bound and unbound classes
+        $instance = $container->get($className);
+
+        if (method_exists($instance, 'register')) {
+            $instance->register();
+        }
+        if (method_exists($instance, 'boot')) {
+            $instance->boot();
+        }
+    }
+
+    /**
+     * Recursively collect all .php files under a directory.
+     *
+     * @param string $directory
+     * @return string[]
      */
     protected function scanDirectory(string $directory): array
     {
         $files = [];
-
-        // Ensure the directory exists and is readable
-        if (!is_dir($directory) || !is_readable($directory)) {
-            error_log("Directory not found or not readable: {$directory}");
+        if (! is_dir($directory) || ! is_readable($directory)) {
+            error_log("ProvidersHelper: Directory not found or not readable: {$directory}");
             return $files;
         }
 
-        // Recursively scan the directory
         $iterator = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($directory),
             \RecursiveIteratorIterator::LEAVES_ONLY
         );
-
         foreach ($iterator as $file) {
             if ($file->isFile() && $file->getExtension() === 'php') {
                 $files[] = $file->getPathname();
@@ -122,5 +142,4 @@ class ProvidersHelper
 
         return $files;
     }
-
 }

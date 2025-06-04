@@ -1,15 +1,13 @@
 <?php 
 
-namespace PluginFrame\Providers\Options;
-
-use PluginFrame\Services\Options\Options as OptionsService;
+namespace PluginFrame\Providers\Widgets;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Options
+class BlockWidgetsProvider
 {
-    // Add
+    // Add Widgets (Block)
     public function __construct()
     {
         // Do something

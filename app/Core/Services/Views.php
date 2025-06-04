@@ -6,51 +6,63 @@ use Exception;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
+use PluginFrame\Core\Services\Options\OptionManager;
+use PluginFrame\Core\Services\Container;
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 class Views
 {
     /**
      * Render a Twig template.
      *
-     * @param   string  $template The relative path to the template (without extension).
-     * @param   string  $extension Optional - The extension of the template.
-     * @param   array   $data Data to pass to the template, default is `twig`.
-     * @param   string  $rootLocation Optional - `resources/views/` is default.
+     * @param   string  $template     Relative path to the template (no extension).
+     * @param   string  $extension    Template extension (default: 'twig').
+     * @param   array   $data         Variables to pass to the template.
+     * @param   string  $rootLocation Filesystem path under PLUGIN_FRAME_DIR (default: 'resources/views/').
      * @return  string  Rendered HTML.
      */
-    public static function render(string $template, string $extension = 'twig', array $data = [], string $rootLocation = 'resources/views/')
-    {
-        // Set up the loader to scan all subdirectories inside 'resources/views/' or provided $rootLocation
+    public static function render(
+        string $template,
+        string $extension = 'twig',
+        array $data = [],
+        string $rootLocation = 'resources/views/'
+    ): string {
+        // 1) Set up Twig loader & environment
         $loader = new FilesystemLoader( PLUGIN_FRAME_DIR . $rootLocation );
-        
-        // Initialize the Twig environment with cache and auto-reload
-        $twig = new Environment($loader, [
-            'cache' => PLUGIN_FRAME_DIR . 'cache/twig',
+        $twig   = new Environment($loader, [
+            'cache'       => PLUGIN_FRAME_DIR . 'cache/twig',
             'auto_reload' => true,
         ]);
 
-        // Add translation functions
-        $twig->addFunction(new TwigFunction('__', function (string $text, string $domain = 'plugin-frame') {
-            return __($text, $domain);  // Return translated text
-        }));
-
-        $twig->addFunction(new TwigFunction('_e', function (string $text, string $domain = 'plugin-frame') {
-            return __($text, $domain);  // Do not echo translated text
-        }));
-
-        $twig->addFunction(new TwigFunction('_n', function (string $single, string $plural, int $number, string $domain = 'plugin-frame') {
-            return _n($single, $plural, $number, $domain);  // Handle plural translation
-        }));
-
-        $twig->addFunction(new TwigFunction('_x', function (string $text, string $context, string $domain = 'plugin-frame') {
-            return _x($text, $context, $domain);  // Contextual translation
-        }));
+        // 2) Translation functions
+        $twig->addFunction(new TwigFunction('__', fn(string $text, string $domain='plugin-frame') => __($text,$domain)));
+        $twig->addFunction(new TwigFunction('_e', fn(string $text, string $domain='plugin-frame') => _e($text,$domain)));
+        $twig->addFunction(new TwigFunction('_n', fn(string $single, string $plural, int $number, string $domain='plugin-frame') => _n($single,$plural,$number,$domain)));
+        $twig->addFunction(new TwigFunction('_x', fn(string $text, string $context, string $domain='plugin-frame') => _x($text,$context,$domain)));
+ 
+        // 3) Option retrieval function
+        $twig->addFunction(new TwigFunction(
+            'option',
+            /**
+             * Fetch a registered option value.
+             *
+             * @param string     $key     Option name.
+             * @param mixed|null $default Default if not found.
+             * @return mixed
+             */
+            function(string $key, $default = null) {
+                /** @var OptionManager $om */
+                $om = Container::getInstance()->get(OptionManager::class);
+                return $om->get($key, $default);
+            }
+        ));
 
         try {
-            // Render the template
+            // 4) Render and return
             return $twig->render("$template.{$extension}", $data);
         } catch (Exception $e) {
             return '<p>Error rendering twig view: ' . htmlspecialchars($e->getMessage()) . '</p>';

@@ -48,7 +48,7 @@ class Bootstrap
     public function __construct()
     {
         //Load Utilities globally
-        $debug_log_file = PLUGIN_FRAME_DIR . 'app/Core/Utilities/UtilsLoader.php';
+        $debug_log_file = PLUGIN_FRAME_DIR . 'app/Core/Loader/UtilitiesLoader.php';
         if ( file_exists( $debug_log_file ) ) {
             require_once $debug_log_file;
         }

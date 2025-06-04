@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) { exit; }
 
 use PluginFrame\Core\Services\Notice;
 
-class Notices
+class NoticesProvider
 {
     /**
      * Notices instance

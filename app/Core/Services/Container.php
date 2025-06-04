@@ -48,22 +48,60 @@ class Container implements ContainerInterface
      * @return mixed    The entry.
      * @throws NotFoundExceptionInterface No entry was found for this identifier.
      */
-    public function get(string $id): mixed
+    public function get(string $id)
     {
+        // 1) Return existing
         if (isset($this->instances[$id])) {
             return $this->instances[$id];
         }
-
-        if (! isset($this->definitions[$id])) {
-            throw new class("Service {$id} not found")
-                extends \Exception
-                implements NotFoundExceptionInterface {};
+    
+        // 2) If you bound a factory, use it
+        if (isset($this->definitions[$id])) {
+            $service = $this->definitions[$id]($this);
+            return $this->instances[$id] = $service;
         }
-
-        $resolver          = $this->definitions[$id];
-        $service           = $resolver($this);
-        $this->instances[$id] = $service;
-        return $service;
+    
+        // 3) Fallback to autowiring if the class exists
+        if (class_exists($id)) {
+            $service = $this->autowire($id);
+            return $this->instances[$id] = $service;
+        }
+    
+        // 4) Nothing found
+        throw new class("Service {$id} not found")
+            extends \Exception
+            implements NotFoundExceptionInterface {};
+    }
+    
+    /**
+     * Autowire a class by reflecting its constructor arguments.
+     *
+     * @param string $class FQCN to instantiate
+     * @return object
+     */
+    private function autowire(string $class)
+    {
+        $ref   = new \ReflectionClass($class);
+        $ctor  = $ref->getConstructor();
+        if (! $ctor || $ctor->getNumberOfParameters() === 0) {
+            return new $class();
+        }
+    
+        $args = [];
+        foreach ($ctor->getParameters() as $param) {
+            $type = $param->getType();
+            if ($type && ! $type->isBuiltin()) {
+                // recursively resolve from container
+                $args[] = $this->get($type->getName());
+            } elseif ($param->isDefaultValueAvailable()) {
+                $args[] = $param->getDefaultValue();
+            } else {
+                // no type & no default: pass null or throw
+                $args[] = null;
+            }
+        }
+    
+        return $ref->newInstanceArgs($args);
     }
 
     /**
@@ -72,7 +110,7 @@ class Container implements ContainerInterface
      * @param string $id
      * @return mixed
      */
-    public static function resolve(string $id): mixed
+    public static function resolve(string $id)
     {
         return self::getInstance()->get($id);
     }

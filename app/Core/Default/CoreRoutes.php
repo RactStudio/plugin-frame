@@ -1,27 +1,26 @@
-<?php 
+<?php
 
-namespace PluginFrame\Core;
+namespace PluginFrame\Core\Default;
 
-class PluginFrame
+class CoreRoutes
 {
     /**
-     * PluginFrame constructor.
+     * DefaultRoutes constructor.
      */
     public function __construct()
     {
-        // Load the plugin framework
-        $this->load_plugin_frame();
+        // Load the default core routes
+        $this->load_default_routes();
     }
 
     /**
-     * Load the plugin framework.
+     * Load the default routes.
      */
-    private function load_plugin_frame(): void
+    private function load_default_routes(): void
     {
         // Load the core components
         new \PluginFrame\Config\Options();
         new \PluginFrame\Config\HooksLoader();
         new \PluginFrame\Config\Routes();
     }
-
 }

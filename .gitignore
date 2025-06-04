@@ -1,4 +1,8 @@
 # Node modules
+.github/*
+CNAME
+
+# Node modules
 node_modules/
 
 # Twig compiled files

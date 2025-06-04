@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 use PluginFrame\Core\Services\Enqueue;
 
-class Enqueues
+class EnqueuesProvider
 {
     protected $enqueueFile;
 

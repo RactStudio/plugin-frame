@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 use PluginFrame\Core\Services\Taxonomies as TaxonomiesService;
 
-class Taxonomies
+class TaxonomiesProvider
 {
     protected $taxonomies;
 

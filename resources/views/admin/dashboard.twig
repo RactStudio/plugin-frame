@@ -19,6 +19,12 @@
         } %}
       </section>
 
+      {# <h2>{{ pf_footer_text }}</h2> #}
+
+      {# outputs the stored footer text, or 'Default' if missing #}
+      <h3>{{ option('pf_footer_text', 'Default footer text') }}</h3>
+      <h3>{{ option('pf_love_text', 'Default footer text') }}</h3>
+
       <section class="pf-mt-6 pf-p-6">
 
         <!-- Button and Modal in the same x-data scope -->

@@ -1,17 +1,18 @@
-<?php 
+<?php
 
-namespace PluginFrame\Providers\Options;
-
-use PluginFrame\Services\Options\Import as ImportService;
+namespace PluginFrame\Core\Services\Options;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Import
+class OptionExporter
 {
-    // Add
+    // Properties
+
+
     public function __construct()
     {
         // Do something
     }
+
 }

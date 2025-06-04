@@ -11,7 +11,7 @@ use PluginFrame\Core\Services\ActionsLinks as ActionsLink;
  * Class ActionsLinks
  * Registers hooks to modify plugin action and description links on the plugins page.
  */
-class ActionsLinks
+class ActionsLinksProvider
 {
     protected $actionLink;
 

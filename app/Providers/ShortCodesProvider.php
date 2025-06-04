@@ -1,16 +1,17 @@
-<?php
+<?php 
 
-namespace PluginFrame\Core\Services\Options;
+namespace PluginFrame\Providers;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-class Import
+use PluginFrame\Core\Services\ShortCode as ShortCodeService;
+
+class ShortCodesProvider
 {
     // Add
     public function __construct()
     {
         // Do something
     }
-
 }
